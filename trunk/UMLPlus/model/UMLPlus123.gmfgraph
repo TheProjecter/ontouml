@@ -642,6 +642,12 @@
           figure="//@figures.0/@descriptors.26/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
+        name="PropertyConnectionFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="PropertyConnectionFigure"/>
+    </descriptors>
+    <descriptors
         name="SubCollectionOfFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
@@ -657,9 +663,9 @@
             text="{}"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.27/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.28/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.27/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.28/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="SubQuantityOfFigure">
@@ -684,13 +690,13 @@
             text="0"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.28/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.29/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.28/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.29/@actualFigure/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.28/@actualFigure/@children.2"/>
+          figure="//@figures.0/@descriptors.29/@actualFigure/@children.2"/>
       <accessors
-          figure="//@figures.0/@descriptors.28/@actualFigure/@children.3"/>
+          figure="//@figures.0/@descriptors.29/@actualFigure/@children.3"/>
     </descriptors>
   </figures>
   <nodes
@@ -769,6 +775,9 @@
   <connections
       name="MemberOf"
       figure="MemberOfFigure"/>
+  <connections
+      name="PropertyConnection"
+      figure="PropertyConnectionFigure"/>
   <connections
       name="SubCollectionOf"
       figure="SubCollectionOfFigure"/>
@@ -1033,12 +1042,12 @@
       name="SubCollectionOfNameLabel"
       figure="SubCollectionOfFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.27/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.28/@accessors.0"/>
   <labels
       name="SubCollectionOfMetaAttributesLabel"
       figure="SubCollectionOfFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.27/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.28/@accessors.1"/>
   <labels
       name="SubKindLabel"
       figure="SubKindFigure"
@@ -1052,17 +1061,17 @@
       name="SubQuantityOfNameLabel"
       figure="SubQuantityOfFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.28/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.29/@accessors.0"/>
   <labels
       name="SubQuantityOfMetaAttributesLabel"
       figure="SubQuantityOfFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.28/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.29/@accessors.1"/>
   <labels
       name="SubQuantityOfSourceCardinalityLabel"
       figure="SubQuantityOfFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.28/@accessors.2">
+      accessor="//@figures.0/@descriptors.29/@accessors.2">
     <facets
         xsi:type="gmfgraph:AlignmentFacet"
         alignment="END"/>
@@ -1071,7 +1080,7 @@
       name="SubQuantityOfTargetCardinalityLabel"
       figure="SubQuantityOfFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.28/@accessors.3">
+      accessor="//@figures.0/@descriptors.29/@accessors.3">
     <facets
         xsi:type="gmfgraph:AlignmentFacet"/>
   </labels>
