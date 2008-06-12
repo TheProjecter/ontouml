@@ -2664,6 +2664,18 @@
         xsi:type="ecore:EReference"
         href="UMLPlus123.ecore#//DirectedRelationship/targetAux1"/>
   </links>
+  <links>
+    <domainMetaElement
+        href="UMLPlus123.ecore#//Property"/>
+    <containmentFeature
+        href="UMLPlus123.ecore#//Container/InstanciarElement"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="UMLPlus123.ecore#//Property/endType"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="UMLPlus123.ecore#//Property/endType"/>
+  </links>
   <diagram>
     <diagramCanvas
         href="UMLPlus123.gmfgraph#UMLPlus"/>
