@@ -100,6 +100,7 @@ public class MultiplicityElementImpl extends ElementImpl implements Multiplicity
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * The commented lines cause errors.
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
@@ -121,6 +122,7 @@ public class MultiplicityElementImpl extends ElementImpl implements Multiplicity
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * The commented lines cause errors.
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
