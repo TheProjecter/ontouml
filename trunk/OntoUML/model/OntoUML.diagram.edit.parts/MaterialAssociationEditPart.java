@@ -3,6 +3,7 @@ package OntoUML.diagram.edit.parts;
 import org.eclipse.draw2d.Connection;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
@@ -15,7 +16,8 @@ import org.eclipse.emf.common.notify.Notification;
 /**
  * @generated
  */
-public class MaterialAssociationEditPart extends ConnectionNodeEditPart {
+public class MaterialAssociationEditPart extends ConnectionNodeEditPart
+implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -88,7 +90,13 @@ public class MaterialAssociationEditPart extends ConnectionNodeEditPart {
 	 * 
 	 * @generated
 	 */
-
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * Changed.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	protected Connection createConnectionFigure() {
 		return new MaterialAssociationFigure(this);
 	}
@@ -100,7 +108,12 @@ public class MaterialAssociationEditPart extends ConnectionNodeEditPart {
 		return (MaterialAssociationFigure) getFigure();
 	}
 	
-	//Criei para atualizar a exibição dos meta-atributos
+	/**
+	 * <!-- begin-user-doc -->
+	 * Created to update the exibition of the meta-attributes.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	protected void handleNotificationEvent(Notification event) {
 		getPrimaryShape().updateContents(this);
 		super.handleNotificationEvent(event);
@@ -129,7 +142,10 @@ public class MaterialAssociationEditPart extends ConnectionNodeEditPart {
 		private WrappingLabel fFigureMaterialAssociationAssociationEnd2CardinalitiesLabelFigure;
 
 		/**
-		 * @generated
+		 * <!-- begin-user-doc -->
+		 * Changed to receive MaterialAssociationEditPart.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
 		 */
 		public MaterialAssociationFigure(MaterialAssociationEditPart materialassociationeditpart) {
 
@@ -137,9 +153,11 @@ public class MaterialAssociationEditPart extends ConnectionNodeEditPart {
 		}
 
 		/**
-		 * @generated
-		 */
-		//Alterei para atualizar a exibição dos meta-atributos
+		 * <!-- begin-user-doc -->
+		 * Changed.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		private void createContents(MaterialAssociationEditPart materialassociationeditpart) {
 
 			fFigureMaterialAssociationLabelFigure = new WrappingLabel();
@@ -200,7 +218,12 @@ public class MaterialAssociationEditPart extends ConnectionNodeEditPart {
 			
 		}
 
-		//Criei para atualizar a exibição dos meta-atributos
+		/**
+		 * <!-- begin-user-doc -->
+		 * Created to update the exibition of the meta-attributes.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		private void updateContents(MaterialAssociationEditPart materialassociationeditpart) {
 			
 			MaterialAssociation m = (MaterialAssociation)((View)materialassociationeditpart.getModel()).getElement();

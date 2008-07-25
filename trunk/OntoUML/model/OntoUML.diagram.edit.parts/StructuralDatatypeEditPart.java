@@ -3,6 +3,7 @@ package OntoUML.diagram.edit.parts;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
@@ -13,7 +14,9 @@ import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ConstrainedToolbarLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
@@ -82,7 +85,6 @@ public class StructuralDatatypeEditPart extends ShapeNodeEditPart {
 						return null;
 					}
 				});
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
@@ -96,23 +98,16 @@ public class StructuralDatatypeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-		LayoutEditPolicy lep = new LayoutEditPolicy() {
+
+		ConstrainedToolbarLayoutEditPolicy lep = new ConstrainedToolbarLayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if (result == null) {
-					result = new NonResizableEditPolicy();
+				if (child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE) == null) {
+					if (child instanceof ITextAwareEditPart) {
+						return new OntoUML.diagram.edit.policies.OntoUMLTextSelectionEditPolicy();
+					}
 				}
-				return result;
-			}
-
-			protected Command getMoveChildrenCommand(Request request) {
-				return null;
-			}
-
-			protected Command getCreateCommand(CreateRequest request) {
-				return null;
+				return super.createChildEditPolicy(child);
 			}
 		};
 		return lep;
@@ -247,7 +242,12 @@ public class StructuralDatatypeEditPart extends ShapeNodeEditPart {
 				.getType(OntoUML.diagram.edit.parts.WrappingLabel12EditPart.VISUAL_ID));
 	}
 	
-	//Criei para atualizar a exibição dos meta-atributos
+	/**
+	 * <!-- begin-user-doc -->
+	 * Created to update the exibition of the meta-attributes.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */	
 	protected void handleNotificationEvent(Notification event) {
 		getPrimaryShape().updateContents(this);
 		super.handleNotificationEvent(event);
@@ -271,6 +271,16 @@ public class StructuralDatatypeEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		public StructuralDatatypeFigure() {
+
+			ToolbarLayout layoutThis = new ToolbarLayout();
+			layoutThis.setStretchMinorAxis(true);
+			layoutThis.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
+
+			layoutThis.setSpacing(0);
+			layoutThis.setVertical(true);
+
+			this.setLayoutManager(layoutThis);
+
 			createContents();
 		}
 
@@ -292,7 +302,12 @@ public class StructuralDatatypeEditPart extends ShapeNodeEditPart {
 
 		}
 		
-		//Criei para atualizar a exibição dos meta-atributos
+		/**
+		 * <!-- begin-user-doc -->
+		 * Created to update the exibition of the meta-attributes.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		private void updateContents(StructuralDatatypeEditPart structuraldatatypeeditpart) {
 			
 			StructuralDatatype s = (StructuralDatatype)((View)structuraldatatypeeditpart.getModel()).getElement();

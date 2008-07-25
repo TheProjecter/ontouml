@@ -83,7 +83,6 @@ public class GeneralizationSetEditPart extends ShapeNodeEditPart {
 						return null;
 					}
 				});
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
@@ -113,9 +112,11 @@ public class GeneralizationSetEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	 * @generated
+	 * <!-- begin-user-doc -->
+	 * Changed.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
 	 */
-	// Alterei, colocando "this".
 	protected IFigure createNodeShape() {
 		GeneralizationSetFigure figure = new GeneralizationSetFigure(this);
 		return primaryShape = figure;
@@ -236,7 +237,12 @@ public class GeneralizationSetEditPart extends ShapeNodeEditPart {
 				.getType(OntoUML.diagram.edit.parts.GeneralizationSetNameEditPart.VISUAL_ID));
 	}
 	
-	//Criei para atualizar a exibição dos meta-atributos
+	/**
+	 * <!-- begin-user-doc -->
+	 * Created to update the exibition of the meta-attributes.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	protected void handleNotificationEvent(Notification event) {
 		getPrimaryShape().updateContents(this);
 		super.handleNotificationEvent(event);
@@ -257,7 +263,10 @@ public class GeneralizationSetEditPart extends ShapeNodeEditPart {
 		private WrappingLabel fFigureGeneralizationSetNameLabelFigure;
 
 		/**
-		 * @generated
+		 * <!-- begin-user-doc -->
+		 * Changed to receive eneralizationSet.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
 		 */
 		public GeneralizationSetFigure(GeneralizationSetEditPart generalizationseteditpart) {
 
@@ -273,22 +282,34 @@ public class GeneralizationSetEditPart extends ShapeNodeEditPart {
 			createContents(generalizationseteditpart);
 		}
 		
-		/** Associa a decoração correta, dependendo do atributo isCovering. */
+		/**
+		 * <!-- begin-user-doc -->
+		 * Associate the correct decoration, depending on the attribute isCovering.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		protected boolean updateFaceIsCovering(GeneralizationSetEditPart generalizationseteditpart) {
 			GeneralizationSet g = (GeneralizationSet)((View)generalizationseteditpart.getModel()).getElement();
 			return g.isIsCovering();
 		}
 		
-		/** Associa a decoração correta, dependendo do atributo isDisjoint. */
+		/**
+		 * <!-- begin-user-doc -->
+		 * Associate the correct decoration, depending on the attribute isDisjoint.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		protected boolean updateFaceIsDisjoint(GeneralizationSetEditPart generalizationseteditpart) {
 			GeneralizationSet g = (GeneralizationSet)((View)generalizationseteditpart.getModel()).getElement();
 			return g.isIsDisjoint();
 		}
 
 		/**
-		 * @generated
-		 */
-		// Alterei e adicionei as funções updateFaceIsCovering e updateFaceIsDisjoint.
+		 * <!-- begin-user-doc -->
+		 * Changed.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		private void createContents(GeneralizationSetEditPart generalizationseteditpart) {
 
 			fFigureGeneralizationSetNameLabelFigure = new WrappingLabel();
@@ -315,7 +336,12 @@ public class GeneralizationSetEditPart extends ShapeNodeEditPart {
 			this.add(fFigureGeneralizationSetMetaAttributesLabelFigure);
 		}
 		
-		//Criei para atualizar a exibição dos meta-atributos isCovering e isDisjoint.
+		/**
+		 * <!-- begin-user-doc -->
+		 * Created to update the exibition of the meta-attributes isEssential, isInseparable, isImmutablePart e isImmutableWhole.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		private void updateContents(GeneralizationSetEditPart generalizationseteditpart) {
 			if (updateFaceIsCovering(generalizationseteditpart) && !updateFaceIsDisjoint(generalizationseteditpart))
 			{

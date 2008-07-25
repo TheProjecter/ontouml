@@ -83,7 +83,6 @@ public class PhaseEditPart extends ShapeNodeEditPart {
 						return null;
 					}
 				});
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new OntoUML.diagram.edit.policies.PhaseItemSemanticEditPolicy());
@@ -238,7 +237,12 @@ public class PhaseEditPart extends ShapeNodeEditPart {
 				.getType(OntoUML.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID));
 	}
 	
-	//Criei para atualizar a exibição dos meta-atributos
+	/**
+	 * <!-- begin-user-doc -->
+	 * Created to update the exibition of the meta-attributes.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */	
 	protected void handleNotificationEvent(Notification event) {
 		getPrimaryShape().updateContents(this);
 		super.handleNotificationEvent(event);
@@ -292,7 +296,12 @@ public class PhaseEditPart extends ShapeNodeEditPart {
 
 		}
 
-		//Criei para atualizar a exibição dos meta-atributos
+		/**
+		 * <!-- begin-user-doc -->
+		 * Created to update the exibition of the meta-attributes.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		private void updateContents(PhaseEditPart phaseeditpart) {
 			
 			Phase s = (Phase)((View)phaseeditpart.getModel()).getElement();

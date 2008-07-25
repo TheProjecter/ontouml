@@ -5,6 +5,7 @@ import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
@@ -15,7 +16,8 @@ import OntoUML.Property;
 /**
  * @generated
  */
-public class SubQuantityOfEditPart extends ConnectionNodeEditPart {
+public class SubQuantityOfEditPart extends ConnectionNodeEditPart implements
+ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -55,18 +57,6 @@ public class SubQuantityOfEditPart extends ConnectionNodeEditPart {
 							.getFigureSubQuantityOfMetaAttributesLabelFigure());
 			return true;
 		}
-		if (childEditPart instanceof OntoUML.diagram.edit.parts.WrappingLabel26EditPart) {
-			((OntoUML.diagram.edit.parts.WrappingLabel26EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureSubQuantityOfSourceCardinalityLabelFigure());
-			return true;
-		}
-		if (childEditPart instanceof OntoUML.diagram.edit.parts.WrappingLabel27EditPart) {
-			((OntoUML.diagram.edit.parts.WrappingLabel27EditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureSubQuantityOfTargetCardinalityLabelFigure());
-			return true;
-		}
 		return false;
 	}
 
@@ -89,6 +79,12 @@ public class SubQuantityOfEditPart extends ConnectionNodeEditPart {
 	 * @generated
 	 */
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * Changed.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	protected Connection createConnectionFigure() {
 		return new SubQuantityOfFigure(this);
 	}
@@ -100,7 +96,12 @@ public class SubQuantityOfEditPart extends ConnectionNodeEditPart {
 		return (SubQuantityOfFigure) getFigure();
 	}
 	
-	//Criei para atualizar a exibição dos meta-atributos isEssential, isInseparable, isImmutablePart e isImmutableWhole.
+	/**
+	 * <!-- begin-user-doc -->
+	 * Created to update the exibition of the meta-attributes isEssential, isInseparable, isImmutablePart e isImmutableWhole.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	protected void handleNotificationEvent(Notification event) {
 		getPrimaryShape().updateContents(this);
 		super.handleNotificationEvent(event);
@@ -129,28 +130,45 @@ public class SubQuantityOfEditPart extends ConnectionNodeEditPart {
 		private WrappingLabel fFigureSubQuantityOfTargetCardinalityLabelFigure;
 		
 		/**
-		 * @generated
+		 * <!-- begin-user-doc -->
+		 * Changed to receive SubQuantityOfEditPart.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
 		 */
-		// Modifiquei para receber o SubQuantityOfEditPart.
 		public SubQuantityOfFigure(SubQuantityOfEditPart subquantityofeditpart) {
 
 			createContents(subquantityofeditpart);
 			setSourceDecoration(createSourceDecoration());
 		}
 
-		/** Associa a decoração correta, dependendo do atributo isEssential. */
+		/**
+		 * <!-- begin-user-doc -->
+		 * Associate the correct decoration, depending on the attribute isEssential.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */		
 		protected boolean updateFaceIsEssential(SubQuantityOfEditPart subquantityofeditpart) {
 			subQuantityOf c = (subQuantityOf)((View)subquantityofeditpart.getModel()).getElement();
 			return c.isIsEssential();
 		}
-		
-		/** Associa a decoração correta, dependendo do atributo isInseparable. */
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * Associate the correct decoration, depending on the attribute isInseparable.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */
 		protected boolean updateFaceIsInseparable(SubQuantityOfEditPart subquantityofeditpart) {
 			subQuantityOf c = (subQuantityOf)((View)subquantityofeditpart.getModel()).getElement();
 			return c.isIsInseparable();
 		}
 		
-		/** Associa a decoração correta, dependendo dos atributos isEssential e isImmutablePart. */
+		/**
+		 * <!-- begin-user-doc -->
+		 * Associate the correct decoration, depending on the attributes isEssential and isImmutablePart.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */		
 		protected boolean updateFaceIsImmutablePart(SubQuantityOfEditPart subquantityofeditpart) {
 			subQuantityOf c = (subQuantityOf)((View)subquantityofeditpart.getModel()).getElement();
 			if(!c.isIsEssential() && c.isIsImmutablePart())
@@ -158,8 +176,13 @@ public class SubQuantityOfEditPart extends ConnectionNodeEditPart {
 			else
 				return false;
 		}
-		
-		/** Associa a decoração correta, dependendo dos atributos isInseparable e isImmutableWhole. */
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * Associate the correct decoration, depending on the attributes isInseparable e isImmutableWhole.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		protected boolean updateFaceIsImmutableWhole(SubQuantityOfEditPart subquantityofeditpart) {
 			subQuantityOf c = (subQuantityOf)((View)subquantityofeditpart.getModel()).getElement();
 			if (!c.isIsInseparable() && c.isIsImmutableWhole())
@@ -167,8 +190,13 @@ public class SubQuantityOfEditPart extends ConnectionNodeEditPart {
 			else
 				return false;
 		}
-		
-		/** Acha a cardinalidade mínima do Property que está em source. */
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * Finds the minimum cardinality of the Property that is in Source.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		protected Integer initialSourceLowerCardinality(SubQuantityOfEditPart subquantityofeditpart) {
 			subQuantityOf c = (subQuantityOf)((View)subquantityofeditpart.getModel()).getElement();
 			if (!c.getSource().isEmpty()) {
@@ -181,8 +209,13 @@ public class SubQuantityOfEditPart extends ConnectionNodeEditPart {
 			else
 				return 0;
 		}
-		
-		/** Acha a cardinalidade máxima do Property que está em source. */
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * Finds the maximum cardinality of the Property that is in Source.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		protected Integer initialSourceUpperCardinality(SubQuantityOfEditPart subquantityofeditpart) {
 			subQuantityOf c = (subQuantityOf)((View)subquantityofeditpart.getModel()).getElement();
 			if (!c.getSource().isEmpty())
@@ -190,8 +223,13 @@ public class SubQuantityOfEditPart extends ConnectionNodeEditPart {
 			else
 				return 0;
 		}
-		
-		/** Acha a cardinalidade mínima do Property que está em target. */
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * Finds the minimum cardinality of the Property that is in Target.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		protected Integer initialTargetLowerCardinality(SubQuantityOfEditPart subquantityofeditpart) {
 			subQuantityOf c = (subQuantityOf)((View)subquantityofeditpart.getModel()).getElement();
 			if (!c.getTarget().isEmpty()) {
@@ -204,8 +242,13 @@ public class SubQuantityOfEditPart extends ConnectionNodeEditPart {
 			else
 				return 0;
 		}
-		
-		/** Acha a cardinalidade máxima do Property que está em target. */
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * Finds the maximum cardinality of the Property that is in Target.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		protected Integer initialTargetUpperCardinality(SubQuantityOfEditPart subquantityofeditpart) {
 			subQuantityOf c = (subQuantityOf)((View)subquantityofeditpart.getModel()).getElement();
 			if (!c.getTarget().isEmpty())
@@ -213,8 +256,13 @@ public class SubQuantityOfEditPart extends ConnectionNodeEditPart {
 			else
 				return 0;
 		}
-		
-		/** Atualiza as cardinalidades dos Properties em source e target. */
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * Updates the cardinalities of the Properties that are in Source and Target.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		protected void updatePropertyCardinality(SubQuantityOfEditPart subquantityofeditpart, int source_lower, int source_upper, int target_lower, int target_upper) {
 			subQuantityOf c = (subQuantityOf)((View)subquantityofeditpart.getModel()).getElement();
 			if (!c.getSource().isEmpty()) {
@@ -226,11 +274,13 @@ public class SubQuantityOfEditPart extends ConnectionNodeEditPart {
 				((Property)c.getTarget().get(0)).setUpper(target_upper);
 			}
 		}
-		
+
 		/**
-		 * @generated
-		 */
-		// Alterei e adicionei as funções updateFaceIsEssential, updateFaceIsInseparable, updateFaceIsImmutablePart, updateFaceIsImmutableWhole.
+		 * <!-- begin-user-doc -->
+		 * Changed.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		private void createContents(SubQuantityOfEditPart subquantityofeditpart) {
 
 			String text = new String("{");
@@ -293,8 +343,13 @@ public class SubQuantityOfEditPart extends ConnectionNodeEditPart {
 
 			this.add(fFigureSubQuantityOfTargetCardinalityLabelFigure);
 		}
-		
-		//Criei para atualizar a exibição dos meta-atributos isEssential, isInseparable, isImmutablePart e isImmutableWhole.
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * Created to update the exibition of the meta-attributes isEssential, isInseparable, isImmutablePart e isImmutableWhole.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		private void updateContents(SubQuantityOfEditPart subquantityofeditpart) {
 
 			String text = new String("{");
@@ -338,9 +393,11 @@ public class SubQuantityOfEditPart extends ConnectionNodeEditPart {
 		}
 		
 		/**
-		 * @generated
-		 */
-		//Alterei para que o meta atributo isShareable defina se o diamante vai ser vazio ou cheio.
+		 * <!-- begin-user-doc -->
+		 * Changed so that the meta-attribute isShareable set if the diamond will be empty or full.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		private RotatableDecoration createSourceDecoration() {
 			OntoUML.diagram.edit.parts.SubQuantityOfCustomFigure df = new OntoUML.diagram.edit.parts.SubQuantityOfCustomFigure(SubQuantityOfEditPart.this);
 

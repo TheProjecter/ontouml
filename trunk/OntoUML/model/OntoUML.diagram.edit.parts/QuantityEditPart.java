@@ -83,7 +83,6 @@ public class QuantityEditPart extends ShapeNodeEditPart {
 						return null;
 					}
 				});
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
@@ -240,7 +239,12 @@ public class QuantityEditPart extends ShapeNodeEditPart {
 				.getType(OntoUML.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID));
 	}
 	
-	//Criei para atualizar a exibição dos meta-atributos
+	/**
+	 * <!-- begin-user-doc -->
+	 * Created to update the exibition of the meta-attributes.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */	
 	protected void handleNotificationEvent(Notification event) {
 		getPrimaryShape().updateContents(this);
 		super.handleNotificationEvent(event);
@@ -294,7 +298,12 @@ public class QuantityEditPart extends ShapeNodeEditPart {
 
 		}
 		
-		//Criei para atualizar a exibição dos meta-atributos
+		/**
+		 * <!-- begin-user-doc -->
+		 * Created to update the exibition of the meta-attributes.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		private void updateContents(QuantityEditPart quantityeditpart) {
 			
 			Quantity s = (Quantity)((View)quantityeditpart.getModel()).getElement();

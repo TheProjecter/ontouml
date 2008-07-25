@@ -83,7 +83,6 @@ public class ModeEditPart extends ShapeNodeEditPart {
 						return null;
 					}
 				});
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new OntoUML.diagram.edit.policies.ModeItemSemanticEditPolicy());
@@ -238,7 +237,12 @@ public class ModeEditPart extends ShapeNodeEditPart {
 				.getType(OntoUML.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID));
 	}
 	
-	//Criei para atualizar a exibição dos meta-atributos
+	/**
+	 * <!-- begin-user-doc -->
+	 * Created to update the exibition of the meta-attributes.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	protected void handleNotificationEvent(Notification event) {
 		getPrimaryShape().updateContents(this);
 		super.handleNotificationEvent(event);
@@ -292,7 +296,12 @@ public class ModeEditPart extends ShapeNodeEditPart {
 
 		}
 		
-		//Criei para atualizar a exibição dos meta-atributos
+		/**
+		 * <!-- begin-user-doc -->
+		 * Created to update the exibition of the meta-attributes.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		private void updateContents(ModeEditPart modeeditpart) {
 			
 			Mode s = (Mode)((View)modeeditpart.getModel()).getElement();

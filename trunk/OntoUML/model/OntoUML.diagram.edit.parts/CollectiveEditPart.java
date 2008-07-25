@@ -84,7 +84,6 @@ public class CollectiveEditPart extends ShapeNodeEditPart {
 						return null;
 					}
 				});
-
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
@@ -243,7 +242,12 @@ public class CollectiveEditPart extends ShapeNodeEditPart {
 				.getType(OntoUML.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
 	}
 	
-	//Criei para atualizar a exibição do meta-atributo isExtensional.
+	/**
+	 * <!-- begin-user-doc -->
+	 * Created to update the exibition of the meta-attribute isExtensional.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	protected void handleNotificationEvent(Notification event) {
 		getPrimaryShape().updateContents(this);
 		super.handleNotificationEvent(event);
@@ -268,7 +272,10 @@ public class CollectiveEditPart extends ShapeNodeEditPart {
 		private WrappingLabel fFigureCollectiveMetaAttributeLabelFigure;
 
 		/**
-		 * @generated
+		 * <!-- begin-user-doc -->
+		 * Changed to update the exibition of the meta-attribute isExtensional.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
 		 */
 		public CollectiveFigure(CollectiveEditPart collectiveeditpart) {
 
@@ -284,16 +291,23 @@ public class CollectiveEditPart extends ShapeNodeEditPart {
 			createContents(collectiveeditpart);
 		}
 
-		/** Associa a decoração correta, dependendo do atributo isExtensional. */
+		/**
+		 * <!-- begin-user-doc -->
+		 * Associate the correct decoration, depending on the attribute isExtensional.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */
 		protected boolean updateFaceIsExtensional(CollectiveEditPart collectiveeditpart) {
 			Collective c = (Collective)((View)collectiveeditpart.getModel()).getElement();
 			return c.isIsExtensional();
 		}
 		
 		/**
-		 * @generated
+		 * <!-- begin-user-doc -->
+		 * Changed.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
 		 */
-		// Alterei e adicionei a função updateFaceIsExtensional.
 		private void createContents(CollectiveEditPart collectiveeditpart) {
 
 			fFigureCollectiveLabelFigure = new WrappingLabel();
@@ -317,7 +331,12 @@ public class CollectiveEditPart extends ShapeNodeEditPart {
 
 		}
 		
-		//Criei para atualizar a exibição do meta-atributo isExtensional.
+		/**
+		 * <!-- begin-user-doc -->
+		 * Created to update the exibition of the meta-attribute isExtensional.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */
 		private void updateContents(CollectiveEditPart collectiveeditpart) {
 			if(updateFaceIsExtensional(collectiveeditpart)) {
 				fFigureCollectiveMetaAttributeLabelFigure.setText("{extensional}");

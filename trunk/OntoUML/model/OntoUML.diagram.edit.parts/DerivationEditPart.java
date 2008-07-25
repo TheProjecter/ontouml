@@ -6,6 +6,7 @@ import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
@@ -17,7 +18,8 @@ import OntoUML.Property;
 /**
  * @generated
  */
-public class DerivationEditPart extends ConnectionNodeEditPart {
+public class DerivationEditPart extends ConnectionNodeEditPart implements
+ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -84,7 +86,13 @@ public class DerivationEditPart extends ConnectionNodeEditPart {
 	 * 
 	 * @generated
 	 */
-
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * Changed.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	protected Connection createConnectionFigure() {
 		return new DerivationFigure(this);
 	}
@@ -96,7 +104,12 @@ public class DerivationEditPart extends ConnectionNodeEditPart {
 		return (DerivationFigure) getFigure();
 	}
 
-	//Criei para atualizar a exibição dos meta-atributos
+	/**
+	 * <!-- begin-user-doc -->
+	 * Created to update the exibition of the meta-attributes.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	protected void handleNotificationEvent(Notification event) {
 		getPrimaryShape().updateContents(this);
 		super.handleNotificationEvent(event);
@@ -121,7 +134,10 @@ public class DerivationEditPart extends ConnectionNodeEditPart {
 		private WrappingLabel fFigureDerivationTargetCardinalitiesLabelFigure;
 
 		/**
-		 * @generated
+		 * <!-- begin-user-doc -->
+		 * Changed to receive DerivationEditPart.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
 		 */
 		public DerivationFigure(DerivationEditPart derivationeditpart) {
 			this.setLineStyle(Graphics.LINE_DASH);
@@ -131,8 +147,11 @@ public class DerivationEditPart extends ConnectionNodeEditPart {
 		}
 
 		/**
-		 * @generated
-		 */
+		 * <!-- begin-user-doc -->
+		 * Changed.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		private void createContents(DerivationEditPart derivationeditpart) {
 
 			fFigureDerivationNameLabelFigure = new WrappingLabel();
@@ -188,7 +207,12 @@ public class DerivationEditPart extends ConnectionNodeEditPart {
 
 		}
 
-		//Criei para atualizar a exibição dos meta-atributos
+		/**
+		 * <!-- begin-user-doc -->
+		 * Created to update the exibition of the meta-attributes.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		private void updateContents(DerivationEditPart derivationeditpart) {
 			
 			Derivation d = (Derivation)((View)derivationeditpart.getModel()).getElement();
@@ -238,8 +262,11 @@ public class DerivationEditPart extends ConnectionNodeEditPart {
 		}
 		
 		/**
-		 * @generated
-		 */
+		 * <!-- begin-user-doc -->
+		 * Changed.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		private RotatableDecoration createTargetDecoration() {
 			OntoUML.diagram.edit.parts.DerivationCustomFigure df = new OntoUML.diagram.edit.parts.DerivationCustomFigure();
 

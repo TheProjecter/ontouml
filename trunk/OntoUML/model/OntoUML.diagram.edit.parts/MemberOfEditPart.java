@@ -5,6 +5,7 @@ import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
@@ -14,7 +15,8 @@ import OntoUML.memberOf;
 /**
  * @generated
  */
-public class MemberOfEditPart extends ConnectionNodeEditPart {
+public class MemberOfEditPart extends ConnectionNodeEditPart implements
+ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -76,6 +78,12 @@ public class MemberOfEditPart extends ConnectionNodeEditPart {
 	 * @generated
 	 */
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * Changed.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	protected Connection createConnectionFigure() {
 		return new MemberOfFigure(this);
 	}
@@ -87,7 +95,12 @@ public class MemberOfEditPart extends ConnectionNodeEditPart {
 		return (MemberOfFigure) getFigure();
 	}
 	
-	//Criei para atualizar a exibição dos meta-atributos isEssential, isInseparable, isImmutablePart e isImmutableWhole.
+	/**
+	 * <!-- begin-user-doc -->
+	 * Created to update the exibition of the meta-attributes isEssential, isInseparable, isImmutablePart e isImmutableWhole.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	protected void handleNotificationEvent(Notification event) {
 		getPrimaryShape().updateContents(this);
 		super.handleNotificationEvent(event);
@@ -108,28 +121,45 @@ public class MemberOfEditPart extends ConnectionNodeEditPart {
 		private WrappingLabel fFigureMemberOfMetaAttributesLabelFigure;
 
 		/**
-		 * @generated
+		 * <!-- begin-user-doc -->
+		 * Changed to receive MemberOfEditPart.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
 		 */
-		// Modifiquei para receber o MemberOfEditPart.
 		public MemberOfFigure(MemberOfEditPart memberofeditpart) {
 
 			createContents(memberofeditpart);
 			setSourceDecoration(createSourceDecoration());
 		}
 		
-		/** Associa a decoração correta, dependendo do atributo isEssential. */
+		/**
+		 * <!-- begin-user-doc -->
+		 * Associate the correct decoration, depending on the attribute isEssential.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */		
 		protected boolean updateFaceIsEssential(MemberOfEditPart memberofeditpart) {
 			memberOf m = (memberOf)((View)memberofeditpart.getModel()).getElement();
 			return m.isIsEssential();
 		}
 		
-		/** Associa a decoração correta, dependendo do atributo isInseparable. */
+		/**
+		 * <!-- begin-user-doc -->
+		 * Associate the correct decoration, depending on the attribute isInseparable.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */
 		protected boolean updateFaceIsInseparable(MemberOfEditPart memberofeditpart) {
 			memberOf m = (memberOf)((View)memberofeditpart.getModel()).getElement();
 			return m.isIsInseparable();
 		}
 		
-		/** Associa a decoração correta, dependendo dos atributos isEssential e isImmutablePart. */
+		/**
+		 * <!-- begin-user-doc -->
+		 * Associate the correct decoration, depending on the attributes isEssential and isImmutablePart.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */
 		protected boolean updateFaceIsImmutablePart(MemberOfEditPart memberofeditpart) {
 			memberOf m = (memberOf)((View)memberofeditpart.getModel()).getElement();
 			if(!m.isIsEssential() && m.isIsImmutablePart())
@@ -138,7 +168,12 @@ public class MemberOfEditPart extends ConnectionNodeEditPart {
 				return false;
 		}
 		
-		/** Associa a decoração correta, dependendo dos atributos isInseparable e isImmutableWhole. */
+		/**
+		 * <!-- begin-user-doc -->
+		 * Associate the correct decoration, depending on the attributes isInseparable e isImmutableWhole.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		protected boolean updateFaceIsImmutableWhole(MemberOfEditPart memberofeditpart) {
 			memberOf m = (memberOf)((View)memberofeditpart.getModel()).getElement();
 			if (!m.isIsInseparable() && m.isIsImmutableWhole())
@@ -148,9 +183,11 @@ public class MemberOfEditPart extends ConnectionNodeEditPart {
 		}
 
 		/**
-		 * @generated
-		 */
-		// Alterei e adicionei as funções updateFaceIsEssential, updateFaceIsInseparable, updateFaceIsImmutablePart, updateFaceIsImmutableWhole.
+		 * <!-- begin-user-doc -->
+		 * Changed.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		private void createContents(MemberOfEditPart memberofeditpart) {
 
 			String text = new String("{");
@@ -196,7 +233,12 @@ public class MemberOfEditPart extends ConnectionNodeEditPart {
 			this.add(fFigureMemberOfMetaAttributesLabelFigure);
 		}
 		
-		//Criei para atualizar a exibição dos meta-atributos isEssential, isInseparable, isImmutablePart e isImmutableWhole.
+		/**
+		 * <!-- begin-user-doc -->
+		 * Created to update the exibition of the meta-attributes isEssential, isInseparable, isImmutablePart e isImmutableWhole.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		private void updateContents(MemberOfEditPart memberofeditpart) {
 
 			String text = new String("{");
@@ -237,9 +279,11 @@ public class MemberOfEditPart extends ConnectionNodeEditPart {
 		}
 		
 		/**
-		 * @generated
-		 */
-		//Alterei para que o meta atributo isShareable defina se o diamante vai ser vazio ou cheio.		
+		 * <!-- begin-user-doc -->
+		 * Changed so that the meta-attribute isShareable set if the diamond will be empty or full.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		private RotatableDecoration createSourceDecoration() {
 			OntoUML.diagram.edit.parts.MemberOfCustomFigure df = new OntoUML.diagram.edit.parts.MemberOfCustomFigure(MemberOfEditPart.this);
 

@@ -6,6 +6,7 @@ import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
@@ -18,7 +19,8 @@ import org.eclipse.emf.common.util.EList;
 /**
  * @generated
  */
-public class DatatypeAssociationEditPart extends ConnectionNodeEditPart {
+public class DatatypeAssociationEditPart extends ConnectionNodeEditPart
+implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -73,7 +75,13 @@ public class DatatypeAssociationEditPart extends ConnectionNodeEditPart {
 	 * 
 	 * @generated
 	 */
-
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * Changed.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	protected Connection createConnectionFigure() {
 		return new DatatypeAssociationFigure(this);
 	}
@@ -85,7 +93,12 @@ public class DatatypeAssociationEditPart extends ConnectionNodeEditPart {
 		return (DatatypeAssociationFigure) getFigure();
 	}
 	
-	//Criei para atualizar a exibição dos meta-atributos
+	/**
+	 * <!-- begin-user-doc -->
+	 * Created to update the exibition of the meta-attributes.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	protected void handleNotificationEvent(Notification event) {
 		getPrimaryShape().updateContents(this);
 		super.handleNotificationEvent(event);
@@ -102,7 +115,10 @@ public class DatatypeAssociationEditPart extends ConnectionNodeEditPart {
 		private WrappingLabel fFigureDatatypeAssociationNameLabelFigure;
 
 		/**
-		 * @generated
+		 * <!-- begin-user-doc -->
+		 * Changed to receive DatatypeAssociationEditPart.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
 		 */
 		public DatatypeAssociationFigure(DatatypeAssociationEditPart datatypeassociationeditpart) {
 
@@ -111,9 +127,11 @@ public class DatatypeAssociationEditPart extends ConnectionNodeEditPart {
 		}
 
 		/**
-		 * @generated
-		 */
-		// Alterei
+		 * <!-- begin-user-doc -->
+		 * Changed.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		private void createContents(DatatypeAssociationEditPart datatypeassociationeditpart) {
 
 			fFigureDatatypeAssociationNameLabelFigure = new WrappingLabel();
@@ -133,7 +151,12 @@ public class DatatypeAssociationEditPart extends ConnectionNodeEditPart {
 			
 		}
 		
-		//Criei para atualizar a exibição dos meta-atributos
+		/**
+		 * <!-- begin-user-doc -->
+		 * Created to update the exibition of the meta-attributes.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */
 		private void updateContents(DatatypeAssociationEditPart datatypeassociationeditpart) {
 			
 			DatatypeAssociation d = (DatatypeAssociation)((View)datatypeassociationeditpart.getModel()).getElement();

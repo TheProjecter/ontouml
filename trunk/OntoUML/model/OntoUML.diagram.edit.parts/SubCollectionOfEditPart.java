@@ -20,7 +20,8 @@ import org.eclipse.gmf.runtime.diagram.core.services.ViewService;
 /**
  * @generated
  */
-public class SubCollectionOfEditPart extends ConnectionNodeEditPart {
+public class SubCollectionOfEditPart extends ConnectionNodeEditPart implements
+ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -82,6 +83,12 @@ public class SubCollectionOfEditPart extends ConnectionNodeEditPart {
 	 * @generated
 	 */
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * Changed.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	protected Connection createConnectionFigure() {
 		return new SubCollectionOfFigure(this);
 	}
@@ -93,7 +100,12 @@ public class SubCollectionOfEditPart extends ConnectionNodeEditPart {
 		return (SubCollectionOfFigure) getFigure();
 	}
 	
-	//Criei para atualizar a exibição dos meta-atributos isEssential, isInseparable, isImmutablePart e isImmutableWhole.
+	/**
+	 * <!-- begin-user-doc -->
+	 * Created to update the exibition of the meta-attributes isEssential, isInseparable, isImmutablePart e isImmutableWhole.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	protected void handleNotificationEvent(Notification event) {
 		getPrimaryShape().updateContents(this);
 		super.handleNotificationEvent(event);
@@ -114,28 +126,45 @@ public class SubCollectionOfEditPart extends ConnectionNodeEditPart {
 		private WrappingLabel fFigureSubCollectionOfMetaAttributesLabelFigure;
 
 		/**
-		 * @generated
+		 * <!-- begin-user-doc -->
+		 * Changed to receive SubCollectionOfEditPart.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
 		 */
-		// Modifiquei para receber o SubCollectionOfEditPart.
 		public SubCollectionOfFigure(SubCollectionOfEditPart subcollectionofeditpart) {
 
 			createContents(subcollectionofeditpart);
 			setSourceDecoration(createSourceDecoration());
 		}
 		
-		/** Associa a decoração correta, dependendo do atributo isEssential. */
+		/**
+		 * <!-- begin-user-doc -->
+		 * Associate the correct decoration, depending on the attribute isEssential.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		protected boolean updateFaceIsEssential(SubCollectionOfEditPart subcollectionofeditpart) {
 			subCollectionOf s = (subCollectionOf)((View)subcollectionofeditpart.getModel()).getElement();
 			return s.isIsEssential();
 		}
 		
-		/** Associa a decoração correta, dependendo do atributo isInseparable. */
+		/**
+		 * <!-- begin-user-doc -->
+		 * Associate the correct decoration, depending on the attribute isInseparable.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */
 		protected boolean updateFaceIsInseparable(SubCollectionOfEditPart subcollectionofeditpart) {
 			subCollectionOf s = (subCollectionOf)((View)subcollectionofeditpart.getModel()).getElement();
 			return s.isIsInseparable();
 		}
 		
-		/** Associa a decoração correta, dependendo dos atributos isEssential e isImmutablePart. */
+		/**
+		 * <!-- begin-user-doc -->
+		 * Associate the correct decoration, depending on the attributes isEssential and isImmutablePart.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		protected boolean updateFaceIsImmutablePart(SubCollectionOfEditPart subcollectionofeditpart) {
 			subCollectionOf s = (subCollectionOf)((View)subcollectionofeditpart.getModel()).getElement();
 			if(!s.isIsEssential() && s.isIsImmutablePart())
@@ -144,7 +173,12 @@ public class SubCollectionOfEditPart extends ConnectionNodeEditPart {
 				return false;
 		}
 		
-		/** Associa a decoração correta, dependendo dos atributos isInseparable e isImmutableWhole. */
+		/**
+		 * <!-- begin-user-doc -->
+		 * Associate the correct decoration, depending on the attributes isInseparable e isImmutableWhole.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		protected boolean updateFaceIsImmutableWhole(SubCollectionOfEditPart subcollectionofeditpart) {
 			subCollectionOf s = (subCollectionOf)((View)subcollectionofeditpart.getModel()).getElement();
 			if (!s.isIsInseparable() && s.isIsImmutableWhole())
@@ -154,9 +188,11 @@ public class SubCollectionOfEditPart extends ConnectionNodeEditPart {
 		}
 
 		/**
-		 * @generated
-		 */
-		// Alterei e adicionei as funções updateFaceIsEssential, updateFaceIsInseparable, updateFaceIsImmutablePart, updateFaceIsImmutableWhole.
+		 * <!-- begin-user-doc -->
+		 * Changed.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		private void createContents(SubCollectionOfEditPart subcollectionofeditpart) {
 
 			String text = new String("{");
@@ -202,7 +238,12 @@ public class SubCollectionOfEditPart extends ConnectionNodeEditPart {
 			this.add(fFigureSubCollectionOfMetaAttributesLabelFigure);
 		}
 		
-		//Criei para atualizar a exibição dos meta-atributos isEssential, isInseparable, isImmutablePart e isImmutableWhole.
+		/**
+		 * <!-- begin-user-doc -->
+		 * Created to update the exibition of the meta-attributes isEssential, isInseparable, isImmutablePart e isImmutableWhole.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		private void updateContents(SubCollectionOfEditPart subcollectionofeditpart) {
 
 			String text = new String("{");
@@ -243,9 +284,11 @@ public class SubCollectionOfEditPart extends ConnectionNodeEditPart {
 		}
 
 		/**
-		 * @generated
-		 */
-		//Alterei para que o meta atributo isShareable defina se o diamante vai ser vazio ou cheio.
+		 * <!-- begin-user-doc -->
+		 * Changed so that the meta-attribute isShareable set if the diamond will be empty or full.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */	
 		private RotatableDecoration createSourceDecoration() {
 			OntoUML.diagram.edit.parts.SubCollectionOfCustomFigure df = new OntoUML.diagram.edit.parts.SubCollectionOfCustomFigure(SubCollectionOfEditPart.this);
 
