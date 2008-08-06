@@ -529,21 +529,9 @@
             xsi:type="gmfgraph:Label"
             name="DerivationNameLabelFigure"
             text="Name"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="DerivationSourceCardinalitiesLabelFigure"
-            text="0..1"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="DerivationTargetCardinalitiesLabelFigure"
-            text="1"/>
       </actualFigure>
       <accessors
           figure="//@figures.0/@descriptors.21/@actualFigure/@children.0"/>
-      <accessors
-          figure="//@figures.0/@descriptors.21/@actualFigure/@children.1"/>
-      <accessors
-          figure="//@figures.0/@descriptors.21/@actualFigure/@children.2"/>
     </descriptors>
     <descriptors
         name="FormalAssociationFigure">
@@ -584,23 +572,11 @@
             xsi:type="gmfgraph:Label"
             name="MaterialAssociationNameLabelFigure"
             text="Name"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="MaterialAssociationAssociationEnd1CardinalitiesLabelFigure"
-            text="0..1"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="MaterialAssociationAssociationEnd2CardinalitiesLabelFigure"
-            text="0..1"/>
       </actualFigure>
       <accessors
           figure="//@figures.0/@descriptors.24/@actualFigure/@children.0"/>
       <accessors
           figure="//@figures.0/@descriptors.24/@actualFigure/@children.1"/>
-      <accessors
-          figure="//@figures.0/@descriptors.24/@actualFigure/@children.2"/>
-      <accessors
-          figure="//@figures.0/@descriptors.24/@actualFigure/@children.3"/>
     </descriptors>
     <descriptors
         name="MediationFigure">
@@ -681,22 +657,11 @@
             xsi:type="gmfgraph:Label"
             name="SubQuantityOfMetaAttributesLabelFigure"
             text="{}"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="SubQuantityOfSourceCardinalityLabelFigure"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="SubQuantityOfTargetCardinalityLabelFigure"
-            text="0"/>
       </actualFigure>
       <accessors
           figure="//@figures.0/@descriptors.29/@actualFigure/@children.0"/>
       <accessors
           figure="//@figures.0/@descriptors.29/@actualFigure/@children.1"/>
-      <accessors
-          figure="//@figures.0/@descriptors.29/@actualFigure/@children.2"/>
-      <accessors
-          figure="//@figures.0/@descriptors.29/@actualFigure/@children.3"/>
     </descriptors>
   </figures>
   <nodes
@@ -844,23 +809,6 @@
       elementIcon="false"
       accessor="//@figures.0/@descriptors.21/@accessors.0"/>
   <labels
-      name="DerivationSourceCardinalitiesLabel"
-      figure="DerivationFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.21/@accessors.1">
-    <facets
-        xsi:type="gmfgraph:AlignmentFacet"
-        alignment="END"/>
-  </labels>
-  <labels
-      name="DerivationTargetCardinalitiesLabel"
-      figure="DerivationFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.21/@accessors.2">
-    <facets
-        xsi:type="gmfgraph:AlignmentFacet"/>
-  </labels>
-  <labels
       name="FormalAssociationLabel"
       figure="FormalAssociationFigure"
       accessor="//@figures.0/@descriptors.22/@accessors.0"/>
@@ -892,23 +840,6 @@
       figure="MaterialAssociationFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.24/@accessors.1"/>
-  <labels
-      name="MaterialAssociationAssociationEnd1CardinalitiesLabel"
-      figure="MaterialAssociationFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.24/@accessors.2">
-    <facets
-        xsi:type="gmfgraph:AlignmentFacet"
-        alignment="END"/>
-  </labels>
-  <labels
-      name="MaterialAssociationAssociationEnd2CardinalitiesLabel"
-      figure="MaterialAssociationFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.24/@accessors.3">
-    <facets
-        xsi:type="gmfgraph:AlignmentFacet"/>
-  </labels>
   <labels
       name="MediationLabel"
       figure="MediationFigure"
@@ -1071,21 +1002,4 @@
       figure="SubQuantityOfFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.29/@accessors.1"/>
-  <labels
-      name="SubQuantityOfSourceCardinalityLabel"
-      figure="SubQuantityOfFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.29/@accessors.2">
-    <facets
-        xsi:type="gmfgraph:AlignmentFacet"
-        alignment="END"/>
-  </labels>
-  <labels
-      name="SubQuantityOfTargetCardinalityLabel"
-      figure="SubQuantityOfFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.29/@accessors.3">
-    <facets
-        xsi:type="gmfgraph:AlignmentFacet"/>
-  </labels>
 </gmfgraph:Canvas>

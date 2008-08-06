@@ -11,6 +11,17 @@
     <ownedChild>
       <domainMetaElement
           href="OntoUML.ecore#//Category"/>
+      <domainInitializer
+          xsi:type="gmfmap:FeatureSeqInitializer">
+        <initializers
+            xsi:type="gmfmap:FeatureValueSpec">
+          <feature
+              xsi:type="ecore:EAttribute"
+              href="OntoUML.ecore#//Classifier/isAbstract"/>
+          <value
+              body="true"/>
+        </initializers>
+      </domainInitializer>
       <labelMappings
           readOnly="true">
         <diagramLabel
@@ -410,6 +421,17 @@
     <ownedChild>
       <domainMetaElement
           href="OntoUML.ecore#//Mixin"/>
+      <domainInitializer
+          xsi:type="gmfmap:FeatureSeqInitializer">
+        <initializers
+            xsi:type="gmfmap:FeatureValueSpec">
+          <feature
+              xsi:type="ecore:EAttribute"
+              href="OntoUML.ecore#//Classifier/isAbstract"/>
+          <value
+              body="true"/>
+        </initializers>
+      </domainInitializer>
       <labelMappings
           readOnly="true">
         <diagramLabel
@@ -1202,6 +1224,17 @@
     <ownedChild>
       <domainMetaElement
           href="OntoUML.ecore#//RoleMixin"/>
+      <domainInitializer
+          xsi:type="gmfmap:FeatureSeqInitializer">
+        <initializers
+            xsi:type="gmfmap:FeatureValueSpec">
+          <feature
+              xsi:type="ecore:EAttribute"
+              href="OntoUML.ecore#//Classifier/isAbstract"/>
+          <value
+              body="true"/>
+        </initializers>
+      </domainInitializer>
       <labelMappings
           readOnly="true">
         <diagramLabel
@@ -2249,16 +2282,6 @@
       <features
           href="OntoUML.ecore#//NamedElement/name"/>
     </labelMappings>
-    <labelMappings
-        readOnly="true">
-      <diagramLabel
-          href="OntoUML.gmfgraph#DerivationSourceCardinalitiesLabel"/>
-    </labelMappings>
-    <labelMappings
-        readOnly="true">
-      <diagramLabel
-          href="OntoUML.gmfgraph#DerivationTargetCardinalitiesLabel"/>
-    </labelMappings>
     <containmentFeature
         href="OntoUML.ecore#//Container/InstanciarElement"/>
     <tool
@@ -2395,6 +2418,14 @@
             <value
                 body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association).associationEndAux1->any(true) else null endif"/>
           </initializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//Property/isDerived"/>
+            <value
+                body="true"/>
+          </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
         </newElementInitializers>
@@ -2415,6 +2446,14 @@
             <value
                 body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association).associationEndAux2->any(true) else null endif"/>
           </initializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//Property/isDerived"/>
+            <value
+                body="true"/>
+          </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
         </newElementInitializers>
@@ -2431,16 +2470,6 @@
           href="OntoUML.gmfgraph#MaterialAssociationNameLabel"/>
       <features
           href="OntoUML.ecore#//NamedElement/name"/>
-    </labelMappings>
-    <labelMappings
-        readOnly="true">
-      <diagramLabel
-          href="OntoUML.gmfgraph#MaterialAssociationAssociationEnd1CardinalitiesLabel"/>
-    </labelMappings>
-    <labelMappings
-        readOnly="true">
-      <diagramLabel
-          href="OntoUML.gmfgraph#MaterialAssociationAssociationEnd2CardinalitiesLabel"/>
     </labelMappings>
     <containmentFeature
         href="OntoUML.ecore#//Container/InstanciarElement"/>
@@ -2475,6 +2504,22 @@
             <value
                 body="self.source.sourceAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
           </initializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//MultiplicityElement/lower"/>
+            <value
+                body="1"/>
+          </initializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//MultiplicityElement/upper"/>
+            <value
+                body="1"/>
+          </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
         </newElementInitializers>
@@ -2500,6 +2545,22 @@
                 href="OntoUML.ecore#//Property/isReadOnly"/>
             <value
                 body="true"/>
+          </initializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//MultiplicityElement/lower"/>
+            <value
+                body="1"/>
+          </initializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//MultiplicityElement/upper"/>
+            <value
+                body="1"/>
           </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
@@ -2669,6 +2730,14 @@
             <value
                 body="self.target.targetAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
           </initializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//MultiplicityElement/upper"/>
+            <value
+                body="1"/>
+          </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
         </newElementInitializers>
@@ -2753,6 +2822,14 @@
             <value
                 body="self.target.targetAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
           </initializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//MultiplicityElement/upper"/>
+            <value
+                body="1"/>
+          </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
         </newElementInitializers>
@@ -2773,12 +2850,28 @@
         <value
             body="targetAux2"/>
       </initializers>
+      <initializers
+          xsi:type="gmfmap:FeatureValueSpec">
+        <feature
+            xsi:type="ecore:EAttribute"
+            href="OntoUML.ecore#//Meronymic/isShareable"/>
+        <value
+            body="false"/>
+      </initializers>
+      <initializers
+          xsi:type="gmfmap:FeatureValueSpec">
+        <feature
+            xsi:type="ecore:EAttribute"
+            href="OntoUML.ecore#//Meronymic/isEssential"/>
+        <value
+            body="true"/>
+      </initializers>
     </domainInitializer>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping"
-        viewPattern="putz {0}"
-        editorPattern="cacilda {0}"
-        editPattern="asd {0}">
+        viewPattern=""
+        editorPattern=""
+        editPattern="">
       <diagramLabel
           href="OntoUML.gmfgraph#SubQuantityOfNameLabel"/>
       <features
@@ -2788,14 +2881,6 @@
         readOnly="true">
       <diagramLabel
           href="OntoUML.gmfgraph#SubQuantityOfMetaAttributesLabel"/>
-    </labelMappings>
-    <labelMappings>
-      <diagramLabel
-          href="OntoUML.gmfgraph#SubQuantityOfSourceCardinalityLabel"/>
-    </labelMappings>
-    <labelMappings>
-      <diagramLabel
-          href="OntoUML.gmfgraph#SubQuantityOfTargetCardinalityLabel"/>
     </labelMappings>
     <containmentFeature
         href="OntoUML.ecore#//Container/InstanciarElement"/>
@@ -2935,30 +3020,13 @@
       </audits>
     </childContainers>
     <childContainers
-        id="Classifier"
-        name="Classifier"
-        description="Classifier">
-      <audits
-          name="ClassifierRestrição1"
-          id="ClassifierRestrição1"
-          message="Instâncias de Classifier que não sejam abstratas (isAbstract = false) e que não sejam instâncias de Substance Sortal devem ter como supertipo pelo menos uma instância de Substance Sortal.">
-        <rule
-            body="if ((self.isAbstract = false) and not self.oclIsKindOf(SubstanceSortal)) then self.allSuperTypes()->exists(x | x.oclIsKindOf(SubstanceSortal)) else true endif"/>
-        <target
-            xsi:type="gmfmap:DomainElementTarget">
-          <element
-              href="OntoUML.ecore#//Classifier"/>
-        </target>
-      </audits>
-    </childContainers>
-    <childContainers
         id="Collective"
         name="Collective"
         description="Collective">
       <audits
           name="CollectiveRestrição1"
           id="CollectiveRestrição1"
-          message="Instâncias de Collective que tenham o meta-atributo isExtensional = true devem ter todas as suas partes com os respectivos meta-atributos isEssencial = true.">
+          message="Collective instances whose meta-attributes isExtensional are true must have all their parts with their respective meta-attributes isEssencial = true.">
         <rule
             body="self.isExtensional implies Meronymic.allInstances()->forAll(x | x.source->forAll(y | if y.oclIsKindOf(Property) then if (y.oclAsType(Property).endType = self) then x.isEssential else true endif else false endif))"/>
         <target
@@ -3190,6 +3258,32 @@
               href="OntoUML.ecore#//Generalization"/>
         </target>
       </audits>
+      <audits
+          name="GeneralizationConstraint3"
+          id="GeneralizationConstraint3"
+          useInLiveMode="true"
+          message="Generalization instances cannot hold between two sortals, because a sortal have its own identity criterion and cannot inherit one from another sortal.">
+        <rule
+            body="if self.source->forAll(x | x.oclIsKindOf(SubstanceSortal)) then not self.target->forAll(x| x.oclIsKindOf(SubstanceSortal)) else true endif"/>
+        <target
+            xsi:type="gmfmap:DomainElementTarget">
+          <element
+              href="OntoUML.ecore#//Generalization"/>
+        </target>
+      </audits>
+      <audits
+          name="GeneralizationConstraint4"
+          id="GeneralizationConstraint4"
+          useInLiveMode="true"
+          message="An anti-rigid instance can not be a supertype of a rigid instance.">
+        <rule
+            body="if self.target->forAll(x | x.oclIsKindOf(RigidSortalClass)) then not self.source->forAll(x| x.oclIsKindOf(AntiRigidSortalClass)) else true endif"/>
+        <target
+            xsi:type="gmfmap:DomainElementTarget">
+          <element
+              href="OntoUML.ecore#//Generalization"/>
+        </target>
+      </audits>
     </childContainers>
     <childContainers
         id="MaterialAssociation"
@@ -3305,7 +3399,7 @@
       <audits
           name="memberOfRestrição1"
           id="memberOfRestrição1"
-          message="Instâncias de memberOf que possuírem o meta-atributo isEssential = true  devem ter suas extremidades fonte associadas à instâncias de Collective com seus meta-atributos isExtensional = true.">
+          message="memberOf instances whose meta-attributes isEssencial are true must have its source extremities associated with Collective instances which meta-attributes isExtensional are true.">
         <rule
             body="self.isEssential implies self.source->forAll(x | if x.oclIsKindOf(Property) then (if x.oclAsType(Property).endType.oclIsKindOf(Collective) then x.oclAsType(Property).endType.oclAsType(Collective).isExtensional else false endif) else false endif)"/>
         <target
@@ -3348,7 +3442,7 @@
       <audits
           name="MeronymicRestrição1"
           id="MeronymicRestrição1"
-          message="O conjunto das instâncias de Meronymic deve verificar o axioma da Suplementação Fraca, ou seja, um todo em uma relação todo-parte deve ter ao menos duas partes distintas.">
+          message="A whole must have at least two parts (Weak Supplementation).">
         <rule
             body="Meronymic.allInstances()->select(x | x.source->exists(y | if y.oclIsKindOf(Property) then (self.source->exists(z | if z.oclIsKindOf(Property) then (z.oclAsType(Property).endType = y.oclAsType(Property).endType) else false endif)) else false endif))->collect(w | w.target->collect(k | if k.oclIsKindOf(Property) then k.oclAsType(Property).lower else 0 endif)->sum())->sum() >= 2"/>
         <target
@@ -3456,6 +3550,7 @@
       <audits
           name="MixinClassRestrição2"
           id="MixinClassRestrição2"
+          useInLiveMode="true"
           message="Instâncias de Mixin Class devem ter o meta-atributo isAbstract = true.">
         <rule
             body="self.isAbstract = true"/>
@@ -3490,13 +3585,56 @@
       <audits
           name="MultiplicityElementRestrição1"
           id="MultiplicityElementRestrição1"
-          message="Instâncias de Multiplicity Element devem ter números cardinais em seus meta-atributos upper e lower, sendo que o número -1 representa o menor dos cardinais infinito, o álefe-0.">
+          useInLiveMode="true"
+          message="Instâncias de Multiplicity Element devem ter números cardinais em seus meta-atributos lower, sendo que o número -1 representa o menor dos cardinais infinito, o álefe-0.">
+        <rule
+            body="(self.lower >= 0) or (self.lower = -1)"/>
+        <target
+            xsi:type="gmfmap:DomainElementTarget">
+          <element
+              href="OntoUML.ecore#//MultiplicityElement"/>
+        </target>
+      </audits>
+      <audits
+          name="MultiplicityElementRestrição2"
+          id="MultiplicityElementRestrição2"
+          useInLiveMode="true"
+          message="Instâncias de Multiplicity Element devem ter números cardinais em seus meta-atributos upper, sendo que o número -1 representa o menor dos cardinais infinito, o álefe-0.">
         <rule
             body="(self.upper >= 0) or (self.upper = -1)"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
               href="OntoUML.ecore#//MultiplicityElement"/>
+        </target>
+      </audits>
+      <audits
+          name="MultiplicityElementConstraint3"
+          id="MultiplicityElementConstraint3"
+          message="Upper cardinality must be greater or equal to lower cardinality.">
+        <rule
+            body="if (lower &lt;> -1) then (self.upper >= self.lower) else (self.upper = -1) endif"/>
+        <target
+            xsi:type="gmfmap:DomainElementTarget">
+          <element
+              href="OntoUML.ecore#//MultiplicityElement"/>
+        </target>
+      </audits>
+    </childContainers>
+    <childContainers
+        id="ObjectClass"
+        name="ObjectClass"
+        description="ObjectClass">
+      <audits
+          name="ObjectClassConstraint1"
+          id="ObjectClassConstraint1"
+          message="ObjectClass instances which are not abstract (isAbstract = false) and which are not Substance Sortal instances must have at least one Substance Sortal instance as supertype.">
+        <rule
+            body="if ((self.isAbstract = false) and not self.oclIsKindOf(SubstanceSortal)) then self.allSuperTypes()->exists(x | x.oclIsKindOf(SubstanceSortal)) else true endif"/>
+        <target
+            xsi:type="gmfmap:DomainElementTarget">
+          <element
+              href="OntoUML.ecore#//ObjectClass"/>
         </target>
       </audits>
     </childContainers>
@@ -3617,7 +3755,7 @@
           name="subCollectionOfRestrição1"
           id="subCollectionOfRestrição1"
           useInLiveMode="true"
-          message="Instâncias de subCollectionOf devem ter as extremidades fonte associadas à elementos que representam universais cujas instâncias são collectives">
+          message="subCollectionOf instances must have its source extremities associated to elements that represent universals whose instances are collectives.">
         <rule
             body="self.source->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.hasCollectivesInstances() else false endif)"/>
         <target
@@ -3630,7 +3768,7 @@
           name="subCollectionOfRestrição2"
           id="subCollectionOfRestrição2"
           useInLiveMode="true"
-          message="Instâncias de subCollectionOf devem ter as extremidades alvo associadas à elementos que representam universais cujas instâncias são collectives">
+          message="subCollectionOf instances must have its target extremities associated to elements that represent universals whose instances are collectives.">
         <rule
             body="self.target->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.hasCollectivesInstances() else false endif)"/>
         <target
@@ -3677,7 +3815,8 @@
       <audits
           name="subQuantityOfRestrição1"
           id="subQuantityOfRestrição1"
-          message="Instâncias de subQuantityOf devem ter o meta-atributo isShareable = false.">
+          useInLiveMode="true"
+          message="subQuantityOf instances must have meta-attributes isShareable = false.">
         <rule
             body="self.isShareable = false"/>
         <target
@@ -3689,7 +3828,8 @@
       <audits
           name="subQuantityOfRestrição2"
           id="subQuantityOfRestrição2"
-          message="Instâncias de subQuantityOf devem ter o meta-atributo isEssential = true, pois instâncias de Quantity são indivíduos extensionais.">
+          useInLiveMode="true"
+          message="subQuantityOf instances must have meta-attributes isEssential = true, because Quantity instances are extensional individuals.">
         <rule
             body="self.isEssential = true"/>
         <target
@@ -3714,7 +3854,7 @@
           name="subQuantityOfRestrição4"
           id="subQuantityOfRestrição4"
           useInLiveMode="true"
-          message="Instâncias de subQuantityOf devem ter as extremidades fonte associadas à elementos que representam universais cujas instâncias são quantities.">
+          message="subQuantityOf instances must have its source extremities associated to elements that represent universals whose instances are quantities.">
         <rule
             body="self.source->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.hasQuantitiesInstances() else false endif)"/>
         <target
@@ -3727,7 +3867,7 @@
           name="subQuantityOfRestrição5"
           id="subQuantityOfRestrição5"
           useInLiveMode="true"
-          message="Instâncias de subQuantityOf devem ter as extremidades alvo associadas à elementos que representam universais cujas instâncias são quantities.">
+          message="subQuantityOf instances must have its target extremities associated to elements that represent universals whose instances are quantities.">
         <rule
             body="self.target->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.hasQuantitiesInstances() else false endif)"/>
         <target
@@ -3745,9 +3885,9 @@
           name="SubstanceSortalRestrição1"
           id="SubstanceSortalRestrição1"
           useInLiveMode="true"
-          message="Instâncias de Substance Sortal não podem ter como supertipos instâncias de Rigid Sortal Class.">
+          message="Substance Sortal instances cannot have as supertypes Rigid Sortal Class instances.">
         <rule
-            body="not self.allSuperTypes()-> exists (y | y.oclIsKindOf(RigidSortalClass))"/>
+            body="not self.allSuperTypes()->exists(y | y.oclIsKindOf(RigidSortalClass))"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element

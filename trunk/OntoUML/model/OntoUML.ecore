@@ -153,9 +153,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isInseparable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isImmutablePart" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="false"/>
+        defaultValueLiteral="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isImmutableWhole" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="false"/>
+        defaultValueLiteral="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Mixin" eSuperTypes="#//SemiRigidMixin"/>
   <eClassifiers xsi:type="ecore:EClass" name="MixinClass" eSuperTypes="#//ObjectClass"/>

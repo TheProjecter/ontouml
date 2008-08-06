@@ -147,7 +147,7 @@
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
-        title="OntoUML Relações"
+        title="OntoUML Relations"
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
