@@ -242,4 +242,37 @@
   <eClassifiers xsi:type="ecore:EClass" name="subQuantityOf" eSuperTypes="#//Meronymic"/>
   <eClassifiers xsi:type="ecore:EClass" name="SubstanceSortal" eSuperTypes="#//RigidSortalClass"/>
   <eClassifiers xsi:type="ecore:EClass" name="Type" eSuperTypes="#//NamedElement #//Element"/>
+  <eSubpackages name="URML" nsURI="URML" nsPrefix="URML">
+    <eClassifiers xsi:type="ecore:EClass" name="Rule" eSuperTypes="#//NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//URML/Condition"
+          containment="true" eOpposite="#//URML/Condition/conditionRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DerivationRule" eSuperTypes="#//URML/Rule">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="conclusion" upperBound="-1"
+          eType="#//URML/Conclusion" containment="true" eOpposite="#//URML/Conclusion/conclusionRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Conclusion" eSuperTypes="#//RelationalClassifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="conclusionRule" lowerBound="1"
+          eType="#//URML/DerivationRule" eOpposite="#//URML/DerivationRule/conclusion"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Condition" eSuperTypes="#//RelationalClassifier">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="negative" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="conditionRule" lowerBound="1"
+          eType="#//URML/Rule" eOpposite="#//URML/Rule/condition"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ClassifierAtom" eSuperTypes="#//URML/Condition #//URML/Conclusion">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="class" lowerBound="1"
+          eType="#//Class"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RoleTypeAtom" eSuperTypes="#//URML/Conclusion #//URML/Condition"/>
+    <eClassifiers xsi:type="ecore:EClass" name="BinaryAssociationAtom" eSuperTypes="#//URML/Condition #//URML/Conclusion">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="srcVariable" eType="#//URML/ObjectVariable"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="tgtVariable" eType="#//URML/ObjectVariable"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="association" lowerBound="1"
+          eType="#//Association"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ObjectVariable"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AttributionAtom" eSuperTypes="#//URML/Conclusion"/>
+  </eSubpackages>
 </ecore:EPackage>
