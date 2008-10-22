@@ -2,7 +2,7 @@
 = Introduction =
 ADD SOME TEXT HERE
 
-= GenModel = 
+== GenModel ==
 In the Genmodel open the genmodel click on the OntoUML icon ( not in the package ), go to the properties(righ click "show properties view") window and make this settings:
 -Model
  - Model Plug-in Variables = OCL_ECORE=org.eclipse.ocl.ecore
