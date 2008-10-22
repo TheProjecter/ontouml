@@ -1,0 +1,19 @@
+#This text will teach how to generate the code needed to run the OntoUML.
+= Introduction =
+ADD SOME TEXT HERE
+
+= GenModel = 
+In the Genmodel open the genmodel click on the OntoUML icon ( not in the package ), go to the properties(righ click "show properties view") window and make this settings:
+-Model
+ - Model Plug-in Variables = OCL_ECORE=org.eclipse.ocl.ecore
+-Templates & Merge 
+ - Dynamic Templates = true
+ - Template Directory = Files where *.javajet files where ( Usualy /OntoUML/templates )
+ 
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
