@@ -664,6 +664,126 @@
           figure="//@figures.0/@descriptors.29/@actualFigure/@children.1"/>
     </descriptors>
   </figures>
+  <figures
+      name="URML">
+    <descriptors
+        name="RuleFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Ellipse"
+          name="RuleFigure">
+        <children
+            xsi:type="gmfgraph:Label"
+            name="RuleId"
+            text="RuleId:"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.1/@descriptors.0/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors
+        name="ConclusionFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="ConclusionFigure"
+          targetDecoration="//@figures.1/@descriptors.1/@actualFigure/@children.2">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="red"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ConclusionVar1LabelFigure"
+            text=""/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ConclusionVar2LabelFigure"/>
+        <children
+            xsi:type="gmfgraph:PolylineDecoration"
+            name="ConclusionArrow"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.1/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors
+          figure="//@figures.1/@descriptors.1/@actualFigure/@children.1"/>
+      <accessors
+          figure="//@figures.1/@descriptors.1/@actualFigure"/>
+    </descriptors>
+    <descriptors
+        name="ConditionFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="ConditionFigure"
+          sourceDecoration="//@figures.1/@descriptors.2/@actualFigure/@children.0">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="blue"/>
+        <children
+            xsi:type="gmfgraph:PolylineDecoration"
+            name="ConditionArrowFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="FilterLabel"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ConditionVar2LabelFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ConditionVar1LabelFigure"
+            text=""/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.1/@descriptors.2/@actualFigure/@children.1"/>
+      <accessors
+          figure="//@figures.1/@descriptors.2/@actualFigure/@children.3"/>
+      <accessors
+          figure="//@figures.1/@descriptors.2/@actualFigure/@children.2"/>
+      <accessors
+          figure="//@figures.1/@descriptors.2/@actualFigure"/>
+    </descriptors>
+    <descriptors
+        name="NegatedConditionFigureDescriptor">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="NegatedConditionFigure"
+          sourceDecoration="//@figures.1/@descriptors.3/@actualFigure/@children.0"
+          targetDecoration="//@figures.1/@descriptors.3/@actualFigure/@children.4">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="blue"/>
+        <children
+            xsi:type="gmfgraph:PolylineDecoration"
+            name="NegatedConditionArrowFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="FilterLabel"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ConditionVar2LabelFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ConditionVar1LabelFigure"
+            text=""/>
+        <children
+            xsi:type="gmfgraph:PolylineDecoration"
+            name="NegatedConditionTraceFigure">
+          <location
+              x="-2"/>
+          <template
+              x="-2"
+              y="-2"/>
+          <template
+              x="-2"
+              y="2"/>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.1/@descriptors.3/@actualFigure/@children.1"/>
+      <accessors
+          figure="//@figures.1/@descriptors.3/@actualFigure/@children.3"/>
+      <accessors
+          figure="//@figures.1/@descriptors.3/@actualFigure/@children.2"/>
+      <accessors
+          figure="//@figures.1/@descriptors.3/@actualFigure"/>
+    </descriptors>
+  </figures>
   <nodes
       name="Category"
       figure="CategoryFigure"/>
@@ -713,6 +833,9 @@
   <nodes
       name="SubKind"
       figure="SubKindFigure"/>
+  <nodes
+      name="Rule"
+      figure="RuleFigure"/>
   <connections
       name="Characterization"
       figure="CharacterizationFigure"/>
@@ -753,6 +876,15 @@
   <connections
       name="SubQuantityOf"
       figure="SubQuantityOfFigure"/>
+  <connections
+      name="Conclusion"
+      figure="ConclusionFigure"/>
+  <connections
+      name="Condition"
+      figure="ConditionFigure"/>
+  <connections
+      name="NegatedCondition"
+      figure="NegatedConditionFigureDescriptor"/>
   <compartments
       name="AttributeCompartment"
       figure="AttributeFigure"
@@ -1002,4 +1134,22 @@
       figure="SubQuantityOfFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.29/@accessors.1"/>
+  <labels
+      name="RuleIdLabel"/>
+  <labels
+      name="ConclusionVar2Label"
+      figure="ConclusionFigure"
+      accessor="//@figures.1/@descriptors.1/@accessors.1"/>
+  <labels
+      name="ConclusionVar1Label"
+      figure="ConclusionFigure"
+      accessor="//@figures.1/@descriptors.1/@accessors.0"/>
+  <labels
+      name="ConditionVar2Label"
+      figure="ConditionFigure"
+      accessor="//@figures.1/@descriptors.2/@accessors.2"/>
+  <labels
+      name="ConditionVar1Label"
+      figure="ConditionFigure"
+      accessor="//@figures.1/@descriptors.2/@accessors.1"/>
 </gmfgraph:Canvas>

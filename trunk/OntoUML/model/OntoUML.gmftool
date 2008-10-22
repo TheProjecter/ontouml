@@ -249,5 +249,23 @@
             xsi:type="gmftool:DefaultImage"/>
       </tools>
     </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Rules"
+        description=""
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Condition"
+          description="Create an Condition"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Derivation Rule"
+          description="Create a derivation rule"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Conclusion"
+          description="Creates a new conclusion"/>
+    </tools>
   </palette>
 </gmftool:ToolRegistry>

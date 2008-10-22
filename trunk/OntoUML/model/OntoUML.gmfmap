@@ -1889,6 +1889,38 @@
         href="OntoUML.ecore#//Container/InstanciarElement"/>
     <ownedChild>
       <domainMetaElement
+          href="OntoUML.ecore#//URML/DerivationRule"/>
+      <domainInitializer
+          xsi:type="gmfmap:FeatureSeqInitializer">
+        <initializers
+            xsi:type="gmfmap:FeatureValueSpec">
+          <feature
+              xsi:type="ecore:EAttribute"
+              href="OntoUML.ecore#//NamedElement/name"/>
+          <value
+              body="'RuleID'"/>
+        </initializers>
+      </domainInitializer>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping"
+          editPattern="">
+        <diagramLabel
+            href="OntoUML.gmfgraph#RuleIdLabel"/>
+        <features
+            href="OntoUML.ecore#//NamedElement/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="OntoUML.gmftool#//@palette/@tools.2/@tools.1"/>
+      <diagramNode
+          href="OntoUML.gmfgraph#Rule"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="OntoUML.ecore#//Container/InstanciarElement"/>
+    <ownedChild>
+      <domainMetaElement
           href="OntoUML.ecore#//Property"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
@@ -2920,6 +2952,142 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="OntoUML.ecore#//Property/source"/>
+  </links>
+  <links>
+    <domainMetaElement
+        href="OntoUML.ecore#//URML/BinaryAssociationAtom"/>
+    <domainSpecialization
+        body="oclIsKindOf(Condition)  and negative=false and conclusionRule=null"/>
+    <containmentFeature
+        href="OntoUML.ecore#//Container/InstanciarElement"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="OntoUML.gmftool#//@palette/@tools.2/@tools.0"/>
+    <diagramLink
+        href="OntoUML.gmfgraph#Condition"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="OntoUML.ecore#//URML/Condition/conditionRule"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="OntoUML.ecore#//URML/BinaryAssociationAtom/association"/>
+  </links>
+  <links>
+    <domainMetaElement
+        href="OntoUML.ecore#//URML/BinaryAssociationAtom"/>
+    <domainSpecialization
+        body="oclIsKindOf(Condition) and negative=true and conclusionRule=null"/>
+    <containmentFeature
+        href="OntoUML.ecore#//Container/InstanciarElement"/>
+    <diagramLink
+        href="OntoUML.gmfgraph#NegatedCondition"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="OntoUML.ecore#//URML/Condition/conditionRule"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="OntoUML.ecore#//URML/BinaryAssociationAtom/association"/>
+  </links>
+  <links>
+    <domainMetaElement
+        href="OntoUML.ecore#//URML/BinaryAssociationAtom"/>
+    <domainSpecialization
+        body="oclIsKindOf(Conclusion) and conditionRule=null"/>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="OntoUML.gmfgraph#ConclusionVar1Label"/>
+      <features
+          href="OntoUML.ecore#//NamedElement/name"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="OntoUML.gmfgraph#ConclusionVar2Label"/>
+      <features
+          href="OntoUML.ecore#//NamedElement/name"/>
+    </labelMappings>
+    <containmentFeature
+        href="OntoUML.ecore#//Container/InstanciarElement"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="OntoUML.gmftool#//@palette/@tools.2/@tools.2"/>
+    <diagramLink
+        href="OntoUML.gmfgraph#Conclusion"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="OntoUML.ecore#//URML/Conclusion/conclusionRule"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="OntoUML.ecore#//URML/BinaryAssociationAtom/association"/>
+  </links>
+  <links>
+    <domainMetaElement
+        href="OntoUML.ecore#//URML/ClassifierAtom"/>
+    <domainSpecialization
+        body="oclIsKindOf(Condition) and negative=false and conclusionRule=null"/>
+    <containmentFeature
+        href="OntoUML.ecore#//Container/InstanciarElement"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="OntoUML.gmftool#//@palette/@tools.2/@tools.0"/>
+    <diagramLink
+        href="OntoUML.gmfgraph#Condition"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="OntoUML.ecore#//URML/Condition/conditionRule"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="OntoUML.ecore#//URML/ClassifierAtom/class"/>
+  </links>
+  <links>
+    <domainMetaElement
+        href="OntoUML.ecore#//URML/ClassifierAtom"/>
+    <domainSpecialization
+        body="oclIsKindOf(Condition) and negative=true and conclusionRule=null"/>
+    <containmentFeature
+        href="OntoUML.ecore#//Container/InstanciarElement"/>
+    <diagramLink
+        href="OntoUML.gmfgraph#NegatedCondition"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="OntoUML.ecore#//URML/Condition/conditionRule"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="OntoUML.ecore#//URML/ClassifierAtom/class"/>
+  </links>
+  <links>
+    <domainMetaElement
+        href="OntoUML.ecore#//URML/ClassifierAtom"/>
+    <domainSpecialization
+        body="oclIsKindOf(Conclusion) and conditionRule=null"/>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="OntoUML.gmfgraph#ConclusionVar1Label"/>
+      <features
+          href="OntoUML.ecore#//NamedElement/name"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="OntoUML.gmfgraph#ConclusionVar2Label"/>
+      <features
+          href="OntoUML.ecore#//NamedElement/name"/>
+    </labelMappings>
+    <containmentFeature
+        href="OntoUML.ecore#//Container/InstanciarElement"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="OntoUML.gmftool#//@palette/@tools.2/@tools.2"/>
+    <diagramLink
+        href="OntoUML.gmfgraph#Conclusion"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="OntoUML.ecore#//URML/Conclusion/conclusionRule"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="OntoUML.ecore#//URML/ClassifierAtom/class"/>
   </links>
   <diagram>
     <diagramCanvas
