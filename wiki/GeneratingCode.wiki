@@ -9,7 +9,14 @@ In the Genmodel open the genmodel click on the OntoUML icon ( not in the package
 -Templates & Merge 
  - Dynamic Templates = true
  - Template Directory = Files where *.javajet files where ( Usualy /OntoUML/templates )
- 
+
+
+After generate the code of the URML maybe could be needed to change the MANIFEST FILE.
+add the lines(with space) in the Export package property:
+ OntoUML.URML,
+ OntoUML.URML.impl,
+ OntoUML.URML.util
+
 
 = Details =
 
