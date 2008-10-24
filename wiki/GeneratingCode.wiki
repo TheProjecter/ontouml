@@ -17,6 +17,16 @@ add the lines(with space) in the Export package property:
  OntoUML.URML.impl,
  OntoUML.URML.util
 
+==GMFGen==
+
+Ligando a validação em OCL.
+Gen Diagram Container EditPart:
+
+Validation Decorators -> True
+Validation Enabled ->True
+Validation Decorator Provider Priority -> Modifica para highest
+Validation Provider Priority -> Modifica para highest
+LiveValidation UI Feedback-> true
 
 = Details =
 
