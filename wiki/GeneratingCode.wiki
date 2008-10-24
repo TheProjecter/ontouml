@@ -1,6 +1,7 @@
 #This text will teach how to generate the code needed to run the OntoUML.
 = Introduction =
-ADD SOME TEXT HERE
+
+Any change needed, in the procedure to generate code, please write it here.
 
 == GenModel ==
 In the Genmodel open the genmodel click on the OntoUML icon ( not in the package ), go to the properties(righ click "show properties view") window and make this settings:
@@ -19,14 +20,18 @@ add the lines(with space) in the Export package property:
 
 ==GMFGen==
 
-Ligando a validação em OCL.
+Turn on OCL Validation.
 Gen Diagram Container EditPart:
 
-Validation Decorators -> True
-Validation Enabled ->True
-Validation Decorator Provider Priority -> Modifica para highest
-Validation Provider Priority -> Modifica para highest
-LiveValidation UI Feedback-> true
+*  Validation Decorators -> True
+
+*  Validation Enabled ->True
+
+*  Validation Decorator Provider Priority -> highest
+
+*  Validation Provider Priority ->  highest
+
+*  LiveValidation UI Feedback-> true
 
 = Details =
 
