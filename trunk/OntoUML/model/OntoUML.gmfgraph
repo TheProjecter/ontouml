@@ -1135,7 +1135,9 @@
       elementIcon="false"
       accessor="//@figures.0/@descriptors.29/@accessors.1"/>
   <labels
-      name="RuleIdLabel"/>
+      name="RuleIdLabel"
+      figure="RuleFigure"
+      accessor="//@figures.1/@descriptors.0/@accessors.0"/>
   <labels
       name="ConclusionVar2Label"
       figure="ConclusionFigure"

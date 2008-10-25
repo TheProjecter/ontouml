@@ -2979,6 +2979,9 @@
         body="oclIsKindOf(Condition) and negative=true and conclusionRule=null"/>
     <containmentFeature
         href="OntoUML.ecore#//Container/InstanciarElement"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="OntoUML.gmftool#//@palette/@tools.2/@tools.0"/>
     <diagramLink
         href="OntoUML.gmfgraph#NegatedCondition"/>
     <sourceMetaFeature
@@ -3026,6 +3029,17 @@
         href="OntoUML.ecore#//URML/ClassifierAtom"/>
     <domainSpecialization
         body="oclIsKindOf(Condition) and negative=false and conclusionRule=null"/>
+    <domainInitializer
+        xsi:type="gmfmap:FeatureSeqInitializer">
+      <initializers
+          xsi:type="gmfmap:FeatureValueSpec">
+        <feature
+            xsi:type="ecore:EReference"
+            href="OntoUML.ecore#//URML/Conclusion/conclusionRule"/>
+        <value
+            body="null"/>
+      </initializers>
+    </domainInitializer>
     <containmentFeature
         href="OntoUML.ecore#//Container/InstanciarElement"/>
     <tool
@@ -3045,6 +3059,17 @@
         href="OntoUML.ecore#//URML/ClassifierAtom"/>
     <domainSpecialization
         body="oclIsKindOf(Condition) and negative=true and conclusionRule=null"/>
+    <domainInitializer
+        xsi:type="gmfmap:FeatureSeqInitializer">
+      <initializers
+          xsi:type="gmfmap:FeatureValueSpec">
+        <feature
+            xsi:type="ecore:EReference"
+            href="OntoUML.ecore#//URML/Conclusion/conclusionRule"/>
+        <value
+            body="null"/>
+      </initializers>
+    </domainInitializer>
     <containmentFeature
         href="OntoUML.ecore#//Container/InstanciarElement"/>
     <diagramLink
@@ -3061,6 +3086,17 @@
         href="OntoUML.ecore#//URML/ClassifierAtom"/>
     <domainSpecialization
         body="oclIsKindOf(Conclusion) and conditionRule=null"/>
+    <domainInitializer
+        xsi:type="gmfmap:FeatureSeqInitializer">
+      <initializers
+          xsi:type="gmfmap:FeatureValueSpec">
+        <feature
+            xsi:type="ecore:EReference"
+            href="OntoUML.ecore#//URML/Condition/conditionRule"/>
+        <value
+            body="null"/>
+      </initializers>
+    </domainInitializer>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel

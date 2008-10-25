@@ -242,14 +242,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="subQuantityOf" eSuperTypes="#//Meronymic"/>
   <eClassifiers xsi:type="ecore:EClass" name="SubstanceSortal" eSuperTypes="#//RigidSortalClass"/>
   <eClassifiers xsi:type="ecore:EClass" name="Type" eSuperTypes="#//NamedElement #//Element"/>
-  <eSubpackages name="URML" nsURI="URML" nsPrefix="URML">
+  <eSubpackages name="URML" nsURI="OntoUML.URML" nsPrefix="OntoUML.URML">
     <eClassifiers xsi:type="ecore:EClass" name="Rule" eSuperTypes="#//NamedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//URML/Condition"
-          containment="true" eOpposite="#//URML/Condition/conditionRule"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="condition" upperBound="-1"
+          eType="#//URML/Condition" eOpposite="#//URML/Condition/conditionRule"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DerivationRule" eSuperTypes="#//URML/Rule">
       <eStructuralFeatures xsi:type="ecore:EReference" name="conclusion" upperBound="-1"
-          eType="#//URML/Conclusion" containment="true" eOpposite="#//URML/Conclusion/conclusionRule"/>
+          eType="#//URML/Conclusion" eOpposite="#//URML/Conclusion/conclusionRule"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Conclusion" eSuperTypes="#//RelationalClassifier">
       <eStructuralFeatures xsi:type="ecore:EReference" name="conclusionRule" lowerBound="1"
@@ -258,8 +258,8 @@
     <eClassifiers xsi:type="ecore:EClass" name="Condition" eSuperTypes="#//RelationalClassifier">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="negative" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="conditionRule" lowerBound="1"
-          eType="#//URML/Rule" eOpposite="#//URML/Rule/condition"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="conditionRule" ordered="false"
+          lowerBound="1" eType="#//URML/Rule" eOpposite="#//URML/Rule/condition"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ClassifierAtom" eSuperTypes="#//URML/Condition #//URML/Conclusion">
       <eStructuralFeatures xsi:type="ecore:EReference" name="class" lowerBound="1"

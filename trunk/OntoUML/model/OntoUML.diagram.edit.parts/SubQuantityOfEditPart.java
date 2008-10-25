@@ -22,7 +22,7 @@ public class SubQuantityOfEditPart extends ConnectionNodeEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3011;
+	public static final int VISUAL_ID = 4011;
 
 	/**
 	 * @generated

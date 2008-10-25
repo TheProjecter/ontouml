@@ -23,7 +23,7 @@ public class ComponentOfEditPart extends ConnectionNodeEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3002;
+	public static final int VISUAL_ID = 4002;
 
 	/**
 	 * @generated

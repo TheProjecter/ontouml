@@ -27,7 +27,7 @@ public class SubCollectionOfEditPart extends ConnectionNodeEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3010;
+	public static final int VISUAL_ID = 4010;
 
 	/**
 	 * @generated
