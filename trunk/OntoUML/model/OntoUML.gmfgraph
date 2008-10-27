@@ -763,7 +763,8 @@
             text=""/>
         <children
             xsi:type="gmfgraph:PolylineDecoration"
-            name="NegatedConditionTraceFigure">
+            name="NegatedConditionTraceFigure"
+            outline="false">
           <location
               x="-2"/>
           <template
