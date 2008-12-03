@@ -264,13 +264,14 @@
     <eClassifiers xsi:type="ecore:EClass" name="ClassifierAtom" eSuperTypes="#//URML/Condition #//URML/Conclusion">
       <eStructuralFeatures xsi:type="ecore:EReference" name="class" lowerBound="1"
           eType="#//Class"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="classVariable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RoleTypeAtom" eSuperTypes="#//URML/Conclusion #//URML/Condition"/>
     <eClassifiers xsi:type="ecore:EClass" name="BinaryAssociationAtom" eSuperTypes="#//URML/Condition #//URML/Conclusion">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="srcVariable" eType="#//URML/ObjectVariable"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="tgtVariable" eType="#//URML/ObjectVariable"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="association" lowerBound="1"
           eType="#//Association"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceVariable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetVariable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ObjectVariable"/>
     <eClassifiers xsi:type="ecore:EClass" name="AttributionAtom" eSuperTypes="#//URML/Conclusion"/>
