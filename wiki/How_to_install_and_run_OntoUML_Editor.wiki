@@ -15,6 +15,8 @@
 5. Execute Eclipse! 
 
 =Creating a model=
-Click in File -> New -> Example -> OntoUML Diagram.
+1. Execute Eclipse.
+
+2. Click in File -> New -> Example -> OntoUML Diagram.
 
 Thank you for using OntoUML Editor!
