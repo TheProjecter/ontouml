@@ -1,0 +1,16 @@
+#summary How to install and run OntoUML Editor.
+#labels Phase-Deploy
+
+Pre-requisite: a working JRE.
+
+=Installing the plugin=
+1. Download the Eclipse Modeling Tools package for your OS: http://www.eclipse.org/downloads/
+2. Download ontouml.zip from the download section of this site.
+3. Unzip the Eclipse package.
+4. Unzip ontouml.zip on the "dropins" folder which is inside the just created main Eclipse folder.
+5. Execute Eclipse! 
+
+=Creating a model=
+Click in File -> New -> Example -> OntoUML Diagram.
+
+Thank you for using OntoUML Editor!
