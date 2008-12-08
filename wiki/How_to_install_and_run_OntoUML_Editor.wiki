@@ -13,7 +13,7 @@
 =Creating a model=
  # Execute Eclipse.
  # Create a project (if you don't have one): Click in File -> New -> Project... -> General -> Project -> Next -> Name it -> Next -> Next -> Finish.
- # Create a diagram: Click in File -> New -> Example -> OntoUML Diagram -> Next -> Choose the folder just created -> Give a name for the file -> Next -> Next -> Finish.
+ # Create an OntoUML diagram: Click in File -> New -> Example -> OntoUML Diagram -> Next -> Choose the folder just created -> Give a name for the file -> Next -> Next -> Finish.
  # You are ready to create an OntoUML model!
 
 _Thank you for using OntoUML Editor!_
