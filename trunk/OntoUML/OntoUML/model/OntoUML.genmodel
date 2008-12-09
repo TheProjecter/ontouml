@@ -152,15 +152,14 @@
       <genClasses ecoreClass="OntoUML.ecore#//URML/ClassifierAtom">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference OntoUML.ecore#//URML/ClassifierAtom/class"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OntoUML.ecore#//URML/ClassifierAtom/classVariable"/>
       </genClasses>
       <genClasses ecoreClass="OntoUML.ecore#//URML/RoleTypeAtom"/>
       <genClasses ecoreClass="OntoUML.ecore#//URML/BinaryAssociationAtom">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference OntoUML.ecore#//URML/BinaryAssociationAtom/srcVariable"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference OntoUML.ecore#//URML/BinaryAssociationAtom/tgtVariable"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference OntoUML.ecore#//URML/BinaryAssociationAtom/association"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OntoUML.ecore#//URML/BinaryAssociationAtom/sourceVariable"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OntoUML.ecore#//URML/BinaryAssociationAtom/targetVariable"/>
       </genClasses>
       <genClasses ecoreClass="OntoUML.ecore#//URML/ObjectVariable"/>
       <genClasses ecoreClass="OntoUML.ecore#//URML/AttributionAtom"/>
