@@ -5,7 +5,7 @@
 
 =Installing the plugin=
  # Download the Eclipse Modeling Tools package for your OS: http://www.eclipse.org/downloads/
- # Download ontouml.zip from the download section of this site.
+ # Download ontouml_1.0.0.yyyymmddhhmm.zip from the download section of this site.
  # Unzip the Eclipse package.
  # Unzip ontouml.zip on the "dropins" folder, which is inside the just created main Eclipse folder.
  # Execute Eclipse! 
