@@ -62,113 +62,113 @@
         name="MaterialAssociation"
         description="MaterialAssociation"
         path="//@audits/@categories.0 //@audits/@categories.9"
-        audits="//@audits/@rules.25 //@audits/@rules.26 //@audits/@rules.27"/>
+        audits="//@audits/@rules.25 //@audits/@rules.26 //@audits/@rules.27 //@audits/@rules.28"/>
     <categories
         id="Mediation"
         name="Mediation"
         description="Mediation"
         path="//@audits/@categories.0 //@audits/@categories.10"
-        audits="//@audits/@rules.28 //@audits/@rules.29 //@audits/@rules.30 //@audits/@rules.31 //@audits/@rules.32"/>
+        audits="//@audits/@rules.29 //@audits/@rules.30 //@audits/@rules.31 //@audits/@rules.32 //@audits/@rules.33"/>
     <categories
         id="memberOf"
         name="memberOf"
         description="memberOf"
         path="//@audits/@categories.0 //@audits/@categories.11"
-        audits="//@audits/@rules.33 //@audits/@rules.34 //@audits/@rules.35"/>
+        audits="//@audits/@rules.34 //@audits/@rules.35 //@audits/@rules.36"/>
     <categories
         id="Meronymic"
         name="Meronymic"
         description="Meronymic"
         path="//@audits/@categories.0 //@audits/@categories.12"
-        audits="//@audits/@rules.36 //@audits/@rules.37 //@audits/@rules.38 //@audits/@rules.39 //@audits/@rules.40 //@audits/@rules.41"/>
+        audits="//@audits/@rules.37 //@audits/@rules.38 //@audits/@rules.39 //@audits/@rules.40 //@audits/@rules.41 //@audits/@rules.42"/>
     <categories
         id="Mixin"
         name="Mixin"
         description="Mixin"
         path="//@audits/@categories.0 //@audits/@categories.13"
-        audits="//@audits/@rules.42"/>
+        audits="//@audits/@rules.43"/>
     <categories
         id="MixinClass"
         name="MixinClass"
         description="MixinClass"
         path="//@audits/@categories.0 //@audits/@categories.14"
-        audits="//@audits/@rules.43 //@audits/@rules.44"/>
+        audits="//@audits/@rules.44 //@audits/@rules.45"/>
     <categories
         id="Mode"
         name="Mode"
         description="Mode"
         path="//@audits/@categories.0 //@audits/@categories.15"
-        audits="//@audits/@rules.45"/>
+        audits="//@audits/@rules.46"/>
     <categories
         id="MultiplicityElement"
         name="MultiplicityElement"
         description="MultiplicityElement"
         path="//@audits/@categories.0 //@audits/@categories.16"
-        audits="//@audits/@rules.46 //@audits/@rules.47 //@audits/@rules.48"/>
+        audits="//@audits/@rules.47 //@audits/@rules.48 //@audits/@rules.49"/>
     <categories
         id="ObjectClass"
         name="ObjectClass"
         description="ObjectClass"
         path="//@audits/@categories.0 //@audits/@categories.17"
-        audits="//@audits/@rules.49"/>
+        audits="//@audits/@rules.50"/>
     <categories
         id="Phase"
         name="Phase"
         description="Phase"
         path="//@audits/@categories.0 //@audits/@categories.18"
-        audits="//@audits/@rules.50"/>
+        audits="//@audits/@rules.51"/>
     <categories
         id="Relator"
         name="Relator"
         description="Relator"
         path="//@audits/@categories.0 //@audits/@categories.19"
-        audits="//@audits/@rules.51 //@audits/@rules.52"/>
+        audits="//@audits/@rules.52 //@audits/@rules.53"/>
     <categories
         id="Role"
         name="Role"
         description="Role"
         path="//@audits/@categories.0 //@audits/@categories.20"
-        audits="//@audits/@rules.53 //@audits/@rules.54"/>
+        audits="//@audits/@rules.54 //@audits/@rules.55"/>
     <categories
         id="RoleMixin"
         name="RoleMixin"
         description="RoleMixin"
         path="//@audits/@categories.0 //@audits/@categories.21"
-        audits="//@audits/@rules.55"/>
+        audits="//@audits/@rules.56"/>
     <categories
         id="StructuralDatatype"
         name="StructuralDatatype"
         description="StructuralDatatype"
         path="//@audits/@categories.0 //@audits/@categories.22"
-        audits="//@audits/@rules.56"/>
+        audits="//@audits/@rules.57"/>
     <categories
         id="subCollectionOf"
         name="subCollectionOf"
         description="subCollectionOf"
         path="//@audits/@categories.0 //@audits/@categories.23"
-        audits="//@audits/@rules.57 //@audits/@rules.58 //@audits/@rules.59"/>
+        audits="//@audits/@rules.58 //@audits/@rules.59 //@audits/@rules.60"/>
     <categories
         id="SubKind"
         name="SubKind"
         description="SubKind"
         path="//@audits/@categories.0 //@audits/@categories.24"
-        audits="//@audits/@rules.60"/>
+        audits="//@audits/@rules.61"/>
     <categories
         id="subQuantityOf"
         name="subQuantityOf"
         description="subQuantityOf"
         path="//@audits/@categories.0 //@audits/@categories.25"
-        audits="//@audits/@rules.61 //@audits/@rules.62 //@audits/@rules.63 //@audits/@rules.64 //@audits/@rules.65"/>
+        audits="//@audits/@rules.62 //@audits/@rules.63 //@audits/@rules.64 //@audits/@rules.65 //@audits/@rules.66"/>
     <categories
         id="SubstanceSortal"
         name="SubstanceSortal"
         description="SubstanceSortal"
         path="//@audits/@categories.0 //@audits/@categories.26"
-        audits="//@audits/@rules.66 //@audits/@rules.67"/>
+        audits="//@audits/@rules.67 //@audits/@rules.68"/>
     <rules
         name="CategoryRestrição1"
         id="CategoryRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.168"
+        rule="//@expressionProviders/@providers.0/@expressions.163"
         message="Instâncias de Category só podem ter como supertipos instâncias de Category ou Mixin."
         useInLiveMode="true"
         category="//@audits/@categories.1">
@@ -182,7 +182,7 @@
     <rules
         name="CharacterizationRestrição1"
         id="CharacterizationRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.169"
+        rule="//@expressionProviders/@providers.0/@expressions.164"
         message="Instâncias de Characterization devem devem ter as extremidades fonte associadas à instâncias de Mode."
         useInLiveMode="true"
         category="//@audits/@categories.2">
@@ -196,7 +196,7 @@
     <rules
         name="CharacterizationRestrição2"
         id="CharacterizationRestrição2"
-        rule="//@expressionProviders/@providers.0/@expressions.170"
+        rule="//@expressionProviders/@providers.0/@expressions.165"
         message="Instâncias de Characterization devem ter as extremidades alvo com cardinalidades mínimas e máximas exatamente iguais a 1."
         category="//@audits/@categories.2">
       <target
@@ -209,7 +209,7 @@
     <rules
         name="CharacterizationRestrição3"
         id="CharacterizationRestrição3"
-        rule="//@expressionProviders/@providers.0/@expressions.171"
+        rule="//@expressionProviders/@providers.0/@expressions.166"
         message="Instâncias de Characterization devem devem ter as extremidades fonte com cardinalidades mínimas maiores ou iguais a 1."
         category="//@audits/@categories.2">
       <target
@@ -222,7 +222,7 @@
     <rules
         name="CharacterizationRestrição4"
         id="CharacterizationRestrição4"
-        rule="//@expressionProviders/@providers.0/@expressions.172"
+        rule="//@expressionProviders/@providers.0/@expressions.167"
         message="Instâncias de Characterization devem ter as extremidades alvo com o meta-atributo isReadOnly = true."
         category="//@audits/@categories.2">
       <target
@@ -235,7 +235,7 @@
     <rules
         name="CharacterizationRestrição5"
         id="CharacterizationRestrição5"
-        rule="//@expressionProviders/@providers.0/@expressions.173"
+        rule="//@expressionProviders/@providers.0/@expressions.168"
         message="Instâncias de Characterization devem ser sempre associações binárias."
         category="//@audits/@categories.2">
       <target
@@ -248,7 +248,7 @@
     <rules
         name="CollectiveRestrição1"
         id="CollectiveRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.174"
+        rule="//@expressionProviders/@providers.0/@expressions.169"
         message="Collective instances whose meta-attributes isExtensional are true must have all their parts with their respective meta-attributes isEssencial = true."
         category="//@audits/@categories.3">
       <target
@@ -261,7 +261,7 @@
     <rules
         name="componentOfRestrição1"
         id="componentOfRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.175"
+        rule="//@expressionProviders/@providers.0/@expressions.170"
         message="Instâncias de componentOf devem ter extremidades fonte associadas à elementos que representam universais cujas instâncias são complexos funcionais."
         useInLiveMode="true"
         category="//@audits/@categories.4">
@@ -275,7 +275,7 @@
     <rules
         name="componentOfRestrição2"
         id="componentOfRestrição2"
-        rule="//@expressionProviders/@providers.0/@expressions.176"
+        rule="//@expressionProviders/@providers.0/@expressions.171"
         message="Instâncias de componentOf devem ter extremidades alvo associadas à elementos que representam universais cujas instâncias são complexos funcionais."
         useInLiveMode="true"
         category="//@audits/@categories.4">
@@ -289,7 +289,7 @@
     <rules
         name="DatatypeAssociationRestrição1"
         id="DatatypeAssociationRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.177"
+        rule="//@expressionProviders/@providers.0/@expressions.172"
         message="Instâncias de Datatype Association devem estar associadas a ao menos uma instância de Datatype."
         category="//@audits/@categories.5">
       <target
@@ -302,7 +302,7 @@
     <rules
         name="DatatypeAssociationRestrição2"
         id="DatatypeAssociationRestrição2"
-        rule="//@expressionProviders/@providers.0/@expressions.178"
+        rule="//@expressionProviders/@providers.0/@expressions.173"
         message="Instâncias de Datatype Association não devem permitir a existência de atributos opcionais, ou seja, atributos com cardinalidade mínima igual a zero."
         category="//@audits/@categories.5">
       <target
@@ -315,7 +315,7 @@
     <rules
         name="DerivationRestrição1"
         id="DerivationRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.179"
+        rule="//@expressionProviders/@providers.0/@expressions.174"
         message="Instâncias de Derivation devem ter instâncias de Material Association em sua extremidade fonte."
         useInLiveMode="true"
         category="//@audits/@categories.6">
@@ -329,7 +329,7 @@
     <rules
         name="DerivationRestrição2"
         id="DerivationRestrição2"
-        rule="//@expressionProviders/@providers.0/@expressions.180"
+        rule="//@expressionProviders/@providers.0/@expressions.175"
         message="Instâncias de Derivation devem ter instâncias de Relator em sua extremidade alvo."
         useInLiveMode="true"
         category="//@audits/@categories.6">
@@ -343,7 +343,7 @@
     <rules
         name="DerivationRestrição3"
         id="DerivationRestrição3"
-        rule="//@expressionProviders/@providers.0/@expressions.181"
+        rule="//@expressionProviders/@providers.0/@expressions.176"
         message="Instâncias de Derivation devem ser sempre associações binárias."
         category="//@audits/@categories.6">
       <target
@@ -356,7 +356,7 @@
     <rules
         name="DerivationRestrição4"
         id="DerivationRestrição4"
-        rule="//@expressionProviders/@providers.0/@expressions.182"
+        rule="//@expressionProviders/@providers.0/@expressions.177"
         message="Instâncias de Derivation devem ter as extremidades alvo com cardinalidades mínimas e máximas exatamente iguais a 1."
         category="//@audits/@categories.6">
       <target
@@ -369,7 +369,7 @@
     <rules
         name="DerivationRestrição5"
         id="DerivationRestrição5"
-        rule="//@expressionProviders/@providers.0/@expressions.183"
+        rule="//@expressionProviders/@providers.0/@expressions.178"
         message="Instâncias de Derivation devem ter as extremidades alvo com o meta-atributo isReadOnly = true."
         category="//@audits/@categories.6">
       <target
@@ -382,7 +382,7 @@
     <rules
         name="DerivationRestrição6"
         id="DerivationRestrição6"
-        rule="//@expressionProviders/@providers.0/@expressions.184"
+        rule="//@expressionProviders/@providers.0/@expressions.179"
         message="Instâncias de Derivation devem as extremidades fonte com cardinalidades mínimas maiores ou iguais a 1."
         category="//@audits/@categories.6">
       <target
@@ -395,7 +395,7 @@
     <rules
         name="DirectedBinaryRelationshipRestrição1"
         id="DirectedBinaryRelationshipRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.185"
+        rule="//@expressionProviders/@providers.0/@expressions.180"
         message="Instâncias de Directed Binary Relationship devem ter as extremidades fonte associadas à instâncias de Property."
         category="//@audits/@categories.7">
       <target
@@ -408,7 +408,7 @@
     <rules
         name="DirectedBinaryRelationshipRestrição2"
         id="DirectedBinaryRelationshipRestrição2"
-        rule="//@expressionProviders/@providers.0/@expressions.186"
+        rule="//@expressionProviders/@providers.0/@expressions.181"
         message="Instâncias de Directed Binary Relationship devem ter as extremidades alvo associadas à instâncias de Property."
         category="//@audits/@categories.7">
       <target
@@ -421,7 +421,7 @@
     <rules
         name="DirectedBinaryRelationshipRestrição3"
         id="DirectedBinaryRelationshipRestrição3"
-        rule="//@expressionProviders/@providers.0/@expressions.187"
+        rule="//@expressionProviders/@providers.0/@expressions.182"
         message="Instâncias de Directed Binary Relationship devem ter as extremidades fonte associadas à somente um elemento."
         category="//@audits/@categories.7">
       <target
@@ -434,7 +434,7 @@
     <rules
         name="DirectedBinaryRelationshipRestrição4"
         id="DirectedBinaryRelationshipRestrição4"
-        rule="//@expressionProviders/@providers.0/@expressions.188"
+        rule="//@expressionProviders/@providers.0/@expressions.183"
         message="Instâncias de Directed Binary Relationship devem ter as extremidades alvo associadas à somente um elemento."
         category="//@audits/@categories.7">
       <target
@@ -447,7 +447,7 @@
     <rules
         name="GeneralizationRestrição1"
         id="GeneralizationRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.189"
+        rule="//@expressionProviders/@providers.0/@expressions.184"
         message="Instâncias de Geeneralization devem ter as extremidades fonte associadas à no máximo um elemento."
         useInLiveMode="true"
         category="//@audits/@categories.8">
@@ -461,7 +461,7 @@
     <rules
         name="GeneralizationRestrição2"
         id="GeneralizationRestrição2"
-        rule="//@expressionProviders/@providers.0/@expressions.190"
+        rule="//@expressionProviders/@providers.0/@expressions.185"
         message="Instâncias de Geeneralization devem ter as extremidades alvo associadas à no máximo um elemento."
         useInLiveMode="true"
         category="//@audits/@categories.8">
@@ -475,7 +475,7 @@
     <rules
         name="GeneralizationConstraint3"
         id="GeneralizationConstraint3"
-        rule="//@expressionProviders/@providers.0/@expressions.191"
+        rule="//@expressionProviders/@providers.0/@expressions.186"
         message="Generalization instances cannot hold between two sortals, because a sortal have its own identity criterion and cannot inherit one from another sortal."
         useInLiveMode="true"
         category="//@audits/@categories.8">
@@ -489,7 +489,7 @@
     <rules
         name="GeneralizationConstraint4"
         id="GeneralizationConstraint4"
-        rule="//@expressionProviders/@providers.0/@expressions.192"
+        rule="//@expressionProviders/@providers.0/@expressions.187"
         message="An anti-rigid instance can not be a supertype of a rigid instance."
         useInLiveMode="true"
         category="//@audits/@categories.8">
@@ -503,7 +503,7 @@
     <rules
         name="MaterialAssociationRestrição1"
         id="MaterialAssociationRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.193"
+        rule="//@expressionProviders/@providers.0/@expressions.188"
         message="Instâncias de Material Association devem estar associadas à exatamente uma instância de Derivation."
         category="//@audits/@categories.9">
       <target
@@ -516,7 +516,7 @@
     <rules
         name="MaterialAssociationRestrição2"
         id="MaterialAssociationRestrição2"
-        rule="//@expressionProviders/@providers.0/@expressions.194"
+        rule="//@expressionProviders/@providers.0/@expressions.189"
         message="Instâncias de Material Association devem ter suas extremidades com cardinalidades mínimas maiores ou iguais a 1."
         category="//@audits/@categories.9">
       <target
@@ -529,8 +529,22 @@
     <rules
         name="MaterialAssociationRestrição3"
         id="MaterialAssociationRestrição3"
-        rule="//@expressionProviders/@providers.0/@expressions.195"
+        rule="//@expressionProviders/@providers.0/@expressions.190"
         message="Instâncias de Material Association devem ter suas extremidades com seus respectivos meta-atributos isDerived = true."
+        category="//@audits/@categories.9">
+      <target
+          xsi:type="gmfgen:GenDomainElementTarget"
+          contextSelector="//@audits/@clientContexts.0">
+        <element
+            href="OntoUML.genmodel#//OntoUML/MaterialAssociation"/>
+      </target>
+    </rules>
+    <rules
+        name="MaterialAssociationConstraint4"
+        id="MaterialAssociationConstraint4"
+        rule="//@expressionProviders/@providers.0/@expressions.191"
+        message="Material Association instances needs to have its extremities mediated by an unique Relator Universal instance."
+        useInLiveMode="true"
         category="//@audits/@categories.9">
       <target
           xsi:type="gmfgen:GenDomainElementTarget"
@@ -542,7 +556,7 @@
     <rules
         name="MediationRestrição1"
         id="MediationRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.196"
+        rule="//@expressionProviders/@providers.0/@expressions.192"
         message="Instâncias de Mediation devem ter suas extremidades fonte associadas à instâncias de Relator."
         useInLiveMode="true"
         category="//@audits/@categories.10">
@@ -556,7 +570,7 @@
     <rules
         name="MediationRestrição2"
         id="MediationRestrição2"
-        rule="//@expressionProviders/@providers.0/@expressions.197"
+        rule="//@expressionProviders/@providers.0/@expressions.193"
         message="Instâncias de Mediation devem ter suas extremidades alvo com cardinalidades mínimas maiores ou iguais a 1."
         category="//@audits/@categories.10">
       <target
@@ -569,7 +583,7 @@
     <rules
         name="MediationRestrição3"
         id="MediationRestrição3"
-        rule="//@expressionProviders/@providers.0/@expressions.198"
+        rule="//@expressionProviders/@providers.0/@expressions.194"
         message="Instâncias de Mediation devem ter suas extremidades alvo com seus respectivos meta-atributos isReadOnly = true."
         category="//@audits/@categories.10">
       <target
@@ -582,7 +596,7 @@
     <rules
         name="MediationRestrição4"
         id="MediationRestrição4"
-        rule="//@expressionProviders/@providers.0/@expressions.199"
+        rule="//@expressionProviders/@providers.0/@expressions.195"
         message="Instâncias de Mediation devem ter suas extremidades fonte com cardinalidades mínimas maiores ou iguais a 1. "
         category="//@audits/@categories.10">
       <target
@@ -595,7 +609,7 @@
     <rules
         name="MediationRestrição5"
         id="MediationRestrição5"
-        rule="//@expressionProviders/@providers.0/@expressions.200"
+        rule="//@expressionProviders/@providers.0/@expressions.196"
         message="Instâncias de Mediation devem ser sempre associações binárias."
         category="//@audits/@categories.10">
       <target
@@ -608,7 +622,7 @@
     <rules
         name="memberOfRestrição1"
         id="memberOfRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.201"
+        rule="//@expressionProviders/@providers.0/@expressions.197"
         message="memberOf instances whose meta-attributes isEssencial are true must have its source extremities associated with Collective instances which meta-attributes isExtensional are true."
         category="//@audits/@categories.11">
       <target
@@ -621,7 +635,7 @@
     <rules
         name="memberOfRestrição2"
         id="memberOfRestrição2"
-        rule="//@expressionProviders/@providers.0/@expressions.202"
+        rule="//@expressionProviders/@providers.0/@expressions.198"
         message="Instâncias de memberOf devem ter suas extremidades fonte associadas à elementos que representam universais cujas instâncias são collectives"
         useInLiveMode="true"
         category="//@audits/@categories.11">
@@ -635,7 +649,7 @@
     <rules
         name="memberOfRestrição3"
         id="memberOfRestrição3"
-        rule="//@expressionProviders/@providers.0/@expressions.203"
+        rule="//@expressionProviders/@providers.0/@expressions.199"
         message="Instâncias de memberOf devem ter suas extremidades alvo associadas à elementos que representam universais cujas instâncias são collectives ou complexos funcionais."
         useInLiveMode="true"
         category="//@audits/@categories.11">
@@ -649,7 +663,7 @@
     <rules
         name="MeronymicRestrição1"
         id="MeronymicRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.204"
+        rule="//@expressionProviders/@providers.0/@expressions.200"
         message="A whole must have at least two parts (Weak Supplementation)."
         category="//@audits/@categories.12">
       <target
@@ -662,7 +676,7 @@
     <rules
         name="MeronymicRestrição2"
         id="MeronymicRestrição2"
-        rule="//@expressionProviders/@providers.0/@expressions.205"
+        rule="//@expressionProviders/@providers.0/@expressions.201"
         message="Instâncias de Meronymic em que as extremidades alvo estiverem associadas à instâncias de Anti Rigid Sortal Class ou Anti Rigid Mixin Class devem ter seus meta-atributos isEssential = false."
         category="//@audits/@categories.12">
       <target
@@ -675,7 +689,7 @@
     <rules
         name="MeronymicRestrição3"
         id="MeronymicRestrição3"
-        rule="//@expressionProviders/@providers.0/@expressions.206"
+        rule="//@expressionProviders/@providers.0/@expressions.202"
         message="Instâncias de Meronymic que possuírem o meta-atributo isImmutablePart = true devem ter as suas extremidades alvo com os meta-atributos isreadOnly = true."
         category="//@audits/@categories.12">
       <target
@@ -688,7 +702,7 @@
     <rules
         name="MeronymicRestrição4"
         id="MeronymicRestrição4"
-        rule="//@expressionProviders/@providers.0/@expressions.207"
+        rule="//@expressionProviders/@providers.0/@expressions.203"
         message="Instâncias de Meronymic que possuírem o meta-atributo isImmutableWhole = true devem ter as suas extremidades fonte com os meta-atributos isreadOnly = true."
         category="//@audits/@categories.12">
       <target
@@ -701,7 +715,7 @@
     <rules
         name="MeronymicRestrição5"
         id="MeronymicRestrição5"
-        rule="//@expressionProviders/@providers.0/@expressions.208"
+        rule="//@expressionProviders/@providers.0/@expressions.204"
         message="Instâncias de Meronymic que possuírem o meta-atributo isEssential = true devem ter o meta-atributo isImmutablePart = true."
         category="//@audits/@categories.12">
       <target
@@ -714,7 +728,7 @@
     <rules
         name="MeronymicRestrição6"
         id="MeronymicRestrição6"
-        rule="//@expressionProviders/@providers.0/@expressions.209"
+        rule="//@expressionProviders/@providers.0/@expressions.205"
         message="Instâncias de Meronymic que possuírem o meta-atributo isInseparable = true devem ter o meta-atributo isImmutableWhole = true."
         category="//@audits/@categories.12">
       <target
@@ -727,7 +741,7 @@
     <rules
         name="MixinRestrição1"
         id="MixinRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.210"
+        rule="//@expressionProviders/@providers.0/@expressions.206"
         message="Instâncias de Mixin não podem ter instâncias de Role Mixin como seus supertipos."
         useInLiveMode="true"
         category="//@audits/@categories.13">
@@ -741,7 +755,7 @@
     <rules
         name="MixinClassRestrição1"
         id="MixinClassRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.211"
+        rule="//@expressionProviders/@providers.0/@expressions.207"
         message="Instâncias de Mixin Class não podem ter instâncias de Sortal Class como seus supertipos."
         useInLiveMode="true"
         category="//@audits/@categories.14">
@@ -755,7 +769,7 @@
     <rules
         name="MixinClassRestrição2"
         id="MixinClassRestrição2"
-        rule="//@expressionProviders/@providers.0/@expressions.212"
+        rule="//@expressionProviders/@providers.0/@expressions.208"
         message="Instâncias de Mixin Class devem ter o meta-atributo isAbstract = true."
         useInLiveMode="true"
         category="//@audits/@categories.14">
@@ -769,7 +783,7 @@
     <rules
         name="ModeRestrição1"
         id="ModeRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.213"
+        rule="//@expressionProviders/@providers.0/@expressions.209"
         message="Instâncias de Mode devem estar conectadas (diretamente ou indiretamente) a ao menos uma extremidade de uma instância de Characterization."
         category="//@audits/@categories.15">
       <target
@@ -782,7 +796,7 @@
     <rules
         name="MultiplicityElementRestrição1"
         id="MultiplicityElementRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.214"
+        rule="//@expressionProviders/@providers.0/@expressions.210"
         message="Instâncias de Multiplicity Element devem ter números cardinais em seus meta-atributos lower, sendo que o número -1 representa o menor dos cardinais infinito, o álefe-0."
         useInLiveMode="true"
         category="//@audits/@categories.16">
@@ -796,7 +810,7 @@
     <rules
         name="MultiplicityElementRestrição2"
         id="MultiplicityElementRestrição2"
-        rule="//@expressionProviders/@providers.0/@expressions.215"
+        rule="//@expressionProviders/@providers.0/@expressions.211"
         message="Instâncias de Multiplicity Element devem ter números cardinais em seus meta-atributos upper, sendo que o número -1 representa o menor dos cardinais infinito, o álefe-0."
         useInLiveMode="true"
         category="//@audits/@categories.16">
@@ -810,7 +824,7 @@
     <rules
         name="MultiplicityElementConstraint3"
         id="MultiplicityElementConstraint3"
-        rule="//@expressionProviders/@providers.0/@expressions.216"
+        rule="//@expressionProviders/@providers.0/@expressions.212"
         message="Upper cardinality must be greater or equal to lower cardinality."
         category="//@audits/@categories.16">
       <target
@@ -823,7 +837,7 @@
     <rules
         name="ObjectClassConstraint1"
         id="ObjectClassConstraint1"
-        rule="//@expressionProviders/@providers.0/@expressions.217"
+        rule="//@expressionProviders/@providers.0/@expressions.213"
         message="ObjectClass instances which are not abstract (isAbstract = false) and which are not Substance Sortal instances must have at least one Substance Sortal instance as supertype."
         category="//@audits/@categories.17">
       <target
@@ -836,7 +850,7 @@
     <rules
         name="PhaseRestrição1"
         id="PhaseRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.218"
+        rule="//@expressionProviders/@providers.0/@expressions.214"
         message="Instâncias de Phase não podem ser supertipos de alguma instância de Substance Sortal."
         category="//@audits/@categories.18">
       <target
@@ -849,7 +863,7 @@
     <rules
         name="RelatorRestrição1"
         id="RelatorRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.219"
+        rule="//@expressionProviders/@providers.0/@expressions.215"
         message="Instâncias de Relator devem estar conectadas (diretamente ou indiretamente) a ao menos uma extremidade de uma instância de Mediation."
         category="//@audits/@categories.19">
       <target
@@ -862,7 +876,7 @@
     <rules
         name="RelatorRestrição2"
         id="RelatorRestrição2"
-        rule="//@expressionProviders/@providers.0/@expressions.220"
+        rule="//@expressionProviders/@providers.0/@expressions.216"
         message="Instâncias de Relator devem estar mediando (por meio de instâncias de Mediation) pelo menos dois elementos distintos."
         category="//@audits/@categories.19">
       <target
@@ -875,7 +889,7 @@
     <rules
         name="RoleRestrição1"
         id="RoleRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.221"
+        rule="//@expressionProviders/@providers.0/@expressions.217"
         message="Instâncias de Role não podem ser supertipos de alguma instância de Substance Sortal."
         category="//@audits/@categories.20">
       <target
@@ -888,7 +902,7 @@
     <rules
         name="RoleRestrição2"
         id="RoleRestrição2"
-        rule="//@expressionProviders/@providers.0/@expressions.222"
+        rule="//@expressionProviders/@providers.0/@expressions.218"
         message="Instâncias de Role devem estar conectadas à extremidade de uma instância de Mediation."
         category="//@audits/@categories.20">
       <target
@@ -901,7 +915,7 @@
     <rules
         name="RoleMixinRestrição1"
         id="RoleMixinRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.223"
+        rule="//@expressionProviders/@providers.0/@expressions.219"
         message="Instâncias de Role Mixin devem estar conectadas à extremidade de uma instância de Mediation."
         category="//@audits/@categories.21">
       <target
@@ -914,7 +928,7 @@
     <rules
         name="StructuralDatatypeRestrição1"
         id="StructuralDatatypeRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.224"
+        rule="//@expressionProviders/@providers.0/@expressions.220"
         message="Instâncias de Structural Datatype devem possuir no mínimo dois atributos distintos."
         category="//@audits/@categories.22">
       <target
@@ -927,7 +941,7 @@
     <rules
         name="subCollectionOfRestrição1"
         id="subCollectionOfRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.225"
+        rule="//@expressionProviders/@providers.0/@expressions.221"
         message="subCollectionOf instances must have its source extremities associated to elements that represent universals whose instances are collectives."
         useInLiveMode="true"
         category="//@audits/@categories.23">
@@ -941,7 +955,7 @@
     <rules
         name="subCollectionOfRestrição2"
         id="subCollectionOfRestrição2"
-        rule="//@expressionProviders/@providers.0/@expressions.226"
+        rule="//@expressionProviders/@providers.0/@expressions.222"
         message="subCollectionOf instances must have its target extremities associated to elements that represent universals whose instances are collectives."
         useInLiveMode="true"
         category="//@audits/@categories.23">
@@ -955,7 +969,7 @@
     <rules
         name="subCollectionOfRestrição3"
         id="subCollectionOfRestrição3"
-        rule="//@expressionProviders/@providers.0/@expressions.227"
+        rule="//@expressionProviders/@providers.0/@expressions.223"
         message="Instâncias de subCollectionOf devem ter as extremidades alvo com cardinalidades máximas exatamente iguais a 1."
         category="//@audits/@categories.23">
       <target
@@ -968,7 +982,7 @@
     <rules
         name="SubKindRestrição1"
         id="SubKindRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.228"
+        rule="//@expressionProviders/@providers.0/@expressions.224"
         message="Instâncias de SubKind não podem ter como supertipos instâncias de Phase, Role e Role Mixin."
         useInLiveMode="true"
         category="//@audits/@categories.24">
@@ -982,7 +996,7 @@
     <rules
         name="subQuantityOfRestrição1"
         id="subQuantityOfRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.229"
+        rule="//@expressionProviders/@providers.0/@expressions.225"
         message="subQuantityOf instances must have meta-attributes isShareable = false."
         useInLiveMode="true"
         category="//@audits/@categories.25">
@@ -996,7 +1010,7 @@
     <rules
         name="subQuantityOfRestrição2"
         id="subQuantityOfRestrição2"
-        rule="//@expressionProviders/@providers.0/@expressions.230"
+        rule="//@expressionProviders/@providers.0/@expressions.226"
         message="subQuantityOf instances must have meta-attributes isEssential = true, because Quantity instances are extensional individuals."
         useInLiveMode="true"
         category="//@audits/@categories.25">
@@ -1010,7 +1024,7 @@
     <rules
         name="subQuantityOfRestrição3"
         id="subQuantityOfRestrição3"
-        rule="//@expressionProviders/@providers.0/@expressions.231"
+        rule="//@expressionProviders/@providers.0/@expressions.227"
         message="Instâncias de subQuantityOf devem ter as extremidades alvo com cardinalidades máximas exatamente iguais a 1."
         category="//@audits/@categories.25">
       <target
@@ -1023,7 +1037,7 @@
     <rules
         name="subQuantityOfRestrição4"
         id="subQuantityOfRestrição4"
-        rule="//@expressionProviders/@providers.0/@expressions.232"
+        rule="//@expressionProviders/@providers.0/@expressions.228"
         message="subQuantityOf instances must have its source extremities associated to elements that represent universals whose instances are quantities."
         useInLiveMode="true"
         category="//@audits/@categories.25">
@@ -1037,7 +1051,7 @@
     <rules
         name="subQuantityOfRestrição5"
         id="subQuantityOfRestrição5"
-        rule="//@expressionProviders/@providers.0/@expressions.233"
+        rule="//@expressionProviders/@providers.0/@expressions.229"
         message="subQuantityOf instances must have its target extremities associated to elements that represent universals whose instances are quantities."
         useInLiveMode="true"
         category="//@audits/@categories.25">
@@ -1051,7 +1065,7 @@
     <rules
         name="SubstanceSortalRestrição1"
         id="SubstanceSortalRestrição1"
-        rule="//@expressionProviders/@providers.0/@expressions.234"
+        rule="//@expressionProviders/@providers.0/@expressions.230"
         message="Substance Sortal instances cannot have as supertypes Rigid Sortal Class instances."
         useInLiveMode="true"
         category="//@audits/@categories.26">
@@ -1065,7 +1079,7 @@
     <rules
         name="SubstanceSortalRestrição2"
         id="SubstanceSortalRestrição2"
-        rule="//@expressionProviders/@providers.0/@expressions.235"
+        rule="//@expressionProviders/@providers.0/@expressions.231"
         message="Instâncias de Substance Sortal não podem ter como supertipos instâncias de Phase, Role e Role Mixin."
         useInLiveMode="true"
         category="//@audits/@categories.26">
@@ -1077,7 +1091,7 @@
       </target>
     </rules>
     <clientContexts
-        ruleTargets="//@audits/@rules.0/@target //@audits/@rules.1/@target //@audits/@rules.2/@target //@audits/@rules.3/@target //@audits/@rules.4/@target //@audits/@rules.5/@target //@audits/@rules.6/@target //@audits/@rules.7/@target //@audits/@rules.8/@target //@audits/@rules.9/@target //@audits/@rules.10/@target //@audits/@rules.11/@target //@audits/@rules.12/@target //@audits/@rules.13/@target //@audits/@rules.14/@target //@audits/@rules.15/@target //@audits/@rules.16/@target //@audits/@rules.17/@target //@audits/@rules.18/@target //@audits/@rules.19/@target //@audits/@rules.20/@target //@audits/@rules.21/@target //@audits/@rules.22/@target //@audits/@rules.23/@target //@audits/@rules.24/@target //@audits/@rules.25/@target //@audits/@rules.26/@target //@audits/@rules.27/@target //@audits/@rules.28/@target //@audits/@rules.29/@target //@audits/@rules.30/@target //@audits/@rules.31/@target //@audits/@rules.32/@target //@audits/@rules.33/@target //@audits/@rules.34/@target //@audits/@rules.35/@target //@audits/@rules.36/@target //@audits/@rules.37/@target //@audits/@rules.38/@target //@audits/@rules.39/@target //@audits/@rules.40/@target //@audits/@rules.41/@target //@audits/@rules.42/@target //@audits/@rules.43/@target //@audits/@rules.44/@target //@audits/@rules.45/@target //@audits/@rules.46/@target //@audits/@rules.47/@target //@audits/@rules.48/@target //@audits/@rules.49/@target //@audits/@rules.50/@target //@audits/@rules.51/@target //@audits/@rules.52/@target //@audits/@rules.53/@target //@audits/@rules.54/@target //@audits/@rules.55/@target //@audits/@rules.56/@target //@audits/@rules.57/@target //@audits/@rules.58/@target //@audits/@rules.59/@target //@audits/@rules.60/@target //@audits/@rules.61/@target //@audits/@rules.62/@target //@audits/@rules.63/@target //@audits/@rules.64/@target //@audits/@rules.65/@target //@audits/@rules.66/@target //@audits/@rules.67/@target"/>
+        ruleTargets="//@audits/@rules.0/@target //@audits/@rules.1/@target //@audits/@rules.2/@target //@audits/@rules.3/@target //@audits/@rules.4/@target //@audits/@rules.5/@target //@audits/@rules.6/@target //@audits/@rules.7/@target //@audits/@rules.8/@target //@audits/@rules.9/@target //@audits/@rules.10/@target //@audits/@rules.11/@target //@audits/@rules.12/@target //@audits/@rules.13/@target //@audits/@rules.14/@target //@audits/@rules.15/@target //@audits/@rules.16/@target //@audits/@rules.17/@target //@audits/@rules.18/@target //@audits/@rules.19/@target //@audits/@rules.20/@target //@audits/@rules.21/@target //@audits/@rules.22/@target //@audits/@rules.23/@target //@audits/@rules.24/@target //@audits/@rules.25/@target //@audits/@rules.26/@target //@audits/@rules.27/@target //@audits/@rules.28/@target //@audits/@rules.29/@target //@audits/@rules.30/@target //@audits/@rules.31/@target //@audits/@rules.32/@target //@audits/@rules.33/@target //@audits/@rules.34/@target //@audits/@rules.35/@target //@audits/@rules.36/@target //@audits/@rules.37/@target //@audits/@rules.38/@target //@audits/@rules.39/@target //@audits/@rules.40/@target //@audits/@rules.41/@target //@audits/@rules.42/@target //@audits/@rules.43/@target //@audits/@rules.44/@target //@audits/@rules.45/@target //@audits/@rules.46/@target //@audits/@rules.47/@target //@audits/@rules.48/@target //@audits/@rules.49/@target //@audits/@rules.50/@target //@audits/@rules.51/@target //@audits/@rules.52/@target //@audits/@rules.53/@target //@audits/@rules.54/@target //@audits/@rules.55/@target //@audits/@rules.56/@target //@audits/@rules.57/@target //@audits/@rules.58/@target //@audits/@rules.59/@target //@audits/@rules.60/@target //@audits/@rules.61/@target //@audits/@rules.62/@target //@audits/@rules.63/@target //@audits/@rules.64/@target //@audits/@rules.65/@target //@audits/@rules.66/@target //@audits/@rules.67/@target //@audits/@rules.68/@target"/>
   </audits>
   <diagram
       visualID="1000"
@@ -1086,7 +1100,7 @@
       notationViewFactoryClassName="ContainerViewFactory"
       canonicalEditPolicyClassName="ContainerCanonicalEditPolicy"
       iconProviderPriority="Low"
-      validationProviderPriority="Low"
+      validationProviderPriority="Highest"
       validationEnabled="true"
       validationDecorators="true"
       validationDecoratorProviderPriority="Highest"
@@ -3560,7 +3574,7 @@
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.102">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/Property/endType"/>
+                    href="OntoUML.genmodel#//OntoUML/Property/associationEnd"/>
               </initializers>
               <elementClass
                   href="OntoUML.genmodel#//OntoUML/Property"/>
@@ -3575,7 +3589,7 @@
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.103">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/Property/endType"/>
+                    href="OntoUML.genmodel#//OntoUML/Property/associationEnd"/>
               </initializers>
               <elementClass
                   href="OntoUML.genmodel#//OntoUML/Property"/>
@@ -3677,7 +3691,7 @@
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.106">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/Property/endType"/>
+                    href="OntoUML.genmodel#//OntoUML/Property/associationEnd"/>
               </initializers>
               <elementClass
                   href="OntoUML.genmodel#//OntoUML/Property"/>
@@ -3692,7 +3706,7 @@
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.107">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/Property/endType"/>
+                    href="OntoUML.genmodel#//OntoUML/Property/associationEnd"/>
               </initializers>
               <elementClass
                   href="OntoUML.genmodel#//OntoUML/Property"/>
@@ -3799,19 +3813,19 @@
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.111">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/Property/endType"/>
+                    href="OntoUML.genmodel#//OntoUML/MultiplicityElement/lower"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.112">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/MultiplicityElement/lower"/>
+                    href="OntoUML.genmodel#//OntoUML/MultiplicityElement/upper"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.113">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/MultiplicityElement/upper"/>
+                    href="OntoUML.genmodel#//OntoUML/Property/associationEndPositionAux"/>
               </initializers>
               <elementClass
                   href="OntoUML.genmodel#//OntoUML/Property"/>
@@ -3827,25 +3841,25 @@
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.115">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/Property/endType"/>
+                    href="OntoUML.genmodel#//OntoUML/MultiplicityElement/lower"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.116">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/MultiplicityElement/lower"/>
+                    href="OntoUML.genmodel#//OntoUML/MultiplicityElement/upper"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.117">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/MultiplicityElement/upper"/>
+                    href="OntoUML.genmodel#//OntoUML/Property/isNavigable"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.118">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/Property/isNavigable"/>
+                    href="OntoUML.genmodel#//OntoUML/Property/associationEndPositionAux"/>
               </initializers>
               <elementClass
                   href="OntoUML.genmodel#//OntoUML/Property"/>
@@ -3917,7 +3931,7 @@
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.119">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/Property/endType"/>
+                    href="OntoUML.genmodel#//OntoUML/Property/associationEnd"/>
               </initializers>
               <elementClass
                   href="OntoUML.genmodel#//OntoUML/Property"/>
@@ -3932,23 +3946,17 @@
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.120">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/Property/endType"/>
+                    href="OntoUML.genmodel#//OntoUML/MultiplicityElement/lower"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.121">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/MultiplicityElement/lower"/>
-              </initializers>
-              <initializers
-                  xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.122">
-                <feature
                     href="OntoUML.genmodel#//OntoUML/MultiplicityElement/upper"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.123">
+                  value="//@expressionProviders/@providers.0/@expressions.122">
                 <feature
                     href="OntoUML.genmodel#//OntoUML/Property/isReadOnly"/>
               </initializers>
@@ -3958,13 +3966,13 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.124">
+              value="//@expressionProviders/@providers.0/@expressions.123">
             <feature
                 href="OntoUML.genmodel#//OntoUML/DirectedRelationship/source"/>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.125">
+              value="//@expressionProviders/@providers.0/@expressions.124">
             <feature
                 href="OntoUML.genmodel#//OntoUML/DirectedRelationship/target"/>
           </initializers>
@@ -4032,15 +4040,15 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.126">
+                  value="//@expressionProviders/@providers.0/@expressions.125">
                 <feature
                     href="OntoUML.genmodel#//OntoUML/Property/associationEnd"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.127">
+                  value="//@expressionProviders/@providers.0/@expressions.126">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/Property/endType"/>
+                    href="OntoUML.genmodel#//OntoUML/Property/associationEndPositionAux"/>
               </initializers>
               <elementClass
                   href="OntoUML.genmodel#//OntoUML/Property"/>
@@ -4048,15 +4056,15 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.128">
+                  value="//@expressionProviders/@providers.0/@expressions.127">
                 <feature
                     href="OntoUML.genmodel#//OntoUML/Property/associationEnd"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.129">
+                  value="//@expressionProviders/@providers.0/@expressions.128">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/Property/endType"/>
+                    href="OntoUML.genmodel#//OntoUML/Property/associationEndPositionAux"/>
               </initializers>
               <elementClass
                   href="OntoUML.genmodel#//OntoUML/Property"/>
@@ -4177,21 +4185,21 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.130">
+                  value="//@expressionProviders/@providers.0/@expressions.129">
                 <feature
                     href="OntoUML.genmodel#//OntoUML/Property/associationEnd"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.131">
+                  value="//@expressionProviders/@providers.0/@expressions.130">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/Property/endType"/>
+                    href="OntoUML.genmodel#//OntoUML/Property/isDerived"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.132">
+                  value="//@expressionProviders/@providers.0/@expressions.131">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/Property/isDerived"/>
+                    href="OntoUML.genmodel#//OntoUML/Property/associationEndPositionAux"/>
               </initializers>
               <elementClass
                   href="OntoUML.genmodel#//OntoUML/Property"/>
@@ -4199,21 +4207,21 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.133">
+                  value="//@expressionProviders/@providers.0/@expressions.132">
                 <feature
                     href="OntoUML.genmodel#//OntoUML/Property/associationEnd"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.134">
+                  value="//@expressionProviders/@providers.0/@expressions.133">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/Property/endType"/>
+                    href="OntoUML.genmodel#//OntoUML/Property/isDerived"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.135">
+                  value="//@expressionProviders/@providers.0/@expressions.134">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/Property/isDerived"/>
+                    href="OntoUML.genmodel#//OntoUML/Property/associationEndPositionAux"/>
               </initializers>
               <elementClass
                   href="OntoUML.genmodel#//OntoUML/Property"/>
@@ -4301,19 +4309,13 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.136">
-                <feature
-                    href="OntoUML.genmodel#//OntoUML/Property/endType"/>
-              </initializers>
-              <initializers
-                  xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.137">
+                  value="//@expressionProviders/@providers.0/@expressions.135">
                 <feature
                     href="OntoUML.genmodel#//OntoUML/MultiplicityElement/lower"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.138">
+                  value="//@expressionProviders/@providers.0/@expressions.136">
                 <feature
                     href="OntoUML.genmodel#//OntoUML/MultiplicityElement/upper"/>
               </initializers>
@@ -4328,25 +4330,19 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.139">
-                <feature
-                    href="OntoUML.genmodel#//OntoUML/Property/endType"/>
-              </initializers>
-              <initializers
-                  xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.140">
+                  value="//@expressionProviders/@providers.0/@expressions.137">
                 <feature
                     href="OntoUML.genmodel#//OntoUML/Property/isReadOnly"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.141">
+                  value="//@expressionProviders/@providers.0/@expressions.138">
                 <feature
                     href="OntoUML.genmodel#//OntoUML/MultiplicityElement/lower"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.142">
+                  value="//@expressionProviders/@providers.0/@expressions.139">
                 <feature
                     href="OntoUML.genmodel#//OntoUML/MultiplicityElement/upper"/>
               </initializers>
@@ -4356,13 +4352,13 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.143">
+              value="//@expressionProviders/@providers.0/@expressions.140">
             <feature
                 href="OntoUML.genmodel#//OntoUML/DirectedRelationship/source"/>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.144">
+              value="//@expressionProviders/@providers.0/@expressions.141">
             <feature
                 href="OntoUML.genmodel#//OntoUML/DirectedRelationship/target"/>
           </initializers>
@@ -4448,9 +4444,9 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.145">
+                  value="//@expressionProviders/@providers.0/@expressions.142">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/Property/endType"/>
+                    href="OntoUML.genmodel#//OntoUML/Property/associationEnd"/>
               </initializers>
               <elementClass
                   href="OntoUML.genmodel#//OntoUML/Property"/>
@@ -4463,9 +4459,9 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.146">
+                  value="//@expressionProviders/@providers.0/@expressions.143">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/Property/endType"/>
+                    href="OntoUML.genmodel#//OntoUML/Property/associationEnd"/>
               </initializers>
               <elementClass
                   href="OntoUML.genmodel#//OntoUML/Property"/>
@@ -4473,13 +4469,13 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.147">
+              value="//@expressionProviders/@providers.0/@expressions.144">
             <feature
                 href="OntoUML.genmodel#//OntoUML/DirectedRelationship/source"/>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.148">
+              value="//@expressionProviders/@providers.0/@expressions.145">
             <feature
                 href="OntoUML.genmodel#//OntoUML/DirectedRelationship/target"/>
           </initializers>
@@ -4564,9 +4560,9 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.149">
+                  value="//@expressionProviders/@providers.0/@expressions.146">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/Property/endType"/>
+                    href="OntoUML.genmodel#//OntoUML/Property/associationEnd"/>
               </initializers>
               <elementClass
                   href="OntoUML.genmodel#//OntoUML/Property"/>
@@ -4579,13 +4575,7 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.150">
-                <feature
-                    href="OntoUML.genmodel#//OntoUML/Property/endType"/>
-              </initializers>
-              <initializers
-                  xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.151">
+                  value="//@expressionProviders/@providers.0/@expressions.147">
                 <feature
                     href="OntoUML.genmodel#//OntoUML/MultiplicityElement/upper"/>
               </initializers>
@@ -4595,13 +4585,13 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.152">
+              value="//@expressionProviders/@providers.0/@expressions.148">
             <feature
                 href="OntoUML.genmodel#//OntoUML/DirectedRelationship/source"/>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.153">
+              value="//@expressionProviders/@providers.0/@expressions.149">
             <feature
                 href="OntoUML.genmodel#//OntoUML/DirectedRelationship/target"/>
           </initializers>
@@ -4686,9 +4676,9 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.154">
+                  value="//@expressionProviders/@providers.0/@expressions.150">
                 <feature
-                    href="OntoUML.genmodel#//OntoUML/Property/endType"/>
+                    href="OntoUML.genmodel#//OntoUML/Property/associationEnd"/>
               </initializers>
               <elementClass
                   href="OntoUML.genmodel#//OntoUML/Property"/>
@@ -4701,13 +4691,7 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.155">
-                <feature
-                    href="OntoUML.genmodel#//OntoUML/Property/endType"/>
-              </initializers>
-              <initializers
-                  xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.156">
+                  value="//@expressionProviders/@providers.0/@expressions.151">
                 <feature
                     href="OntoUML.genmodel#//OntoUML/MultiplicityElement/upper"/>
               </initializers>
@@ -4717,25 +4701,25 @@
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.157">
+              value="//@expressionProviders/@providers.0/@expressions.152">
             <feature
                 href="OntoUML.genmodel#//OntoUML/DirectedRelationship/source"/>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.158">
+              value="//@expressionProviders/@providers.0/@expressions.153">
             <feature
                 href="OntoUML.genmodel#//OntoUML/DirectedRelationship/target"/>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.159">
+              value="//@expressionProviders/@providers.0/@expressions.154">
             <feature
                 href="OntoUML.genmodel#//OntoUML/Meronymic/isShareable"/>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.160">
+              value="//@expressionProviders/@providers.0/@expressions.155">
             <feature
                 href="OntoUML.genmodel#//OntoUML/Meronymic/isEssential"/>
           </initializers>
@@ -4817,7 +4801,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.161">
+              value="//@expressionProviders/@providers.0/@expressions.156">
             <feature
                 href="OntoUML.genmodel#//OntoUML/Property/aux"/>
           </initializers>
@@ -4851,7 +4835,7 @@
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet"
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.162">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.157">
         <metaClass
             href="OntoUML.genmodel#//OntoUML/URML/BinaryAssociationAtom"/>
         <containmentMetaFeature
@@ -4887,7 +4871,7 @@
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet"
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.163">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.158">
         <metaClass
             href="OntoUML.genmodel#//OntoUML/URML/BinaryAssociationAtom"/>
         <containmentMetaFeature
@@ -4923,7 +4907,7 @@
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet"
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.164">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.159">
         <metaClass
             href="OntoUML.genmodel#//OntoUML/URML/BinaryAssociationAtom"/>
         <containmentMetaFeature
@@ -5003,7 +4987,7 @@
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet"
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.165">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.160">
         <metaClass
             href="OntoUML.genmodel#//OntoUML/URML/ClassifierAtom"/>
         <containmentMetaFeature
@@ -5039,7 +5023,7 @@
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet"
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.166">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.161">
         <metaClass
             href="OntoUML.genmodel#//OntoUML/URML/ClassifierAtom"/>
         <containmentMetaFeature
@@ -5075,7 +5059,7 @@
       </viewmap>
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet"
-          modelElementSelector="//@expressionProviders/@providers.0/@expressions.167">
+          modelElementSelector="//@expressionProviders/@providers.0/@expressions.162">
         <metaClass
             href="OntoUML.genmodel#//OntoUML/URML/ClassifierAtom"/>
         <containmentMetaFeature
@@ -13363,33 +13347,31 @@
       <expressions
           body="'RuleID'"/>
       <expressions
-          body="self.source.sourceAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
+          body="null -- I used this Feature Value Spec to be able to create the new Property instance."/>
       <expressions
-          body="self.target.targetAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
+          body="null -- I used this Feature Value Spec to be able to create the new Property instance."/>
       <expressions
           body="sourceAux2"/>
       <expressions
           body="targetAux2"/>
       <expressions
-          body="self.source.sourceAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
+          body="null -- I used this Feature Value Spec to be able to create the new Property instance."/>
       <expressions
-          body="self.target.targetAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
+          body="null -- I used this Feature Value Spec to be able to create the new Property instance."/>
       <expressions
           body="sourceAux2"/>
       <expressions
           body="targetAux2"/>
       <expressions
           body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association) else null endif"/>
-      <expressions
-          body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association).associationEndAux1->any(true) else null endif"/>
       <expressions
           body="0"/>
       <expressions
           body="-1"/>
       <expressions
-          body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association) else null endif"/>
+          body="1"/>
       <expressions
-          body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association).associationEndAux2->any(true) else null endif"/>
+          body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association) else null endif"/>
       <expressions
           body="1"/>
       <expressions
@@ -13397,9 +13379,9 @@
       <expressions
           body="true"/>
       <expressions
-          body="self.source.sourceAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
+          body="2"/>
       <expressions
-          body="self.target.targetAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
+          body="null -- I used this Feature Value Spec to be able to create the new Property instance."/>
       <expressions
           body="1"/>
       <expressions
@@ -13413,31 +13395,27 @@
       <expressions
           body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association) else null endif"/>
       <expressions
-          body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association).associationEndAux1->any(true) else null endif"/>
+          body="1"/>
       <expressions
           body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association) else null endif"/>
       <expressions
-          body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association).associationEndAux2->any(true) else null endif"/>
+          body="2"/>
       <expressions
           body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association) else null endif"/>
-      <expressions
-          body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association).associationEndAux1->any(true) else null endif"/>
       <expressions
           body="true"/>
       <expressions
-          body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association) else null endif"/>
+          body="1"/>
       <expressions
-          body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association).associationEndAux2->any(true) else null endif"/>
+          body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association) else null endif"/>
       <expressions
           body="true"/>
       <expressions
-          body="self.source.sourceAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
+          body="2"/>
       <expressions
           body="1"/>
       <expressions
           body="1"/>
-      <expressions
-          body="self.target.targetAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
       <expressions
           body="true"/>
       <expressions
@@ -13449,17 +13427,15 @@
       <expressions
           body="targetAux2"/>
       <expressions
-          body="self.source.sourceAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
+          body="null -- I used this Feature Value Spec to be able to create the new Property instance."/>
       <expressions
-          body="self.target.targetAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
+          body="null -- I used this Feature Value Spec to be able to create the new Property instance."/>
       <expressions
           body="sourceAux2"/>
       <expressions
           body="targetAux2"/>
       <expressions
-          body="self.source.sourceAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
-      <expressions
-          body="self.target.targetAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
+          body="null -- I used this Feature Value Spec to be able to create the new Property instance."/>
       <expressions
           body="1"/>
       <expressions
@@ -13467,9 +13443,7 @@
       <expressions
           body="targetAux2"/>
       <expressions
-          body="self.source.sourceAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
-      <expressions
-          body="self.target.targetAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
+          body="null -- I used this Feature Value Spec to be able to create the new Property instance."/>
       <expressions
           body="1"/>
       <expressions
@@ -13584,6 +13558,9 @@
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="self.associationEnd->forAll(x | x.isDerived = true)"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (self.associationEnd->exists(z | if z.oclIsKindOf(Property) then (y.oclAsType(Property).endType = z.oclAsType(Property).endType) else false endif)) else false endif)) in (A->collect(x | if x.target->forAll(y | y.oclIsKindOf(Property)) then x.target.oclAsType(Property).endType else null endif)->includesAll(if self.associationEnd->forAll(x | x.oclIsKindOf(Property)) then self.associationEnd.oclAsType(Property).endType else null endif) and A->forAll(x | x.source->exists(y | if y.oclIsKindOf(Property) then A->exists(z | (x.target->exists(w | if w.oclIsKindOf(Property) then (z.target->exists(k | if k.oclIsKindOf(Property) then (w.oclAsType(Property).endType &lt;> k.oclAsType(Property).endType) else false endif)) else false endif)) and (z.source->exists(w | if w.oclIsKindOf(Property) then ((y.oclAsType(Property).endType = w.oclAsType(Property).endType) and y.oclAsType(Property).endType.oclIsKindOf(Relator)) else false endif))) else false endif)))"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="self.source->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.oclIsTypeOf(Relator) else false endif)"/>

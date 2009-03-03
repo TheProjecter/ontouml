@@ -10,16 +10,18 @@
     <genClasses ecoreClass="OntoUML.ecore#//AntiRigidMixinClass"/>
     <genClasses ecoreClass="OntoUML.ecore#//AntiRigidSortalClass"/>
     <genClasses ecoreClass="OntoUML.ecore#//Association">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//Association/associationEnd"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//Association/associationEndAux1"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//Association/associationEndAux2"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//Association/associationEnd"/>
+      <genFeatures property="None" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference OntoUML.ecore#//Association/associationEndAux1"/>
+      <genFeatures property="None" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference OntoUML.ecore#//Association/associationEndAux2"/>
     </genClasses>
     <genClasses ecoreClass="OntoUML.ecore#//Category"/>
     <genClasses ecoreClass="OntoUML.ecore#//Characterization"/>
     <genClasses ecoreClass="OntoUML.ecore#//Class"/>
     <genClasses ecoreClass="OntoUML.ecore#//Classifier">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OntoUML.ecore#//Classifier/isAbstract"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//Classifier/general"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//Classifier/general"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OntoUML.ecore#//Classifier/generalization"/>
     </genClasses>
     <genClasses ecoreClass="OntoUML.ecore#//Collective">
@@ -35,17 +37,19 @@
     <genClasses ecoreClass="OntoUML.ecore#//Derivation"/>
     <genClasses ecoreClass="OntoUML.ecore#//DirectedBinaryRelationship"/>
     <genClasses ecoreClass="OntoUML.ecore#//DirectedRelationship">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//DirectedRelationship/target"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//DirectedRelationship/source"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//DirectedRelationship/targetAux1"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//DirectedRelationship/sourceAux1"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//DirectedRelationship/target"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//DirectedRelationship/source"/>
+      <genFeatures property="None" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference OntoUML.ecore#//DirectedRelationship/targetAux1"/>
+      <genFeatures property="None" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference OntoUML.ecore#//DirectedRelationship/sourceAux1"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OntoUML.ecore#//DirectedRelationship/targetAux2"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OntoUML.ecore#//DirectedRelationship/sourceAux2"/>
     </genClasses>
     <genClasses ecoreClass="OntoUML.ecore#//Element">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference OntoUML.ecore#//Element/attribute"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference OntoUML.ecore#//Element/owner"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference OntoUML.ecore#//Element/container"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference OntoUML.ecore#//Element/owner"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference OntoUML.ecore#//Element/container"/>
       <genOperations ecoreOperation="OntoUML.ecore#//Element/allSuperTypes"/>
       <genOperations ecoreOperation="OntoUML.ecore#//Element/isConected">
         <genParameters ecoreParameter="OntoUML.ecore#//Element/isConected/x"/>
@@ -62,14 +66,14 @@
     </genClasses>
     <genClasses ecoreClass="OntoUML.ecore#//FormalAssociation"/>
     <genClasses ecoreClass="OntoUML.ecore#//Generalization">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference OntoUML.ecore#//Generalization/specific"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//Generalization/general"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//Generalization/semnome"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference OntoUML.ecore#//Generalization/specific"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//Generalization/general"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//Generalization/semnome"/>
     </genClasses>
     <genClasses ecoreClass="OntoUML.ecore#//GeneralizationSet">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OntoUML.ecore#//GeneralizationSet/isCovering"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OntoUML.ecore#//GeneralizationSet/isDisjoint"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//GeneralizationSet/semnome"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//GeneralizationSet/semnome"/>
     </genClasses>
     <genClasses ecoreClass="OntoUML.ecore#//Kind"/>
     <genClasses ecoreClass="OntoUML.ecore#//MaterialAssociation"/>
@@ -100,11 +104,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OntoUML.ecore#//Property/isDerived"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OntoUML.ecore#//Property/isReadOnly"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute OntoUML.ecore#//Property/isNavigable"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//Property/endType"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//Property/associationEnd"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//Property/source"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//Property/target"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//Property/aux"/>
+      <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference OntoUML.ecore#//Property/endType"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//Property/associationEnd"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//Property/source"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//Property/target"/>
+      <genFeatures property="None" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference OntoUML.ecore#//Property/aux"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute OntoUML.ecore#//Property/associationEndPositionAux"/>
       <genOperations ecoreOperation="OntoUML.ecore#//Property/derivarLowerMaterialAssociation"/>
       <genOperations ecoreOperation="OntoUML.ecore#//Property/derivarUpperMaterialAssociation"/>
       <genOperations ecoreOperation="OntoUML.ecore#//Property/derivarLowerDerivation"/>
@@ -113,7 +120,7 @@
     <genClasses ecoreClass="OntoUML.ecore#//Quantity"/>
     <genClasses ecoreClass="OntoUML.ecore#//RelationalClassifier"/>
     <genClasses ecoreClass="OntoUML.ecore#//Relationship">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//Relationship/relatedElement"/>
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference OntoUML.ecore#//Relationship/relatedElement"/>
     </genClasses>
     <genClasses ecoreClass="OntoUML.ecore#//Relator"/>
     <genClasses ecoreClass="OntoUML.ecore#//RigidMixinClass"/>

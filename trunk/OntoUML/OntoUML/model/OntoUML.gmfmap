@@ -1959,9 +1959,9 @@
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
                 xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/endType"/>
+                href="OntoUML.ecore#//Property/associationEnd"/>
             <value
-                body="self.source.sourceAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
+                body="null -- I used this Feature Value Spec to be able to create the new Property instance."/>
           </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
@@ -1977,9 +1977,9 @@
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
                 xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/endType"/>
+                href="OntoUML.ecore#//Property/associationEnd"/>
             <value
-                body="self.target.targetAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
+                body="null -- I used this Feature Value Spec to be able to create the new Property instance."/>
           </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
@@ -2043,9 +2043,9 @@
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
                 xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/endType"/>
+                href="OntoUML.ecore#//Property/associationEnd"/>
             <value
-                body="self.source.sourceAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
+                body="null -- I used this Feature Value Spec to be able to create the new Property instance."/>
           </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
@@ -2061,9 +2061,9 @@
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
                 xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/endType"/>
+                href="OntoUML.ecore#//Property/associationEnd"/>
             <value
-                body="self.target.targetAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
+                body="null -- I used this Feature Value Spec to be able to create the new Property instance."/>
           </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
@@ -2134,14 +2134,6 @@
           <initializers
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
-                xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/endType"/>
-            <value
-                body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association).associationEndAux1->any(true) else null endif"/>
-          </initializers>
-          <initializers
-              xsi:type="gmfmap:FeatureValueSpec">
-            <feature
                 xsi:type="ecore:EAttribute"
                 href="OntoUML.ecore#//MultiplicityElement/lower"/>
             <value
@@ -2155,6 +2147,14 @@
             <value
                 body="-1"/>
           </initializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//Property/associationEndPositionAux"/>
+            <value
+                body="1"/>
+          </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
         </newElementInitializers>
@@ -2166,14 +2166,6 @@
                 href="OntoUML.ecore#//Property/associationEnd"/>
             <value
                 body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association) else null endif"/>
-          </initializers>
-          <initializers
-              xsi:type="gmfmap:FeatureValueSpec">
-            <feature
-                xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/endType"/>
-            <value
-                body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association).associationEndAux2->any(true) else null endif"/>
           </initializers>
           <initializers
               xsi:type="gmfmap:FeatureValueSpec">
@@ -2198,6 +2190,14 @@
                 href="OntoUML.ecore#//Property/isNavigable"/>
             <value
                 body="true"/>
+          </initializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//Property/associationEndPositionAux"/>
+            <value
+                body="2"/>
           </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
@@ -2240,9 +2240,9 @@
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
                 xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/endType"/>
+                href="OntoUML.ecore#//Property/associationEnd"/>
             <value
-                body="self.source.sourceAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
+                body="null -- I used this Feature Value Spec to be able to create the new Property instance."/>
           </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
@@ -2254,14 +2254,6 @@
             xsi:type="ecore:EReference"
             href="OntoUML.ecore#//DirectedRelationship/targetAux2"/>
         <newElementInitializers>
-          <initializers
-              xsi:type="gmfmap:FeatureValueSpec">
-            <feature
-                xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/endType"/>
-            <value
-                body="self.target.targetAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
-          </initializers>
           <initializers
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
@@ -2350,10 +2342,10 @@
           <initializers
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
-                xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/endType"/>
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//Property/associationEndPositionAux"/>
             <value
-                body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association).associationEndAux1->any(true) else null endif"/>
+                body="1"/>
           </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
@@ -2370,10 +2362,10 @@
           <initializers
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
-                xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/endType"/>
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//Property/associationEndPositionAux"/>
             <value
-                body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association).associationEndAux2->any(true) else null endif"/>
+                body="2"/>
           </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
@@ -2445,18 +2437,18 @@
           <initializers
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
-                xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/endType"/>
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//Property/isDerived"/>
             <value
-                body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association).associationEndAux1->any(true) else null endif"/>
+                body="true"/>
           </initializers>
           <initializers
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
                 xsi:type="ecore:EAttribute"
-                href="OntoUML.ecore#//Property/isDerived"/>
+                href="OntoUML.ecore#//Property/associationEndPositionAux"/>
             <value
-                body="true"/>
+                body="1"/>
           </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
@@ -2473,18 +2465,18 @@
           <initializers
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
-                xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/endType"/>
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//Property/isDerived"/>
             <value
-                body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association).associationEndAux2->any(true) else null endif"/>
+                body="true"/>
           </initializers>
           <initializers
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
                 xsi:type="ecore:EAttribute"
-                href="OntoUML.ecore#//Property/isDerived"/>
+                href="OntoUML.ecore#//Property/associationEndPositionAux"/>
             <value
-                body="true"/>
+                body="2"/>
           </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
@@ -2531,14 +2523,6 @@
           <initializers
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
-                xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/endType"/>
-            <value
-                body="self.source.sourceAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
-          </initializers>
-          <initializers
-              xsi:type="gmfmap:FeatureValueSpec">
-            <feature
                 xsi:type="ecore:EAttribute"
                 href="OntoUML.ecore#//MultiplicityElement/lower"/>
             <value
@@ -2562,14 +2546,6 @@
             xsi:type="ecore:EReference"
             href="OntoUML.ecore#//DirectedRelationship/targetAux2"/>
         <newElementInitializers>
-          <initializers
-              xsi:type="gmfmap:FeatureValueSpec">
-            <feature
-                xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/endType"/>
-            <value
-                body="self.target.targetAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
-          </initializers>
           <initializers
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
@@ -2656,9 +2632,9 @@
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
                 xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/endType"/>
+                href="OntoUML.ecore#//Property/associationEnd"/>
             <value
-                body="self.source.sourceAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
+                body="null -- I used this Feature Value Spec to be able to create the new Property instance."/>
           </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
@@ -2674,9 +2650,9 @@
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
                 xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/endType"/>
+                href="OntoUML.ecore#//Property/associationEnd"/>
             <value
-                body="self.target.targetAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
+                body="null -- I used this Feature Value Spec to be able to create the new Property instance."/>
           </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
@@ -2740,9 +2716,9 @@
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
                 xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/endType"/>
+                href="OntoUML.ecore#//Property/associationEnd"/>
             <value
-                body="self.source.sourceAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
+                body="null -- I used this Feature Value Spec to be able to create the new Property instance."/>
           </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
@@ -2754,14 +2730,6 @@
             xsi:type="ecore:EReference"
             href="OntoUML.ecore#//DirectedRelationship/targetAux2"/>
         <newElementInitializers>
-          <initializers
-              xsi:type="gmfmap:FeatureValueSpec">
-            <feature
-                xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/endType"/>
-            <value
-                body="self.target.targetAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
-          </initializers>
           <initializers
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
@@ -2832,9 +2800,9 @@
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
                 xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/endType"/>
+                href="OntoUML.ecore#//Property/associationEnd"/>
             <value
-                body="self.source.sourceAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
+                body="null -- I used this Feature Value Spec to be able to create the new Property instance."/>
           </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
@@ -2846,14 +2814,6 @@
             xsi:type="ecore:EReference"
             href="OntoUML.ecore#//DirectedRelationship/targetAux2"/>
         <newElementInitializers>
-          <initializers
-              xsi:type="gmfmap:FeatureValueSpec">
-            <feature
-                xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/endType"/>
-            <value
-                body="self.target.targetAux1->any(x | x.oclIsKindOf(Type)).oclAsType(Type)"/>
-          </initializers>
           <initializers
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
@@ -3487,6 +3447,19 @@
           message="Instâncias de Material Association devem ter suas extremidades com seus respectivos meta-atributos isDerived = true.">
         <rule
             body="self.associationEnd->forAll(x | x.isDerived = true)"/>
+        <target
+            xsi:type="gmfmap:DomainElementTarget">
+          <element
+              href="OntoUML.ecore#//MaterialAssociation"/>
+        </target>
+      </audits>
+      <audits
+          name="MaterialAssociationConstraint4"
+          id="MaterialAssociationConstraint4"
+          useInLiveMode="true"
+          message="Material Association instances needs to have its extremities mediated by an unique Relator Universal instance.">
+        <rule
+            body="let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (self.associationEnd->exists(z | if z.oclIsKindOf(Property) then (y.oclAsType(Property).endType = z.oclAsType(Property).endType) else false endif)) else false endif)) in (A->collect(x | if x.target->forAll(y | y.oclIsKindOf(Property)) then x.target.oclAsType(Property).endType else null endif)->includesAll(if self.associationEnd->forAll(x | x.oclIsKindOf(Property)) then self.associationEnd.oclAsType(Property).endType else null endif) and A->forAll(x | x.source->exists(y | if y.oclIsKindOf(Property) then A->exists(z | (x.target->exists(w | if w.oclIsKindOf(Property) then (z.target->exists(k | if k.oclIsKindOf(Property) then (w.oclAsType(Property).endType &lt;> k.oclAsType(Property).endType) else false endif)) else false endif)) and (z.source->exists(w | if w.oclIsKindOf(Property) then ((y.oclAsType(Property).endType = w.oclAsType(Property).endType) and y.oclAsType(Property).endType.oclIsKindOf(Relator)) else false endif))) else false endif)))"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
