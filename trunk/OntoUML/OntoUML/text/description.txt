@@ -119,11 +119,12 @@ Package OntoUML <OntoUML>
     Attribute isDerived : EBoolean<<1..1>>
     Attribute isReadOnly : EBoolean<<1..1>>
     Attribute isNavigable : EBoolean<<1..1>>
-    Reference endType : Type
+    Reference /endType : Type
     Reference associationEnd : Association
     Reference /source : DirectedBinaryRelationship
     Reference /target : DirectedBinaryRelationship
     Reference aux : Property
+    Attribute associationEndPositionAux : EInt
     Operation derivarLowerMaterialAssociation() : EInt
     Operation derivarUpperMaterialAssociation() : EInt
     Operation derivarLowerDerivation() : EInt

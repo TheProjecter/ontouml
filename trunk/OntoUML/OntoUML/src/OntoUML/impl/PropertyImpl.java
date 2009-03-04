@@ -44,6 +44,7 @@ import org.eclipse.ocl.expressions.OCLExpression;
  *   <li>{@link OntoUML.impl.PropertyImpl#getSource <em>Source</em>}</li>
  *   <li>{@link OntoUML.impl.PropertyImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link OntoUML.impl.PropertyImpl#getAux <em>Aux</em>}</li>
+ *   <li>{@link OntoUML.impl.PropertyImpl#getAssociationEndPositionAux <em>Association End Position Aux</em>}</li>
  * </ul>
  * </p>
  *
@@ -111,16 +112,6 @@ public class PropertyImpl extends StructuralFeatureImpl implements Property {
 	protected boolean isNavigable = IS_NAVIGABLE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getEndType() <em>End Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEndType()
-	 * @generated
-	 * @ordered
-	 */
-	protected Type endType;
-
-	/**
 	 * The cached value of the '{@link #getAssociationEnd() <em>Association End</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -139,6 +130,26 @@ public class PropertyImpl extends StructuralFeatureImpl implements Property {
 	 * @ordered
 	 */
 	protected Property aux;
+
+	/**
+	 * The default value of the '{@link #getAssociationEndPositionAux() <em>Association End Position Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssociationEndPositionAux()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ASSOCIATION_END_POSITION_AUX_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getAssociationEndPositionAux() <em>Association End Position Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssociationEndPositionAux()
+	 * @generated
+	 * @ordered
+	 */
+	protected int associationEndPositionAux = ASSOCIATION_END_POSITION_AUX_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -228,15 +239,8 @@ public class PropertyImpl extends StructuralFeatureImpl implements Property {
 	 * @generated
 	 */
 	public Type getEndType() {
-		if (endType != null && endType.eIsProxy()) {
-			InternalEObject oldEndType = (InternalEObject)endType;
-			endType = (Type)eResolveProxy(oldEndType);
-			if (endType != oldEndType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, OntoUMLPackage.PROPERTY__END_TYPE, oldEndType, endType));
-			}
-		}
-		return endType;
+		Type endType = basicGetEndType();
+		return endType != null && endType.eIsProxy() ? (Type)eResolveProxy((InternalEObject)endType) : endType;
 	}
 
 	/**
@@ -245,7 +249,26 @@ public class PropertyImpl extends StructuralFeatureImpl implements Property {
 	 * @generated
 	 */
 	public Type basicGetEndType() {
-		return endType;
+		if (endTypeDeriveOCL == null) { 
+			EStructuralFeature eFeature = (OntoUMLPackage.Literals.PROPERTY__END_TYPE);
+			
+			Helper helper = OCL_ENV.createOCLHelper();
+			helper.setAttributeContext(OntoUMLPackage.Literals.PROPERTY, eFeature);
+			
+			EAnnotation ocl = eFeature.getEAnnotation(OCL_ANNOTATION_SOURCE);
+			String derive = (String) ocl.getDetails().get("derive");
+			
+			try {
+				endTypeDeriveOCL = helper.createQuery(derive);
+			} catch (ParserException e) {
+				throw new UnsupportedOperationException(e.getLocalizedMessage());
+			}
+		}
+		
+		Query<EClassifier, ?, ?> query = OCL_ENV.createQuery(endTypeDeriveOCL);
+	
+		return (Type) query.evaluate(this);
+	
 	}
 
 	/**
@@ -254,10 +277,9 @@ public class PropertyImpl extends StructuralFeatureImpl implements Property {
 	 * @generated
 	 */
 	public void setEndType(Type newEndType) {
-		Type oldEndType = endType;
-		endType = newEndType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OntoUMLPackage.PROPERTY__END_TYPE, oldEndType, endType));
+		// TODO: implement this method to set the 'End Type' reference
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -461,6 +483,27 @@ public class PropertyImpl extends StructuralFeatureImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getAssociationEndPositionAux() {
+		return associationEndPositionAux;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAssociationEndPositionAux(int newAssociationEndPositionAux) {
+		int oldAssociationEndPositionAux = associationEndPositionAux;
+		associationEndPositionAux = newAssociationEndPositionAux;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OntoUMLPackage.PROPERTY__ASSOCIATION_END_POSITION_AUX, oldAssociationEndPositionAux, associationEndPositionAux));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public int derivarLowerMaterialAssociation() {
 		if (derivarLowerMaterialAssociationBodyOCL == null) {
 			EOperation eOperation = OntoUMLPackage.Literals.PROPERTY.getEOperations().get(0);
@@ -619,6 +662,8 @@ public class PropertyImpl extends StructuralFeatureImpl implements Property {
 			case OntoUMLPackage.PROPERTY__AUX:
 				if (resolve) return getAux();
 				return basicGetAux();
+			case OntoUMLPackage.PROPERTY__ASSOCIATION_END_POSITION_AUX:
+				return new Integer(getAssociationEndPositionAux());
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -654,6 +699,9 @@ public class PropertyImpl extends StructuralFeatureImpl implements Property {
 				return;
 			case OntoUMLPackage.PROPERTY__AUX:
 				setAux((Property)newValue);
+				return;
+			case OntoUMLPackage.PROPERTY__ASSOCIATION_END_POSITION_AUX:
+				setAssociationEndPositionAux(((Integer)newValue).intValue());
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -691,6 +739,9 @@ public class PropertyImpl extends StructuralFeatureImpl implements Property {
 			case OntoUMLPackage.PROPERTY__AUX:
 				setAux((Property)null);
 				return;
+			case OntoUMLPackage.PROPERTY__ASSOCIATION_END_POSITION_AUX:
+				setAssociationEndPositionAux(ASSOCIATION_END_POSITION_AUX_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -710,7 +761,7 @@ public class PropertyImpl extends StructuralFeatureImpl implements Property {
 			case OntoUMLPackage.PROPERTY__IS_NAVIGABLE:
 				return isNavigable != IS_NAVIGABLE_EDEFAULT;
 			case OntoUMLPackage.PROPERTY__END_TYPE:
-				return endType != null;
+				return basicGetEndType() != null;
 			case OntoUMLPackage.PROPERTY__ASSOCIATION_END:
 				return associationEnd != null;
 			case OntoUMLPackage.PROPERTY__SOURCE:
@@ -719,6 +770,8 @@ public class PropertyImpl extends StructuralFeatureImpl implements Property {
 				return basicGetTarget() != null;
 			case OntoUMLPackage.PROPERTY__AUX:
 				return aux != null;
+			case OntoUMLPackage.PROPERTY__ASSOCIATION_END_POSITION_AUX:
+				return associationEndPositionAux != ASSOCIATION_END_POSITION_AUX_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -739,6 +792,8 @@ public class PropertyImpl extends StructuralFeatureImpl implements Property {
 		result.append(isReadOnly);
 		result.append(", isNavigable: ");
 		result.append(isNavigable);
+		result.append(", associationEndPositionAux: ");
+		result.append(associationEndPositionAux);
 		result.append(')');
 		return result.toString();
 	}
@@ -778,6 +833,15 @@ public class PropertyImpl extends StructuralFeatureImpl implements Property {
 	 * @generated
 	 */
 	private static OCLExpression<EClassifier> derivarUpperDerivationBodyOCL;
+
+	/**
+	 * The parsed OCL expression for the derivation of '{@link #getEndType <em>End Type</em>}' property.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEndType
+	 * @generated
+	 */
+	private static OCLExpression<EClassifier> endTypeDeriveOCL;
 
 	/**
 	 * The parsed OCL expression for the derivation of '{@link #getSource <em>Source</em>}' property.

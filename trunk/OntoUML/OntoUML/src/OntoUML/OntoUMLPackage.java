@@ -4315,13 +4315,22 @@ public interface OntoUMLPackage extends EPackage {
 	int PROPERTY__AUX = STRUCTURAL_FEATURE_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Association End Position Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY__ASSOCIATION_END_POSITION_AUX = STRUCTURAL_FEATURE_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_FEATURE_COUNT = STRUCTURAL_FEATURE_FEATURE_COUNT + 8;
+	int PROPERTY_FEATURE_COUNT = STRUCTURAL_FEATURE_FEATURE_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link OntoUML.impl.QuantityImpl <em>Quantity</em>}' class.
@@ -6140,6 +6149,17 @@ public interface OntoUMLPackage extends EPackage {
 	EReference getProperty_Aux();
 
 	/**
+	 * Returns the meta object for the attribute '{@link OntoUML.Property#getAssociationEndPositionAux <em>Association End Position Aux</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Association End Position Aux</em>'.
+	 * @see OntoUML.Property#getAssociationEndPositionAux()
+	 * @see #getProperty()
+	 * @generated
+	 */
+	EAttribute getProperty_AssociationEndPositionAux();
+
+	/**
 	 * Returns the meta object for class '{@link OntoUML.Quantity <em>Quantity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7013,6 +7033,14 @@ public interface OntoUMLPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROPERTY__AUX = eINSTANCE.getProperty_Aux();
+
+		/**
+		 * The meta object literal for the '<em><b>Association End Position Aux</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROPERTY__ASSOCIATION_END_POSITION_AUX = eINSTANCE.getProperty_AssociationEndPositionAux();
 
 		/**
 		 * The meta object literal for the '{@link OntoUML.impl.QuantityImpl <em>Quantity</em>}' class.

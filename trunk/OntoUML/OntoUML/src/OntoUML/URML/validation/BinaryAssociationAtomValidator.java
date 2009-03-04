@@ -6,6 +6,7 @@
  */
 package OntoUML.URML.validation;
 
+import OntoUML.Relationship;
 import OntoUML.Association;
 
 import OntoUML.URML.ObjectVariable;
@@ -18,6 +19,8 @@ import OntoUML.URML.ObjectVariable;
  */
 public interface BinaryAssociationAtomValidator {
 	boolean validate();
+
+	boolean validateAssociation(Relationship value);
 
 	boolean validateSrcVariable(ObjectVariable value);
 	boolean validateTgtVariable(ObjectVariable value);

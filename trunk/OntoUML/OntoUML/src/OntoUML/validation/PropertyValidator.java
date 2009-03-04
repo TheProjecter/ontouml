@@ -28,4 +28,6 @@ public interface PropertyValidator {
 	boolean validateSource(DirectedBinaryRelationship value);
 	boolean validateTarget(DirectedBinaryRelationship value);
 	boolean validateAux(Property value);
+
+	boolean validateAssociationEndPositionAux(int value);
 }

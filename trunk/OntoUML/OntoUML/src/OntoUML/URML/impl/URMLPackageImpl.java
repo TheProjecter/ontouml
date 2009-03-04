@@ -451,11 +451,11 @@ public class URMLPackageImpl extends EPackageImpl implements URMLPackage {
 		initEReference(getDerivationRule_Conclusion(), this.getConclusion(), this.getConclusion_ConclusionRule(), "conclusion", null, 0, -1, DerivationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(conclusionEClass, Conclusion.class, "Conclusion", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConclusion_ConclusionRule(), this.getDerivationRule(), this.getDerivationRule_Conclusion(), "conclusionRule", null, 1, 1, Conclusion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConclusion_ConclusionRule(), this.getDerivationRule(), this.getDerivationRule_Conclusion(), "conclusionRule", null, 0, 1, Conclusion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(conditionEClass, Condition.class, "Condition", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCondition_Negative(), ecorePackage.getEBoolean(), "negative", null, 1, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getCondition_ConditionRule(), this.getRule(), this.getRule_Condition(), "conditionRule", null, 1, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getCondition_ConditionRule(), this.getRule(), this.getRule_Condition(), "conditionRule", null, 0, 1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(classifierAtomEClass, ClassifierAtom.class, "ClassifierAtom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getClassifierAtom_Class(), theOntoUMLPackage.getClass_(), null, "class", null, 1, 1, ClassifierAtom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -464,7 +464,7 @@ public class URMLPackageImpl extends EPackageImpl implements URMLPackage {
 		initEClass(roleTypeAtomEClass, RoleTypeAtom.class, "RoleTypeAtom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(binaryAssociationAtomEClass, BinaryAssociationAtom.class, "BinaryAssociationAtom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBinaryAssociationAtom_Association(), theOntoUMLPackage.getAssociation(), null, "association", null, 1, 1, BinaryAssociationAtom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryAssociationAtom_Association(), theOntoUMLPackage.getRelationship(), null, "association", null, 1, 1, BinaryAssociationAtom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBinaryAssociationAtom_SourceVariable(), ecorePackage.getEString(), "sourceVariable", null, 0, 1, BinaryAssociationAtom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBinaryAssociationAtom_TargetVariable(), ecorePackage.getEString(), "targetVariable", null, 0, 1, BinaryAssociationAtom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

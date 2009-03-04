@@ -6,6 +6,7 @@
  */
 package OntoUML.URML.impl;
 
+import OntoUML.Relationship;
 import OntoUML.Association;
 
 import OntoUML.URML.BinaryAssociationAtom;
@@ -59,7 +60,7 @@ public class BinaryAssociationAtomImpl extends ConditionImpl implements BinaryAs
 	 * @generated
 	 * @ordered
 	 */
-	protected Association association;
+	protected Relationship association;
 
 	/**
 	 * The default value of the '{@link #getSourceVariable() <em>Source Variable</em>}' attribute.
@@ -185,10 +186,10 @@ public class BinaryAssociationAtomImpl extends ConditionImpl implements BinaryAs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Association getAssociation() {
+	public Relationship getAssociation() {
 		if (association != null && association.eIsProxy()) {
 			InternalEObject oldAssociation = (InternalEObject)association;
-			association = (Association)eResolveProxy(oldAssociation);
+			association = (Relationship)eResolveProxy(oldAssociation);
 			if (association != oldAssociation) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, URMLPackage.BINARY_ASSOCIATION_ATOM__ASSOCIATION, oldAssociation, association));
@@ -202,7 +203,7 @@ public class BinaryAssociationAtomImpl extends ConditionImpl implements BinaryAs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Association basicGetAssociation() {
+	public Relationship basicGetAssociation() {
 		return association;
 	}
 
@@ -211,8 +212,8 @@ public class BinaryAssociationAtomImpl extends ConditionImpl implements BinaryAs
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAssociation(Association newAssociation) {
-		Association oldAssociation = association;
+	public void setAssociation(Relationship newAssociation) {
+		Relationship oldAssociation = association;
 		association = newAssociation;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, URMLPackage.BINARY_ASSOCIATION_ATOM__ASSOCIATION, oldAssociation, association));
@@ -324,7 +325,7 @@ public class BinaryAssociationAtomImpl extends ConditionImpl implements BinaryAs
 				setConclusionRule((DerivationRule)newValue);
 				return;
 			case URMLPackage.BINARY_ASSOCIATION_ATOM__ASSOCIATION:
-				setAssociation((Association)newValue);
+				setAssociation((Relationship)newValue);
 				return;
 			case URMLPackage.BINARY_ASSOCIATION_ATOM__SOURCE_VARIABLE:
 				setSourceVariable((String)newValue);
@@ -348,7 +349,7 @@ public class BinaryAssociationAtomImpl extends ConditionImpl implements BinaryAs
 				setConclusionRule((DerivationRule)null);
 				return;
 			case URMLPackage.BINARY_ASSOCIATION_ATOM__ASSOCIATION:
-				setAssociation((Association)null);
+				setAssociation((Relationship)null);
 				return;
 			case URMLPackage.BINARY_ASSOCIATION_ATOM__SOURCE_VARIABLE:
 				setSourceVariable(SOURCE_VARIABLE_EDEFAULT);

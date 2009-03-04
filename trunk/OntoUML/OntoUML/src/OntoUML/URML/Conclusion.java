@@ -38,7 +38,7 @@ public interface Conclusion extends RelationalClassifier {
 	 * @see #setConclusionRule(DerivationRule)
 	 * @see OntoUML.URML.URMLPackage#getConclusion_ConclusionRule()
 	 * @see OntoUML.URML.DerivationRule#getConclusion
-	 * @model opposite="conclusion" required="true"
+	 * @model opposite="conclusion"
 	 * @generated
 	 */
 	DerivationRule getConclusionRule();

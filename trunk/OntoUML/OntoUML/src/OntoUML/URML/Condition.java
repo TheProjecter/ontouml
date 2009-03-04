@@ -65,7 +65,7 @@ public interface Condition extends RelationalClassifier {
 	 * @see #setConditionRule(Rule)
 	 * @see OntoUML.URML.URMLPackage#getCondition_ConditionRule()
 	 * @see OntoUML.URML.Rule#getCondition
-	 * @model opposite="condition" required="true" ordered="false"
+	 * @model opposite="condition" ordered="false"
 	 * @generated
 	 */
 	Rule getConditionRule();

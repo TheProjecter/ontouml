@@ -6,6 +6,7 @@
  */
 package OntoUML.URML;
 
+import OntoUML.Relationship;
 import OntoUML.Association;
 
 /**
@@ -36,12 +37,12 @@ public interface BinaryAssociationAtom extends Condition, Conclusion {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Association</em>' reference.
-	 * @see #setAssociation(Association)
+	 * @see #setAssociation(Relationship)
 	 * @see OntoUML.URML.URMLPackage#getBinaryAssociationAtom_Association()
 	 * @model required="true"
 	 * @generated
 	 */
-	Association getAssociation();
+	Relationship getAssociation();
 
 	/**
 	 * Sets the value of the '{@link OntoUML.URML.BinaryAssociationAtom#getAssociation <em>Association</em>}' reference.
@@ -51,7 +52,7 @@ public interface BinaryAssociationAtom extends Condition, Conclusion {
 	 * @see #getAssociation()
 	 * @generated
 	 */
-	void setAssociation(Association value);
+	void setAssociation(Relationship value);
 
 	/**
 	 * Returns the value of the '<em><b>Source Variable</b></em>' attribute.

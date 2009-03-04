@@ -1193,6 +1193,15 @@ public class OntoUMLPackageImpl extends EPackageImpl implements OntoUMLPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getProperty_AssociationEndPositionAux() {
+		return (EAttribute)propertyEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getQuantity() {
 		return quantityEClass;
 	}
@@ -1495,6 +1504,7 @@ public class OntoUMLPackageImpl extends EPackageImpl implements OntoUMLPackage {
 		createEReference(propertyEClass, PROPERTY__SOURCE);
 		createEReference(propertyEClass, PROPERTY__TARGET);
 		createEReference(propertyEClass, PROPERTY__AUX);
+		createEAttribute(propertyEClass, PROPERTY__ASSOCIATION_END_POSITION_AUX);
 
 		quantityEClass = createEClass(QUANTITY);
 
@@ -1748,11 +1758,12 @@ public class OntoUMLPackageImpl extends EPackageImpl implements OntoUMLPackage {
 		initEAttribute(getProperty_IsDerived(), ecorePackage.getEBoolean(), "isDerived", "false", 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProperty_IsReadOnly(), ecorePackage.getEBoolean(), "isReadOnly", "false", 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProperty_IsNavigable(), ecorePackage.getEBoolean(), "isNavigable", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProperty_EndType(), this.getType(), null, "endType", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProperty_EndType(), this.getType(), null, "endType", null, 0, 1, Property.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getProperty_AssociationEnd(), this.getAssociation(), this.getAssociation_AssociationEnd(), "associationEnd", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProperty_Source(), this.getDirectedBinaryRelationship(), null, "source", null, 0, 1, Property.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getProperty_Target(), this.getDirectedBinaryRelationship(), null, "target", null, 0, 1, Property.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getProperty_Aux(), this.getProperty(), null, "aux", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProperty_AssociationEndPositionAux(), ecorePackage.getEInt(), "associationEndPositionAux", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(propertyEClass, ecorePackage.getEInt(), "derivarLowerMaterialAssociation", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1897,13 +1908,13 @@ public class OntoUMLPackageImpl extends EPackageImpl implements OntoUMLPackage {
 		  (propertyEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
-			 "body", "let A:Set(Mediation) = \r\nMediation.allInstances()->select(x | \r\n\t\tx.target->exists(y | \r\n\t\t\tif y.oclIsKindOf(Property) \r\n\t\t\tthen \r\n\t\t\t\t(y.oclAsType(Property).endType = self.endType) \r\n\t\t\telse \r\n\t\t\t\tfalse \r\n\t\t\tendif)\r\n), \r\n\r\nB:Set(MaterialAssociation) = \r\n\tMaterialAssociation.allInstances()->select(x | \r\n\tx.associationEnd->exists(y | \r\n\t\ty = self)\r\n\t) \r\n\r\nin let C:Set(Mediation) = \r\n\tMediation.allInstances()->select(x | \r\n\t\tx.target->exists(y | \r\n\t\t\tif y.oclIsKindOf(Property) \r\n\t\t\tthen \r\n\t\t\t\t(y.oclAsType(Property).endType = B->any(true).associationEnd->select(z | \r\n\t\t\t\t\tz <> self)->any(true).endType\r\n\t\t\t\t) \r\n\t\t\telse \r\n\t\t\t\tfalse \r\n\t\tendif)) \r\n\r\nin let D:Set(Mediation) = \r\n\tA->select(x | \r\n\t\tC->source.oclAsType(Property).endType->includesAll(\r\n\t\t\tx.source.oclAsType(Property).endType)\r\n\t\t), \r\n\r\n\r\nE:Set(Mediation) = \r\n\tC->select(x | \r\n\t\tA->source.oclAsType(Property).endType->includesAll(\r\n\t\t\tx.source.oclAsType(Property).endType)\r\n\t) \r\n\r\nin let lower:Integer = \r\nif ( D->isEmpty() or E->isEmpty()) then\r\n 0\r\nelse \r\n\tD->collect(x | \r\n\t\tx.target->collect(y | \r\n\t\t\tif \r\n\t\t\t\ty.oclIsKindOf(Property) \r\n\t\t\tthen \r\n\t\t\t\ty.oclAsType(Property).lower \r\n\t\t\telse \r\n\t\t\t\t0 \r\n\t\t\tendif)\r\n\t\t)->any(true)*E->collect(z | \r\n\t\tz.source->collect(w | \r\n\t\t\tif w.oclIsKindOf(Property) \r\n\t\t\tthen \r\n\t\t\t\tw.oclAsType(Property).lower \r\n\t\t\telse \r\n\t\t\t\t0 \r\n\t\t\tendif)\r\n\t\t)->any(true)\r\nendif,\r\n\t\t\r\n\t\t\r\nupper:Integer =  \r\nif (D->isEmpty() or E->isEmpty()) \r\nthen 0\r\nelse \r\n\tD->collect(x | x.target->collect(\r\n\t\ty | \r\n\t\tif y.oclIsKindOf(Property) \r\n\t\tthen y.oclAsType(Property).upper \r\n\t\telse 0 \r\n\t\tendif)\r\n\t)->any(true)*E->collect(z | \r\n\t\tz.source->collect(w | \r\n\t\tif w.oclIsKindOf(Property) \r\n\t\tthen w.oclAsType(Property).upper \r\n\t\telse 0 \r\n\t\tendif))->any(true) \r\nendif in lower"
+			 "body", "let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = self.endType) else false endif)), B:Set(MaterialAssociation) = MaterialAssociation.allInstances()->select(x | x.associationEnd->exists(y | y = self)) in let C:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).associationEnd->select(z | z <> self)->any(true).endType) else false endif)) in let D:Set(Mediation) = A->select(x | C->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)), E:Set(Mediation) = C->select(x | A->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)) in let lower:Integer = D->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).lower else 0 endif))->any(true)*E->collect(z | z.source->collect(w | if w.oclIsKindOf(Property) then w.oclAsType(Property).lower else 0 endif))->any(true), upper:Integer =  D->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).upper else 0 endif))->any(true)*E->collect(z | z.source->collect(w | if w.oclIsKindOf(Property) then w.oclAsType(Property).upper else 0 endif))->any(true) in lower"
 		   });		
 		addAnnotation
 		  (propertyEClass.getEOperations().get(1), 
 		   source, 
 		   new String[] {
-			 "body", "let A:Set(Mediation) = \r\nMediation.allInstances()->select(x | \r\n\t\tx.target->exists(y | \r\n\t\t\tif y.oclIsKindOf(Property) \r\n\t\t\tthen \r\n\t\t\t\t(y.oclAsType(Property).endType = self.endType) \r\n\t\t\telse \r\n\t\t\t\tfalse \r\n\t\t\tendif)\r\n), \r\n\r\nB:Set(MaterialAssociation) = \r\n\tMaterialAssociation.allInstances()->select(x | \r\n\tx.associationEnd->exists(y | \r\n\t\ty = self)\r\n\t) \r\n\r\nin let C:Set(Mediation) = \r\n\tMediation.allInstances()->select(x | \r\n\t\tx.target->exists(y | \r\n\t\t\tif y.oclIsKindOf(Property) \r\n\t\t\tthen \r\n\t\t\t\t(y.oclAsType(Property).endType = B->any(true).associationEnd->select(z | \r\n\t\t\t\t\tz <> self)->any(true).endType\r\n\t\t\t\t) \r\n\t\t\telse \r\n\t\t\t\tfalse \r\n\t\tendif)) \r\n\r\nin let D:Set(Mediation) = \r\n\tA->select(x | \r\n\t\tC->source.oclAsType(Property).endType->includesAll(\r\n\t\t\tx.source.oclAsType(Property).endType)\r\n\t\t), \r\n\r\n\r\nE:Set(Mediation) = \r\n\tC->select(x | \r\n\t\tA->source.oclAsType(Property).endType->includesAll(\r\n\t\t\tx.source.oclAsType(Property).endType)\r\n\t) \r\n\r\nin let lower:Integer = \r\nif ( D->isEmpty() or E->isEmpty()) then\r\n 0\r\nelse \r\n\tD->collect(x | \r\n\t\tx.target->collect(y | \r\n\t\t\tif \r\n\t\t\t\ty.oclIsKindOf(Property) \r\n\t\t\tthen \r\n\t\t\t\ty.oclAsType(Property).lower \r\n\t\t\telse \r\n\t\t\t\t0 \r\n\t\t\tendif)\r\n\t\t)->any(true)*E->collect(z | \r\n\t\tz.source->collect(w | \r\n\t\t\tif w.oclIsKindOf(Property) \r\n\t\t\tthen \r\n\t\t\t\tw.oclAsType(Property).lower \r\n\t\t\telse \r\n\t\t\t\t0 \r\n\t\t\tendif)\r\n\t\t)->any(true)\r\nendif,\r\n\t\t\r\n\t\t\r\nupper:Integer =  \r\nif (D->isEmpty() or E->isEmpty()) \r\nthen 0\r\nelse \r\n\tD->collect(x | x.target->collect(\r\n\t\ty | \r\n\t\tif y.oclIsKindOf(Property) \r\n\t\tthen y.oclAsType(Property).upper \r\n\t\telse 0 \r\n\t\tendif)\r\n\t)->any(true)*E->collect(z | \r\n\t\tz.source->collect(w | \r\n\t\tif w.oclIsKindOf(Property) \r\n\t\tthen w.oclAsType(Property).upper \r\n\t\telse 0 \r\n\t\tendif))->any(true) \r\nendif in lower"
+			 "body", "let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = self.endType) else false endif)), B:Set(MaterialAssociation) = MaterialAssociation.allInstances()->select(x | x.associationEnd->exists(y | y = self)) in let C:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).associationEnd->select(z | z <> self)->any(true).endType) else false endif)) in let D:Set(Mediation) = A->select(x | C->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)), E:Set(Mediation) = C->select(x | A->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)) in let lower:Integer = D->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).lower else 0 endif))->any(true)*E->collect(z | z.source->collect(w | if w.oclIsKindOf(Property) then w.oclAsType(Property).lower else 0 endif))->any(true), upper:Integer =  D->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).upper else 0 endif))->any(true)*E->collect(z | z.source->collect(w | if w.oclIsKindOf(Property) then w.oclAsType(Property).upper else 0 endif))->any(true) in upper"
 		   });		
 		addAnnotation
 		  (propertyEClass.getEOperations().get(2), 
@@ -1916,6 +1927,12 @@ public class OntoUMLPackageImpl extends EPackageImpl implements OntoUMLPackage {
 		   source, 
 		   new String[] {
 			 "body", "let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if (y.oclIsKindOf(Property) and self.endType.oclIsKindOf(MaterialAssociation)) then self.endType.oclAsType(MaterialAssociation).associationEnd->exists(z | z.endType = y.oclAsType(Property).endType) else false endif)), B:Set(Derivation) = Derivation.allInstances()->select(x | x.source->exists(y | y = self)) in let C:Set(Mediation) = A->select(x | x.source->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).target->select(z | z.oclIsKindOf(Property))->any(true).oclAsType(Property).endType) else false endif)) in let lower:Integer = C->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).lower else 0 endif))->iterate(z; a:Integer = 1 | a*z), upper:Integer = C->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).upper else 0 endif))->iterate(z; a:Integer = 1 | a*z) in upper"
+		   });		
+		addAnnotation
+		  (getProperty_EndType(), 
+		   source, 
+		   new String[] {
+			 "derive", "if self.source->notEmpty() then (if self.source.sourceAux1->forAll(x | x.oclIsKindOf(Type)) then self.source.sourceAux1.oclAsType(Type)->any(true) else null endif) else if self.target->notEmpty() then (if self.target.targetAux1->forAll(x | x.oclIsKindOf(Type)) then self.target.targetAux1.oclAsType(Type)->any(true) else null endif) else if (self.associationEndPositionAux = 1) then self.associationEnd.associationEndAux1->any(true) else if (self.associationEndPositionAux = 2) then self.associationEnd.associationEndAux2->any(true) else null endif endif endif endif"
 		   });		
 		addAnnotation
 		  (getProperty_Source(), 

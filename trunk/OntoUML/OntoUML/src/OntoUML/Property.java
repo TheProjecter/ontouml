@@ -23,6 +23,7 @@ package OntoUML;
  *   <li>{@link OntoUML.Property#getSource <em>Source</em>}</li>
  *   <li>{@link OntoUML.Property#getTarget <em>Target</em>}</li>
  *   <li>{@link OntoUML.Property#getAux <em>Aux</em>}</li>
+ *   <li>{@link OntoUML.Property#getAssociationEndPositionAux <em>Association End Position Aux</em>}</li>
  * </ul>
  * </p>
  *
@@ -122,7 +123,8 @@ public interface Property extends StructuralFeature {
 	 * @return the value of the '<em>End Type</em>' reference.
 	 * @see #setEndType(Type)
 	 * @see OntoUML.OntoUMLPackage#getProperty_EndType()
-	 * @model
+	 * @model transient="true" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/ocl/examples/OCL derive='if self.source->notEmpty() then (if self.source.sourceAux1->forAll(x | x.oclIsKindOf(Type)) then self.source.sourceAux1.oclAsType(Type)->any(true) else null endif) else if self.target->notEmpty() then (if self.target.targetAux1->forAll(x | x.oclIsKindOf(Type)) then self.target.targetAux1.oclAsType(Type)->any(true) else null endif) else if (self.associationEndPositionAux = 1) then self.associationEnd.associationEndAux1->any(true) else if (self.associationEndPositionAux = 2) then self.associationEnd.associationEndAux2->any(true) else null endif endif endif endif'"
 	 * @generated
 	 */
 	Type getEndType();
@@ -246,9 +248,35 @@ public interface Property extends StructuralFeature {
 	void setAux(Property value);
 
 	/**
+	 * Returns the value of the '<em><b>Association End Position Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Association End Position Aux</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Association End Position Aux</em>' attribute.
+	 * @see #setAssociationEndPositionAux(int)
+	 * @see OntoUML.OntoUMLPackage#getProperty_AssociationEndPositionAux()
+	 * @model
+	 * @generated
+	 */
+	int getAssociationEndPositionAux();
+
+	/**
+	 * Sets the value of the '{@link OntoUML.Property#getAssociationEndPositionAux <em>Association End Position Aux</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/ocl/examples/OCL body='let A:Set(Mediation) = \r\nMediation.allInstances()->select(x | \r\n\t\tx.target->exists(y | \r\n\t\t\tif y.oclIsKindOf(Property) \r\n\t\t\tthen \r\n\t\t\t\t(y.oclAsType(Property).endType = self.endType) \r\n\t\t\telse \r\n\t\t\t\tfalse \r\n\t\t\tendif)\r\n), \r\n\r\nB:Set(MaterialAssociation) = \r\n\tMaterialAssociation.allInstances()->select(x | \r\n\tx.associationEnd->exists(y | \r\n\t\ty = self)\r\n\t) \r\n\r\nin let C:Set(Mediation) = \r\n\tMediation.allInstances()->select(x | \r\n\t\tx.target->exists(y | \r\n\t\t\tif y.oclIsKindOf(Property) \r\n\t\t\tthen \r\n\t\t\t\t(y.oclAsType(Property).endType = B->any(true).associationEnd->select(z | \r\n\t\t\t\t\tz <> self)->any(true).endType\r\n\t\t\t\t) \r\n\t\t\telse \r\n\t\t\t\tfalse \r\n\t\tendif)) \r\n\r\nin let D:Set(Mediation) = \r\n\tA->select(x | \r\n\t\tC->source.oclAsType(Property).endType->includesAll(\r\n\t\t\tx.source.oclAsType(Property).endType)\r\n\t\t), \r\n\r\n\r\nE:Set(Mediation) = \r\n\tC->select(x | \r\n\t\tA->source.oclAsType(Property).endType->includesAll(\r\n\t\t\tx.source.oclAsType(Property).endType)\r\n\t) \r\n\r\nin let lower:Integer = \r\nif ( D->isEmpty() or E->isEmpty()) then\r\n 0\r\nelse \r\n\tD->collect(x | \r\n\t\tx.target->collect(y | \r\n\t\t\tif \r\n\t\t\t\ty.oclIsKindOf(Property) \r\n\t\t\tthen \r\n\t\t\t\ty.oclAsType(Property).lower \r\n\t\t\telse \r\n\t\t\t\t0 \r\n\t\t\tendif)\r\n\t\t)->any(true)*E->collect(z | \r\n\t\tz.source->collect(w | \r\n\t\t\tif w.oclIsKindOf(Property) \r\n\t\t\tthen \r\n\t\t\t\tw.oclAsType(Property).lower \r\n\t\t\telse \r\n\t\t\t\t0 \r\n\t\t\tendif)\r\n\t\t)->any(true)\r\nendif,\r\n\t\t\r\n\t\t\r\nupper:Integer =  \r\nif (D->isEmpty() or E->isEmpty()) \r\nthen 0\r\nelse \r\n\tD->collect(x | x.target->collect(\r\n\t\ty | \r\n\t\tif y.oclIsKindOf(Property) \r\n\t\tthen y.oclAsType(Property).upper \r\n\t\telse 0 \r\n\t\tendif)\r\n\t)->any(true)*E->collect(z | \r\n\t\tz.source->collect(w | \r\n\t\tif w.oclIsKindOf(Property) \r\n\t\tthen w.oclAsType(Property).upper \r\n\t\telse 0 \r\n\t\tendif))->any(true) \r\nendif in lower'"
+	 * @param value the new value of the '<em>Association End Position Aux</em>' attribute.
+	 * @see #getAssociationEndPositionAux()
+	 * @generated
+	 */
+	void setAssociationEndPositionAux(int value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/ocl/examples/OCL body='let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = self.endType) else false endif)), B:Set(MaterialAssociation) = MaterialAssociation.allInstances()->select(x | x.associationEnd->exists(y | y = self)) in let C:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).associationEnd->select(z | z <> self)->any(true).endType) else false endif)) in let D:Set(Mediation) = A->select(x | C->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)), E:Set(Mediation) = C->select(x | A->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)) in let lower:Integer = D->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).lower else 0 endif))->any(true)*E->collect(z | z.source->collect(w | if w.oclIsKindOf(Property) then w.oclAsType(Property).lower else 0 endif))->any(true), upper:Integer =  D->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).upper else 0 endif))->any(true)*E->collect(z | z.source->collect(w | if w.oclIsKindOf(Property) then w.oclAsType(Property).upper else 0 endif))->any(true) in lower'"
 	 * @generated
 	 */
 	int derivarLowerMaterialAssociation();
@@ -256,7 +284,7 @@ public interface Property extends StructuralFeature {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/ocl/examples/OCL body='let A:Set(Mediation) = \r\nMediation.allInstances()->select(x | \r\n\t\tx.target->exists(y | \r\n\t\t\tif y.oclIsKindOf(Property) \r\n\t\t\tthen \r\n\t\t\t\t(y.oclAsType(Property).endType = self.endType) \r\n\t\t\telse \r\n\t\t\t\tfalse \r\n\t\t\tendif)\r\n), \r\n\r\nB:Set(MaterialAssociation) = \r\n\tMaterialAssociation.allInstances()->select(x | \r\n\tx.associationEnd->exists(y | \r\n\t\ty = self)\r\n\t) \r\n\r\nin let C:Set(Mediation) = \r\n\tMediation.allInstances()->select(x | \r\n\t\tx.target->exists(y | \r\n\t\t\tif y.oclIsKindOf(Property) \r\n\t\t\tthen \r\n\t\t\t\t(y.oclAsType(Property).endType = B->any(true).associationEnd->select(z | \r\n\t\t\t\t\tz <> self)->any(true).endType\r\n\t\t\t\t) \r\n\t\t\telse \r\n\t\t\t\tfalse \r\n\t\tendif)) \r\n\r\nin let D:Set(Mediation) = \r\n\tA->select(x | \r\n\t\tC->source.oclAsType(Property).endType->includesAll(\r\n\t\t\tx.source.oclAsType(Property).endType)\r\n\t\t), \r\n\r\n\r\nE:Set(Mediation) = \r\n\tC->select(x | \r\n\t\tA->source.oclAsType(Property).endType->includesAll(\r\n\t\t\tx.source.oclAsType(Property).endType)\r\n\t) \r\n\r\nin let lower:Integer = \r\nif ( D->isEmpty() or E->isEmpty()) then\r\n 0\r\nelse \r\n\tD->collect(x | \r\n\t\tx.target->collect(y | \r\n\t\t\tif \r\n\t\t\t\ty.oclIsKindOf(Property) \r\n\t\t\tthen \r\n\t\t\t\ty.oclAsType(Property).lower \r\n\t\t\telse \r\n\t\t\t\t0 \r\n\t\t\tendif)\r\n\t\t)->any(true)*E->collect(z | \r\n\t\tz.source->collect(w | \r\n\t\t\tif w.oclIsKindOf(Property) \r\n\t\t\tthen \r\n\t\t\t\tw.oclAsType(Property).lower \r\n\t\t\telse \r\n\t\t\t\t0 \r\n\t\t\tendif)\r\n\t\t)->any(true)\r\nendif,\r\n\t\t\r\n\t\t\r\nupper:Integer =  \r\nif (D->isEmpty() or E->isEmpty()) \r\nthen 0\r\nelse \r\n\tD->collect(x | x.target->collect(\r\n\t\ty | \r\n\t\tif y.oclIsKindOf(Property) \r\n\t\tthen y.oclAsType(Property).upper \r\n\t\telse 0 \r\n\t\tendif)\r\n\t)->any(true)*E->collect(z | \r\n\t\tz.source->collect(w | \r\n\t\tif w.oclIsKindOf(Property) \r\n\t\tthen w.oclAsType(Property).upper \r\n\t\telse 0 \r\n\t\tendif))->any(true) \r\nendif in lower'"
+	 * @model annotation="http://www.eclipse.org/ocl/examples/OCL body='let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = self.endType) else false endif)), B:Set(MaterialAssociation) = MaterialAssociation.allInstances()->select(x | x.associationEnd->exists(y | y = self)) in let C:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).associationEnd->select(z | z <> self)->any(true).endType) else false endif)) in let D:Set(Mediation) = A->select(x | C->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)), E:Set(Mediation) = C->select(x | A->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)) in let lower:Integer = D->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).lower else 0 endif))->any(true)*E->collect(z | z.source->collect(w | if w.oclIsKindOf(Property) then w.oclAsType(Property).lower else 0 endif))->any(true), upper:Integer =  D->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).upper else 0 endif))->any(true)*E->collect(z | z.source->collect(w | if w.oclIsKindOf(Property) then w.oclAsType(Property).upper else 0 endif))->any(true) in upper'"
 	 * @generated
 	 */
 	int derivarUpperMaterialAssociation();
