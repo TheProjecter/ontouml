@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: OntoUML Editor
+Bundle-SymbolicName: OntoUML.editor;singleton:=true
+Bundle-Version: 1.1.0.vqualifier
+Bundle-ClassPath: .
+Bundle-Activator: OntoUML.presentation.OntoUMLEditorPlugin$Implementation
+Bundle-Vendor: Alessander Botti Benevides
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: OntoUML.URML.presentation,
+ OntoUML.presentation
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources;visibility:=reexport,
+ OntoUML.edit;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.eclipse.emf.edit.ui;visibility:=reexport,
+ org.eclipse.ui.ide;visibility:=reexport
+Bundle-ActivationPolicy: lazy
