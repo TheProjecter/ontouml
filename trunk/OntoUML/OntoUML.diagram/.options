@@ -1,7 +1,0 @@
-# Tracing options for the OntoUML.diagram plug-in
-
-# Common issues
-OntoUML.diagram/debug=false
-
-# Visual IDs
-OntoUML.diagram/debug/visualID=false
