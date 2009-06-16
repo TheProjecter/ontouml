@@ -244,6 +244,7 @@ litigation.
       <import plugin="org.eclipse.gmf.runtime.draw2d.ui"/>
       <import plugin="org.eclipse.draw2d"/>
       <import plugin="org.eclipse.gef"/>
+      <import plugin="org.eclipse.gmf.runtime.notation"/>
       <import plugin="org.eclipse.emf.edit"/>
    </requires>
 
