@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <description url="http://192.168.1.103/~alessander/OntoUMLUpdateSite">
+   <description url="http://ontouml.googlecode.com/svn/trunk/OntoUMLUpdateSite">
       OntoUML Editor Update Site
    </description>
    <feature url="features/OntoUML_1.1.0.vqualifier.jar" id="OntoUML" version="1.1.0.vqualifier">
