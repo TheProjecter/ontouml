@@ -83,7 +83,7 @@
         <children
             xsi:type="gmfgraph:Label"
             name="CollectiveMetaAttributeLabelFigure"
-            text="{}"/>
+            text=""/>
       </actualFigure>
       <accessors
           figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
@@ -229,40 +229,6 @@
           figure="//@figures.0/@descriptors.6/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
-        name="PropertyEndFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="PropertyEndFigure"
-          outline="false">
-        <children
-            xsi:type="gmfgraph:Label"
-            name="PropertyEndCardinalitiesLabelFigure"
-            text="end"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="PropertyEndNameLabelFigure"
-            text=""/>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
-      <accessors
-          figure="//@figures.0/@descriptors.7/@actualFigure/@children.1"/>
-    </descriptors>
-    <descriptors
-        name="PropertyBeginningFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Label"
-          name="PropertyBeginningNameLabelFigure"
-          text="BeginningName">
-        <children
-            xsi:type="gmfgraph:Label"
-            name="PropertyBeginningCardinalitiesLabelFigure"
-            text="beginning"/>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors
         name="QuantityFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
@@ -285,9 +251,9 @@
             text="Name"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.9/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.9/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.7/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="RelatorFigure">
@@ -312,9 +278,9 @@
             text="Name"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.10/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.8/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="RoleFigure">
@@ -339,9 +305,9 @@
             text="Name"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.9/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.11/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.9/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="RoleMixinFigure">
@@ -366,9 +332,9 @@
             text="Name"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.12/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.10/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="SimpleDatatypeFigure">
@@ -393,15 +359,16 @@
             text="Name"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.13/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.13/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.11/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="AttributeFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="AttributeFigure">
+          name="AttributeFigure"
+          outline="false">
         <layout
             xsi:type="gmfgraph:StackLayout"/>
       </actualFigure>
@@ -436,9 +403,9 @@
             text="Name"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.16/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.14/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.16/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.14/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="SubKindFigure">
@@ -463,9 +430,9 @@
             text="Name"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.17/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.15/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.17/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.15/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="CharacterizationFigure">
@@ -480,11 +447,33 @@
             xsi:type="gmfgraph:Label"
             name="CharacterizationNameLabelFigure"
             text="Name"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="CharacterizationSourcePropertyNameLabelFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="CharacterizationSourcePropertyCardinalitiesLabelFigure"
+            text=""/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="CharacterizationTargetPropertyNameLabelFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="CharacterizationTargetPropertyCardinalitiesLabelFigure"
+            text=""/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.18/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.16/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.18/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.16/@actualFigure/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.16/@actualFigure/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.16/@actualFigure/@children.3"/>
+      <accessors
+          figure="//@figures.0/@descriptors.16/@actualFigure/@children.4"/>
+      <accessors
+          figure="//@figures.0/@descriptors.16/@actualFigure/@children.5"/>
     </descriptors>
     <descriptors
         name="ComponentOfFigure">
@@ -504,33 +493,77 @@
             xsi:type="gmfgraph:Label"
             name="ComponentOfMetaAttributesLabelFigure"
             text="{}"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ComponentOfSourcePropertyNameLabelFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ComponentOfSourcePropertyCardinalitiesLabelFigure"
+            text=""/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ComponentOfTargetPropertyNameLabelFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ComponentOfTargetPropertyCardinalitiesLabelFigure"
+            text=""/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.19/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.17/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.19/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.17/@actualFigure/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.19/@actualFigure/@children.2"/>
+          figure="//@figures.0/@descriptors.17/@actualFigure/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.17/@actualFigure/@children.3"/>
+      <accessors
+          figure="//@figures.0/@descriptors.17/@actualFigure/@children.4"/>
+      <accessors
+          figure="//@figures.0/@descriptors.17/@actualFigure/@children.5"/>
+      <accessors
+          figure="//@figures.0/@descriptors.17/@actualFigure/@children.6"/>
     </descriptors>
     <descriptors
-        name="DatatypeAssociationFigure">
+        name="DatatypeRelationshipFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
-          name="DatatypeAssociationFigure"
+          name="DatatypeRelationshipFigure"
           targetDecoration="//@figures.0/@figures.1">
         <children
             xsi:type="gmfgraph:Label"
-            name="DatatypeAssociationLabelFigure"
-            text="«datatypeAssociation»"/>
+            name="DatatypeRelationshipLabelFigure"
+            text="«datatypeRelationship»"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="DatatypeAssociationNameLabelFigure"
-            text="Name"/>
+            name="DatatypeRelationshipNameLabelFigure"
+            text=""/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="DatatypeRelationshipSourcePropertyNameLabelFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="DatatypeRelationshipSourcePropertyCardinalitiesLabelFigure"
+            text=""/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="DatatypeRelationshipTargetPropertyNameLabelFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="DatatypeRelationshipTargetPropertyCardinalitiesLabelFigure"
+            text=""/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.20/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.18/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.20/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.18/@actualFigure/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.18/@actualFigure/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.18/@actualFigure/@children.3"/>
+      <accessors
+          figure="//@figures.0/@descriptors.18/@actualFigure/@children.4"/>
+      <accessors
+          figure="//@figures.0/@descriptors.18/@actualFigure/@children.5"/>
     </descriptors>
     <descriptors
         name="DerivationFigure">
@@ -542,10 +575,22 @@
         <children
             xsi:type="gmfgraph:Label"
             name="DerivationNameLabelFigure"
-            text="Name"/>
+            text=""/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="DerivationSourcePropertyCardinalitiesLabelFigure"
+            text=""/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="DerivationTargetPropertyCardinalitiesLabelFigure"
+            text=""/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.21/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.19/@actualFigure/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.19/@actualFigure/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.19/@actualFigure/@children.2"/>
     </descriptors>
     <descriptors
         name="FormalAssociationFigure">
@@ -560,11 +605,33 @@
             xsi:type="gmfgraph:Label"
             name="FormalAssociationNameLabelFigure"
             text="Name"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="FormalAssociationAssociationEnd1PropertyNameLabelFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="FormalAssociationAssociationEnd1PropertyCardinalitiesLabelFigure"
+            text=""/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="FormalAssociationAssociationEnd2PropertyNameLabelFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="FormalAssociationAssociationEnd2PropertyCardinalitiesLabelFigure"
+            text=""/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.22/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.20/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.22/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.20/@actualFigure/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.20/@actualFigure/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.20/@actualFigure/@children.3"/>
+      <accessors
+          figure="//@figures.0/@descriptors.20/@actualFigure/@children.4"/>
+      <accessors
+          figure="//@figures.0/@descriptors.20/@actualFigure/@children.5"/>
     </descriptors>
     <descriptors
         name="GeneralizationFigure">
@@ -586,11 +653,33 @@
             xsi:type="gmfgraph:Label"
             name="MaterialAssociationNameLabelFigure"
             text="Name"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="MaterialAssociationAssociationEnd1PropertyNameLabelFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="MaterialAssociationAssociationEnd1PropertyCardinalitiesLabelFigure"
+            text=""/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="MaterialAssociationAssociationEnd2PropertyNameLabelFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="MaterialAssociationAssociationEnd2PropertyCardinalitiesLabelFigure"
+            text=""/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.24/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.22/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.24/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.22/@actualFigure/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.22/@actualFigure/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.22/@actualFigure/@children.3"/>
+      <accessors
+          figure="//@figures.0/@descriptors.22/@actualFigure/@children.4"/>
+      <accessors
+          figure="//@figures.0/@descriptors.22/@actualFigure/@children.5"/>
     </descriptors>
     <descriptors
         name="MediationFigure">
@@ -604,12 +693,34 @@
         <children
             xsi:type="gmfgraph:Label"
             name="MediationNameLabelFigure"
-            text="Name"/>
+            text=""/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="MediationSourcePropertyNameLabelFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="MediationSourcePropertyCardinalitiesLabelFigure"
+            text=""/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="MediationTargetPropertyNameLabelFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="MediationTargetPropertyCardinalitiesLabelFigure"
+            text=""/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.25/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.23/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.25/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.23/@actualFigure/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.23/@actualFigure/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.23/@actualFigure/@children.3"/>
+      <accessors
+          figure="//@figures.0/@descriptors.23/@actualFigure/@children.4"/>
+      <accessors
+          figure="//@figures.0/@descriptors.23/@actualFigure/@children.5"/>
     </descriptors>
     <descriptors
         name="MemberOfFigure">
@@ -629,19 +740,35 @@
             xsi:type="gmfgraph:Label"
             name="MemberOfMetaAttributesLabelFigure"
             text="{}"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="MemberOfSourcePropertyNameLabelFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="MemberOfSourcePropertyCardinalitiesLabelFigure"
+            text=""/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="MemberOfTargetPropertyNameLabelFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="MemberOfTargetPropertyCardinalitiesLabelFigure"
+            text=""/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.26/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.24/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.26/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.24/@actualFigure/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.26/@actualFigure/@children.2"/>
-    </descriptors>
-    <descriptors
-        name="PropertyConnectionFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="PropertyConnectionFigure"/>
+          figure="//@figures.0/@descriptors.24/@actualFigure/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.24/@actualFigure/@children.3"/>
+      <accessors
+          figure="//@figures.0/@descriptors.24/@actualFigure/@children.4"/>
+      <accessors
+          figure="//@figures.0/@descriptors.24/@actualFigure/@children.5"/>
+      <accessors
+          figure="//@figures.0/@descriptors.24/@actualFigure/@children.6"/>
     </descriptors>
     <descriptors
         name="SubCollectionOfFigure">
@@ -661,13 +788,35 @@
             xsi:type="gmfgraph:Label"
             name="SubCollectionOfMetaAttributesLabelFigure"
             text="{}"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="SubCollectionOfSourcePropertyNameLabelFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="SubCollectionOfSourcePropertyCardinalitiesLabelFigure"
+            text=""/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="SubCollectionOfTargetPropertyNameLabelFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="SubCollectionOfTargetPropertyCardinalitiesLabelFigure"
+            text=""/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.28/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.25/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.28/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.25/@actualFigure/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.28/@actualFigure/@children.2"/>
+          figure="//@figures.0/@descriptors.25/@actualFigure/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.25/@actualFigure/@children.3"/>
+      <accessors
+          figure="//@figures.0/@descriptors.25/@actualFigure/@children.4"/>
+      <accessors
+          figure="//@figures.0/@descriptors.25/@actualFigure/@children.5"/>
+      <accessors
+          figure="//@figures.0/@descriptors.25/@actualFigure/@children.6"/>
     </descriptors>
     <descriptors
         name="SubQuantityOfFigure">
@@ -687,13 +836,35 @@
             xsi:type="gmfgraph:Label"
             name="SubQuantityOfMetaAttributesLabelFigure"
             text="{}"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="SubQuantitySourcePropertyNameLabelFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="SubQuantitySourcePropertyCardinalitiesLabelFigure"
+            text=""/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="SubQuantityTargetPropertyNameLabelFigure"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="SubQuantityTargetPropertyCardinalitiesLabelFigure"
+            text=""/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.29/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.26/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.29/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.26/@actualFigure/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.29/@actualFigure/@children.2"/>
+          figure="//@figures.0/@descriptors.26/@actualFigure/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.26/@actualFigure/@children.3"/>
+      <accessors
+          figure="//@figures.0/@descriptors.26/@actualFigure/@children.4"/>
+      <accessors
+          figure="//@figures.0/@descriptors.26/@actualFigure/@children.5"/>
+      <accessors
+          figure="//@figures.0/@descriptors.26/@actualFigure/@children.6"/>
     </descriptors>
   </figures>
   <figures
@@ -838,13 +1009,6 @@
       name="Phase"
       figure="PhaseFigure"/>
   <nodes
-      name="PropertyEnd"
-      figure="PropertyEndFigure">
-    <facets
-        xsi:type="gmfgraph:AlignmentFacet"
-        alignment="END"/>
-  </nodes>
-  <nodes
       name="Quantity"
       figure="QuantityFigure"/>
   <nodes
@@ -872,8 +1036,8 @@
       name="Characterization"
       figure="CharacterizationFigure"/>
   <connections
-      name="DatatypeAssociation"
-      figure="DatatypeAssociationFigure"/>
+      name="DatatypeRelationship"
+      figure="DatatypeRelationshipFigure"/>
   <connections
       name="ComponentOf"
       figure="ComponentOfFigure"/>
@@ -895,13 +1059,6 @@
   <connections
       name="MemberOf"
       figure="MemberOfFigure"/>
-  <connections
-      name="PropertyConnection"
-      figure="PropertyConnectionFigure">
-    <facets
-        xsi:type="gmfgraph:AlignmentFacet"
-        alignment="END"/>
-  </connections>
   <connections
       name="SubCollectionOf"
       figure="SubCollectionOfFigure"/>
@@ -937,12 +1094,60 @@
   <labels
       name="CharacterizationLabel"
       figure="CharacterizationFigure"
-      accessor="//@figures.0/@descriptors.18/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.16/@accessors.0"/>
   <labels
       name="CharacterizationNameLabel"
       figure="CharacterizationFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.18/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.16/@accessors.1"/>
+  <labels
+      name="CharacterizationSourcePropertyNameLabel"
+      figure="CharacterizationFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.16/@accessors.2">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="END"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        x="20"
+        y="20"/>
+  </labels>
+  <labels
+      name="CharacterizationSourcePropertyCardinalitiesLabel"
+      figure="CharacterizationFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.16/@accessors.3">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="END"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="20"/>
+  </labels>
+  <labels
+      name="CharacterizationTargetPropertyNameLabel"
+      figure="CharacterizationFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.16/@accessors.4">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        x="-20"
+        y="20"/>
+  </labels>
+  <labels
+      name="CharacterizationTargetPropertyCardinalitiesLabel"
+      figure="CharacterizationFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.16/@accessors.5">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="20"/>
+  </labels>
   <labels
       name="CollectiveLabel"
       figure="CollectiveFigure"
@@ -955,40 +1160,207 @@
   <labels
       name="ComponentOfLabel"
       figure="ComponentOfFigure"
-      accessor="//@figures.0/@descriptors.19/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.17/@accessors.0"/>
   <labels
       name="ComponentOfNameLabel"
       figure="ComponentOfFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.19/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.17/@accessors.1"/>
   <labels
       name="ComponentOfMetaAttributesLabel"
       figure="ComponentOfFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.19/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.17/@accessors.2"/>
   <labels
-      name="DatatypeAssociationLabel"
-      figure="DatatypeAssociationFigure"
-      accessor="//@figures.0/@descriptors.20/@accessors.0"/>
-  <labels
-      name="DatatypeAssociationNameLabel"
-      figure="DatatypeAssociationFigure"
+      name="ComponentOfSourcePropertyNameLabel"
+      figure="ComponentOfFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.20/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.17/@accessors.3">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="END"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        x="20"
+        y="20"/>
+  </labels>
+  <labels
+      name="ComponentOfSourcePropertyCardinalitiesLabel"
+      figure="ComponentOfFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.17/@accessors.4">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="END"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="20"/>
+  </labels>
+  <labels
+      name="ComponentOfTargetPropertyNameLabel"
+      figure="ComponentOfFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.17/@accessors.5">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        x="-20"
+        y="20"/>
+  </labels>
+  <labels
+      name="ComponentOfTargetPropertyCardinalitiesLabel"
+      figure="ComponentOfFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.17/@accessors.6">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="20"/>
+  </labels>
+  <labels
+      name="DatatypeRelationshipLabel"
+      figure="DatatypeRelationshipFigure"
+      accessor="//@figures.0/@descriptors.18/@accessors.0"/>
+  <labels
+      name="DatatypeRelationshipNameLabel"
+      figure="DatatypeRelationshipFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.18/@accessors.1"/>
+  <labels
+      name="DatatypeRelationshipSourcePropertyNameLabel"
+      figure="DatatypeRelationshipFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.18/@accessors.2">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="END"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        x="20"
+        y="20"/>
+  </labels>
+  <labels
+      name="DatatypeRelationshipSourcePropertyCardinalitiesLabel"
+      figure="DatatypeRelationshipFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.18/@accessors.3">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="END"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="20"/>
+  </labels>
+  <labels
+      name="DatatypeRelationshipTargetPropertyNameLabel"
+      figure="DatatypeRelationshipFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.18/@accessors.4">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        x="-20"
+        y="20"/>
+  </labels>
+  <labels
+      name="DatatypeRelationshipTargetPropertyCardinalitiesLabel"
+      figure="DatatypeRelationshipFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.18/@accessors.5">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="20"/>
+  </labels>
   <labels
       name="DerivationNameLabel"
       figure="DerivationFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.21/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.19/@accessors.0"/>
+  <labels
+      name="DerivationSourcePropertyCardinalitiesLabel"
+      figure="DerivationFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.19/@accessors.1">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="END"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="20"/>
+  </labels>
+  <labels
+      name="DerivationTargetPropertyCardinalitiesLabel"
+      figure="DerivationFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.19/@accessors.2">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="20"/>
+  </labels>
   <labels
       name="FormalAssociationLabel"
       figure="FormalAssociationFigure"
-      accessor="//@figures.0/@descriptors.22/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.20/@accessors.0"/>
   <labels
       name="FormalAssociationNameLabel"
       figure="FormalAssociationFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.22/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.20/@accessors.1"/>
+  <labels
+      name="FormalAssociationAssociationEnd1PropertyNameLabel"
+      figure="FormalAssociationFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.20/@accessors.2">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="END"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        x="20"
+        y="20"/>
+  </labels>
+  <labels
+      name="FormalAssociationAssociationEnd1PropertyCardinalitiesLabel"
+      figure="FormalAssociationFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.20/@accessors.3">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="END"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="20"/>
+  </labels>
+  <labels
+      name="FormalAssociationAssociationEnd2PropertyNameLabel"
+      figure="FormalAssociationFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.20/@accessors.4">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        x="-20"
+        y="20"/>
+  </labels>
+  <labels
+      name="FormalAssociationAssociationEnd2PropertyCardinalitiesLabel"
+      figure="FormalAssociationFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.20/@accessors.5">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="20"/>
+  </labels>
   <labels
       name="GeneralizationSetNameLabel"
       figure="GeneralizationSetFigure"
@@ -1006,35 +1378,179 @@
   <labels
       name="MaterialAssociationLabel"
       figure="MaterialAssociationFigure"
-      accessor="//@figures.0/@descriptors.24/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.22/@accessors.0"/>
   <labels
       name="MaterialAssociationNameLabel"
       figure="MaterialAssociationFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.24/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.22/@accessors.1"/>
+  <labels
+      name="MaterialAssociationAssociationEnd1PropertyNameLabel"
+      figure="MaterialAssociationFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.22/@accessors.2">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="END"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        x="20"
+        y="20"/>
+  </labels>
+  <labels
+      name="MaterialAssociationAssociationEnd1PropertyCardinalitiesLabel"
+      figure="MaterialAssociationFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.22/@accessors.3">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="END"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="20"/>
+  </labels>
+  <labels
+      name="MaterialAssociationAssociationEnd2PropertyNameLabel"
+      figure="MaterialAssociationFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.22/@accessors.4">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        x="-20"
+        y="20"/>
+  </labels>
+  <labels
+      name="MaterialAssociationAssociationEnd2PropertyCardinalitiesLabel"
+      figure="MaterialAssociationFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.22/@accessors.5">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="20"/>
+  </labels>
   <labels
       name="MediationLabel"
       figure="MediationFigure"
-      accessor="//@figures.0/@descriptors.25/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.23/@accessors.0"/>
   <labels
       name="MediationNameLabel"
       figure="MediationFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.25/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.23/@accessors.1"/>
+  <labels
+      name="MediationSourcePropertyNameLabel"
+      figure="MediationFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.23/@accessors.2">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="END"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        x="20"
+        y="20"/>
+  </labels>
+  <labels
+      name="MediationSourcePropertyCardinalitiesLabel"
+      figure="MediationFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.23/@accessors.3">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="END"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="20"/>
+  </labels>
+  <labels
+      name="MediationTargetPropertyNameLabel"
+      figure="MediationFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.23/@accessors.4">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        x="-20"
+        y="20"/>
+  </labels>
+  <labels
+      name="MediationTargetPropertyCardinalitiesLabel"
+      figure="MediationFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.23/@accessors.5">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="20"/>
+  </labels>
   <labels
       name="MemberOfNameLabel"
       figure="MemberOfFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.26/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.24/@accessors.1"/>
   <labels
       name="MemberOfLabel"
       figure="MemberOfFigure"
-      accessor="//@figures.0/@descriptors.26/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.24/@accessors.0"/>
   <labels
       name="MemberOfMetaAttributesLabel"
       figure="MemberOfFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.26/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.24/@accessors.2"/>
+  <labels
+      name="MemberOfSourcePropertyNameLabel"
+      figure="MemberOfFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.24/@accessors.3">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="END"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        x="20"
+        y="20"/>
+  </labels>
+  <labels
+      name="MemberOfSourcePropertyCardinalitiesLabel"
+      figure="MemberOfFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.24/@accessors.4">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="END"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="20"/>
+  </labels>
+  <labels
+      name="MemberOfTargetPropertyNameLabel"
+      figure="MemberOfFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.24/@accessors.5">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        x="-20"
+        y="20"/>
+  </labels>
+  <labels
+      name="MemberOfTargetPropertyCardinalitiesLabel"
+      figure="MemberOfFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.24/@accessors.6">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="20"/>
+  </labels>
   <labels
       name="MixinLabel"
       figure="MixinFigure"
@@ -1063,129 +1579,192 @@
       elementIcon="false"
       accessor="//@figures.0/@descriptors.6/@accessors.1"/>
   <labels
-      name="PropertyEndNameLabel"
-      figure="PropertyEndFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.7/@accessors.1">
-    <facets
-        xsi:type="gmfgraph:AlignmentFacet"
-        alignment="END"/>
-  </labels>
-  <labels
-      name="PropertyEndCardinalitiesLabel"
-      figure="PropertyEndFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.7/@accessors.0">
-    <facets
-        xsi:type="gmfgraph:AlignmentFacet"
-        alignment="END"/>
-  </labels>
-  <labels
-      name="PropertyBeginningNameLabel"
-      figure="PropertyBeginningFigure"
-      elementIcon="false">
-    <facets
-        xsi:type="gmfgraph:AlignmentFacet"/>
-  </labels>
-  <labels
-      name="PropertyBeginningCardinalitiesLabel"
-      figure="PropertyBeginningFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.8/@accessors.0">
-    <facets
-        xsi:type="gmfgraph:AlignmentFacet"/>
-  </labels>
-  <labels
       name="QuantityLabel"
       figure="QuantityFigure"
-      accessor="//@figures.0/@descriptors.9/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.7/@accessors.0"/>
   <labels
       name="QuantityNameLabel"
       figure="QuantityFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.9/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.7/@accessors.1"/>
   <labels
       name="RelatorLabel"
       figure="RelatorFigure"
-      accessor="//@figures.0/@descriptors.10/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.8/@accessors.0"/>
   <labels
       name="RelatorNameLabel"
       figure="RelatorFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.10/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.8/@accessors.1"/>
   <labels
       name="RoleLabel"
       figure="RoleFigure"
-      accessor="//@figures.0/@descriptors.11/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.9/@accessors.0"/>
   <labels
       name="RoleNameLabel"
       figure="RoleFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.11/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.9/@accessors.1"/>
   <labels
       name="RoleMixinLabel"
       figure="RoleMixinFigure"
-      accessor="//@figures.0/@descriptors.12/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.10/@accessors.0"/>
   <labels
       name="RoleMixinNameLabel"
       figure="RoleMixinFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.12/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.10/@accessors.1"/>
   <labels
       name="SimpleDatatypeLabel"
       figure="SimpleDatatypeFigure"
-      accessor="//@figures.0/@descriptors.13/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.11/@accessors.0"/>
   <labels
       name="SimpleDatatypeNameLabel"
       figure="SimpleDatatypeFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.13/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.11/@accessors.1"/>
   <labels
       name="StructuralDatatypeLabel"
       figure="StructuralDatatypeFigure"
-      accessor="//@figures.0/@descriptors.16/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.14/@accessors.0"/>
   <labels
       name="StructuralDatatypeNameLabel"
       figure="StructuralDatatypeFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.16/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.14/@accessors.1"/>
   <labels
       name="SubCollectionOfLabel"
       figure="SubCollectionOfFigure"
-      accessor="//@figures.0/@descriptors.28/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.25/@accessors.0"/>
   <labels
       name="SubCollectionOfNameLabel"
       figure="SubCollectionOfFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.28/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.25/@accessors.1"/>
   <labels
       name="SubCollectionOfMetaAttributesLabel"
       figure="SubCollectionOfFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.28/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.25/@accessors.2"/>
+  <labels
+      name="SubCollectionOfSourcePropertyNameLabel"
+      figure="SubCollectionOfFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.25/@accessors.3">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="END"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        x="20"
+        y="20"/>
+  </labels>
+  <labels
+      name="SubCollectionOfSourcePropertyCardinalitiesLabel"
+      figure="SubCollectionOfFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.25/@accessors.4">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="END"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="20"/>
+  </labels>
+  <labels
+      name="SubCollectionOfTargetPropertyNameLabel"
+      figure="ConclusionFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.25/@accessors.5">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        x="-20"
+        y="20"/>
+  </labels>
+  <labels
+      name="SubCollectionOfTargetPropertyCardinalitiesLabel"
+      figure="SubCollectionOfFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.25/@accessors.6">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="20"/>
+  </labels>
   <labels
       name="SubKindLabel"
       figure="SubKindFigure"
-      accessor="//@figures.0/@descriptors.17/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.15/@accessors.0"/>
   <labels
       name="SubKindNameLabel"
       figure="SubKindFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.17/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.15/@accessors.1"/>
   <labels
       name="SubQuantityOfLabel"
       figure="SubQuantityOfFigure"
-      accessor="//@figures.0/@descriptors.29/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.26/@accessors.0"/>
   <labels
       name="SubQuantityOfNameLabel"
       figure="SubQuantityOfFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.29/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.26/@accessors.1"/>
   <labels
       name="SubQuantityOfMetaAttributesLabel"
       figure="SubQuantityOfFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.29/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.26/@accessors.2"/>
+  <labels
+      name="SubQuantityOfSourcePropertyNameLabel"
+      figure="SubQuantityOfFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.26/@accessors.3">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="END"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        x="20"
+        y="20"/>
+  </labels>
+  <labels
+      name="SubQuantityOfSourcePropertyCardinalitiesLabel"
+      figure="SubQuantityOfFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.26/@accessors.4">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"
+        alignment="END"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="20"/>
+  </labels>
+  <labels
+      name="SubQuantityOfTargetPropertyNameLabel"
+      figure="SubQuantityOfFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.26/@accessors.5">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        x="-20"
+        y="20"/>
+  </labels>
+  <labels
+      name="SubQuantityOfTargetPropertyCardinalitiesLabel"
+      figure="SubQuantityOfFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.26/@accessors.6">
+    <facets
+        xsi:type="gmfgraph:AlignmentFacet"/>
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        y="20"/>
+  </labels>
   <labels
       name="RuleIdLabel"
       figure="RuleFigure"

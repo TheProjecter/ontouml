@@ -22,6 +22,10 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link OntoUML.DirectedRelationship#getSourceAux1 <em>Source Aux1</em>}</li>
  *   <li>{@link OntoUML.DirectedRelationship#getTargetAux2 <em>Target Aux2</em>}</li>
  *   <li>{@link OntoUML.DirectedRelationship#getSourceAux2 <em>Source Aux2</em>}</li>
+ *   <li>{@link OntoUML.DirectedRelationship#getSourcePropertyNameLabelAux <em>Source Property Name Label Aux</em>}</li>
+ *   <li>{@link OntoUML.DirectedRelationship#getTargetPropertyNameLabelAux <em>Target Property Name Label Aux</em>}</li>
+ *   <li>{@link OntoUML.DirectedRelationship#getSourcePropertyCardinalitiesLabelAux <em>Source Property Cardinalities Label Aux</em>}</li>
+ *   <li>{@link OntoUML.DirectedRelationship#getTargetPropertyCardinalitiesLabelAux <em>Target Property Cardinalities Label Aux</em>}</li>
  * </ul>
  * </p>
  *
@@ -125,5 +129,113 @@ public interface DirectedRelationship extends Relationship {
 	 * @generated
 	 */
 	EList<Element> getSourceAux2();
+
+	/**
+	 * Returns the value of the '<em><b>Source Property Name Label Aux</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Source Property Name Label Aux</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Source Property Name Label Aux</em>' attribute.
+	 * @see #setSourcePropertyNameLabelAux(String)
+	 * @see OntoUML.OntoUMLPackage#getDirectedRelationship_SourcePropertyNameLabelAux()
+	 * @model default="" transient="true" volatile="true" derived="true"
+	 * @generated
+	 */
+	String getSourcePropertyNameLabelAux();
+
+	/**
+	 * Sets the value of the '{@link OntoUML.DirectedRelationship#getSourcePropertyNameLabelAux <em>Source Property Name Label Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Source Property Name Label Aux</em>' attribute.
+	 * @see #getSourcePropertyNameLabelAux()
+	 * @generated
+	 */
+	void setSourcePropertyNameLabelAux(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Target Property Name Label Aux</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Target Property Name Label Aux</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Target Property Name Label Aux</em>' attribute.
+	 * @see #setTargetPropertyNameLabelAux(String)
+	 * @see OntoUML.OntoUMLPackage#getDirectedRelationship_TargetPropertyNameLabelAux()
+	 * @model default="" transient="true" volatile="true" derived="true"
+	 * @generated
+	 */
+	String getTargetPropertyNameLabelAux();
+
+	/**
+	 * Sets the value of the '{@link OntoUML.DirectedRelationship#getTargetPropertyNameLabelAux <em>Target Property Name Label Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Target Property Name Label Aux</em>' attribute.
+	 * @see #getTargetPropertyNameLabelAux()
+	 * @generated
+	 */
+	void setTargetPropertyNameLabelAux(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Source Property Cardinalities Label Aux</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Source Property Cardinalities Label Aux</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Source Property Cardinalities Label Aux</em>' attribute.
+	 * @see #setSourcePropertyCardinalitiesLabelAux(String)
+	 * @see OntoUML.OntoUMLPackage#getDirectedRelationship_SourcePropertyCardinalitiesLabelAux()
+	 * @model default="" transient="true" volatile="true" derived="true"
+	 * @generated
+	 */
+	String getSourcePropertyCardinalitiesLabelAux();
+
+	/**
+	 * Sets the value of the '{@link OntoUML.DirectedRelationship#getSourcePropertyCardinalitiesLabelAux <em>Source Property Cardinalities Label Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Source Property Cardinalities Label Aux</em>' attribute.
+	 * @see #getSourcePropertyCardinalitiesLabelAux()
+	 * @generated
+	 */
+	void setSourcePropertyCardinalitiesLabelAux(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Target Property Cardinalities Label Aux</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Target Property Cardinalities Label Aux</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Target Property Cardinalities Label Aux</em>' attribute.
+	 * @see #setTargetPropertyCardinalitiesLabelAux(String)
+	 * @see OntoUML.OntoUMLPackage#getDirectedRelationship_TargetPropertyCardinalitiesLabelAux()
+	 * @model default="" transient="true" volatile="true" derived="true"
+	 * @generated
+	 */
+	String getTargetPropertyCardinalitiesLabelAux();
+
+	/**
+	 * Sets the value of the '{@link OntoUML.DirectedRelationship#getTargetPropertyCardinalitiesLabelAux <em>Target Property Cardinalities Label Aux</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Target Property Cardinalities Label Aux</em>' attribute.
+	 * @see #getTargetPropertyCardinalitiesLabelAux()
+	 * @generated
+	 */
+	void setTargetPropertyCardinalitiesLabelAux(String value);
 
 } // DirectedRelationship

@@ -9,7 +9,11 @@ package OntoUML.impl;
 import OntoUML.OntoUMLPackage;
 import OntoUML.componentOf;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import OntoUML.Property;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,5 +43,4 @@ public class componentOfImpl extends MeronymicImpl implements componentOf {
 	protected EClass eStaticClass() {
 		return OntoUMLPackage.Literals.COMPONENT_OF;
 	}
-
 } //componentOfImpl

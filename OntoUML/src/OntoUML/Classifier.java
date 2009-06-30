@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link OntoUML.Classifier#getAttribute <em>Attribute</em>}</li>
  *   <li>{@link OntoUML.Classifier#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link OntoUML.Classifier#getGeneral <em>General</em>}</li>
  *   <li>{@link OntoUML.Classifier#getGeneralization <em>Generalization</em>}</li>
@@ -27,6 +28,23 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Classifier extends Type {
+	/**
+	 * Returns the value of the '<em><b>Attribute</b></em>' reference list.
+	 * The list contents are of type {@link OntoUML.Property}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Attribute</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Attribute</em>' reference list.
+	 * @see OntoUML.OntoUMLPackage#getClassifier_Attribute()
+	 * @model transient="true" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/ocl/examples/OCL derive='DatatypeRelationship.allInstances()->select(x | if x.source->forAll(y | y.oclIsKindOf(Property)) then x.source->exists(y | y.oclAsType(Property).endType = self) else false endif)->collect(x | if x.target->forAll(y | y.oclIsKindOf(Property)) then x.target.oclAsType(Property) else null endif)'"
+	 * @generated
+	 */
+	EList<Property> getAttribute();
+
 	/**
 	 * Returns the value of the '<em><b>Is Abstract</b></em>' attribute.
 	 * The default value is <code>"false"</code>.

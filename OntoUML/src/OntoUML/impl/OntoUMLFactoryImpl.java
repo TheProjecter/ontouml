@@ -6,6 +6,12 @@
  */
 package OntoUML.impl;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
 import OntoUML.AntiRigidMixinClass;
 import OntoUML.AntiRigidSortalClass;
 import OntoUML.Association;
@@ -15,12 +21,13 @@ import OntoUML.Classifier;
 import OntoUML.Collective;
 import OntoUML.Container;
 import OntoUML.Datatype;
-import OntoUML.DatatypeAssociation;
+import OntoUML.DatatypeRelationship;
 import OntoUML.DependencyRelationship;
 import OntoUML.Derivation;
 import OntoUML.DirectedBinaryRelationship;
 import OntoUML.DirectedRelationship;
 import OntoUML.Element;
+import OntoUML.Feature;
 import OntoUML.FormalAssociation;
 import OntoUML.Generalization;
 import OntoUML.GeneralizationSet;
@@ -33,7 +40,6 @@ import OntoUML.MixinClass;
 import OntoUML.Mode;
 import OntoUML.MomentClass;
 import OntoUML.MultiplicityElement;
-import OntoUML.NamedElement;
 import OntoUML.NonRigidMixinClass;
 import OntoUML.ObjectClass;
 import OntoUML.OntoUMLFactory;
@@ -41,6 +47,7 @@ import OntoUML.OntoUMLPackage;
 import OntoUML.Phase;
 import OntoUML.Property;
 import OntoUML.Quantity;
+import OntoUML.RedefinableElement;
 import OntoUML.RelationalClassifier;
 import OntoUML.Relationship;
 import OntoUML.Relator;
@@ -56,18 +63,11 @@ import OntoUML.StructuralFeature;
 import OntoUML.SubKind;
 import OntoUML.SubstanceSortal;
 import OntoUML.Type;
+import OntoUML.TypedElement;
 import OntoUML.componentOf;
 import OntoUML.memberOf;
 import OntoUML.subCollectionOf;
 import OntoUML.subQuantityOf;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
-
-import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
  * <!-- begin-user-doc -->
@@ -124,12 +124,13 @@ public class OntoUMLFactoryImpl extends EFactoryImpl implements OntoUMLFactory {
 			case OntoUMLPackage.COMPONENT_OF: return createcomponentOf();
 			case OntoUMLPackage.CONTAINER: return createContainer();
 			case OntoUMLPackage.DATATYPE: return createDatatype();
-			case OntoUMLPackage.DATATYPE_ASSOCIATION: return createDatatypeAssociation();
+			case OntoUMLPackage.DATATYPE_RELATIONSHIP: return createDatatypeRelationship();
 			case OntoUMLPackage.DEPENDENCY_RELATIONSHIP: return createDependencyRelationship();
 			case OntoUMLPackage.DERIVATION: return createDerivation();
 			case OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP: return createDirectedBinaryRelationship();
 			case OntoUMLPackage.DIRECTED_RELATIONSHIP: return createDirectedRelationship();
 			case OntoUMLPackage.ELEMENT: return createElement();
+			case OntoUMLPackage.FEATURE: return createFeature();
 			case OntoUMLPackage.FORMAL_ASSOCIATION: return createFormalAssociation();
 			case OntoUMLPackage.GENERALIZATION: return createGeneralization();
 			case OntoUMLPackage.GENERALIZATION_SET: return createGeneralizationSet();
@@ -148,6 +149,7 @@ public class OntoUMLFactoryImpl extends EFactoryImpl implements OntoUMLFactory {
 			case OntoUMLPackage.PHASE: return createPhase();
 			case OntoUMLPackage.PROPERTY: return createProperty();
 			case OntoUMLPackage.QUANTITY: return createQuantity();
+			case OntoUMLPackage.REDEFINABLE_ELEMENT: return createRedefinableElement();
 			case OntoUMLPackage.RELATIONAL_CLASSIFIER: return createRelationalClassifier();
 			case OntoUMLPackage.RELATIONSHIP: return createRelationship();
 			case OntoUMLPackage.RELATOR: return createRelator();
@@ -165,6 +167,7 @@ public class OntoUMLFactoryImpl extends EFactoryImpl implements OntoUMLFactory {
 			case OntoUMLPackage.SUB_QUANTITY_OF: return createsubQuantityOf();
 			case OntoUMLPackage.SUBSTANCE_SORTAL: return createSubstanceSortal();
 			case OntoUMLPackage.TYPE: return createType();
+			case OntoUMLPackage.TYPED_ELEMENT: return createTypedElement();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -285,9 +288,9 @@ public class OntoUMLFactoryImpl extends EFactoryImpl implements OntoUMLFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DatatypeAssociation createDatatypeAssociation() {
-		DatatypeAssociationImpl datatypeAssociation = new DatatypeAssociationImpl();
-		return datatypeAssociation;
+	public DatatypeRelationship createDatatypeRelationship() {
+		DatatypeRelationshipImpl datatypeRelationship = new DatatypeRelationshipImpl();
+		return datatypeRelationship;
 	}
 
 	/**
@@ -338,6 +341,16 @@ public class OntoUMLFactoryImpl extends EFactoryImpl implements OntoUMLFactory {
 	public Element createElement() {
 		ElementImpl element = new ElementImpl();
 		return element;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Feature createFeature() {
+		FeatureImpl feature = new FeatureImpl();
+		return feature;
 	}
 
 	/**
@@ -525,6 +538,16 @@ public class OntoUMLFactoryImpl extends EFactoryImpl implements OntoUMLFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public RedefinableElement createRedefinableElement() {
+		RedefinableElementImpl redefinableElement = new RedefinableElementImpl();
+		return redefinableElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RelationalClassifier createRelationalClassifier() {
 		RelationalClassifierImpl relationalClassifier = new RelationalClassifierImpl();
 		return relationalClassifier;
@@ -688,6 +711,16 @@ public class OntoUMLFactoryImpl extends EFactoryImpl implements OntoUMLFactory {
 	public Type createType() {
 		TypeImpl type = new TypeImpl();
 		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypedElement createTypedElement() {
+		TypedElementImpl typedElement = new TypedElementImpl();
+		return typedElement;
 	}
 
 	/**

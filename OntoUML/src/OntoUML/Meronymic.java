@@ -57,7 +57,7 @@ public interface Meronymic extends DirectedBinaryRelationship {
 
 	/**
 	 * Returns the value of the '<em><b>Is Essential</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
+	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Is Essential</em>' attribute isn't clear,
@@ -67,7 +67,7 @@ public interface Meronymic extends DirectedBinaryRelationship {
 	 * @return the value of the '<em>Is Essential</em>' attribute.
 	 * @see #setIsEssential(boolean)
 	 * @see OntoUML.OntoUMLPackage#getMeronymic_IsEssential()
-	 * @model default="true"
+	 * @model default="false"
 	 * @generated
 	 */
 	boolean isIsEssential();
@@ -84,7 +84,7 @@ public interface Meronymic extends DirectedBinaryRelationship {
 
 	/**
 	 * Returns the value of the '<em><b>Is Inseparable</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
+	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Is Inseparable</em>' attribute isn't clear,
@@ -94,7 +94,7 @@ public interface Meronymic extends DirectedBinaryRelationship {
 	 * @return the value of the '<em>Is Inseparable</em>' attribute.
 	 * @see #setIsInseparable(boolean)
 	 * @see OntoUML.OntoUMLPackage#getMeronymic_IsInseparable()
-	 * @model default="true"
+	 * @model default="false"
 	 * @generated
 	 */
 	boolean isIsInseparable();
@@ -111,7 +111,7 @@ public interface Meronymic extends DirectedBinaryRelationship {
 
 	/**
 	 * Returns the value of the '<em><b>Is Immutable Part</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
+	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Is Immutable Part</em>' attribute isn't clear,
@@ -121,7 +121,7 @@ public interface Meronymic extends DirectedBinaryRelationship {
 	 * @return the value of the '<em>Is Immutable Part</em>' attribute.
 	 * @see #setIsImmutablePart(boolean)
 	 * @see OntoUML.OntoUMLPackage#getMeronymic_IsImmutablePart()
-	 * @model default="true"
+	 * @model default="false"
 	 * @generated
 	 */
 	boolean isIsImmutablePart();
@@ -138,7 +138,7 @@ public interface Meronymic extends DirectedBinaryRelationship {
 
 	/**
 	 * Returns the value of the '<em><b>Is Immutable Whole</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
+	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Is Immutable Whole</em>' attribute isn't clear,
@@ -148,7 +148,7 @@ public interface Meronymic extends DirectedBinaryRelationship {
 	 * @return the value of the '<em>Is Immutable Whole</em>' attribute.
 	 * @see #setIsImmutableWhole(boolean)
 	 * @see OntoUML.OntoUMLPackage#getMeronymic_IsImmutableWhole()
-	 * @model default="true"
+	 * @model default="false"
 	 * @generated
 	 */
 	boolean isIsImmutableWhole();

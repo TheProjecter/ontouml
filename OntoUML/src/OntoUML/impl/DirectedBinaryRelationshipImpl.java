@@ -11,6 +11,7 @@ import OntoUML.DirectedBinaryRelationship;
 import OntoUML.Generalization;
 import OntoUML.NamedElement;
 import OntoUML.OntoUMLPackage;
+import OntoUML.Property;
 import OntoUML.RelationalClassifier;
 import OntoUML.Type;
 
@@ -45,6 +46,7 @@ import org.eclipse.ocl.expressions.OCLExpression;
  * The following features are implemented:
  * <ul>
  *   <li>{@link OntoUML.impl.DirectedBinaryRelationshipImpl#getName <em>Name</em>}</li>
+ *   <li>{@link OntoUML.impl.DirectedBinaryRelationshipImpl#getAttribute <em>Attribute</em>}</li>
  *   <li>{@link OntoUML.impl.DirectedBinaryRelationshipImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link OntoUML.impl.DirectedBinaryRelationshipImpl#getGeneral <em>General</em>}</li>
  *   <li>{@link OntoUML.impl.DirectedBinaryRelationshipImpl#getGeneralization <em>Generalization</em>}</li>
@@ -132,6 +134,36 @@ public class DirectedBinaryRelationshipImpl extends DirectedRelationshipImpl imp
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Property> getAttribute() {
+		EStructuralFeature eFeature = OntoUMLPackage.Literals.CLASSIFIER__ATTRIBUTE;
+	
+		if (attributeDeriveOCL == null) { 
+			Helper helper = OCL_ENV.createOCLHelper();
+			helper.setAttributeContext(OntoUMLPackage.Literals.CLASSIFIER, eFeature);
+			
+			EAnnotation ocl = eFeature.getEAnnotation(OCL_ANNOTATION_SOURCE);
+			String derive = (String) ocl.getDetails().get("derive");
+			
+			try {
+				attributeDeriveOCL = helper.createQuery(derive);
+			} catch (ParserException e) {
+				throw new UnsupportedOperationException(e.getLocalizedMessage());
+			}
+		}
+		
+		Query<EClassifier, ?, ?> query = OCL_ENV.createQuery(attributeDeriveOCL);
+	
+		@SuppressWarnings("unchecked")
+		Collection<Property> result = (Collection<Property>) query.evaluate(this);
+		return new EcoreEList.UnmodifiableEList<Property>(this, eFeature, result.size(), result.toArray());
+	
 	}
 
 	/**
@@ -239,6 +271,8 @@ public class DirectedBinaryRelationshipImpl extends DirectedRelationshipImpl imp
 		switch (featureID) {
 			case OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__NAME:
 				return getName();
+			case OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__ATTRIBUTE:
+				return getAttribute();
 			case OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__IS_ABSTRACT:
 				return isIsAbstract() ? Boolean.TRUE : Boolean.FALSE;
 			case OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__GENERAL:
@@ -260,6 +294,10 @@ public class DirectedBinaryRelationshipImpl extends DirectedRelationshipImpl imp
 		switch (featureID) {
 			case OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__NAME:
 				setName((String)newValue);
+				return;
+			case OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__ATTRIBUTE:
+				getAttribute().clear();
+				getAttribute().addAll((Collection<? extends Property>)newValue);
 				return;
 			case OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__IS_ABSTRACT:
 				setIsAbstract(((Boolean)newValue).booleanValue());
@@ -287,6 +325,9 @@ public class DirectedBinaryRelationshipImpl extends DirectedRelationshipImpl imp
 			case OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__ATTRIBUTE:
+				getAttribute().clear();
+				return;
 			case OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__IS_ABSTRACT:
 				setIsAbstract(IS_ABSTRACT_EDEFAULT);
 				return;
@@ -310,6 +351,8 @@ public class DirectedBinaryRelationshipImpl extends DirectedRelationshipImpl imp
 		switch (featureID) {
 			case OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__ATTRIBUTE:
+				return !getAttribute().isEmpty();
 			case OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__IS_ABSTRACT:
 				return isAbstract != IS_ABSTRACT_EDEFAULT;
 			case OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__GENERAL:
@@ -340,6 +383,7 @@ public class DirectedBinaryRelationshipImpl extends DirectedRelationshipImpl imp
 		}
 		if (baseClass == Classifier.class) {
 			switch (derivedFeatureID) {
+				case OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__ATTRIBUTE: return OntoUMLPackage.CLASSIFIER__ATTRIBUTE;
 				case OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__IS_ABSTRACT: return OntoUMLPackage.CLASSIFIER__IS_ABSTRACT;
 				case OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__GENERAL: return OntoUMLPackage.CLASSIFIER__GENERAL;
 				case OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__GENERALIZATION: return OntoUMLPackage.CLASSIFIER__GENERALIZATION;
@@ -374,6 +418,7 @@ public class DirectedBinaryRelationshipImpl extends DirectedRelationshipImpl imp
 		}
 		if (baseClass == Classifier.class) {
 			switch (baseFeatureID) {
+				case OntoUMLPackage.CLASSIFIER__ATTRIBUTE: return OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__ATTRIBUTE;
 				case OntoUMLPackage.CLASSIFIER__IS_ABSTRACT: return OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__IS_ABSTRACT;
 				case OntoUMLPackage.CLASSIFIER__GENERAL: return OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__GENERAL;
 				case OntoUMLPackage.CLASSIFIER__GENERALIZATION: return OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__GENERALIZATION;
@@ -405,6 +450,15 @@ public class DirectedBinaryRelationshipImpl extends DirectedRelationshipImpl imp
 		result.append(')');
 		return result.toString();
 	}
+
+	/**
+	 * The parsed OCL expression for the derivation of '{@link #getAttribute <em>Attribute</em>}' property.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAttribute
+	 * @generated
+	 */
+	private static OCLExpression<EClassifier> attributeDeriveOCL;
 
 	/**
 	 * The parsed OCL expression for the derivation of '{@link #getGeneral <em>General</em>}' property.

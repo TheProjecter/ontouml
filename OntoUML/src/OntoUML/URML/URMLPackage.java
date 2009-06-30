@@ -72,15 +72,6 @@ public interface URMLPackage extends EPackage {
 	int RULE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RULE__ATTRIBUTE = OntoUMLPackage.NAMED_ELEMENT__ATTRIBUTE;
-
-	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -125,15 +116,6 @@ public interface URMLPackage extends EPackage {
 	 * @generated
 	 */
 	int DERIVATION_RULE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DERIVATION_RULE__ATTRIBUTE = RULE__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -191,15 +173,6 @@ public interface URMLPackage extends EPackage {
 	int CONCLUSION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONCLUSION__ATTRIBUTE = OntoUMLPackage.RELATIONAL_CLASSIFIER__ATTRIBUTE;
-
-	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -216,6 +189,15 @@ public interface URMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONCLUSION__NAME = OntoUMLPackage.RELATIONAL_CLASSIFIER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCLUSION__ATTRIBUTE = OntoUMLPackage.RELATIONAL_CLASSIFIER__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -273,15 +255,6 @@ public interface URMLPackage extends EPackage {
 	int CONDITION = 3;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION__ATTRIBUTE = OntoUMLPackage.RELATIONAL_CLASSIFIER__ATTRIBUTE;
-
-	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -298,6 +271,15 @@ public interface URMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONDITION__NAME = OntoUMLPackage.RELATIONAL_CLASSIFIER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION__ATTRIBUTE = OntoUMLPackage.RELATIONAL_CLASSIFIER__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -364,15 +346,6 @@ public interface URMLPackage extends EPackage {
 	int CLASSIFIER_ATOM = 4;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASSIFIER_ATOM__ATTRIBUTE = CONDITION__ATTRIBUTE;
-
-	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -389,6 +362,15 @@ public interface URMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int CLASSIFIER_ATOM__NAME = CONDITION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFIER_ATOM__ATTRIBUTE = CONDITION__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -482,15 +464,6 @@ public interface URMLPackage extends EPackage {
 	int ROLE_TYPE_ATOM = 5;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE_TYPE_ATOM__ATTRIBUTE = CONCLUSION__ATTRIBUTE;
-
-	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -507,6 +480,15 @@ public interface URMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROLE_TYPE_ATOM__NAME = CONCLUSION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_TYPE_ATOM__ATTRIBUTE = CONCLUSION__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -582,15 +564,6 @@ public interface URMLPackage extends EPackage {
 	int BINARY_ASSOCIATION_ATOM = 6;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_ASSOCIATION_ATOM__ATTRIBUTE = CONDITION__ATTRIBUTE;
-
-	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -607,6 +580,15 @@ public interface URMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int BINARY_ASSOCIATION_ATOM__NAME = CONDITION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_ASSOCIATION_ATOM__ATTRIBUTE = CONDITION__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -728,15 +710,6 @@ public interface URMLPackage extends EPackage {
 	int ATTRIBUTION_ATOM = 8;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTION_ATOM__ATTRIBUTE = CONCLUSION__ATTRIBUTE;
-
-	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -753,6 +726,15 @@ public interface URMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int ATTRIBUTION_ATOM__NAME = CONCLUSION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTION_ATOM__ATTRIBUTE = CONCLUSION__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.

@@ -177,9 +177,6 @@
     <nodeLabelTraces
         visualID="5027"
         queryText="true"/>
-    <compartmentTraces
-        visualID="7014"
-        queryText="true"/>
   </nodeTraces>
   <nodeTraces
       visualID="2015"
@@ -188,58 +185,45 @@
         visualID="5028"
         queryText="true"/>
   </nodeTraces>
-  <nodeTraces
-      visualID="2016"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Container') and _containmentMF_.name = 'InstanciarElement')">
-    <nodeLabelTraces
-        visualID="5029"
-        queryText="true"/>
-    <nodeLabelTraces
-        visualID="5030"
-        queryText="true"/>
-  </nodeTraces>
   <childNodeTraces
-      visualID="3001"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Element') and _containmentMF_.name = 'attribute')"/>
+      visualID="3028"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Classifier') and _containmentMF_.name = 'attribute')"/>
   <childNodeTraces
-      visualID="3002"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Element') and _containmentMF_.name = 'attribute')"/>
+      visualID="3029"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Classifier') and _containmentMF_.name = 'attribute')"/>
   <childNodeTraces
-      visualID="3003"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Element') and _containmentMF_.name = 'attribute')"/>
+      visualID="3030"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Classifier') and _containmentMF_.name = 'attribute')"/>
   <childNodeTraces
-      visualID="3004"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Element') and _containmentMF_.name = 'attribute')"/>
+      visualID="3031"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Classifier') and _containmentMF_.name = 'attribute')"/>
   <childNodeTraces
-      visualID="3005"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Element') and _containmentMF_.name = 'attribute')"/>
+      visualID="3032"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Classifier') and _containmentMF_.name = 'attribute')"/>
   <childNodeTraces
-      visualID="3006"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Element') and _containmentMF_.name = 'attribute')"/>
+      visualID="3033"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Classifier') and _containmentMF_.name = 'attribute')"/>
   <childNodeTraces
-      visualID="3007"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Element') and _containmentMF_.name = 'attribute')"/>
+      visualID="3034"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Classifier') and _containmentMF_.name = 'attribute')"/>
   <childNodeTraces
-      visualID="3008"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Element') and _containmentMF_.name = 'attribute')"/>
+      visualID="3035"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Classifier') and _containmentMF_.name = 'attribute')"/>
   <childNodeTraces
-      visualID="3009"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Element') and _containmentMF_.name = 'attribute')"/>
+      visualID="3036"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Classifier') and _containmentMF_.name = 'attribute')"/>
   <childNodeTraces
-      visualID="3010"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Element') and _containmentMF_.name = 'attribute')"/>
+      visualID="3037"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Classifier') and _containmentMF_.name = 'attribute')"/>
   <childNodeTraces
-      visualID="3011"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Element') and _containmentMF_.name = 'attribute')"/>
+      visualID="3038"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Classifier') and _containmentMF_.name = 'attribute')"/>
   <childNodeTraces
-      visualID="3012"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Element') and _containmentMF_.name = 'attribute')"/>
+      visualID="3039"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Classifier') and _containmentMF_.name = 'attribute')"/>
   <childNodeTraces
-      visualID="3013"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Element') and _containmentMF_.name = 'attribute')"/>
-  <childNodeTraces
-      visualID="3014"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Element') and _containmentMF_.name = 'attribute')"/>
+      visualID="3040"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Classifier') and _containmentMF_.name = 'attribute')"/>
   <linkTraces
       visualID="4001"
       queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Characterization')">
@@ -248,6 +232,18 @@
         queryText="true"/>
     <linkLabelTraces
         visualID="6002"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6032"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6033"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6034"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6035"
         queryText="true"/>
   </linkTraces>
   <linkTraces
@@ -262,15 +258,17 @@
     <linkLabelTraces
         visualID="6023"
         queryText="true"/>
-  </linkTraces>
-  <linkTraces
-      visualID="4003"
-      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'DatatypeAssociation')">
     <linkLabelTraces
-        visualID="6005"
+        visualID="6028"
         queryText="true"/>
     <linkLabelTraces
-        visualID="6025"
+        visualID="6029"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6030"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6031"
         queryText="true"/>
   </linkTraces>
   <linkTraces
@@ -278,6 +276,12 @@
       queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Derivation')">
     <linkLabelTraces
         visualID="6006"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6036"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6037"
         queryText="true"/>
   </linkTraces>
   <linkTraces
@@ -288,6 +292,18 @@
         queryText="true"/>
     <linkLabelTraces
         visualID="6008"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6058"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6059"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6060"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6061"
         queryText="true"/>
   </linkTraces>
   <linkTraces
@@ -302,6 +318,18 @@
     <linkLabelTraces
         visualID="6010"
         queryText="true"/>
+    <linkLabelTraces
+        visualID="6062"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6063"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6064"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6065"
+        queryText="true"/>
   </linkTraces>
   <linkTraces
       visualID="4008"
@@ -311,6 +339,18 @@
         queryText="true"/>
     <linkLabelTraces
         visualID="6012"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6038"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6039"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6040"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6041"
         queryText="true"/>
   </linkTraces>
   <linkTraces
@@ -325,6 +365,18 @@
     <linkLabelTraces
         visualID="6024"
         queryText="true"/>
+    <linkLabelTraces
+        visualID="6042"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6043"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6044"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6045"
+        queryText="true"/>
   </linkTraces>
   <linkTraces
       visualID="4010"
@@ -337,6 +389,18 @@
         queryText="true"/>
     <linkLabelTraces
         visualID="6026"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6046"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6047"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6048"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6049"
         queryText="true"/>
   </linkTraces>
   <linkTraces
@@ -351,10 +415,19 @@
     <linkLabelTraces
         visualID="6027"
         queryText="true"/>
+    <linkLabelTraces
+        visualID="6050"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6051"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6052"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6053"
+        queryText="true"/>
   </linkTraces>
-  <linkTraces
-      visualID="4012"
-      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'Property')"/>
   <linkTraces
       visualID="4013"
       queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML.URML' and _eClass_.name = 'BinaryAssociationAtom')"/>
@@ -385,6 +458,28 @@
         queryText="true"/>
     <linkLabelTraces
         visualID="6022"
+        queryText="true"/>
+  </linkTraces>
+  <linkTraces
+      visualID="4019"
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'OntoUML' and _eClass_.name = 'DatatypeRelationship')">
+    <linkLabelTraces
+        visualID="6066"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6067"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6068"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6069"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6070"
+        queryText="true"/>
+    <linkLabelTraces
+        visualID="6071"
         queryText="true"/>
   </linkTraces>
 </trace:TraceModel>

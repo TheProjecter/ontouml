@@ -10,6 +10,7 @@ import OntoUML.Classifier;
 import OntoUML.Generalization;
 import OntoUML.OntoUMLPackage;
 
+import OntoUML.Property;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -40,6 +41,7 @@ import org.eclipse.ocl.expressions.OCLExpression;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link OntoUML.impl.ClassifierImpl#getAttribute <em>Attribute</em>}</li>
  *   <li>{@link OntoUML.impl.ClassifierImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link OntoUML.impl.ClassifierImpl#getGeneral <em>General</em>}</li>
  *   <li>{@link OntoUML.impl.ClassifierImpl#getGeneralization <em>Generalization</em>}</li>
@@ -93,6 +95,36 @@ public class ClassifierImpl extends TypeImpl implements Classifier {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Property> getAttribute() {
+		EStructuralFeature eFeature = OntoUMLPackage.Literals.CLASSIFIER__ATTRIBUTE;
+	
+		if (attributeDeriveOCL == null) { 
+			Helper helper = OCL_ENV.createOCLHelper();
+			helper.setAttributeContext(OntoUMLPackage.Literals.CLASSIFIER, eFeature);
+			
+			EAnnotation ocl = eFeature.getEAnnotation(OCL_ANNOTATION_SOURCE);
+			String derive = (String) ocl.getDetails().get("derive");
+			
+			try {
+				attributeDeriveOCL = helper.createQuery(derive);
+			} catch (ParserException e) {
+				throw new UnsupportedOperationException(e.getLocalizedMessage());
+			}
+		}
+		
+		Query<EClassifier, ?, ?> query = OCL_ENV.createQuery(attributeDeriveOCL);
+	
+		@SuppressWarnings("unchecked")
+		Collection<Property> result = (Collection<Property>) query.evaluate(this);
+		return new EcoreEList.UnmodifiableEList<Property>(this, eFeature, result.size(), result.toArray());
+	
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isIsAbstract() {
 		return isAbstract;
 	}
@@ -108,7 +140,7 @@ public class ClassifierImpl extends TypeImpl implements Classifier {
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OntoUMLPackage.CLASSIFIER__IS_ABSTRACT, oldIsAbstract, isAbstract));
 	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -191,6 +223,8 @@ public class ClassifierImpl extends TypeImpl implements Classifier {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case OntoUMLPackage.CLASSIFIER__ATTRIBUTE:
+				return getAttribute();
 			case OntoUMLPackage.CLASSIFIER__IS_ABSTRACT:
 				return isIsAbstract() ? Boolean.TRUE : Boolean.FALSE;
 			case OntoUMLPackage.CLASSIFIER__GENERAL:
@@ -210,6 +244,10 @@ public class ClassifierImpl extends TypeImpl implements Classifier {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case OntoUMLPackage.CLASSIFIER__ATTRIBUTE:
+				getAttribute().clear();
+				getAttribute().addAll((Collection<? extends Property>)newValue);
+				return;
 			case OntoUMLPackage.CLASSIFIER__IS_ABSTRACT:
 				setIsAbstract(((Boolean)newValue).booleanValue());
 				return;
@@ -233,6 +271,9 @@ public class ClassifierImpl extends TypeImpl implements Classifier {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case OntoUMLPackage.CLASSIFIER__ATTRIBUTE:
+				getAttribute().clear();
+				return;
 			case OntoUMLPackage.CLASSIFIER__IS_ABSTRACT:
 				setIsAbstract(IS_ABSTRACT_EDEFAULT);
 				return;
@@ -254,6 +295,8 @@ public class ClassifierImpl extends TypeImpl implements Classifier {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case OntoUMLPackage.CLASSIFIER__ATTRIBUTE:
+				return !getAttribute().isEmpty();
 			case OntoUMLPackage.CLASSIFIER__IS_ABSTRACT:
 				return isAbstract != IS_ABSTRACT_EDEFAULT;
 			case OntoUMLPackage.CLASSIFIER__GENERAL:
@@ -279,6 +322,15 @@ public class ClassifierImpl extends TypeImpl implements Classifier {
 		result.append(')');
 		return result.toString();
 	}
+
+	/**
+	 * The parsed OCL expression for the derivation of '{@link #getAttribute <em>Attribute</em>}' property.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAttribute
+	 * @generated
+	 */
+	private static OCLExpression<EClassifier> attributeDeriveOCL;
 
 	/**
 	 * The parsed OCL expression for the derivation of '{@link #getGeneral <em>General</em>}' property.

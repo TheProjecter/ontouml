@@ -6,6 +6,11 @@
  */
 package OntoUML.util;
 
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notifier;
+import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+import org.eclipse.emf.ecore.EObject;
+
 import OntoUML.AntiRigidMixinClass;
 import OntoUML.AntiRigidSortalClass;
 import OntoUML.Association;
@@ -15,12 +20,13 @@ import OntoUML.Classifier;
 import OntoUML.Collective;
 import OntoUML.Container;
 import OntoUML.Datatype;
-import OntoUML.DatatypeAssociation;
+import OntoUML.DatatypeRelationship;
 import OntoUML.DependencyRelationship;
 import OntoUML.Derivation;
 import OntoUML.DirectedBinaryRelationship;
 import OntoUML.DirectedRelationship;
 import OntoUML.Element;
+import OntoUML.Feature;
 import OntoUML.FormalAssociation;
 import OntoUML.Generalization;
 import OntoUML.GeneralizationSet;
@@ -40,6 +46,7 @@ import OntoUML.OntoUMLPackage;
 import OntoUML.Phase;
 import OntoUML.Property;
 import OntoUML.Quantity;
+import OntoUML.RedefinableElement;
 import OntoUML.RelationalClassifier;
 import OntoUML.Relationship;
 import OntoUML.Relator;
@@ -55,19 +62,11 @@ import OntoUML.StructuralFeature;
 import OntoUML.SubKind;
 import OntoUML.SubstanceSortal;
 import OntoUML.Type;
+import OntoUML.TypedElement;
 import OntoUML.componentOf;
 import OntoUML.memberOf;
 import OntoUML.subCollectionOf;
 import OntoUML.subQuantityOf;
-
-import org.eclipse.emf.common.notify.Adapter;
-import org.eclipse.emf.common.notify.Notifier;
-
-import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
-import org.eclipse.emf.ecore.EModelElement;
-import org.eclipse.emf.ecore.ENamedElement;
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -170,8 +169,8 @@ public class OntoUMLAdapterFactory extends AdapterFactoryImpl {
 				return createDatatypeAdapter();
 			}
 			@Override
-			public Adapter caseDatatypeAssociation(DatatypeAssociation object) {
-				return createDatatypeAssociationAdapter();
+			public Adapter caseDatatypeRelationship(DatatypeRelationship object) {
+				return createDatatypeRelationshipAdapter();
 			}
 			@Override
 			public Adapter caseDependencyRelationship(DependencyRelationship object) {
@@ -192,6 +191,10 @@ public class OntoUMLAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseElement(Element object) {
 				return createElementAdapter();
+			}
+			@Override
+			public Adapter caseFeature(Feature object) {
+				return createFeatureAdapter();
 			}
 			@Override
 			public Adapter caseFormalAssociation(FormalAssociation object) {
@@ -270,6 +273,10 @@ public class OntoUMLAdapterFactory extends AdapterFactoryImpl {
 				return createQuantityAdapter();
 			}
 			@Override
+			public Adapter caseRedefinableElement(RedefinableElement object) {
+				return createRedefinableElementAdapter();
+			}
+			@Override
 			public Adapter caseRelationalClassifier(RelationalClassifier object) {
 				return createRelationalClassifierAdapter();
 			}
@@ -336,6 +343,10 @@ public class OntoUMLAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseType(Type object) {
 				return createTypeAdapter();
+			}
+			@Override
+			public Adapter caseTypedElement(TypedElement object) {
+				return createTypedElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -512,16 +523,16 @@ public class OntoUMLAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link OntoUML.DatatypeAssociation <em>Datatype Association</em>}'.
+	 * Creates a new adapter for an object of class '{@link OntoUML.DatatypeRelationship <em>Datatype Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see OntoUML.DatatypeAssociation
+	 * @see OntoUML.DatatypeRelationship
 	 * @generated
 	 */
-	public Adapter createDatatypeAssociationAdapter() {
+	public Adapter createDatatypeRelationshipAdapter() {
 		return null;
 	}
 
@@ -592,6 +603,20 @@ public class OntoUMLAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link OntoUML.Feature <em>Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see OntoUML.Feature
+	 * @generated
+	 */
+	public Adapter createFeatureAdapter() {
 		return null;
 	}
 
@@ -862,6 +887,20 @@ public class OntoUMLAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link OntoUML.RedefinableElement <em>Redefinable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see OntoUML.RedefinableElement
+	 * @generated
+	 */
+	public Adapter createRedefinableElementAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link OntoUML.RelationalClassifier <em>Relational Classifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1096,6 +1135,20 @@ public class OntoUMLAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link OntoUML.TypedElement <em>Typed Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see OntoUML.TypedElement
+	 * @generated
+	 */
+	public Adapter createTypedElementAdapter() {
 		return null;
 	}
 

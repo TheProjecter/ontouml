@@ -6,6 +6,11 @@
  */
 package OntoUML.util;
 
+import java.util.List;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+
 import OntoUML.AntiRigidMixinClass;
 import OntoUML.AntiRigidSortalClass;
 import OntoUML.Association;
@@ -15,12 +20,13 @@ import OntoUML.Classifier;
 import OntoUML.Collective;
 import OntoUML.Container;
 import OntoUML.Datatype;
-import OntoUML.DatatypeAssociation;
+import OntoUML.DatatypeRelationship;
 import OntoUML.DependencyRelationship;
 import OntoUML.Derivation;
 import OntoUML.DirectedBinaryRelationship;
 import OntoUML.DirectedRelationship;
 import OntoUML.Element;
+import OntoUML.Feature;
 import OntoUML.FormalAssociation;
 import OntoUML.Generalization;
 import OntoUML.GeneralizationSet;
@@ -40,6 +46,7 @@ import OntoUML.OntoUMLPackage;
 import OntoUML.Phase;
 import OntoUML.Property;
 import OntoUML.Quantity;
+import OntoUML.RedefinableElement;
 import OntoUML.RelationalClassifier;
 import OntoUML.Relationship;
 import OntoUML.Relator;
@@ -55,17 +62,11 @@ import OntoUML.StructuralFeature;
 import OntoUML.SubKind;
 import OntoUML.SubstanceSortal;
 import OntoUML.Type;
+import OntoUML.TypedElement;
 import OntoUML.componentOf;
 import OntoUML.memberOf;
 import OntoUML.subCollectionOf;
 import OntoUML.subQuantityOf;
-
-import java.util.List;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EModelElement;
-import org.eclipse.emf.ecore.ENamedElement;
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -274,16 +275,17 @@ public class OntoUMLSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OntoUMLPackage.DATATYPE_ASSOCIATION: {
-				DatatypeAssociation datatypeAssociation = (DatatypeAssociation)theEObject;
-				T result = caseDatatypeAssociation(datatypeAssociation);
-				if (result == null) result = caseAssociation(datatypeAssociation);
-				if (result == null) result = caseRelationship(datatypeAssociation);
-				if (result == null) result = caseRelationalClassifier(datatypeAssociation);
-				if (result == null) result = caseElement(datatypeAssociation);
-				if (result == null) result = caseClassifier(datatypeAssociation);
-				if (result == null) result = caseType(datatypeAssociation);
-				if (result == null) result = caseNamedElement(datatypeAssociation);
+			case OntoUMLPackage.DATATYPE_RELATIONSHIP: {
+				DatatypeRelationship datatypeRelationship = (DatatypeRelationship)theEObject;
+				T result = caseDatatypeRelationship(datatypeRelationship);
+				if (result == null) result = caseDirectedBinaryRelationship(datatypeRelationship);
+				if (result == null) result = caseDirectedRelationship(datatypeRelationship);
+				if (result == null) result = caseRelationalClassifier(datatypeRelationship);
+				if (result == null) result = caseRelationship(datatypeRelationship);
+				if (result == null) result = caseClassifier(datatypeRelationship);
+				if (result == null) result = caseElement(datatypeRelationship);
+				if (result == null) result = caseType(datatypeRelationship);
+				if (result == null) result = caseNamedElement(datatypeRelationship);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -340,6 +342,15 @@ public class OntoUMLSwitch<T> {
 			case OntoUMLPackage.ELEMENT: {
 				Element element = (Element)theEObject;
 				T result = caseElement(element);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OntoUMLPackage.FEATURE: {
+				Feature feature = (Feature)theEObject;
+				T result = caseFeature(feature);
+				if (result == null) result = caseRedefinableElement(feature);
+				if (result == null) result = caseNamedElement(feature);
+				if (result == null) result = caseElement(feature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -553,8 +564,11 @@ public class OntoUMLSwitch<T> {
 				T result = caseProperty(property);
 				if (result == null) result = caseStructuralFeature(property);
 				if (result == null) result = caseMultiplicityElement(property);
-				if (result == null) result = caseNamedElement(property);
+				if (result == null) result = caseFeature(property);
+				if (result == null) result = caseTypedElement(property);
 				if (result == null) result = caseElement(property);
+				if (result == null) result = caseRedefinableElement(property);
+				if (result == null) result = caseNamedElement(property);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -570,6 +584,14 @@ public class OntoUMLSwitch<T> {
 				if (result == null) result = caseType(quantity);
 				if (result == null) result = caseNamedElement(quantity);
 				if (result == null) result = caseElement(quantity);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OntoUMLPackage.REDEFINABLE_ELEMENT: {
+				RedefinableElement redefinableElement = (RedefinableElement)theEObject;
+				T result = caseRedefinableElement(redefinableElement);
+				if (result == null) result = caseNamedElement(redefinableElement);
+				if (result == null) result = caseElement(redefinableElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -709,8 +731,11 @@ public class OntoUMLSwitch<T> {
 				StructuralFeature structuralFeature = (StructuralFeature)theEObject;
 				T result = caseStructuralFeature(structuralFeature);
 				if (result == null) result = caseMultiplicityElement(structuralFeature);
-				if (result == null) result = caseNamedElement(structuralFeature);
+				if (result == null) result = caseFeature(structuralFeature);
+				if (result == null) result = caseTypedElement(structuralFeature);
 				if (result == null) result = caseElement(structuralFeature);
+				if (result == null) result = caseRedefinableElement(structuralFeature);
+				if (result == null) result = caseNamedElement(structuralFeature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -777,6 +802,14 @@ public class OntoUMLSwitch<T> {
 				T result = caseType(type);
 				if (result == null) result = caseNamedElement(type);
 				if (result == null) result = caseElement(type);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case OntoUMLPackage.TYPED_ELEMENT: {
+				TypedElement typedElement = (TypedElement)theEObject;
+				T result = caseTypedElement(typedElement);
+				if (result == null) result = caseNamedElement(typedElement);
+				if (result == null) result = caseElement(typedElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -950,17 +983,17 @@ public class OntoUMLSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Datatype Association</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Datatype Relationship</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Datatype Association</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Datatype Relationship</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDatatypeAssociation(DatatypeAssociation object) {
+	public T caseDatatypeRelationship(DatatypeRelationship object) {
 		return null;
 	}
 
@@ -1036,6 +1069,21 @@ public class OntoUMLSwitch<T> {
 	 * @generated
 	 */
 	public T caseElement(Element object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Feature</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Feature</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFeature(Feature object) {
 		return null;
 	}
 
@@ -1325,6 +1373,21 @@ public class OntoUMLSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Redefinable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Redefinable Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRedefinableElement(RedefinableElement object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Relational Classifier</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1576,6 +1639,21 @@ public class OntoUMLSwitch<T> {
 	 * @generated
 	 */
 	public T caseType(Type object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Typed Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Typed Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTypedElement(TypedElement object) {
 		return null;
 	}
 

@@ -125,13 +125,13 @@ public interface OntoUMLFactory extends EFactory {
 	Datatype createDatatype();
 
 	/**
-	 * Returns a new object of class '<em>Datatype Association</em>'.
+	 * Returns a new object of class '<em>Datatype Relationship</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Datatype Association</em>'.
+	 * @return a new object of class '<em>Datatype Relationship</em>'.
 	 * @generated
 	 */
-	DatatypeAssociation createDatatypeAssociation();
+	DatatypeRelationship createDatatypeRelationship();
 
 	/**
 	 * Returns a new object of class '<em>Dependency Relationship</em>'.
@@ -177,6 +177,15 @@ public interface OntoUMLFactory extends EFactory {
 	 * @generated
 	 */
 	Element createElement();
+
+	/**
+	 * Returns a new object of class '<em>Feature</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Feature</em>'.
+	 * @generated
+	 */
+	Feature createFeature();
 
 	/**
 	 * Returns a new object of class '<em>Formal Association</em>'.
@@ -341,6 +350,15 @@ public interface OntoUMLFactory extends EFactory {
 	Quantity createQuantity();
 
 	/**
+	 * Returns a new object of class '<em>Redefinable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Redefinable Element</em>'.
+	 * @generated
+	 */
+	RedefinableElement createRedefinableElement();
+
+	/**
 	 * Returns a new object of class '<em>Relational Classifier</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -492,6 +510,15 @@ public interface OntoUMLFactory extends EFactory {
 	 * @generated
 	 */
 	Type createType();
+
+	/**
+	 * Returns a new object of class '<em>Typed Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Typed Element</em>'.
+	 * @generated
+	 */
+	TypedElement createTypedElement();
 
 	/**
 	 * Returns the package supported by this factory.
