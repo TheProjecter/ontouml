@@ -46,15 +46,16 @@
           compartment="//@nodes.0/@ownedChild/@compartments.0"
           referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
-            href="OntoUML.ecore#//Element/attribute"/>
+            href="OntoUML.ecore#//Classifier/attribute"/>
         <ownedChild>
           <domainMetaElement
               href="OntoUML.ecore#//Property"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping"
-              viewPattern="{0} [{1}..{2,choice,-1#*|-1&lt;{2}}]"
+              readOnly="true"
+              viewPattern=""
               editorPattern=""
-              editPattern="{0} [{1}..{2}]">
+              editPattern="">
             <diagramLabel
                 href="OntoUML.gmfgraph#AttributeLabel"/>
             <features
@@ -102,15 +103,16 @@
           compartment="//@nodes.1/@ownedChild/@compartments.0"
           referencedChild="//@nodes.1/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
-            href="OntoUML.ecore#//Element/attribute"/>
+            href="OntoUML.ecore#//Classifier/attribute"/>
         <ownedChild>
           <domainMetaElement
               href="OntoUML.ecore#//Property"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping"
-              viewPattern="{0} [{1}..{2,choice,-1#*|-1&lt;{2}}]"
+              readOnly="true"
+              viewPattern=""
               editorPattern=""
-              editPattern="{0} [{1}..{2}]">
+              editPattern="">
             <diagramLabel
                 href="OntoUML.gmfgraph#AttributeLabel"/>
             <features
@@ -158,15 +160,16 @@
           compartment="//@nodes.2/@ownedChild/@compartments.0"
           referencedChild="//@nodes.2/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
-            href="OntoUML.ecore#//Element/attribute"/>
+            href="OntoUML.ecore#//Classifier/attribute"/>
         <ownedChild>
           <domainMetaElement
               href="OntoUML.ecore#//Property"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping"
-              viewPattern="{0} [{1}..{2,choice,-1#*|-1&lt;{2}}]"
+              readOnly="true"
+              viewPattern=""
               editorPattern=""
-              editPattern="{0} [{1}..{2}]">
+              editPattern="">
             <diagramLabel
                 href="OntoUML.gmfgraph#AttributeLabel"/>
             <features
@@ -225,15 +228,16 @@
           compartment="//@nodes.3/@ownedChild/@compartments.0"
           referencedChild="//@nodes.3/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
-            href="OntoUML.ecore#//Element/attribute"/>
+            href="OntoUML.ecore#//Classifier/attribute"/>
         <ownedChild>
           <domainMetaElement
               href="OntoUML.ecore#//Property"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping"
-              viewPattern="{0} [{1}..{2,choice,-1#*|-1&lt;{2}}]"
+              readOnly="true"
+              viewPattern=""
               editorPattern=""
-              editPattern="{0} [{1}..{2}]">
+              editPattern="">
             <diagramLabel
                 href="OntoUML.gmfgraph#AttributeLabel"/>
             <features
@@ -281,15 +285,16 @@
           compartment="//@nodes.4/@ownedChild/@compartments.0"
           referencedChild="//@nodes.4/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
-            href="OntoUML.ecore#//Element/attribute"/>
+            href="OntoUML.ecore#//Classifier/attribute"/>
         <ownedChild>
           <domainMetaElement
               href="OntoUML.ecore#//Property"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping"
-              viewPattern="{0} [{1}..{2,choice,-1#*|-1&lt;{2}}]"
+              readOnly="true"
+              viewPattern=""
               editorPattern=""
-              editPattern="{0} [{1}..{2}]">
+              editPattern="">
             <diagramLabel
                 href="OntoUML.gmfgraph#AttributeLabel"/>
             <features
@@ -337,15 +342,16 @@
           compartment="//@nodes.5/@ownedChild/@compartments.0"
           referencedChild="//@nodes.5/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
-            href="OntoUML.ecore#//Element/attribute"/>
+            href="OntoUML.ecore#//Classifier/attribute"/>
         <ownedChild>
           <domainMetaElement
               href="OntoUML.ecore#//Property"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping"
-              viewPattern="{0} [{1}..{2,choice,-1#*|-1&lt;{2}}]"
+              readOnly="true"
+              viewPattern=""
               editorPattern=""
-              editPattern="{0} [{1}..{2}]">
+              editPattern="">
             <diagramLabel
                 href="OntoUML.gmfgraph#AttributeLabel"/>
             <features
@@ -393,15 +399,16 @@
           compartment="//@nodes.6/@ownedChild/@compartments.0"
           referencedChild="//@nodes.6/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
-            href="OntoUML.ecore#//Element/attribute"/>
+            href="OntoUML.ecore#//Classifier/attribute"/>
         <ownedChild>
           <domainMetaElement
               href="OntoUML.ecore#//Property"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping"
-              viewPattern="{0} [{1}..{2,choice,-1#*|-1&lt;{2}}]"
+              readOnly="true"
+              viewPattern=""
               editorPattern=""
-              editPattern="{0} [{1}..{2}]">
+              editPattern="">
             <diagramLabel
                 href="OntoUML.gmfgraph#AttributeLabel"/>
             <features
@@ -449,15 +456,16 @@
           compartment="//@nodes.7/@ownedChild/@compartments.0"
           referencedChild="//@nodes.7/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
-            href="OntoUML.ecore#//Element/attribute"/>
+            href="OntoUML.ecore#//Classifier/attribute"/>
         <ownedChild>
           <domainMetaElement
               href="OntoUML.ecore#//Property"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping"
-              viewPattern="{0} [{1}..{2,choice,-1#*|-1&lt;{2}}]"
+              readOnly="true"
+              viewPattern=""
               editorPattern=""
-              editPattern="{0} [{1}..{2}]">
+              editPattern="">
             <diagramLabel
                 href="OntoUML.gmfgraph#AttributeLabel"/>
             <features
@@ -505,15 +513,16 @@
           compartment="//@nodes.8/@ownedChild/@compartments.0"
           referencedChild="//@nodes.8/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
-            href="OntoUML.ecore#//Element/attribute"/>
+            href="OntoUML.ecore#//Classifier/attribute"/>
         <ownedChild>
           <domainMetaElement
               href="OntoUML.ecore#//Property"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping"
-              viewPattern="{0} [{1}..{2,choice,-1#*|-1&lt;{2}}]"
+              readOnly="true"
+              viewPattern=""
               editorPattern=""
-              editPattern="{0} [{1}..{2}]">
+              editPattern="">
             <diagramLabel
                 href="OntoUML.gmfgraph#AttributeLabel"/>
             <features
@@ -572,15 +581,16 @@
           compartment="//@nodes.9/@ownedChild/@compartments.0"
           referencedChild="//@nodes.9/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
-            href="OntoUML.ecore#//Element/attribute"/>
+            href="OntoUML.ecore#//Classifier/attribute"/>
         <ownedChild>
           <domainMetaElement
               href="OntoUML.ecore#//Property"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping"
-              viewPattern="{0} [{1}..{2,choice,-1#*|-1&lt;{2}}]"
+              readOnly="true"
+              viewPattern=""
               editorPattern=""
-              editPattern="{0} [{1}..{2}]">
+              editPattern="">
             <diagramLabel
                 href="OntoUML.gmfgraph#AttributeLabel"/>
             <features
@@ -628,15 +638,16 @@
           compartment="//@nodes.10/@ownedChild/@compartments.0"
           referencedChild="//@nodes.10/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
-            href="OntoUML.ecore#//Element/attribute"/>
+            href="OntoUML.ecore#//Classifier/attribute"/>
         <ownedChild>
           <domainMetaElement
               href="OntoUML.ecore#//Property"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping"
-              viewPattern="{0} [{1}..{2,choice,-1#*|-1&lt;{2}}]"
+              readOnly="true"
+              viewPattern=""
               editorPattern=""
-              editPattern="{0} [{1}..{2}]">
+              editPattern="">
             <diagramLabel
                 href="OntoUML.gmfgraph#AttributeLabel"/>
             <features
@@ -684,15 +695,16 @@
           compartment="//@nodes.11/@ownedChild/@compartments.0"
           referencedChild="//@nodes.11/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
-            href="OntoUML.ecore#//Element/attribute"/>
+            href="OntoUML.ecore#//Classifier/attribute"/>
         <ownedChild>
           <domainMetaElement
               href="OntoUML.ecore#//Property"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping"
-              viewPattern="{0} [{1}..{2,choice,-1#*|-1&lt;{2}}]"
+              readOnly="true"
+              viewPattern=""
               editorPattern=""
-              editPattern="{0} [{1}..{2}]">
+              editPattern="">
             <diagramLabel
                 href="OntoUML.gmfgraph#AttributeLabel"/>
             <features
@@ -740,15 +752,16 @@
           compartment="//@nodes.12/@ownedChild/@compartments.0"
           referencedChild="//@nodes.12/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
-            href="OntoUML.ecore#//Element/attribute"/>
+            href="OntoUML.ecore#//Classifier/attribute"/>
         <ownedChild>
           <domainMetaElement
               href="OntoUML.ecore#//Property"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping"
-              viewPattern="{0} [{1}..{2,choice,-1#*|-1&lt;{2}}]"
+              readOnly="true"
+              viewPattern=""
               editorPattern=""
-              editPattern="{0} [{1}..{2}]">
+              editPattern="">
             <diagramLabel
                 href="OntoUML.gmfgraph#AttributeLabel"/>
             <features
@@ -787,37 +800,6 @@
           href="OntoUML.gmftool#//@palette/@tools.0/@tools.2"/>
       <diagramNode
           href="OntoUML.gmfgraph#GeneralizationSet"/>
-      <children
-          compartment="//@nodes.13/@ownedChild/@compartments.0"
-          referencedChild="//@nodes.13/@ownedChild/@children.0/@ownedChild">
-        <containmentFeature
-            href="OntoUML.ecore#//Element/attribute"/>
-        <ownedChild>
-          <domainMetaElement
-              href="OntoUML.ecore#//Property"/>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping"
-              viewPattern="{0} [{1}..{2,choice,-1#*|-1&lt;{2}}]"
-              editorPattern=""
-              editPattern="{0} [{1}..{2}]">
-            <diagramLabel
-                href="OntoUML.gmfgraph#AttributeLabel"/>
-            <features
-                href="OntoUML.ecore#//NamedElement/name"/>
-            <features
-                href="OntoUML.ecore#//MultiplicityElement/lower"/>
-            <features
-                href="OntoUML.ecore#//MultiplicityElement/upper"/>
-          </labelMappings>
-          <diagramNode
-              href="OntoUML.gmfgraph#AttributeLabel"/>
-        </ownedChild>
-      </children>
-      <compartments
-          children="//@nodes.13/@ownedChild/@children.0">
-        <compartment
-            href="OntoUML.gmfgraph#AttributeCompartment"/>
-      </compartments>
     </ownedChild>
   </nodes>
   <nodes>
@@ -852,34 +834,6 @@
           href="OntoUML.gmfgraph#Rule"/>
     </ownedChild>
   </nodes>
-  <nodes>
-    <containmentFeature
-        href="OntoUML.ecore#//Container/InstanciarElement"/>
-    <ownedChild>
-      <domainMetaElement
-          href="OntoUML.ecore#//Property"/>
-      <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping">
-        <diagramLabel
-            href="OntoUML.gmfgraph#PropertyEndNameLabel"/>
-        <features
-            href="OntoUML.ecore#//NamedElement/name"/>
-      </labelMappings>
-      <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping"
-          viewPattern=""
-          editPattern="{0}..{1}">
-        <diagramLabel
-            href="OntoUML.gmfgraph#PropertyEndCardinalitiesLabel"/>
-        <features
-            href="OntoUML.ecore#//MultiplicityElement/lower"/>
-        <features
-            href="OntoUML.ecore#//MultiplicityElement/upper"/>
-      </labelMappings>
-      <diagramNode
-          href="OntoUML.gmfgraph#PropertyEnd"/>
-    </ownedChild>
-  </nodes>
   <links>
     <domainMetaElement
         href="OntoUML.ecore#//Characterization"/>
@@ -894,10 +848,18 @@
           <initializers
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
-                xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/associationEnd"/>
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//MultiplicityElement/lower"/>
             <value
-                body="null -- I used this Feature Value Spec to be able to create the new Property instance."/>
+                body="1"/>
+          </initializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//MultiplicityElement/upper"/>
+            <value
+                body="1"/>
           </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
@@ -912,10 +874,26 @@
           <initializers
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
-                xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/associationEnd"/>
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//MultiplicityElement/lower"/>
             <value
-                body="null -- I used this Feature Value Spec to be able to create the new Property instance."/>
+                body="1"/>
+          </initializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//MultiplicityElement/upper"/>
+            <value
+                body="1"/>
+          </initializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//StructuralFeature/isReadOnly"/>
+            <value
+                body="true"/>
           </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
@@ -949,6 +927,39 @@
           href="OntoUML.gmfgraph#CharacterizationNameLabel"/>
       <features
           href="OntoUML.ecore#//NamedElement/name"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true"
+        editPattern="">
+      <diagramLabel
+          href="OntoUML.gmfgraph#CharacterizationSourcePropertyNameLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/sourcePropertyNameLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#CharacterizationSourcePropertyCardinalitiesLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/sourcePropertyCardinalitiesLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#CharacterizationTargetPropertyNameLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/targetPropertyNameLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#CharacterizationTargetPropertyCardinalitiesLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/targetPropertyCardinalitiesLabelAux"/>
     </labelMappings>
     <containmentFeature
         href="OntoUML.ecore#//Container/InstanciarElement"/>
@@ -1039,6 +1050,38 @@
       <diagramLabel
           href="OntoUML.gmfgraph#ComponentOfMetaAttributesLabel"/>
     </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#ComponentOfSourcePropertyNameLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/sourcePropertyNameLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#ComponentOfSourcePropertyCardinalitiesLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/sourcePropertyCardinalitiesLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#ComponentOfTargetPropertyNameLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/targetPropertyNameLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#ComponentOfTargetPropertyCardinalitiesLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/targetPropertyCardinalitiesLabelAux"/>
+    </labelMappings>
     <containmentFeature
         href="OntoUML.ecore#//Container/InstanciarElement"/>
     <tool
@@ -1055,23 +1098,15 @@
   </links>
   <links>
     <domainMetaElement
-        href="OntoUML.ecore#//DatatypeAssociation"/>
+        href="OntoUML.ecore#//DatatypeRelationship"/>
     <domainInitializer
         xsi:type="gmfmap:FeatureSeqInitializer">
       <initializers
           xsi:type="gmfmap:ReferenceNewElementSpec">
         <feature
             xsi:type="ecore:EReference"
-            href="OntoUML.ecore#//Element/attribute"/>
+            href="OntoUML.ecore#//DirectedRelationship/sourceAux2"/>
         <newElementInitializers>
-          <initializers
-              xsi:type="gmfmap:FeatureValueSpec">
-            <feature
-                xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/associationEnd"/>
-            <value
-                body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association) else null endif"/>
-          </initializers>
           <initializers
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
@@ -1087,108 +1122,6 @@
                 href="OntoUML.ecore#//MultiplicityElement/upper"/>
             <value
                 body="-1"/>
-          </initializers>
-          <initializers
-              xsi:type="gmfmap:FeatureValueSpec">
-            <feature
-                xsi:type="ecore:EAttribute"
-                href="OntoUML.ecore#//Property/associationEndPositionAux"/>
-            <value
-                body="1"/>
-          </initializers>
-          <elementClass
-              href="OntoUML.ecore#//Property"/>
-        </newElementInitializers>
-        <newElementInitializers>
-          <initializers
-              xsi:type="gmfmap:FeatureValueSpec">
-            <feature
-                xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/associationEnd"/>
-            <value
-                body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association) else null endif"/>
-          </initializers>
-          <initializers
-              xsi:type="gmfmap:FeatureValueSpec">
-            <feature
-                xsi:type="ecore:EAttribute"
-                href="OntoUML.ecore#//MultiplicityElement/lower"/>
-            <value
-                body="1"/>
-          </initializers>
-          <initializers
-              xsi:type="gmfmap:FeatureValueSpec">
-            <feature
-                xsi:type="ecore:EAttribute"
-                href="OntoUML.ecore#//MultiplicityElement/upper"/>
-            <value
-                body="1"/>
-          </initializers>
-          <initializers
-              xsi:type="gmfmap:FeatureValueSpec">
-            <feature
-                xsi:type="ecore:EAttribute"
-                href="OntoUML.ecore#//Property/isNavigable"/>
-            <value
-                body="true"/>
-          </initializers>
-          <initializers
-              xsi:type="gmfmap:FeatureValueSpec">
-            <feature
-                xsi:type="ecore:EAttribute"
-                href="OntoUML.ecore#//Property/associationEndPositionAux"/>
-            <value
-                body="2"/>
-          </initializers>
-          <elementClass
-              href="OntoUML.ecore#//Property"/>
-        </newElementInitializers>
-      </initializers>
-    </domainInitializer>
-    <labelMappings
-        readOnly="true">
-      <diagramLabel
-          href="OntoUML.gmfgraph#DatatypeAssociationLabel"/>
-    </labelMappings>
-    <labelMappings
-        xsi:type="gmfmap:FeatureLabelMapping">
-      <diagramLabel
-          href="OntoUML.gmfgraph#DatatypeAssociationNameLabel"/>
-      <features
-          href="OntoUML.ecore#//NamedElement/name"/>
-    </labelMappings>
-    <containmentFeature
-        href="OntoUML.ecore#//Container/InstanciarElement"/>
-    <tool
-        xsi:type="gmftool:CreationTool"
-        href="OntoUML.gmftool#//@palette/@tools.1/@tools.2"/>
-    <diagramLink
-        href="OntoUML.gmfgraph#DatatypeAssociation"/>
-    <sourceMetaFeature
-        xsi:type="ecore:EReference"
-        href="OntoUML.ecore#//Association/associationEndAux1"/>
-    <linkMetaFeature
-        xsi:type="ecore:EReference"
-        href="OntoUML.ecore#//Association/associationEndAux2"/>
-  </links>
-  <links>
-    <domainMetaElement
-        href="OntoUML.ecore#//Derivation"/>
-    <domainInitializer
-        xsi:type="gmfmap:FeatureSeqInitializer">
-      <initializers
-          xsi:type="gmfmap:ReferenceNewElementSpec">
-        <feature
-            xsi:type="ecore:EReference"
-            href="OntoUML.ecore#//DirectedRelationship/sourceAux2"/>
-        <newElementInitializers>
-          <initializers
-              xsi:type="gmfmap:FeatureValueSpec">
-            <feature
-                xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/associationEnd"/>
-            <value
-                body="null -- I used this Feature Value Spec to be able to create the new Property instance."/>
           </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
@@ -1220,9 +1153,17 @@
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
                 xsi:type="ecore:EAttribute"
-                href="OntoUML.ecore#//Property/isReadOnly"/>
+                href="OntoUML.ecore#//Property/isNavigable"/>
             <value
                 body="true"/>
+          </initializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//NamedElement/name"/>
+            <value
+                body="'Name'"/>
           </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
@@ -1246,11 +1187,161 @@
       </initializers>
     </domainInitializer>
     <labelMappings
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#DatatypeRelationshipLabel"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="OntoUML.gmfgraph#DatatypeRelationshipNameLabel"/>
+      <features
+          href="OntoUML.ecore#//NamedElement/name"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true"
+        editorPattern="">
+      <diagramLabel
+          href="OntoUML.gmfgraph#DatatypeRelationshipSourcePropertyNameLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/sourcePropertyNameLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#DatatypeRelationshipSourcePropertyCardinalitiesLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/sourcePropertyCardinalitiesLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#DatatypeRelationshipTargetPropertyNameLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/targetPropertyNameLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#DatatypeRelationshipTargetPropertyCardinalitiesLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/targetPropertyCardinalitiesLabelAux"/>
+    </labelMappings>
+    <containmentFeature
+        href="OntoUML.ecore#//Container/InstanciarElement"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="OntoUML.gmftool#//@palette/@tools.1/@tools.2"/>
+    <diagramLink
+        href="OntoUML.gmfgraph#DatatypeRelationship"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="OntoUML.ecore#//DirectedRelationship/sourceAux1"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="OntoUML.ecore#//DirectedRelationship/targetAux1"/>
+  </links>
+  <links>
+    <domainMetaElement
+        href="OntoUML.ecore#//Derivation"/>
+    <domainInitializer
+        xsi:type="gmfmap:FeatureSeqInitializer">
+      <initializers
+          xsi:type="gmfmap:ReferenceNewElementSpec">
+        <feature
+            xsi:type="ecore:EReference"
+            href="OntoUML.ecore#//DirectedRelationship/sourceAux2"/>
+        <newElementInitializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//MultiplicityElement/lower"/>
+            <value
+                body="1"/>
+          </initializers>
+          <elementClass
+              href="OntoUML.ecore#//Property"/>
+        </newElementInitializers>
+      </initializers>
+      <initializers
+          xsi:type="gmfmap:ReferenceNewElementSpec">
+        <feature
+            xsi:type="ecore:EReference"
+            href="OntoUML.ecore#//DirectedRelationship/targetAux2"/>
+        <newElementInitializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//MultiplicityElement/lower"/>
+            <value
+                body="1"/>
+          </initializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//MultiplicityElement/upper"/>
+            <value
+                body="1"/>
+          </initializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//StructuralFeature/isReadOnly"/>
+            <value
+                body="true"/>
+          </initializers>
+          <elementClass
+              href="OntoUML.ecore#//Property"/>
+        </newElementInitializers>
+      </initializers>
+      <initializers
+          xsi:type="gmfmap:FeatureValueSpec">
+        <feature
+            xsi:type="ecore:EReference"
+            href="OntoUML.ecore#//DirectedRelationship/target"/>
+        <value
+            body="targetAux2"/>
+      </initializers>
+      <initializers
+          xsi:type="gmfmap:FeatureValueSpec">
+        <feature
+            xsi:type="ecore:EReference"
+            href="OntoUML.ecore#//DirectedRelationship/source"/>
+        <value
+            body="sourceAux2"/>
+      </initializers>
+    </domainInitializer>
+    <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel
           href="OntoUML.gmfgraph#DerivationNameLabel"/>
       <features
           href="OntoUML.ecore#//NamedElement/name"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true"
+        editPattern="">
+      <diagramLabel
+          href="OntoUML.gmfgraph#DerivationSourcePropertyCardinalitiesLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/sourcePropertyCardinalitiesLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#DerivationTargetPropertyCardinalitiesLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/targetPropertyCardinalitiesLabelAux"/>
     </labelMappings>
     <containmentFeature
         href="OntoUML.ecore#//Container/InstanciarElement"/>
@@ -1275,16 +1366,8 @@
           xsi:type="gmfmap:ReferenceNewElementSpec">
         <feature
             xsi:type="ecore:EReference"
-            href="OntoUML.ecore#//Element/attribute"/>
+            href="OntoUML.ecore#//Association/associationEnd3Aux"/>
         <newElementInitializers>
-          <initializers
-              xsi:type="gmfmap:FeatureValueSpec">
-            <feature
-                xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/associationEnd"/>
-            <value
-                body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association) else null endif"/>
-          </initializers>
           <initializers
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
@@ -1300,14 +1383,6 @@
           <initializers
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
-                xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/associationEnd"/>
-            <value
-                body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association) else null endif"/>
-          </initializers>
-          <initializers
-              xsi:type="gmfmap:FeatureValueSpec">
-            <feature
                 xsi:type="ecore:EAttribute"
                 href="OntoUML.ecore#//Property/associationEndPositionAux"/>
             <value
@@ -1316,6 +1391,14 @@
           <elementClass
               href="OntoUML.ecore#//Property"/>
         </newElementInitializers>
+      </initializers>
+      <initializers
+          xsi:type="gmfmap:FeatureValueSpec">
+        <feature
+            xsi:type="ecore:EReference"
+            href="OntoUML.ecore#//Association/associationEnd"/>
+        <value
+            body="associationEnd3Aux"/>
       </initializers>
     </domainInitializer>
     <labelMappings
@@ -1329,6 +1412,38 @@
           href="OntoUML.gmfgraph#FormalAssociationNameLabel"/>
       <features
           href="OntoUML.ecore#//NamedElement/name"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#FormalAssociationAssociationEnd1PropertyNameLabel"/>
+      <features
+          href="OntoUML.ecore#//Association/associationEnd1PropertyNameLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#FormalAssociationAssociationEnd1PropertyCardinalitiesLabel"/>
+      <features
+          href="OntoUML.ecore#//Association/associationEnd1PropertyCardinalitiesLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#FormalAssociationAssociationEnd2PropertyNameLabel"/>
+      <features
+          href="OntoUML.ecore#//Association/associationEnd2PropertyNameLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#FormalAssociationAssociationEnd2PropertyCardinalitiesLabel"/>
+      <features
+          href="OntoUML.ecore#//Association/associationEnd2PropertyCardinalitiesLabelAux"/>
     </labelMappings>
     <containmentFeature
         href="OntoUML.ecore#//Container/InstanciarElement"/>
@@ -1370,16 +1485,8 @@
           xsi:type="gmfmap:ReferenceNewElementSpec">
         <feature
             xsi:type="ecore:EReference"
-            href="OntoUML.ecore#//Element/attribute"/>
+            href="OntoUML.ecore#//Association/associationEnd3Aux"/>
         <newElementInitializers>
-          <initializers
-              xsi:type="gmfmap:FeatureValueSpec">
-            <feature
-                xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/associationEnd"/>
-            <value
-                body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association) else null endif"/>
-          </initializers>
           <initializers
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
@@ -1396,18 +1503,18 @@
             <value
                 body="1"/>
           </initializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//MultiplicityElement/lower"/>
+            <value
+                body="1"/>
+          </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
         </newElementInitializers>
         <newElementInitializers>
-          <initializers
-              xsi:type="gmfmap:FeatureValueSpec">
-            <feature
-                xsi:type="ecore:EReference"
-                href="OntoUML.ecore#//Property/associationEnd"/>
-            <value
-                body="if self.owner.oclIsKindOf(Association) then self.owner.oclAsType(Association) else null endif"/>
-          </initializers>
           <initializers
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
@@ -1424,9 +1531,33 @@
             <value
                 body="2"/>
           </initializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//MultiplicityElement/lower"/>
+            <value
+                body="1"/>
+          </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
         </newElementInitializers>
+      </initializers>
+      <initializers
+          xsi:type="gmfmap:FeatureValueSpec">
+        <feature
+            xsi:type="ecore:EReference"
+            href="OntoUML.ecore#//Association/associationEnd"/>
+        <value
+            body="associationEnd3Aux"/>
+      </initializers>
+      <initializers
+          xsi:type="gmfmap:FeatureValueSpec">
+        <feature
+            xsi:type="ecore:EAttribute"
+            href="OntoUML.ecore#//Association/isDerived"/>
+        <value
+            body="true"/>
       </initializers>
     </domainInitializer>
     <labelMappings
@@ -1440,6 +1571,38 @@
           href="OntoUML.gmfgraph#MaterialAssociationNameLabel"/>
       <features
           href="OntoUML.ecore#//NamedElement/name"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#MaterialAssociationAssociationEnd1PropertyNameLabel"/>
+      <features
+          href="OntoUML.ecore#//Association/associationEnd1PropertyNameLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#MaterialAssociationAssociationEnd1PropertyCardinalitiesLabel"/>
+      <features
+          href="OntoUML.ecore#//Association/associationEnd1PropertyCardinalitiesLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#MaterialAssociationAssociationEnd2PropertyNameLabel"/>
+      <features
+          href="OntoUML.ecore#//Association/associationEnd2PropertyNameLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#MaterialAssociationAssociationEnd2PropertyCardinalitiesLabel"/>
+      <features
+          href="OntoUML.ecore#//Association/associationEnd2PropertyCardinalitiesLabelAux"/>
     </labelMappings>
     <containmentFeature
         href="OntoUML.ecore#//Container/InstanciarElement"/>
@@ -1496,7 +1659,7 @@
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
                 xsi:type="ecore:EAttribute"
-                href="OntoUML.ecore#//Property/isReadOnly"/>
+                href="OntoUML.ecore#//StructuralFeature/isReadOnly"/>
             <value
                 body="true"/>
           </initializers>
@@ -1548,6 +1711,38 @@
           href="OntoUML.gmfgraph#MediationNameLabel"/>
       <features
           href="OntoUML.ecore#//NamedElement/name"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#MediationSourcePropertyNameLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/sourcePropertyNameLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#MediationSourcePropertyCardinalitiesLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/sourcePropertyCardinalitiesLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#MediationTargetPropertyNameLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/targetPropertyNameLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#MediationTargetPropertyCardinalitiesLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/targetPropertyCardinalitiesLabelAux"/>
     </labelMappings>
     <containmentFeature
         href="OntoUML.ecore#//Container/InstanciarElement"/>
@@ -1638,6 +1833,38 @@
       <diagramLabel
           href="OntoUML.gmfgraph#MemberOfMetaAttributesLabel"/>
     </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#MemberOfSourcePropertyNameLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/sourcePropertyNameLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#MemberOfSourcePropertyCardinalitiesLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/sourcePropertyCardinalitiesLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#MemberOfTargetPropertyNameLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/targetPropertyNameLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#MemberOfTargetPropertyCardinalitiesLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/targetPropertyCardinalitiesLabelAux"/>
+    </labelMappings>
     <containmentFeature
         href="OntoUML.ecore#//Container/InstanciarElement"/>
     <tool
@@ -1727,6 +1954,38 @@
       <diagramLabel
           href="OntoUML.gmfgraph#SubCollectionOfMetaAttributesLabel"/>
     </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#SubCollectionOfSourcePropertyNameLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/sourcePropertyNameLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#SubCollectionOfSourcePropertyCardinalitiesLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/sourcePropertyCardinalitiesLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#SubCollectionOfTargetPropertyNameLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/targetPropertyNameLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#SubCollectionOfTargetPropertyCardinalitiesLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/targetPropertyCardinalitiesLabelAux"/>
+    </labelMappings>
     <containmentFeature
         href="OntoUML.ecore#//Container/InstanciarElement"/>
     <tool
@@ -1778,6 +2037,14 @@
             <value
                 body="1"/>
           </initializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="OntoUML.ecore#//StructuralFeature/isReadOnly"/>
+            <value
+                body="true"/>
+          </initializers>
           <elementClass
               href="OntoUML.ecore#//Property"/>
         </newElementInitializers>
@@ -1814,6 +2081,14 @@
         <value
             body="true"/>
       </initializers>
+      <initializers
+          xsi:type="gmfmap:FeatureValueSpec">
+        <feature
+            xsi:type="ecore:EAttribute"
+            href="OntoUML.ecore#//Meronymic/isImmutablePart"/>
+        <value
+            body="true"/>
+      </initializers>
     </domainInitializer>
     <labelMappings
         readOnly="true">
@@ -1835,6 +2110,38 @@
       <diagramLabel
           href="OntoUML.gmfgraph#SubQuantityOfMetaAttributesLabel"/>
     </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#SubQuantityOfSourcePropertyNameLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/sourcePropertyNameLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#SubQuantityOfSourcePropertyCardinalitiesLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/sourcePropertyCardinalitiesLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#SubQuantityOfTargetPropertyNameLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/targetPropertyNameLabelAux"/>
+    </labelMappings>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="OntoUML.gmfgraph#SubQuantityOfTargetPropertyCardinalitiesLabel"/>
+      <features
+          href="OntoUML.ecore#//DirectedRelationship/targetPropertyCardinalitiesLabelAux"/>
+    </labelMappings>
     <containmentFeature
         href="OntoUML.ecore#//Container/InstanciarElement"/>
     <tool
@@ -1848,31 +2155,6 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="OntoUML.ecore#//DirectedRelationship/targetAux1"/>
-  </links>
-  <links>
-    <domainMetaElement
-        href="OntoUML.ecore#//Property"/>
-    <domainInitializer
-        xsi:type="gmfmap:FeatureSeqInitializer">
-      <initializers
-          xsi:type="gmfmap:FeatureValueSpec">
-        <feature
-            xsi:type="ecore:EReference"
-            href="OntoUML.ecore#//Property/aux"/>
-        <value
-            body="self"/>
-      </initializers>
-    </domainInitializer>
-    <containmentFeature
-        href="OntoUML.ecore#//Container/InstanciarElement"/>
-    <diagramLink
-        href="OntoUML.gmfgraph#PropertyConnection"/>
-    <sourceMetaFeature
-        xsi:type="ecore:EReference"
-        href="OntoUML.ecore#//Property/aux"/>
-    <linkMetaFeature
-        xsi:type="ecore:EReference"
-        href="OntoUML.ecore#//Property/source"/>
   </links>
   <links>
     <domainMetaElement
@@ -2025,6 +2307,24 @@
       name="OntoUML"
       description="OntoUML">
     <childContainers
+        id="Association"
+        name="Association"
+        description="Association">
+      <audits
+          name="AssociationConstraint1*"
+          description="As the decorations for MultiplicityElementConstraint3* cannot be shown in a Link Label, this constraint had to be implemented here."
+          id="AssociationConstraint1*"
+          message="In all association ends of this association, the maximum cardinality constraint (the property&#xA;upper) must be equal or greater to the lower cardinality constraint (the property lower).">
+        <rule
+            body="self.associationEnd->forAll(x | if (x.lower &lt;> -1) then ((x.upper >= x.lower) or (x.upper = -1)) else (x.upper = -1) endif)"/>
+        <target
+            xsi:type="gmfmap:DomainElementTarget">
+          <element
+              href="OntoUML.ecore#//Association"/>
+        </target>
+      </audits>
+    </childContainers>
+    <childContainers
         id="Category"
         name="Category"
         description="Category">
@@ -2032,13 +2332,13 @@
           name="CategoryConstraint1"
           id="CategoryConstraint1"
           useInLiveMode="true"
-          message="A class stereotyped as «category» can only has as supertypes classes stereotyped as «category» or «mixin», because a non-sortal rigid class can not be a subtype of a sortal class or a anti-rigid class.">
+          message="A class stereotyped as «category» can only has as supertypes classes stereotyped as «category» or «mixin», because a non-sortal rigid class cannot be a subtype of a sortal class or an anti-rigid class.">
         <rule
-            body="self.allSuperTypes()->forAll(x | x.oclIsKindOf(Category) or x.oclIsKindOf(Mixin))"/>
+            body="if self.specific.oclIsKindOf(Category) then (self.general.oclIsKindOf(Category) or self.general.oclIsKindOf(Mixin)) else true endif"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
-              href="OntoUML.ecore#//Category"/>
+              href="OntoUML.ecore#//Generalization"/>
         </target>
       </audits>
     </childContainers>
@@ -2062,37 +2362,40 @@
       <audits
           name="CharacterizationConstraint2"
           id="CharacterizationConstraint2"
+          useInLiveMode="true"
           message="The association end connected to the characterized universal must have the cardinality constraints of one and exactly one.">
         <rule
-            body="self.target->forAll(x | if x.oclIsKindOf(Property) then ((x.oclAsType(Property).lower = 1) and (x.oclAsType(Property).upper = 1)) else false endif)"/>
+            body="if self.target.oclIsKindOf(Characterization) then ((self.lower = 1) and (self.upper = 1)) else true endif"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
-              href="OntoUML.ecore#//Characterization"/>
+              href="OntoUML.ecore#//Property"/>
         </target>
       </audits>
       <audits
           name="CharacterizationConstraint3"
           id="CharacterizationConstraint3"
-          message="The association end connected to the characterizing quality universal (source association end) must have the minimum cardinality constraints of one.">
+          useInLiveMode="true"
+          message="The association end connected to the characterizing quality universal (source association end) must have the minimum cardinality constraints ≥ 1.">
         <rule
-            body="self.source->forAll(x | if x.oclIsKindOf(Property) then (x.oclAsType(Property).lower >= 1) else false endif)"/>
+            body="if self.source.oclIsKindOf(Characterization) then ((self.lower >= 1) or (self.lower = -1)) else true endif"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
-              href="OntoUML.ecore#//Characterization"/>
+              href="OntoUML.ecore#//Property"/>
         </target>
       </audits>
       <audits
           name="CharacterizationConstraint4"
           id="CharacterizationConstraint4"
+          useInLiveMode="true"
           message="The association end connected to the characterized universal must have the property isReadOnly = true.">
         <rule
-            body="self.target->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).isReadOnly else false endif)"/>
+            body="if self.target.oclIsKindOf(Characterization) then self.isReadOnly else true endif"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
-              href="OntoUML.ecore#//Characterization"/>
+              href="OntoUML.ecore#//Property"/>
         </target>
       </audits>
       <audits
@@ -2115,7 +2418,7 @@
       <audits
           name="CollectiveConstraint1"
           id="CollectiveConstraint1"
-          message="A relationship stereotyped as «collective» in which its meta-attribute isExtensional is true must have all its parts with their respective meta-attributes isEssential = true.  When the meta-attribute isExtensional = true the collective is said to be extensional and this means that all its parts are essential and the change (or destruction) of any of its parts terminates the existence of the collective.">
+          message="A relationship stereotyped as «collective» in which its property isExtensional is true&#xA;must have all its parts with their respective properties isEssential = true. When the&#xA;property isExtensional = true the collective is said to be extensional and this means&#xA;that all its parts are essential and the change (or destruction) of anyof its parts&#xA;terminates the existence of the collective.">
         <rule
             body="self.isExtensional implies Meronymic.allInstances()->forAll(x | x.source->forAll(y | if y.oclIsKindOf(Property) then if (y.oclAsType(Property).endType = self) then x.isEssential else true endif else false endif))"/>
         <target
@@ -2130,10 +2433,10 @@
         name="componentOf"
         description="componentOf">
       <audits
-          name="componentOfConstraint1"
-          id="componentOfConstraint1"
+          name="componentOfConstraint1a"
+          id="componentOfConstraint1a"
           useInLiveMode="true"
-          message="The classes connected to the source association ends of this relation must represent universals whose instances are functional complexes. A universal X is a universal whose instances are functional complexes if it satisfies the following conditions: (i) If X is a sortal universal, then it must be either stereotyped as «kind» or be a subtype of a class stereotyped as «kind»; (ii) Otherwise, if X is a mixin universal, then for all classes Y such&#xA;that Y is a subtype of X, we have that Y cannot be either stereotyped as «quantity» or «collective», and Y cannot be a subtype of class stereotyped as either «quantity» or «collective».">
+          message="The classes connected to the source association ends of this relation must represent universals whose instances are functional complexes. A universal X is a universal whose instances are functional complexes if it satisfies the following conditions: (i) If X is a sortal universal, then it must be either stereotyped as «kind» or be a subtype of a class stereotyped as «kind»; (ii) Otherwise, if X is a mixin universal, then for all classes Y such that Y is a subtype of X, we have that Y cannot be either stereotyped as «quantity» or «collective», and Y cannot be a subtype of class stereotyped as either «quantity» or «collective».">
         <rule
             body="self.source->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.hasFunctionalComplexesInstances() else false endif)"/>
         <target
@@ -2143,10 +2446,10 @@
         </target>
       </audits>
       <audits
-          name="componentOfConstraint2"
-          id="componentOfConstraint2"
+          name="componentOfConstraint1b"
+          id="componentOfConstraint1b"
           useInLiveMode="true"
-          message="The classes connected to the target association ends of this relation must represent universals whose instances are functional complexes. A universal X is a universal whose instances are functional complexes if it satisfies the following conditions: (i) If X is a sortal universal, then it must be either stereotyped as «kind» or be a subtype of a class stereotyped as «kind»; (ii) Otherwise, if X is a mixin universal, then for all classes Y such&#xA;that Y is a subtype of X, we have that Y cannot be either stereotyped as «quantity» or «collective», and Y cannot be a subtype of class stereotyped as either «quantity» or «collective».">
+          message="The classes connected to the target association ends of this relation must represent universals whose instances are functional complexes. A universal X is a universal whose instances are functional complexes if it satisfies the following conditions: (i) If X is a sortal universal, then it must be either stereotyped as «kind» or be a subtype of a class stereotyped as «kind»; (ii) Otherwise, if X is a mixin universal, then for all classes Y such that Y is a subtype of X, we have that Y cannot be either stereotyped as «quantity» or «collective», and Y cannot be a subtype of class stereotyped as either «quantity» or «collective».">
         <rule
             body="self.target->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.hasFunctionalComplexesInstances() else false endif)"/>
         <target
@@ -2157,31 +2460,33 @@
       </audits>
     </childContainers>
     <childContainers
-        id="DatatypeAssociation"
-        name="DatatypeAssociation"
-        description="DatatypeAssociation">
+        id="DatatypeRelationship"
+        name="DatatypeRelationship"
+        description="DatatypeRelationship">
       <audits
-          name="DatatypeAssociationConstraint1"
-          id="DatatypeAssociationConstraint1"
-          message="An association stereotyped as «datatypeAssociation» must be connected to at least one class stereotyped as «simpleDatatype» or «structuralDatatype».">
+          name="DatatypeRelationshipConstraint1*"
+          id="DatatypeRelationshipConstraint1*"
+          useInLiveMode="true"
+          message="A relationship stereotyped as «datatypeRelationship» must have in its target association end a class stereotyped as «simpleDatatype» or «structuralDatatype», because attributes represent attribute functions derived for quality universals.">
         <rule
-            body="self.associationEnd->exists(x | x.endType.oclIsKindOf(Datatype))"/>
+            body="self.target->forAll(x | if x.oclIsKindOf(Property) then (x.oclAsType(Property).endType.oclIsKindOf(SimpleDatatype) or x.oclAsType(Property).endType.oclIsKindOf(StructuralDatatype)) else false endif)"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
-              href="OntoUML.ecore#//DatatypeAssociation"/>
+              href="OntoUML.ecore#//DatatypeRelationship"/>
         </target>
       </audits>
       <audits
-          name="DatatypeAssociationConstraint2"
-          id="DatatypeAssociationConstraint2"
-          message="An association stereotyped as «datatypeAssociation» must not permit the existence of optional attributes, i.e., attributes with minimum cardinalities equal to zero.">
+          name="DatatypeRelationshipConstraint2*"
+          id="DatatypeRelationshipConstraint2*"
+          useInLiveMode="true"
+          message="A relationship stereotyped as «datatypeRelationship» must have in its source association end an instance of Classifier. Excepting for Generalizations, GeneralizationSets and Properties, all the other OntoUML constructs are Classifiers.">
         <rule
-            body="self.associationEnd->forAll(x | if (x.endType.oclIsKindOf(Datatype) and (x.endType != self)) then (x.lower >= 1) else true endif)&#xA;"/>
+            body="self.source->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.oclIsKindOf(Classifier) else false endif)"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
-              href="OntoUML.ecore#//DatatypeAssociation"/>
+              href="OntoUML.ecore#//DatatypeRelationship"/>
         </target>
       </audits>
     </childContainers>
@@ -2190,8 +2495,8 @@
         name="Derivation"
         description="Derivation">
       <audits
-          name="DerivationConstraint1"
-          id="DerivationConstraint1"
+          name="DerivationConstraint1a"
+          id="DerivationConstraint1a"
           useInLiveMode="true"
           message="A derivation relation must have one of its association ends (not the black circle end) connected to an association stereotyped as «material».">
         <rule
@@ -2203,8 +2508,8 @@
         </target>
       </audits>
       <audits
-          name="DerivationConstraint2"
-          id="DerivationConstraint2"
+          name="DerivationConstraint1b"
+          id="DerivationConstraint1b"
           useInLiveMode="true"
           message="A derivation relation must have one of its association ends (the black circle end) connected to a class stereotyped as «relator».">
         <rule
@@ -2216,8 +2521,8 @@
         </target>
       </audits>
       <audits
-          name="DerivationConstraint3"
-          id="DerivationConstraint3"
+          name="DerivationConstraint2"
+          id="DerivationConstraint2"
           message="Derivation associations are always binary associations.">
         <rule
             body="self.relatedElement->size() = 2"/>
@@ -2228,39 +2533,42 @@
         </target>
       </audits>
       <audits
-          name="DerivationConstraint4"
-          id="DerivationConstraint4"
+          name="DerivationConstraint3"
+          id="DerivationConstraint3"
+          useInLiveMode="true"
           message="The black circle end of the derivation relation must have the cardinality constraints of one and exactly one.">
         <rule
-            body="self.target->forAll(x | if x.oclIsKindOf(Property) then ((x.oclAsType(Property).lower = 1) and (x.oclAsType(Property).upper = 1)) else false endif)"/>
+            body="if self.target.oclIsKindOf(Derivation) then ((self.lower = 1) and (self.upper = 1)) else true endif"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
-              href="OntoUML.ecore#//Derivation"/>
+              href="OntoUML.ecore#//Property"/>
+        </target>
+      </audits>
+      <audits
+          name="DerivationConstraint4"
+          id="DerivationConstraint4"
+          useInLiveMode="true"
+          message="The black circle end of the derivation relation must have the property isReadOnly = true.">
+        <rule
+            body="if self.target.oclIsKindOf(Derivation) then self.isReadOnly else true endif"/>
+        <target
+            xsi:type="gmfmap:DomainElementTarget">
+          <element
+              href="OntoUML.ecore#//Property"/>
         </target>
       </audits>
       <audits
           name="DerivationConstraint5"
           id="DerivationConstraint5"
-          message="The black circle end of the derivation relation must have the property isReadOnly = true.">
-        <rule
-            body="self.target->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).isReadOnly else false endif)"/>
-        <target
-            xsi:type="gmfmap:DomainElementTarget">
-          <element
-              href="OntoUML.ecore#//Derivation"/>
-        </target>
-      </audits>
-      <audits
-          name="DerivationConstraint6"
-          id="DerivationConstraint6"
+          useInLiveMode="true"
           message="The cardinality constraints of the association end connected to the association stereotyped as «material» in a derivation relation are a product of the cardinality constraints of the relations stereotyped as «mediation» of the class stereotyped as «relator» that this association stereotyped as «material» derives from. However, since the relations stereotyped as «mediation» requires a minimum cardinality of one on both of its association ends, then the minimum cardinality on the end connected to the relation stereotyped as «material» of a derivation relation must also be ≥ 1.">
         <rule
-            body="self.source->forAll(x | if x.oclIsKindOf(Property) then (x.oclAsType(Property).lower >= 1) else false endif)"/>
+            body="if self.source.oclIsKindOf(Derivation) then ((self.lower >= 1) or (self.lower = -1)) else true endif"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
-              href="OntoUML.ecore#//Derivation"/>
+              href="OntoUML.ecore#//Property"/>
         </target>
       </audits>
     </childContainers>
@@ -2270,32 +2578,9 @@
         description="DirectedBinaryRelationship">
       <audits
           name="DirectedBinaryRelationshipConstraint1"
+          description="From the metamodel."
           id="DirectedBinaryRelationshipConstraint1"
-          message="An association stereotyped as «characterization», «mediation», «componentOf», «memberOf», «subCollectionOf», «subQuantityOf» or a derivation relation must have its source extremity conected to a Property.">
-        <rule
-            body="self.source->forAll(x | x.oclIsKindOf(Property))"/>
-        <target
-            xsi:type="gmfmap:DomainElementTarget">
-          <element
-              href="OntoUML.ecore#//DirectedBinaryRelationship"/>
-        </target>
-      </audits>
-      <audits
-          name="DirectedBinaryRelationshipConstraint2"
-          id="DirectedBinaryRelationshipConstraint2"
-          message="An association stereotyped as «characterization», «mediation», «componentOf», «memberOf», «subCollectionOf», «subQuantityOf» or a derivation relation must have its target extremity conected to a Property.">
-        <rule
-            body="self.target->forAll(x | x.oclIsKindOf(Property))"/>
-        <target
-            xsi:type="gmfmap:DomainElementTarget">
-          <element
-              href="OntoUML.ecore#//DirectedBinaryRelationship"/>
-        </target>
-      </audits>
-      <audits
-          name="DirectedBinaryRelationshipConstraint3"
-          id="DirectedBinaryRelationshipConstraint3"
-          message="An association stereotyped as «characterization», «mediation», «componentOf», «memberOf», «subCollectionOf», «subQuantityOf» or a derivation relation must have its source extremity conected to a only one element.">
+          message="An association stereotyped as «characterization», «mediation», «componentOf», «memberOf»,&#xA;«subCollectionOf», «subQuantityOf» or a derivation relation must have its source extremity&#xA;conected to only one element.">
         <rule
             body="self.source->size() = 1 -- From the metamodel."/>
         <target
@@ -2305,11 +2590,64 @@
         </target>
       </audits>
       <audits
-          name="DirectedBinaryRelationshipConstraint4"
-          id="DirectedBinaryRelationshipConstraint4"
-          message="An association stereotyped as «characterization», «mediation», «componentOf», «memberOf», «subCollectionOf», «subQuantityOf» or a derivation relation must have its target extremity conected to a only one element.">
+          name="DirectedBinaryRelationshipConstraint2"
+          description="From the metamodel."
+          id="DirectedBinaryRelationshipConstraint2"
+          message="An association stereotyped as «characterization», «mediation», «componentOf», «memberOf»,&#xA;«subCollectionOf», «subQuantityOf» or a derivation relation must have its target extremity&#xA;conected to only one element.">
         <rule
             body="self.target->size() = 1 -- From the metamodel."/>
+        <target
+            xsi:type="gmfmap:DomainElementTarget">
+          <element
+              href="OntoUML.ecore#//DirectedBinaryRelationship"/>
+        </target>
+      </audits>
+      <audits
+          name="DirectedBinaryRelationshipConstraint3*"
+          id="DirectedBinaryRelationshipConstraint3*"
+          useInLiveMode="true"
+          message="An association stereotyped as «characterization», «mediation», «componentOf», «memberOf»,&#xA;«subCollectionOf», «subQuantityOf» or a derivation relation must have its source extremity&#xA;conected to a Property.">
+        <rule
+            body="self.source->forAll(x | x.oclIsKindOf(Property))"/>
+        <target
+            xsi:type="gmfmap:DomainElementTarget">
+          <element
+              href="OntoUML.ecore#//DirectedBinaryRelationship"/>
+        </target>
+      </audits>
+      <audits
+          name="DirectedBinaryRelationshipConstraint4*"
+          id="DirectedBinaryRelationshipConstraint4*"
+          useInLiveMode="true"
+          message="An association stereotyped as «characterization», «mediation», «componentOf», «memberOf»,&#xA;«subCollectionOf», «subQuantityOf» or a derivation relation must have its target extremity&#xA;conected to a Property.">
+        <rule
+            body="self.target->forAll(x | x.oclIsKindOf(Property))"/>
+        <target
+            xsi:type="gmfmap:DomainElementTarget">
+          <element
+              href="OntoUML.ecore#//DirectedBinaryRelationship"/>
+        </target>
+      </audits>
+      <audits
+          name="DirectedBinaryRelationshipConstraint5a*"
+          description="As the decorations for MultiplicityElementConstraint3* cannot be shown in a Link Label, this constraint had to be implemented here."
+          id="DirectedBinaryRelationshipConstraint5a*"
+          message="The source maximum cardinality constraint (the property upper) must be equal or&#xA;greater to the source lower cardinality constraint (the property lower).">
+        <rule
+            body="self.source->forAll(x | if x.oclIsKindOf(Property) then (if (x.oclAsType(Property).lower &lt;> -1) then ((x.oclAsType(Property).upper >= x.oclAsType(Property).lower) or (x.oclAsType(Property).upper = -1)) else (x.oclAsType(Property).upper = -1) endif) else false endif)"/>
+        <target
+            xsi:type="gmfmap:DomainElementTarget">
+          <element
+              href="OntoUML.ecore#//DirectedBinaryRelationship"/>
+        </target>
+      </audits>
+      <audits
+          name="DirectedBinaryRelationshipConstraint5b*"
+          description="As the decorations for MultiplicityElementConstraint3* cannot be shown in a Link Label, this constraint had to be implemented here."
+          id="DirectedBinaryRelationshipConstraint5b*"
+          message="The target maximum cardinality constraint (the property upper) must be equal or&#xA;greater to the target lower cardinality constraint (the property lower).">
+        <rule
+            body="self.target->forAll(x | if x.oclIsKindOf(Property) then (if (x.oclAsType(Property).lower &lt;> -1) then ((x.oclAsType(Property).upper >= x.oclAsType(Property).lower) or (x.oclAsType(Property).upper = -1)) else (x.oclAsType(Property).upper = -1) endif) else false endif)"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
@@ -2347,41 +2685,15 @@
               href="OntoUML.ecore#//Generalization"/>
         </target>
       </audits>
-      <audits
-          name="GeneralizationConstraint3"
-          id="GeneralizationConstraint3"
-          useInLiveMode="true"
-          message="A generalization cannot hold between two sortals, because a sortal has its own principle of identity and cannot inherit another principle of identity from other sortal.">
-        <rule
-            body="if self.source->forAll(x | x.oclIsKindOf(SubstanceSortal)) then not self.target->forAll(x| x.oclIsKindOf(SubstanceSortal)) else true endif"/>
-        <target
-            xsi:type="gmfmap:DomainElementTarget">
-          <element
-              href="OntoUML.ecore#//Generalization"/>
-        </target>
-      </audits>
-      <audits
-          name="GeneralizationConstraint4"
-          id="GeneralizationConstraint4"
-          useInLiveMode="true"
-          message="A class stereotyped as &lt;&lt;kind>>, &lt;&lt;subkind>>, &lt;&lt;collective>> or &lt;&lt;quantity>> cannot be a subtype of a class stereotyped as &lt;&lt;phase>> or &lt;&lt;role>>, because a rigid class can not be a subtype of an anti-rigid class.">
-        <rule
-            body="if self.target->forAll(x | x.oclIsKindOf(RigidSortalClass)) then not self.source->forAll(x| x.oclIsKindOf(AntiRigidSortalClass)) else true endif"/>
-        <target
-            xsi:type="gmfmap:DomainElementTarget">
-          <element
-              href="OntoUML.ecore#//Generalization"/>
-        </target>
-      </audits>
     </childContainers>
     <childContainers
         id="MaterialAssociation"
         name="MaterialAssociation"
         description="MaterialAssociation">
       <audits
-          name="MaterialAssociationRestrição1"
-          id="MaterialAssociationRestrição1"
-          message="Instâncias de Material Association devem estar associadas à exatamente uma instância de Derivation.">
+          name="MaterialAssociationConstraint1"
+          id="MaterialAssociationConstraint1"
+          message="An association stereotyped as «material» must be connected to the association end of exactly&#xA;one derivation relation.">
         <rule
             body="Derivation.allInstances()->one(x | x.source->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = self) else false endif))"/>
         <target
@@ -2391,34 +2703,36 @@
         </target>
       </audits>
       <audits
-          name="MaterialAssociationRestrição2"
-          id="MaterialAssociationRestrição2"
-          message="Instâncias de Material Association devem ter suas extremidades com cardinalidades mínimas maiores ou iguais a 1.">
-        <rule
-            body="self.associationEnd->forAll(x | x.lower >= 1)"/>
-        <target
-            xsi:type="gmfmap:DomainElementTarget">
-          <element
-              href="OntoUML.ecore#//MaterialAssociation"/>
-        </target>
-      </audits>
-      <audits
-          name="MaterialAssociationRestrição3"
-          id="MaterialAssociationRestrição3"
-          message="Instâncias de Material Association devem ter suas extremidades com seus respectivos meta-atributos isDerived = true.">
-        <rule
-            body="self.associationEnd->forAll(x | x.isDerived = true)"/>
-        <target
-            xsi:type="gmfmap:DomainElementTarget">
-          <element
-              href="OntoUML.ecore#//MaterialAssociation"/>
-        </target>
-      </audits>
-      <audits
-          name="MaterialAssociationConstraint4"
-          id="MaterialAssociationConstraint4"
+          name="MaterialAssociationConstraint2"
+          id="MaterialAssociationConstraint2"
           useInLiveMode="true"
-          message="Material Association instances needs to have its extremities mediated by an unique Relator Universal instance.">
+          message="The cardinality constraints of the association ends of this association are derived from the cardinality constraints of the relations stereotyped as «mediation» which are connected on the class stereotyped as «relator» that this association is derived from. Since the relationships stereotyped as «mediation» requires a minimum cardinality of one on both of its association ends, then the minimum cardinality constraint on each end of the this derived association must also be ≥ 1.">
+        <rule
+            body="if self.associationEnd.oclIsKindOf(MaterialAssociation) then ((self.lower >= 1) or (self.lower = -1)) else true endif"/>
+        <target
+            xsi:type="gmfmap:DomainElementTarget">
+          <element
+              href="OntoUML.ecore#//Property"/>
+        </target>
+      </audits>
+      <audits
+          name="MaterialAssociationConstraint3"
+          id="MaterialAssociationConstraint3"
+          useInLiveMode="true"
+          message="An association stereotyped as «material» must have the property isDerived = true.">
+        <rule
+            body="self.isDerived"/>
+        <target
+            xsi:type="gmfmap:DomainElementTarget">
+          <element
+              href="OntoUML.ecore#//MaterialAssociation"/>
+        </target>
+      </audits>
+      <audits
+          name="MaterialAssociationConstraint4*"
+          id="MaterialAssociationConstraint4*"
+          useInLiveMode="true"
+          message="The classes connected on the extremities of an association stereotyped as «material» must also be connected on the extremities of relationships stereotyped as «mediation», and the other extremities of these relationships (stereotyped as «mediation») must be connected to an unique class stereotyped as «relator».">
         <rule
             body="let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (self.associationEnd->exists(z | if z.oclIsKindOf(Property) then (y.oclAsType(Property).endType = z.oclAsType(Property).endType) else false endif)) else false endif)) in (A->collect(x | if x.target->forAll(y | y.oclIsKindOf(Property)) then x.target.oclAsType(Property).endType else null endif)->includesAll(if self.associationEnd->forAll(x | x.oclIsKindOf(Property)) then self.associationEnd.oclAsType(Property).endType else null endif) and A->forAll(x | x.source->exists(y | if y.oclIsKindOf(Property) then A->exists(z | (x.target->exists(w | if w.oclIsKindOf(Property) then (z.target->exists(k | if k.oclIsKindOf(Property) then (w.oclAsType(Property).endType &lt;> k.oclAsType(Property).endType) else false endif)) else false endif)) and (z.source->exists(w | if w.oclIsKindOf(Property) then ((y.oclAsType(Property).endType = w.oclAsType(Property).endType) and y.oclAsType(Property).endType.oclIsKindOf(Relator)) else false endif))) else false endif)))"/>
         <target
@@ -2427,16 +2741,29 @@
               href="OntoUML.ecore#//MaterialAssociation"/>
         </target>
       </audits>
+      <audits
+          name="MaterialAssociationConstraint5*"
+          id="MaterialAssociationConstraint5*"
+          useInLiveMode="true"
+          message="An association stereotyped as «material» must be connected to Properties which have its properties isDerived = true.">
+        <rule
+            body="if self.associationEnd.oclIsKindOf(MaterialAssociation) then isDerived else true endif"/>
+        <target
+            xsi:type="gmfmap:DomainElementTarget">
+          <element
+              href="OntoUML.ecore#//Property"/>
+        </target>
+      </audits>
     </childContainers>
     <childContainers
         id="Mediation"
         name="Mediation"
         description="Mediation">
       <audits
-          name="MediationRestrição1"
-          id="MediationRestrição1"
+          name="MediationConstraint1"
+          id="MediationConstraint1"
           useInLiveMode="true"
-          message="Instâncias de Mediation devem ter suas extremidades fonte associadas à instâncias de Relator.">
+          message="A relationship stereotyped as «mediation» must have in its source association end a class stereotyped as «relator» representing the corresponding relator universal.">
         <rule
             body="self.source->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.oclIsTypeOf(Relator) else false endif)"/>
         <target
@@ -2446,45 +2773,48 @@
         </target>
       </audits>
       <audits
-          name="MediationRestrição2"
-          id="MediationRestrição2"
-          message="Instâncias de Mediation devem ter suas extremidades alvo com cardinalidades mínimas maiores ou iguais a 1.">
+          name="MediationConstraint2"
+          id="MediationConstraint2"
+          useInLiveMode="true"
+          message="In a relationship stereotyped as «mediation», the association end connected to the mediated universal must have the minimum cardinality constraints ≥ 1.">
         <rule
-            body="self.target->forAll(x | if x.oclIsKindOf(Property) then (x.oclAsType(Property).lower >= 1) else false endif) "/>
+            body="if self.target.oclIsKindOf(Mediation) then ((self.lower >= 1) or (self.lower = -1)) else true endif"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
-              href="OntoUML.ecore#//Mediation"/>
+              href="OntoUML.ecore#//Property"/>
         </target>
       </audits>
       <audits
-          name="MediationRestrição3"
-          id="MediationRestrição3"
-          message="Instâncias de Mediation devem ter suas extremidades alvo com seus respectivos meta-atributos isReadOnly = true.">
+          name="MediationConstraint3"
+          id="MediationConstraint3"
+          useInLiveMode="true"
+          message="In a relationship stereotyped as «mediation», the association end connected to the mediated universal must have property isReadOnly = true.">
         <rule
-            body="self.target->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).isReadOnly else false endif)"/>
+            body="if self.target.oclIsKindOf(Mediation) then self.isReadOnly else true endif"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
-              href="OntoUML.ecore#//Mediation"/>
+              href="OntoUML.ecore#//Property"/>
         </target>
       </audits>
       <audits
-          name="MediationRestrição4"
-          id="MediationRestrição4"
-          message="Instâncias de Mediation devem ter suas extremidades fonte com cardinalidades mínimas maiores ou iguais a 1. ">
+          name="MediationConstraint4"
+          id="MediationConstraint4"
+          useInLiveMode="true"
+          message="In a relationship stereotyped as «mediation», the association end connected to the relator universal (the class stereotyped as «relator») must have the minimum cardinality constraints ≥ 1.">
         <rule
-            body="self.source->forAll(x | if x.oclIsKindOf(Property) then (x.oclAsType(Property).lower >= 1) else false endif)"/>
+            body="if self.source.oclIsKindOf(Mediation) then ((self.lower >= 1) or (self.lower = -1)) else true endif"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
-              href="OntoUML.ecore#//Mediation"/>
+              href="OntoUML.ecore#//Property"/>
         </target>
       </audits>
       <audits
-          name="MediationRestrição5"
-          id="MediationRestrição5"
-          message="Instâncias de Mediation devem ser sempre associações binárias.">
+          name="MediationConstraint5"
+          id="MediationConstraint5"
+          message="A relationship stereotyped as «mediation» is always a binary association.">
         <rule
             body="self.relatedElement->size() = 2"/>
         <target
@@ -2499,9 +2829,9 @@
         name="memberOf"
         description="memberOf">
       <audits
-          name="memberOfRestrição1"
-          id="memberOfRestrição1"
-          message="memberOf instances whose meta-attributes isEssencial are true must have its source extremities associated with Collective instances which meta-attributes isExtensional are true.">
+          name="memberOfConstraint1"
+          id="memberOfConstraint1"
+          message="This relation can only represent essential parthood (isEssential = true) if the object&#xA;representing the whole on this relation is an extensional (isExtensional = true) individual.&#xA;In this case, all parthood relations in which this individual participates as a whole are&#xA;essential parthood relations.">
         <rule
             body="self.isEssential implies self.source->forAll(x | if x.oclIsKindOf(Property) then (if x.oclAsType(Property).endType.oclIsKindOf(Collective) then x.oclAsType(Property).endType.oclAsType(Collective).isExtensional else false endif) else false endif)"/>
         <target
@@ -2511,10 +2841,11 @@
         </target>
       </audits>
       <audits
-          name="memberOfRestrição2"
-          id="memberOfRestrição2"
+          name="memberOfConstraint2a"
+          description=""
+          id="memberOfConstraint2a"
           useInLiveMode="true"
-          message="Instâncias de memberOf devem ter suas extremidades fonte associadas à elementos que representam universais cujas instâncias são collectives">
+          message="The classifier connected to association end relative to the whole individual must be a universal whose instances are collectives. A universal X is a universal whose instances are collectives if it satisfies the following conditions: (i) If X is a sortal universal, then it must be either stereotyped as «collective» or be a subtype of a class stereotyped as «collective»; (ii) Otherwise, if X is a mixin universal, then for all classes Y such that Y is a subtype of X, we have that Y cannot be either stereotyped as «kind» or «quantity», and Y cannot be a subtype of class stereotyped as either «kind» or «quantity».">
         <rule
             body="self.source->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.hasCollectivesInstances() else false endif)"/>
         <target
@@ -2524,10 +2855,10 @@
         </target>
       </audits>
       <audits
-          name="memberOfRestrição3"
-          id="memberOfRestrição3"
+          name="memberOfConstraint2b"
+          id="memberOfConstraint2b"
           useInLiveMode="true"
-          message="Instâncias de memberOf devem ter suas extremidades alvo associadas à elementos que representam universais cujas instâncias são collectives ou complexos funcionais.">
+          message="The classifier connected to the association end relative to the part can be either a universal whose instances are collectives, or a universal whose instances are functional complexes. A universal X is a universal whose instances are collectives if it satisfies the following conditions: (i) If X is a sortal universal, then it must be either stereotyped as «collective» or be a subtype of a class stereotyped as «collective»; (ii) Otherwise, if X is a mixin universal, then for all classes Y such that Y is a subtype of X, we have that Y cannot be either stereotyped as «kind» or «quantity», and Y cannot be a subtype of class stereotyped as either «kind» or «quantity». A universal X is a universal whose instances are functional complexes if it satisfies the following conditions: (i) If X is a sortal universal, then it must be either stereotyped as «kind» or be a subtype of a class stereotyped as «kind»; (ii) Otherwise, if X is a mixin universal, then for all classes Y such that Y is a subtype of X, we have that Y cannot be either stereotyped as «quantity» or «collective», and Y cannot be a subtype of class stereotyped as either «quantity» or «collective».">
         <rule
             body="self.target->forAll(x | if x.oclIsKindOf(Property) then (x.oclAsType(Property).endType.hasCollectivesInstances() or x.oclAsType(Property).endType.hasFunctionalComplexesInstances()) else false endif)"/>
         <target
@@ -2544,9 +2875,9 @@
       <audits
           name="MeronymicConstraint1"
           id="MeronymicConstraint1"
-          message="A whole must have at least two disjoint parts&#xA;due to the Weak Supplementation axiom.">
+          message="A whole must have at least two disjoint parts due to the Weak Supplementation axiom.">
         <rule
-            body="Meronymic.allInstances()->select(x | x.source->exists(y | if y.oclIsKindOf(Property) then (self.source->exists(z | if z.oclIsKindOf(Property) then (z.oclAsType(Property).endType = y.oclAsType(Property).endType) else false endif)) else false endif))->collect(w | w.target->collect(k | if k.oclIsKindOf(Property) then k.oclAsType(Property).lower else 0 endif)->sum())->sum() >= 2"/>
+            body="Meronymic.allInstances()->select(x | x.source->exists(y | if y.oclIsKindOf(Property) then (self.source->exists(z | if z.oclIsKindOf(Property) then (z.oclAsType(Property).endType = y.oclAsType(Property).endType) else false endif)) else false endif))->collect(w | w.target->collect(k | if k.oclIsKindOf(Property) then (if (k.oclAsType(Property).lower = -1) then 2 else k.oclAsType(Property).lower endif) else 0 endif)->sum())->sum() >= 2"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
@@ -2554,11 +2885,12 @@
         </target>
       </audits>
       <audits
-          name="MeronymicRestrição2"
-          id="MeronymicRestrição2"
-          message="Instâncias de Meronymic em que as extremidades alvo estiverem associadas à instâncias de Anti Rigid Sortal Class ou Anti Rigid Mixin Class devem ter seus meta-atributos isEssential = false.">
+          name="MeronymicConstraint2a"
+          id="MeronymicConstraint2a"
+          useInLiveMode="true"
+          message="In a relationship stereotyped as «componentOf», «memberOf», «subCollectionOf» or «subQuantityOf» (i.e., a Meronymic relationship), if the class connected to the association end representing the whole is stereotyped as «phase», «role» or «roleMixin» (i.e., it is an anti-rigid class), then the property isEssential must be false.">
         <rule
-            body="(self.target->forAll(x | if x.oclIsKindOf(Property) then (x.oclAsType(Property).endType.oclIsKindOf(AntiRigidSortalClass) or x.oclAsType(Property).endType.oclIsKindOf(AntiRigidMixinClass)) else false endif)) implies (self.isEssential = false)"/>
+            body="(self.source->forAll(x | if x.oclIsKindOf(Property) then (x.oclAsType(Property).endType.oclIsKindOf(AntiRigidSortalClass) or x.oclAsType(Property).endType.oclIsKindOf(AntiRigidMixinClass)) else false endif)) implies (self.isEssential = false)"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
@@ -2566,11 +2898,11 @@
         </target>
       </audits>
       <audits
-          name="MeronymicRestrição3"
-          id="MeronymicRestrição3"
-          message="Instâncias de Meronymic que possuírem o meta-atributo isImmutablePart = true devem ter as suas extremidades alvo com os meta-atributos isreadOnly = true.">
+          name="MeronymicConstraint2b"
+          id="MeronymicConstraint2b"
+          message="In a relationship stereotyped as «componentOf», «memberOf», «subCollectionOf»&#xA;or «subQuantityOf» (i.e., a Meronymic relationship), if the property&#xA;isEssential = true (in case of a rigid class with essential parts), then the property&#xA;isImmutablePart must also be true.">
         <rule
-            body="self.isImmutablePart implies self.target->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).isReadOnly else false endif) -- Restrição 2 revisitada, com os novos meta-atributos isImmutableWhole e isImmutablePart."/>
+            body="self.isEssential implies self.isImmutablePart -- Constraint 2 revisited with the new meta-attributes isImmutableWhole and isImmutablePart."/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
@@ -2578,11 +2910,11 @@
         </target>
       </audits>
       <audits
-          name="MeronymicRestrição4"
-          id="MeronymicRestrição4"
-          message="Instâncias de Meronymic que possuírem o meta-atributo isImmutableWhole = true devem ter as suas extremidades fonte com os meta-atributos isreadOnly = true.">
+          name="MeronymicConstraint5*"
+          id="MeronymicConstraint5*"
+          message="In a relationship stereotyped as «componentOf», «memberOf», «subCollectionOf»&#xA;or «subQuantityOf» (i.e., a Meronymic relationship), if the property&#xA;isImmutablePart = true, then the Properties connected on its target association&#xA;ends must have the property isReadOnly = true.">
         <rule
-            body="self.isImmutableWhole implies self.source->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).isReadOnly else false endif) -- Restrição 2 revisitada, com os novos meta-atributos isImmutableWhole e isImmutablePart."/>
+            body="self.isImmutablePart implies self.target->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).isReadOnly else false endif) -- Constraint 2 revisited with the new meta-attributes isImmutableWhole and isImmutablePart."/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
@@ -2590,11 +2922,11 @@
         </target>
       </audits>
       <audits
-          name="MeronymicRestrição5"
-          id="MeronymicRestrição5"
-          message="Instâncias de Meronymic que possuírem o meta-atributo isEssential = true devem ter o meta-atributo isImmutablePart = true.">
+          name="MeronymicConstraint6*"
+          id="MeronymicConstraint6*"
+          message="In a relationship stereotyped as «componentOf», «memberOf», «subCollectionOf»&#xA;or «subQuantityOf» (i.e., a Meronymic relationship), if the property&#xA;isInseparable = true (in case of an anti-rigid class with inseparable parts), then the&#xA;property isImmutableWhole must also be true.">
         <rule
-            body="self.isEssential implies self.isImmutablePart -- Restrição 2 revisitada, com os novos meta-atributos isImmutableWhole e isImmutablePart."/>
+            body="self.isInseparable implies self.isImmutableWhole -- Constraint 2 revisited with the new meta-attributes isImmutableWhole and isImmutablePart."/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
@@ -2602,11 +2934,11 @@
         </target>
       </audits>
       <audits
-          name="MeronymicRestrição6"
-          id="MeronymicRestrição6"
-          message="Instâncias de Meronymic que possuírem o meta-atributo isInseparable = true devem ter o meta-atributo isImmutableWhole = true.">
+          name="MeronymicConstraint7*"
+          id="MeronymicConstraint7*"
+          message="In a relationship stereotyped as «componentOf», «memberOf», «subCollectionOf»&#xA;or «subQuantityOf» (i.e., a Meronymic relationship), if the property&#xA;isImmutableWhole = true, then the Properties connected on its source association&#xA;ends must have the property isReadOnly = true.">
         <rule
-            body="self.isInseparable implies self.isImmutableWhole -- Restrição 2 revisitada, com os novos meta-atributos isImmutableWhole e isImmutablePart."/>
+            body="self.isImmutableWhole implies self.source->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).isReadOnly else false endif) -- Constraint 2 revisited with the new meta-attributes isImmutableWhole and isImmutablePart."/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
@@ -2619,16 +2951,16 @@
         name="Mixin"
         description="Mixin">
       <audits
-          name="MixinRestrição1"
-          id="MixinRestrição1"
+          name="MixinConstraint1"
+          id="MixinConstraint1"
           useInLiveMode="true"
-          message="Instâncias de Mixin não podem ter instâncias de Role Mixin como seus supertipos.">
+          message="A class stereotyped as «mixin» cannot have a class stereotyped as «roleMixin» as supertype, because a semi-rigid class cannot specialize an anti-rigid class.">
         <rule
-            body="not self.allSuperTypes()->exists(x | x.oclIsKindOf(RoleMixin))"/>
+            body="if self.specific.oclIsKindOf(Mixin) then not self.general.oclIsKindOf(RoleMixin) else true endif"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
-              href="OntoUML.ecore#//Mixin"/>
+              href="OntoUML.ecore#//Generalization"/>
         </target>
       </audits>
     </childContainers>
@@ -2637,23 +2969,23 @@
         name="MixinClass"
         description="MixinClass">
       <audits
-          name="MixinClassRestrição1"
-          id="MixinClassRestrição1"
+          name="MixinClassConstraint1"
+          id="MixinClassConstraint1"
           useInLiveMode="true"
-          message="Instâncias de Mixin Class não podem ter instâncias de Sortal Class como seus supertipos.">
+          message="A class stereotyped as «category», «mixin» or «roleMixin» cannot have as a supertype (must not include in its general collection) a class stereotyped as «kind», «quantity», «collective», «subkind», «phase» or «role» (i.e., a sortal class), because a class representing a non-sortal universal cannot be a subclass of a class representing a sortal.">
         <rule
-            body="not self.allSuperTypes()->exists(x | x.oclIsKindOf(SortalClass))"/>
+            body="if self.specific.oclIsKindOf(MixinClass) then not self.general.oclIsKindOf(SortalClass) else true endif"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
-              href="OntoUML.ecore#//MixinClass"/>
+              href="OntoUML.ecore#//Generalization"/>
         </target>
       </audits>
       <audits
-          name="MixinClassRestrição2"
-          id="MixinClassRestrição2"
+          name="MixinClassConstraint2"
+          id="MixinClassConstraint2"
           useInLiveMode="true"
-          message="Instâncias de Mixin Class devem ter o meta-atributo isAbstract = true.">
+          message="A class stereotyped as «category», «mixin» or «roleMixin» must have its property isAbstract = true, because a non-sortal cannot have direct instances.">
         <rule
             body="self.isAbstract = true"/>
         <target
@@ -2668,9 +3000,9 @@
         name="Mode"
         description="Mode">
       <audits
-          name="ModeRestrição1"
-          id="ModeRestrição1"
-          message="Instâncias de Mode devem estar conectadas (diretamente ou indiretamente) a ao menos uma extremidade de uma instância de Characterization.">
+          name="ModeConstraint1"
+          id="ModeConstraint1"
+          message="A class stereotyped as «mode» must be (directly or indirectly) connected to an&#xA;association end of at least one relationship stereotyped as «characterization».">
         <rule
             body="Characterization.allInstances()->exists(x | x.isConected(self) or self.allSuperTypes()->exists(y | x.isConected(y)))   "/>
         <target
@@ -2685,10 +3017,10 @@
         name="MultiplicityElement"
         description="MultiplicityElement">
       <audits
-          name="MultiplicityElementRestrição1"
-          id="MultiplicityElementRestrição1"
+          name="MultiplicityElementConstraint1"
+          id="MultiplicityElementConstraint1"
           useInLiveMode="true"
-          message="Instâncias de Multiplicity Element devem ter números cardinais em seus meta-atributos lower, sendo que o número -1 representa o menor dos cardinais infinito, o álefe-0.">
+          message="The minimum cardinality constraint (the property lower) must be a cardinal number, where the number -1 represents ℵ0 (aleph-zero), the smallest infinite cardinal number.">
         <rule
             body="(self.lower >= 0) or (self.lower = -1)"/>
         <target
@@ -2698,10 +3030,10 @@
         </target>
       </audits>
       <audits
-          name="MultiplicityElementRestrição2"
-          id="MultiplicityElementRestrição2"
+          name="MultiplicityElementConstraint2"
+          id="MultiplicityElementConstraint2"
           useInLiveMode="true"
-          message="Instâncias de Multiplicity Element devem ter números cardinais em seus meta-atributos upper, sendo que o número -1 representa o menor dos cardinais infinito, o álefe-0.">
+          message="The maximum cardinality constraint (the property upper) must be a cardinal number, where the number -1 represents ℵ0 (aleph-zero), the smallest infinite cardinal number.">
         <rule
             body="(self.upper >= 0) or (self.upper = -1)"/>
         <target
@@ -2711,11 +3043,12 @@
         </target>
       </audits>
       <audits
-          name="MultiplicityElementConstraint3"
-          id="MultiplicityElementConstraint3"
-          message="Upper cardinality must be greater or equal to lower cardinality.">
+          name="MultiplicityElementConstraint3*"
+          description="As the decorations for this constraint cannot be shown in a Link Label, this constraint had to be implemented in DirectedBinaryRelationshipConstraint5a*, DirectedBinaryRelationshipConstraint5b* and AssociationConstraint1*."
+          id="MultiplicityElementConstraint3*"
+          message="The maximum cardinality constraint (the property upper) must be equal or&#xA;greater to the lower cardinality constraint (the property lower).">
         <rule
-            body="if (lower &lt;> -1) then ((self.upper >= self.lower) or (self.upper = -1)) else (self.upper = -1) endif"/>
+            body="true -- if (lower &lt;> -1) then ((self.upper >= self.lower) or (self.upper = -1)) else (self.upper = -1) endif"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
@@ -2724,32 +3057,28 @@
       </audits>
     </childContainers>
     <childContainers
-        id="ObjectClass"
-        name="ObjectClass"
-        description="ObjectClass">
-      <audits
-          name="ObjectClassConstraint1"
-          id="ObjectClassConstraint1"
-          message="ObjectClass instances which are not abstract (isAbstract = false) and which are not Substance Sortal instances must have at least one Substance Sortal instance as supertype.">
-        <rule
-            body="if ((self.isAbstract = false) and not self.oclIsKindOf(SubstanceSortal)) then self.allSuperTypes()->exists(x | x.oclIsKindOf(SubstanceSortal)) else true endif"/>
-        <target
-            xsi:type="gmfmap:DomainElementTarget">
-          <element
-              href="OntoUML.ecore#//ObjectClass"/>
-        </target>
-      </audits>
-    </childContainers>
-    <childContainers
         id="Phase"
         name="Phase"
         description="Phase">
       <audits
-          name="PhaseRestrição1"
-          id="PhaseRestrição1"
-          message="Instâncias de Phase não podem ser supertipos de alguma instância de Substance Sortal.">
+          name="PhaseConstraint1"
+          description="An equivalent constraint (slightly wider) is implemented by CategoryConstraint1 + SubkindConstraint1 + SubstanceSortalConstraint3."
+          id="PhaseConstraint1"
+          message="A class stereotyped as «phase» cannot be a supertype of a class stereotyped as «category», «collective», «kind», «subkind» or «quantity», because an anti-rigid class cannot be a supertype of a rigid class.">
         <rule
-            body="true -- not self.generalization->exists(x | x.general.oclIsKindOf(SubstanceSortal))&#xA;-- uma restrição equivalente (um pouco mais abrangente) é implementada na Restrição2 de SubstanceSortal."/>
+            body="true -- if (self.specific.oclIsKindOf(RigidSortalClass) or self.specific.oclIsKindOf(Category)) then not self.general.oclIsKindOf(Phase) else true endif -- An equivalent constraint (slightly wider) is implemented by CategoryConstraint1 + SubkindConstraint1 + SubstanceSortalConstraint3."/>
+        <target
+            xsi:type="gmfmap:DomainElementTarget">
+          <element
+              href="OntoUML.ecore#//Phase"/>
+        </target>
+      </audits>
+      <audits
+          name="PhaseConstraint2"
+          id="PhaseConstraint2"
+          message="The classes stereotyped as «phase» must form a phase-partition of a class C&#xA;stereotyped as «collective», «kind» or «quantity» (a Substance Sortal class).&#xA;Therefore, there must exist an unique GeneralizationSet which contains the&#xA;generalizations from the classes stereotyped as «phase» to the class C (by&#xA;having its meta-reference &quot;generalizations&quot; pointing to these generalizations)&#xA;and in which the properties isDisjoint = true and isComplete = true.">
+        <rule
+            body="let general_substance_sortal : SubstanceSortal = Generalization.allInstances()->select(x | (x.specific = self) and (x.general.oclIsKindOf(SubstanceSortal)))->collect(x | x.general.oclAsType(SubstanceSortal))->any(true) in (let phase_generalizations : Set(Generalization) = Generalization.allInstances()->select(x | (x.general = general_substance_sortal) and (x.specific.oclIsKindOf(Phase))) in (let phase_generalization_sets : Set(GeneralizationSet) = GeneralizationSet.allInstances()->select(x | x.generalization->includesAll(phase_generalizations)) in (if (general_substance_sortal.oclIsUndefined() or (phase_generalizations->size() = 1)) then true else ((phase_generalization_sets->size() = 1) and (phase_generalization_sets->forAll(x | (x.isCovering = true) and (x.isDisjoint = true)))) endif)))"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
@@ -2758,13 +3087,31 @@
       </audits>
     </childContainers>
     <childContainers
+        id="Property"
+        name="Property"
+        description="Property">
+      <audits
+          name="PropertyConstraint1"
+          id="PropertyConstraint1"
+          useInLiveMode="true"
+          message="An association stereotyped as «datatypeRelationship» must not permit the existence of optional attributes, i.e., attributes with minimum cardinalities equal to zero.">
+        <rule
+            body="self.target->forAll(x | if x.oclIsKindOf(Property) then ((x.oclAsType(Property).lower >= 1) or (x.oclAsType(Property).lower = -1)) else false endif)"/>
+        <target
+            xsi:type="gmfmap:DomainElementTarget">
+          <element
+              href="OntoUML.ecore#//DatatypeRelationship"/>
+        </target>
+      </audits>
+    </childContainers>
+    <childContainers
         id="Relator"
         name="Relator"
         description="Relator">
       <audits
-          name="RelatorRestrição1"
-          id="RelatorRestrição1"
-          message="Instâncias de Relator devem estar conectadas (diretamente ou indiretamente) a ao menos uma extremidade de uma instância de Mediation.">
+          name="RelatorConstraint1"
+          id="RelatorConstraint1"
+          message="A class stereotyped as «relator» must be (directly or indirectly) connected to an&#xA;association end of at least one «mediation» relationship.">
         <rule
             body="Mediation.allInstances()->exists(x | x.isConected(self) or self.allSuperTypes()->exists(y | x.isConected(y)))"/>
         <target
@@ -2774,11 +3121,11 @@
         </target>
       </audits>
       <audits
-          name="RelatorRestrição2"
-          id="RelatorRestrição2"
-          message="Instâncias de Relator devem estar mediando (por meio de instâncias de Mediation) pelo menos dois elementos distintos.">
+          name="RelatorConstraint2"
+          id="RelatorConstraint2"
+          message="A class stereotyped as «relator» must be mediating (by&#xA;being (directly or indirectly) connected to association ends&#xA;of relationships stereotyped as «mediation») at least two&#xA;disjoint elements.">
         <rule
-            body="Mediation.allInstances()->select(x | x.source->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = self) else false endif))->collect(z | z.target->collect(w | if w.oclIsKindOf(Property) then w.oclAsType(Property).lower else 0 endif)->sum())->sum() >= 2"/>
+            body="Mediation.allInstances()->select(x | x.source->exists(y | if y.oclIsKindOf(Property) then ((y.oclAsType(Property).endType = self) or self.allSuperTypes()->includes(y.oclAsType(Property).endType)) else false endif))->collect(z | z.target->collect(w | if w.oclIsKindOf(Property) then (if (w.oclAsType(Property).lower = -1) then 2 else w.oclAsType(Property).lower endif) else 0 endif)->sum())->sum() >= 2"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
@@ -2791,11 +3138,13 @@
         name="Role"
         description="Role">
       <audits
-          name="RoleRestrição1"
-          id="RoleRestrição1"
-          message="Instâncias de Role não podem ser supertipos de alguma instância de Substance Sortal.">
+          name="RoleConstraint1"
+          description="An equivalent constraint (slightly wider) is implemented by CategoryConstraint1 + SubkindConstraint1 + SubstanceSortalConstraint3."
+          id="RoleConstraint1"
+          useInLiveMode="true"
+          message="A class stereotyped as «role» cannot be a supertype of a class stereotyped as «category», «collective», «kind», «subkind» or «quantity», because an anti-rigid class cannot be a supertype of a rigid class.">
         <rule
-            body="true -- not self.generalization->exists(x | x.general.oclIsKindOf(SubstanceSortal))&#xA;-- uma restrição equivalente (um pouco mais abrangente) é implementada na Restrição2 de SubstanceSortal."/>
+            body="true -- if (self.specific.oclIsKindOf(RigidSortalClass) or self.specific.oclIsKindOf(Category)) then not self.general.oclIsKindOf(Role) else true endif -- An equivalent constraint (slightly wider) is implemented by CategoryConstraint1 + SubkindConstraint1 + SubstanceSortalConstraint3."/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
@@ -2803,9 +3152,9 @@
         </target>
       </audits>
       <audits
-          name="RoleRestrição2"
-          id="RoleRestrição2"
-          message="Instâncias de Role devem estar conectadas à extremidade de uma instância de Mediation.">
+          name="RoleConstraint2"
+          id="RoleConstraint2"
+          message="A class stereotyped as «role» must be connected to an&#xA;association end of a relationship stereotyped as «mediation».">
         <rule
             body="Mediation.allInstances()->exists(x | x.target->exists(y | if y.oclIsKindOf(Property) then ((y.oclAsType(Property).endType = self) or (self.allSuperTypes()->includes(y.oclAsType(Property).endType))) else false endif))"/>
         <target
@@ -2820,9 +3169,9 @@
         name="RoleMixin"
         description="RoleMixin">
       <audits
-          name="RoleMixinRestrição1"
-          id="RoleMixinRestrição1"
-          message="Instâncias de Role Mixin devem estar conectadas à extremidade de uma instância de Mediation.">
+          name="RoleMixinConstraint1"
+          id="RoleMixinConstraint1"
+          message="A class stereotyped as «roleMixin» must be connected to an&#xA;association end of a relationship stereotyped as «mediation».">
         <rule
             body="Mediation.allInstances()->exists(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = self) else false endif))"/>
         <target
@@ -2837,11 +3186,11 @@
         name="StructuralDatatype"
         description="StructuralDatatype">
       <audits
-          name="StructuralDatatypeRestrição1"
-          id="StructuralDatatypeRestrição1"
-          message="Instâncias de Structural Datatype devem possuir no mínimo dois atributos distintos.">
+          name="StructuralDatatypeConstraint1*"
+          id="StructuralDatatypeConstraint1*"
+          message="A class stereotyped as «structuralDatatype» must have at&#xA;least two disjoint attributes (a class can have attributes by&#xA;means of relationships stereotyped as «datatypeRelationship»).">
         <rule
-            body="DatatypeAssociation.allInstances()->collect(x | if x.associationEnd->exists(y | y.endType = self) then x.associationEnd->collect(z | if ((z.endType &lt;> self) and z.isNavigable) then z.lower else 0 endif)->sum() else 0 endif)->sum() >= 2"/>
+            body="DatatypeRelationship.allInstances()->collect(x | if x.source->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = self) else false endif) then x.target->collect(z | if z.oclIsKindOf(Property) then (if (z.oclAsType(Property).lower = -1) then 2 else z.oclAsType(Property).lower endif) else 0 endif)->sum() else 0 endif)->sum() >= 2"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
@@ -2854,10 +3203,10 @@
         name="subCollectionOf"
         description="subCollectionOf">
       <audits
-          name="subCollectionOfRestrição1"
-          id="subCollectionOfRestrição1"
+          name="subCollectionOfConstraint1a"
+          id="subCollectionOfConstraint1a"
           useInLiveMode="true"
-          message="subCollectionOf instances must have its source extremities associated to elements that represent universals whose instances are collectives.">
+          message="The classes connected to the association end relative to the whole individual must represent universals whose instances are collectives. A universal X is a universal whose instances are collectives if it satisfies the following conditions: (i) If X is a sortal universal, then it must be either stereotyped as «collective» or be a subtype of a class stereotyped as «collective»; (ii) Otherwise, if X is a mixin universal, then for all classes Y such that Y is a subtype of X, we have that Y cannot be either stereotyped as «kind» or «quantity», and Y cannot be a subtype of class stereotyped as either «kind» or «quantity».">
         <rule
             body="self.source->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.hasCollectivesInstances() else false endif)"/>
         <target
@@ -2867,10 +3216,10 @@
         </target>
       </audits>
       <audits
-          name="subCollectionOfRestrição2"
-          id="subCollectionOfRestrição2"
+          name="subCollectionOfConstraint1b"
+          id="subCollectionOfConstraint1b"
           useInLiveMode="true"
-          message="subCollectionOf instances must have its target extremities associated to elements that represent universals whose instances are collectives.">
+          message="The classes connected to the association end relative to the part must represent universals whose instances are collectives. A universal X is a universal whose instances are collectives if it satisfies the following conditions: (i) If X is a sortal universal, then it must be either stereotyped as «collective» or be a subtype of a class stereotyped as «collective»; (ii) Otherwise, if X is a mixin universal, then for all classes Y such that Y is a subtype of X, we have that Y cannot be either stereotyped as «kind» or «quantity», and Y cannot be a subtype of class stereotyped as either «kind» or «quantity».">
         <rule
             body="self.target->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.hasCollectivesInstances() else false endif)"/>
         <target
@@ -2880,15 +3229,16 @@
         </target>
       </audits>
       <audits
-          name="subCollectionOfRestrição3"
-          id="subCollectionOfRestrição3"
-          message="Instâncias de subCollectionOf devem ter as extremidades alvo com cardinalidades máximas exatamente iguais a 1.">
+          name="subCollectionOfConstraint2"
+          id="subCollectionOfConstraint2"
+          useInLiveMode="true"
+          message="In a relationship stereotyped as «subCollectionOf», the maximum cardinality constraint in the association end connected to the part must be one (the property upper = 1).">
         <rule
-            body="self.target->forAll(x | if x.oclIsKindOf(Property) then (x.oclAsType(Property).upper = 1) else false endif)"/>
+            body="if self.target.oclIsKindOf(subCollectionOf) then self.upper = 1 else true endif"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
-              href="OntoUML.ecore#//subCollectionOf"/>
+              href="OntoUML.ecore#//Property"/>
         </target>
       </audits>
     </childContainers>
@@ -2897,16 +3247,16 @@
         name="SubKind"
         description="SubKind">
       <audits
-          name="SubKindRestrição1"
-          id="SubKindRestrição1"
+          name="SubKindConstraint1"
+          id="SubKindConstraint1"
           useInLiveMode="true"
-          message="Instâncias de SubKind não podem ter como supertipos instâncias de Phase, Role e Role Mixin.">
+          message="A class stereotyped as «subkind» cannot be a subtype of a class stereotyped as «phase», «role» or «roleMixin», because a rigid class cannot be a subtype of an anti-rigid class.">
         <rule
-            body="not self.allSuperTypes()->exists(x | x.oclIsKindOf(Phase) or x.oclIsKindOf(Role) or x.oclIsKindOf(RoleMixin))"/>
+            body="if self.specific.oclIsKindOf(SubKind) then not (self.general.oclIsKindOf(AntiRigidSortalClass) or self.general.oclIsKindOf(RoleMixin)) else true endif"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
-              href="OntoUML.ecore#//SubKind"/>
+              href="OntoUML.ecore#//Generalization"/>
         </target>
       </audits>
     </childContainers>
@@ -2915,10 +3265,10 @@
         name="subQuantityOf"
         description="subQuantityOf">
       <audits
-          name="subQuantityOfRestrição1"
-          id="subQuantityOfRestrição1"
+          name="subQuantityOfConstraint1"
+          id="subQuantityOfConstraint1"
           useInLiveMode="true"
-          message="subQuantityOf instances must have meta-attributes isShareable = false.">
+          message="A relationship stereotyped as «subQuantityOf» is always non-shareable (the property isShareable = false).">
         <rule
             body="self.isShareable = false"/>
         <target
@@ -2928,10 +3278,10 @@
         </target>
       </audits>
       <audits
-          name="subQuantityOfRestrição2"
-          id="subQuantityOfRestrição2"
+          name="subQuantityOfConstraint2a"
+          id="subQuantityOfConstraint2a"
           useInLiveMode="true"
-          message="subQuantityOf instances must have meta-attributes isEssential = true, because Quantity instances are extensional individuals.">
+          message="A relationship stereotyped as «subQuantityOf» must have the property isEssential = true, because classes stereotyped as «quantity» are extensional individuals.">
         <rule
             body="self.isEssential = true"/>
         <target
@@ -2941,11 +3291,12 @@
         </target>
       </audits>
       <audits
-          name="subQuantityOfRestrição3"
-          id="subQuantityOfRestrição3"
-          message="Instâncias de subQuantityOf devem ter as extremidades alvo com cardinalidades máximas exatamente iguais a 1.">
+          name="subQuantityOfConstraint2b*"
+          id="subQuantityOfConstraint2b*"
+          useInLiveMode="true"
+          message="A relationship stereotyped as «subQuantityOf» must have the property isImmutablePart = true, because these relationships are always essential (i.e., the property isEssential = true).">
         <rule
-            body="self.target->forAll(x | if x.oclIsKindOf(Property) then (x.oclAsType(Property).upper = 1) else false endif)"/>
+            body="self.isImmutablePart = true -- Extension of Constraint 2 with the new meta-attribute isImmutablePart."/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
@@ -2953,10 +3304,36 @@
         </target>
       </audits>
       <audits
-          name="subQuantityOfRestrição4"
-          id="subQuantityOfRestrição4"
+          name="subQuantityOfConstraint2c*"
+          id="subQuantityOfConstraint2c*"
           useInLiveMode="true"
-          message="subQuantityOf instances must have its source extremities associated to elements that represent universals whose instances are quantities.">
+          message="In a relationship stereotyped as «subQuantityOf», the Properties related to the parts must have the property isReadOnly = true, because these parts are always immutable (i.e., the property isImmutablePart = true).">
+        <rule
+            body="if self.target.oclIsKindOf(subQuantityOf) then self.isReadOnly else true endif -- Extension of Constraint 2 with the new meta-attribute isImmutablePart."/>
+        <target
+            xsi:type="gmfmap:DomainElementTarget">
+          <element
+              href="OntoUML.ecore#//Property"/>
+        </target>
+      </audits>
+      <audits
+          name="subQuantityOfConstraint3"
+          id="subQuantityOfConstraint3"
+          useInLiveMode="true"
+          message="In a relationship stereotyped as «subQuantityOf», the maximum&#xA;cardinality constraint in the association end connected to the part&#xA;must be one (the property upper = 1).">
+        <rule
+            body="if self.target.oclIsKindOf(subQuantityOf) then self.upper = 1 else true endif"/>
+        <target
+            xsi:type="gmfmap:DomainElementTarget">
+          <element
+              href="OntoUML.ecore#//Property"/>
+        </target>
+      </audits>
+      <audits
+          name="subQuantityOfConstraint4a"
+          id="subQuantityOfConstraint4a"
+          useInLiveMode="true"
+          message="The classes connected to the association end relative to the whole individual must represent universals whose instances are quantities. A universal X is a universal whose instances are quantities if it satisfies the following conditions: (i) If X is a sortal universal, then it must be either stereotyped as «quantity» or be a subtype of a class stereotyped as «quantity»; (ii) Otherwise, if X is a mixin universal, then for all classes Y such that Y is a subtype of X, we have that Y cannot be either stereotyped as «kind» or «collective», and Y cannot be a subtype of class stereotyped as either «kind» or «collective».">
         <rule
             body="self.source->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.hasQuantitiesInstances() else false endif)"/>
         <target
@@ -2966,10 +3343,10 @@
         </target>
       </audits>
       <audits
-          name="subQuantityOfRestrição5"
-          id="subQuantityOfRestrição5"
+          name="subQuantityOfConstraint4b"
+          id="subQuantityOfConstraint4b"
           useInLiveMode="true"
-          message="subQuantityOf instances must have its target extremities associated to elements that represent universals whose instances are quantities.">
+          message="The classes connected to the association end relative to the part must represent universals whose instances are quantities. A universal X is a universal whose instances are quantities if it satisfies the following conditions: (i) If X is a sortal universal, then it must be either stereotyped as «quantity» or be a subtype of a class stereotyped as «quantity»; (ii) Otherwise, if X is a mixin universal, then for all classes Y such that Y is a subtype of X, we have that Y cannot be either stereotyped as «kind» or «collective», and Y cannot be a subtype of class stereotyped as either «kind» or «collective».">
         <rule
             body="self.target->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.hasQuantitiesInstances() else false endif)"/>
         <target
@@ -2984,29 +3361,54 @@
         name="SubstanceSortal"
         description="SubstanceSortal">
       <audits
-          name="SubstanceSortalRestrição1"
-          id="SubstanceSortalRestrição1"
-          useInLiveMode="true"
-          message="Substance Sortal instances cannot have as supertypes Rigid Sortal Class instances.">
+          name="SubstanceSortalConstraint1"
+          id="SubstanceSortalConstraint1"
+          message="The classes which are not abstract (which have the property isAbstract = false)&#xA;and which are not stereotyped as «collective», «kind», «quantity», «mode» or&#xA;«relator» (i.e., which are not substance sortal classes or moment classes) must&#xA;have at least one class stereotyped as «collective», «kind» or «quantity» as&#xA;supertype.">
         <rule
-            body="not self.allSuperTypes()->exists(y | y.oclIsKindOf(RigidSortalClass))"/>
+            body="if ((self.isAbstract = false) and not self.oclIsKindOf(SubstanceSortal)) then self.allSuperTypes()->exists(x | x.oclIsKindOf(SubstanceSortal)) else true endif"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
-              href="OntoUML.ecore#//SubstanceSortal"/>
+              href="OntoUML.ecore#//ObjectClass"/>
         </target>
       </audits>
       <audits
-          name="SubstanceSortalRestrição2"
-          id="SubstanceSortalRestrição2"
+          name="SubstanceSortalConstraint2a"
+          id="SubstanceSortalConstraint2a"
           useInLiveMode="true"
-          message="Instâncias de Substance Sortal não podem ter como supertipos instâncias de Phase, Role e Role Mixin.">
+          message="Any stereotyped class must not include in its general collection more than one class stereotyped as «collective», «kind» or «quantity» (the substance sortal classes). So, verify if the class connected to the source association end of the generalization relationship or one of its subtypes (in case it has subtypes) are already (directly or indirectly) a subtype of a substance sortal class.">
         <rule
-            body="not self.allSuperTypes()->exists(x | x.oclIsKindOf(Phase) or x.oclIsKindOf(Role) or x.oclIsKindOf(RoleMixin))"/>
+            body="self.specific.allSubTypes()->including(self.specific)->forAll(x | x.allSuperTypes()->select(y | y.oclIsKindOf(SubstanceSortal))->size() &lt;= 1)"/>
         <target
             xsi:type="gmfmap:DomainElementTarget">
           <element
-              href="OntoUML.ecore#//SubstanceSortal"/>
+              href="OntoUML.ecore#//Generalization"/>
+        </target>
+      </audits>
+      <audits
+          name="SubstanceSortalConstraint2b"
+          id="SubstanceSortalConstraint2b"
+          useInLiveMode="true"
+          message="A class stereotyped as «collective», «kind» or «quantity» (the substance sortal classes) cannot have as a supertype a class stereotyped as «kind», «subkind», «quantity» or «collective» (the rigid sortal classes), because a substance sortal has its own principle of identity and cannot inherit another principle of identity from other rigid sortal.">
+        <rule
+            body="if self.specific.oclIsKindOf(SubstanceSortal) then not self.general.oclIsKindOf(RigidSortalClass) else true endif"/>
+        <target
+            xsi:type="gmfmap:DomainElementTarget">
+          <element
+              href="OntoUML.ecore#//Generalization"/>
+        </target>
+      </audits>
+      <audits
+          name="SubstanceSortalConstraint3"
+          id="SubstanceSortalConstraint3"
+          useInLiveMode="true"
+          message="A class stereotyped as «collective», «kind» or «quantity» (the substance sortal classes) cannot be a subtype of a class stereotyped as «phase», «role» or «roleMixin», because a rigid class cannot be a subtype of an anti-rigid class.">
+        <rule
+            body="if self.specific.oclIsKindOf(SubstanceSortal) then not (self.general.oclIsKindOf(AntiRigidSortalClass) or self.general.oclIsKindOf(RoleMixin)) else true endif"/>
+        <target
+            xsi:type="gmfmap:DomainElementTarget">
+          <element
+              href="OntoUML.ecore#//Generalization"/>
         </target>
       </audits>
     </childContainers>

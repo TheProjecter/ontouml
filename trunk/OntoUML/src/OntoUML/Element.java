@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link OntoUML.Element#getAttribute <em>Attribute</em>}</li>
  *   <li>{@link OntoUML.Element#getContainer <em>Container</em>}</li>
  * </ul>
  * </p>
@@ -28,47 +27,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Element extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Attribute</b></em>' containment reference list.
-	 * The list contents are of type {@link OntoUML.Property}.
-	 * It is bidirectional and its opposite is '{@link OntoUML.Property#getOwner <em>Owner</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Attribute</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attribute</em>' containment reference list.
-	 * @see #isSetAttribute()
-	 * @see #unsetAttribute()
-	 * @see OntoUML.OntoUMLPackage#getElement_Attribute()
-	 * @see OntoUML.Property#getOwner
-	 * @model opposite="owner" containment="true" unsettable="true"
-	 * @generated
-	 */
-	EList<Property> getAttribute();
-
-	/**
-	 * Unsets the value of the '{@link OntoUML.Element#getAttribute <em>Attribute</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isSetAttribute()
-	 * @see #getAttribute()
-	 * @generated
-	 */
-	void unsetAttribute();
-
-	/**
-	 * Returns whether the value of the '{@link OntoUML.Element#getAttribute <em>Attribute</em>}' containment reference list is set.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Attribute</em>' containment reference list is set.
-	 * @see #unsetAttribute()
-	 * @see #getAttribute()
-	 * @generated
-	 */
-	boolean isSetAttribute();
-
 	/**
 	 * Returns the value of the '<em><b>Container</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link OntoUML.Container#getInstanciarElement <em>Instanciar Element</em>}'.
@@ -105,6 +63,15 @@ public interface Element extends EObject {
 	 * @generated
 	 */
 	EList<Element> allSuperTypes();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model ordered="false"
+	 *        annotation="http://www.eclipse.org/ocl/examples/OCL body='let generalizations : Set(Generalization) = Generalization.allInstances()->select(x | x.general = self) in (if self.oclIsKindOf(Classifier) then (if generalizations->forAll(y | y.oclIsUndefined()) then Set{} else Set{generalizations->collect(y | y.specific), generalizations->collect(y | if y.specific.oclIsKindOf(Classifier) then y.specific.allSubTypes() else Set{} endif)}->flatten() endif) else Set{} endif)'"
+	 * @generated
+	 */
+	EList<Element> allSubTypes();
 
 	/**
 	 * <!-- begin-user-doc -->

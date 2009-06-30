@@ -61,7 +61,7 @@ public class MeronymicImpl extends DirectedBinaryRelationshipImpl implements Mer
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_ESSENTIAL_EDEFAULT = true;
+	protected static final boolean IS_ESSENTIAL_EDEFAULT = false;
 
 	/**
 	 * The cached value of the '{@link #isIsEssential() <em>Is Essential</em>}' attribute.
@@ -81,7 +81,7 @@ public class MeronymicImpl extends DirectedBinaryRelationshipImpl implements Mer
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_INSEPARABLE_EDEFAULT = true;
+	protected static final boolean IS_INSEPARABLE_EDEFAULT = false;
 
 	/**
 	 * The cached value of the '{@link #isIsInseparable() <em>Is Inseparable</em>}' attribute.
@@ -101,7 +101,7 @@ public class MeronymicImpl extends DirectedBinaryRelationshipImpl implements Mer
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_IMMUTABLE_PART_EDEFAULT = true;
+	protected static final boolean IS_IMMUTABLE_PART_EDEFAULT = false;
 
 	/**
 	 * The cached value of the '{@link #isIsImmutablePart() <em>Is Immutable Part</em>}' attribute.
@@ -121,7 +121,7 @@ public class MeronymicImpl extends DirectedBinaryRelationshipImpl implements Mer
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_IMMUTABLE_WHOLE_EDEFAULT = true;
+	protected static final boolean IS_IMMUTABLE_WHOLE_EDEFAULT = false;
 
 	/**
 	 * The cached value of the '{@link #isIsImmutableWhole() <em>Is Immutable Whole</em>}' attribute.

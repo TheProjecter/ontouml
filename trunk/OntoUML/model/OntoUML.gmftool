@@ -160,8 +160,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="DatatypeAssociation"
-          description="Create new DatatypeAssociation">
+          title="DatatypeRelationship"
+          description="Create new DatatypeRelationship">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

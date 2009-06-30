@@ -70,22 +70,13 @@ public interface OntoUMLPackage extends EPackage {
 	int ELEMENT = 16;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELEMENT__ATTRIBUTE = 0;
-
-	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT__CONTAINER = 1;
+	int ELEMENT__CONTAINER = 0;
 
 	/**
 	 * The number of structural features of the '<em>Element</em>' class.
@@ -94,7 +85,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_FEATURE_COUNT = 2;
+	int ELEMENT_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link OntoUML.impl.NamedElementImpl <em>Named Element</em>}' class.
@@ -104,16 +95,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getNamedElement()
 	 * @generated
 	 */
-	int NAMED_ELEMENT = 30;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT__ATTRIBUTE = ELEMENT__ATTRIBUTE;
+	int NAMED_ELEMENT = 31;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -150,16 +132,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getType()
 	 * @generated
 	 */
-	int TYPE = 52;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE__ATTRIBUTE = NAMED_ELEMENT__ATTRIBUTE;
+	int TYPE = 54;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -199,15 +172,6 @@ public interface OntoUMLPackage extends EPackage {
 	int CLASSIFIER = 6;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASSIFIER__ATTRIBUTE = TYPE__ATTRIBUTE;
-
-	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -226,13 +190,22 @@ public interface OntoUMLPackage extends EPackage {
 	int CLASSIFIER__NAME = TYPE__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFIER__ATTRIBUTE = TYPE_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER__IS_ABSTRACT = TYPE_FEATURE_COUNT + 0;
+	int CLASSIFIER__IS_ABSTRACT = TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>General</b></em>' reference list.
@@ -241,7 +214,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER__GENERAL = TYPE_FEATURE_COUNT + 1;
+	int CLASSIFIER__GENERAL = TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Generalization</b></em>' containment reference list.
@@ -250,7 +223,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER__GENERALIZATION = TYPE_FEATURE_COUNT + 2;
+	int CLASSIFIER__GENERALIZATION = TYPE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Classifier</em>' class.
@@ -259,7 +232,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER_FEATURE_COUNT = TYPE_FEATURE_COUNT + 3;
+	int CLASSIFIER_FEATURE_COUNT = TYPE_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link OntoUML.impl.ClassImpl <em>Class</em>}' class.
@@ -270,15 +243,6 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 */
 	int CLASS = 5;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASS__ATTRIBUTE = CLASSIFIER__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -297,6 +261,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int CLASS__NAME = CLASSIFIER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS__ATTRIBUTE = CLASSIFIER__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -342,16 +315,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getObjectClass()
 	 * @generated
 	 */
-	int OBJECT_CLASS = 32;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBJECT_CLASS__ATTRIBUTE = CLASS__ATTRIBUTE;
+	int OBJECT_CLASS = 33;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -370,6 +334,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int OBJECT_CLASS__NAME = CLASS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_CLASS__ATTRIBUTE = CLASS__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -415,16 +388,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getMixinClass()
 	 * @generated
 	 */
-	int MIXIN_CLASS = 26;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MIXIN_CLASS__ATTRIBUTE = OBJECT_CLASS__ATTRIBUTE;
+	int MIXIN_CLASS = 27;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -443,6 +407,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int MIXIN_CLASS__NAME = OBJECT_CLASS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIXIN_CLASS__ATTRIBUTE = OBJECT_CLASS__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -488,16 +461,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getNonRigidMixinClass()
 	 * @generated
 	 */
-	int NON_RIGID_MIXIN_CLASS = 31;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NON_RIGID_MIXIN_CLASS__ATTRIBUTE = MIXIN_CLASS__ATTRIBUTE;
+	int NON_RIGID_MIXIN_CLASS = 32;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -516,6 +480,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int NON_RIGID_MIXIN_CLASS__NAME = MIXIN_CLASS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NON_RIGID_MIXIN_CLASS__ATTRIBUTE = MIXIN_CLASS__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -564,15 +537,6 @@ public interface OntoUMLPackage extends EPackage {
 	int ANTI_RIGID_MIXIN_CLASS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANTI_RIGID_MIXIN_CLASS__ATTRIBUTE = NON_RIGID_MIXIN_CLASS__ATTRIBUTE;
-
-	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -589,6 +553,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int ANTI_RIGID_MIXIN_CLASS__NAME = NON_RIGID_MIXIN_CLASS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANTI_RIGID_MIXIN_CLASS__ATTRIBUTE = NON_RIGID_MIXIN_CLASS__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -634,16 +607,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getSortalClass()
 	 * @generated
 	 */
-	int SORTAL_CLASS = 45;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SORTAL_CLASS__ATTRIBUTE = OBJECT_CLASS__ATTRIBUTE;
+	int SORTAL_CLASS = 47;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -662,6 +626,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int SORTAL_CLASS__NAME = OBJECT_CLASS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SORTAL_CLASS__ATTRIBUTE = OBJECT_CLASS__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -710,15 +683,6 @@ public interface OntoUMLPackage extends EPackage {
 	int ANTI_RIGID_SORTAL_CLASS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANTI_RIGID_SORTAL_CLASS__ATTRIBUTE = SORTAL_CLASS__ATTRIBUTE;
-
-	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -735,6 +699,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int ANTI_RIGID_SORTAL_CLASS__NAME = SORTAL_CLASS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANTI_RIGID_SORTAL_CLASS__ATTRIBUTE = SORTAL_CLASS__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -780,16 +753,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getRelationship()
 	 * @generated
 	 */
-	int RELATIONSHIP = 37;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATIONSHIP__ATTRIBUTE = ELEMENT__ATTRIBUTE;
+	int RELATIONSHIP = 39;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -829,15 +793,6 @@ public interface OntoUMLPackage extends EPackage {
 	int ASSOCIATION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSOCIATION__ATTRIBUTE = RELATIONSHIP__ATTRIBUTE;
-
-	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -865,13 +820,22 @@ public interface OntoUMLPackage extends EPackage {
 	int ASSOCIATION__NAME = RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__ATTRIBUTE = RELATIONSHIP_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION__IS_ABSTRACT = RELATIONSHIP_FEATURE_COUNT + 1;
+	int ASSOCIATION__IS_ABSTRACT = RELATIONSHIP_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>General</b></em>' reference list.
@@ -880,7 +844,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION__GENERAL = RELATIONSHIP_FEATURE_COUNT + 2;
+	int ASSOCIATION__GENERAL = RELATIONSHIP_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Generalization</b></em>' containment reference list.
@@ -889,7 +853,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION__GENERALIZATION = RELATIONSHIP_FEATURE_COUNT + 3;
+	int ASSOCIATION__GENERALIZATION = RELATIONSHIP_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Association End</b></em>' reference list.
@@ -898,7 +862,16 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION__ASSOCIATION_END = RELATIONSHIP_FEATURE_COUNT + 4;
+	int ASSOCIATION__ASSOCIATION_END = RELATIONSHIP_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Is Derived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__IS_DERIVED = RELATIONSHIP_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Association End Aux1</b></em>' reference list.
@@ -907,7 +880,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION__ASSOCIATION_END_AUX1 = RELATIONSHIP_FEATURE_COUNT + 5;
+	int ASSOCIATION__ASSOCIATION_END_AUX1 = RELATIONSHIP_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Association End Aux2</b></em>' reference list.
@@ -916,7 +889,52 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION__ASSOCIATION_END_AUX2 = RELATIONSHIP_FEATURE_COUNT + 6;
+	int ASSOCIATION__ASSOCIATION_END_AUX2 = RELATIONSHIP_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Association End3 Aux</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__ASSOCIATION_END3_AUX = RELATIONSHIP_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Association End1 Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__ASSOCIATION_END1_PROPERTY_NAME_LABEL_AUX = RELATIONSHIP_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Association End2 Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__ASSOCIATION_END2_PROPERTY_NAME_LABEL_AUX = RELATIONSHIP_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Association End1 Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__ASSOCIATION_END1_PROPERTY_CARDINALITIES_LABEL_AUX = RELATIONSHIP_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Association End2 Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__ASSOCIATION_END2_PROPERTY_CARDINALITIES_LABEL_AUX = RELATIONSHIP_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of structural features of the '<em>Association</em>' class.
@@ -925,7 +943,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION_FEATURE_COUNT = RELATIONSHIP_FEATURE_COUNT + 7;
+	int ASSOCIATION_FEATURE_COUNT = RELATIONSHIP_FEATURE_COUNT + 14;
 
 	/**
 	 * The meta object id for the '{@link OntoUML.impl.RigidMixinClassImpl <em>Rigid Mixin Class</em>}' class.
@@ -935,16 +953,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getRigidMixinClass()
 	 * @generated
 	 */
-	int RIGID_MIXIN_CLASS = 39;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RIGID_MIXIN_CLASS__ATTRIBUTE = MIXIN_CLASS__ATTRIBUTE;
+	int RIGID_MIXIN_CLASS = 41;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -963,6 +972,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int RIGID_MIXIN_CLASS__NAME = MIXIN_CLASS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RIGID_MIXIN_CLASS__ATTRIBUTE = MIXIN_CLASS__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -1011,15 +1029,6 @@ public interface OntoUMLPackage extends EPackage {
 	int CATEGORY = 3;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CATEGORY__ATTRIBUTE = RIGID_MIXIN_CLASS__ATTRIBUTE;
-
-	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1036,6 +1045,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int CATEGORY__NAME = RIGID_MIXIN_CLASS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATEGORY__ATTRIBUTE = RIGID_MIXIN_CLASS__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -1082,15 +1100,6 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 */
 	int DIRECTED_RELATIONSHIP = 15;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECTED_RELATIONSHIP__ATTRIBUTE = RELATIONSHIP__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -1165,13 +1174,49 @@ public interface OntoUMLPackage extends EPackage {
 	int DIRECTED_RELATIONSHIP__SOURCE_AUX2 = RELATIONSHIP_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Source Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_RELATIONSHIP__SOURCE_PROPERTY_NAME_LABEL_AUX = RELATIONSHIP_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_RELATIONSHIP__TARGET_PROPERTY_NAME_LABEL_AUX = RELATIONSHIP_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Source Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_RELATIONSHIP__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX = RELATIONSHIP_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_RELATIONSHIP__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX = RELATIONSHIP_FEATURE_COUNT + 9;
+
+	/**
 	 * The number of structural features of the '<em>Directed Relationship</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_RELATIONSHIP_FEATURE_COUNT = RELATIONSHIP_FEATURE_COUNT + 6;
+	int DIRECTED_RELATIONSHIP_FEATURE_COUNT = RELATIONSHIP_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link OntoUML.impl.DirectedBinaryRelationshipImpl <em>Directed Binary Relationship</em>}' class.
@@ -1182,15 +1227,6 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 */
 	int DIRECTED_BINARY_RELATIONSHIP = 14;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECTED_BINARY_RELATIONSHIP__ATTRIBUTE = DIRECTED_RELATIONSHIP__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -1265,6 +1301,42 @@ public interface OntoUMLPackage extends EPackage {
 	int DIRECTED_BINARY_RELATIONSHIP__SOURCE_AUX2 = DIRECTED_RELATIONSHIP__SOURCE_AUX2;
 
 	/**
+	 * The feature id for the '<em><b>Source Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_BINARY_RELATIONSHIP__SOURCE_PROPERTY_NAME_LABEL_AUX = DIRECTED_RELATIONSHIP__SOURCE_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_BINARY_RELATIONSHIP__TARGET_PROPERTY_NAME_LABEL_AUX = DIRECTED_RELATIONSHIP__TARGET_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Source Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_BINARY_RELATIONSHIP__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX = DIRECTED_RELATIONSHIP__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_BINARY_RELATIONSHIP__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX = DIRECTED_RELATIONSHIP__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1274,13 +1346,22 @@ public interface OntoUMLPackage extends EPackage {
 	int DIRECTED_BINARY_RELATIONSHIP__NAME = DIRECTED_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_BINARY_RELATIONSHIP__ATTRIBUTE = DIRECTED_RELATIONSHIP_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_BINARY_RELATIONSHIP__IS_ABSTRACT = DIRECTED_RELATIONSHIP_FEATURE_COUNT + 1;
+	int DIRECTED_BINARY_RELATIONSHIP__IS_ABSTRACT = DIRECTED_RELATIONSHIP_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>General</b></em>' reference list.
@@ -1289,7 +1370,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_BINARY_RELATIONSHIP__GENERAL = DIRECTED_RELATIONSHIP_FEATURE_COUNT + 2;
+	int DIRECTED_BINARY_RELATIONSHIP__GENERAL = DIRECTED_RELATIONSHIP_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Generalization</b></em>' containment reference list.
@@ -1298,7 +1379,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_BINARY_RELATIONSHIP__GENERALIZATION = DIRECTED_RELATIONSHIP_FEATURE_COUNT + 3;
+	int DIRECTED_BINARY_RELATIONSHIP__GENERALIZATION = DIRECTED_RELATIONSHIP_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Directed Binary Relationship</em>' class.
@@ -1307,7 +1388,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT = DIRECTED_RELATIONSHIP_FEATURE_COUNT + 4;
+	int DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT = DIRECTED_RELATIONSHIP_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link OntoUML.impl.DependencyRelationshipImpl <em>Dependency Relationship</em>}' class.
@@ -1318,15 +1399,6 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 */
 	int DEPENDENCY_RELATIONSHIP = 12;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPENDENCY_RELATIONSHIP__ATTRIBUTE = DIRECTED_BINARY_RELATIONSHIP__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -1401,6 +1473,42 @@ public interface OntoUMLPackage extends EPackage {
 	int DEPENDENCY_RELATIONSHIP__SOURCE_AUX2 = DIRECTED_BINARY_RELATIONSHIP__SOURCE_AUX2;
 
 	/**
+	 * The feature id for the '<em><b>Source Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPENDENCY_RELATIONSHIP__SOURCE_PROPERTY_NAME_LABEL_AUX = DIRECTED_BINARY_RELATIONSHIP__SOURCE_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPENDENCY_RELATIONSHIP__TARGET_PROPERTY_NAME_LABEL_AUX = DIRECTED_BINARY_RELATIONSHIP__TARGET_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Source Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPENDENCY_RELATIONSHIP__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX = DIRECTED_BINARY_RELATIONSHIP__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPENDENCY_RELATIONSHIP__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX = DIRECTED_BINARY_RELATIONSHIP__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1408,6 +1516,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int DEPENDENCY_RELATIONSHIP__NAME = DIRECTED_BINARY_RELATIONSHIP__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPENDENCY_RELATIONSHIP__ATTRIBUTE = DIRECTED_BINARY_RELATIONSHIP__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -1454,15 +1571,6 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 */
 	int CHARACTERIZATION = 4;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHARACTERIZATION__ATTRIBUTE = DEPENDENCY_RELATIONSHIP__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -1537,6 +1645,42 @@ public interface OntoUMLPackage extends EPackage {
 	int CHARACTERIZATION__SOURCE_AUX2 = DEPENDENCY_RELATIONSHIP__SOURCE_AUX2;
 
 	/**
+	 * The feature id for the '<em><b>Source Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHARACTERIZATION__SOURCE_PROPERTY_NAME_LABEL_AUX = DEPENDENCY_RELATIONSHIP__SOURCE_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHARACTERIZATION__TARGET_PROPERTY_NAME_LABEL_AUX = DEPENDENCY_RELATIONSHIP__TARGET_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Source Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHARACTERIZATION__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX = DEPENDENCY_RELATIONSHIP__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHARACTERIZATION__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX = DEPENDENCY_RELATIONSHIP__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1544,6 +1688,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int CHARACTERIZATION__NAME = DEPENDENCY_RELATIONSHIP__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHARACTERIZATION__ATTRIBUTE = DEPENDENCY_RELATIONSHIP__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -1589,16 +1742,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getRigidSortalClass()
 	 * @generated
 	 */
-	int RIGID_SORTAL_CLASS = 40;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RIGID_SORTAL_CLASS__ATTRIBUTE = SORTAL_CLASS__ATTRIBUTE;
+	int RIGID_SORTAL_CLASS = 42;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -1617,6 +1761,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int RIGID_SORTAL_CLASS__NAME = SORTAL_CLASS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RIGID_SORTAL_CLASS__ATTRIBUTE = SORTAL_CLASS__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -1662,16 +1815,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getSubstanceSortal()
 	 * @generated
 	 */
-	int SUBSTANCE_SORTAL = 51;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUBSTANCE_SORTAL__ATTRIBUTE = RIGID_SORTAL_CLASS__ATTRIBUTE;
+	int SUBSTANCE_SORTAL = 53;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -1690,6 +1834,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int SUBSTANCE_SORTAL__NAME = RIGID_SORTAL_CLASS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBSTANCE_SORTAL__ATTRIBUTE = RIGID_SORTAL_CLASS__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -1738,15 +1891,6 @@ public interface OntoUMLPackage extends EPackage {
 	int COLLECTIVE = 7;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COLLECTIVE__ATTRIBUTE = SUBSTANCE_SORTAL__ATTRIBUTE;
-
-	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1763,6 +1907,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int COLLECTIVE__NAME = SUBSTANCE_SORTAL__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTIVE__ATTRIBUTE = SUBSTANCE_SORTAL__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -1817,16 +1970,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getMeronymic()
 	 * @generated
 	 */
-	int MERONYMIC = 24;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MERONYMIC__ATTRIBUTE = DIRECTED_BINARY_RELATIONSHIP__ATTRIBUTE;
+	int MERONYMIC = 25;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -1901,6 +2045,42 @@ public interface OntoUMLPackage extends EPackage {
 	int MERONYMIC__SOURCE_AUX2 = DIRECTED_BINARY_RELATIONSHIP__SOURCE_AUX2;
 
 	/**
+	 * The feature id for the '<em><b>Source Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MERONYMIC__SOURCE_PROPERTY_NAME_LABEL_AUX = DIRECTED_BINARY_RELATIONSHIP__SOURCE_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MERONYMIC__TARGET_PROPERTY_NAME_LABEL_AUX = DIRECTED_BINARY_RELATIONSHIP__TARGET_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Source Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MERONYMIC__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX = DIRECTED_BINARY_RELATIONSHIP__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MERONYMIC__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX = DIRECTED_BINARY_RELATIONSHIP__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1908,6 +2088,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int MERONYMIC__NAME = DIRECTED_BINARY_RELATIONSHIP__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MERONYMIC__ATTRIBUTE = DIRECTED_BINARY_RELATIONSHIP__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -2001,15 +2190,6 @@ public interface OntoUMLPackage extends EPackage {
 	int COMPONENT_OF = 8;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_OF__ATTRIBUTE = MERONYMIC__ATTRIBUTE;
-
-	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2082,6 +2262,42 @@ public interface OntoUMLPackage extends EPackage {
 	int COMPONENT_OF__SOURCE_AUX2 = MERONYMIC__SOURCE_AUX2;
 
 	/**
+	 * The feature id for the '<em><b>Source Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_OF__SOURCE_PROPERTY_NAME_LABEL_AUX = MERONYMIC__SOURCE_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_OF__TARGET_PROPERTY_NAME_LABEL_AUX = MERONYMIC__TARGET_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Source Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_OF__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX = MERONYMIC__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_OF__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX = MERONYMIC__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2089,6 +2305,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPONENT_OF__NAME = MERONYMIC__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_OF__ATTRIBUTE = MERONYMIC__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -2210,15 +2435,6 @@ public interface OntoUMLPackage extends EPackage {
 	int DATATYPE = 10;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATATYPE__ATTRIBUTE = CLASSIFIER__ATTRIBUTE;
-
-	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2235,6 +2451,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int DATATYPE__NAME = CLASSIFIER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATATYPE__ATTRIBUTE = CLASSIFIER__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -2273,23 +2498,14 @@ public interface OntoUMLPackage extends EPackage {
 	int DATATYPE_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link OntoUML.impl.DatatypeAssociationImpl <em>Datatype Association</em>}' class.
+	 * The meta object id for the '{@link OntoUML.impl.DatatypeRelationshipImpl <em>Datatype Relationship</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see OntoUML.impl.DatatypeAssociationImpl
-	 * @see OntoUML.impl.OntoUMLPackageImpl#getDatatypeAssociation()
+	 * @see OntoUML.impl.DatatypeRelationshipImpl
+	 * @see OntoUML.impl.OntoUMLPackageImpl#getDatatypeRelationship()
 	 * @generated
 	 */
-	int DATATYPE_ASSOCIATION = 11;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATATYPE_ASSOCIATION__ATTRIBUTE = ASSOCIATION__ATTRIBUTE;
+	int DATATYPE_RELATIONSHIP = 11;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -2298,7 +2514,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATATYPE_ASSOCIATION__CONTAINER = ASSOCIATION__CONTAINER;
+	int DATATYPE_RELATIONSHIP__CONTAINER = DIRECTED_BINARY_RELATIONSHIP__CONTAINER;
 
 	/**
 	 * The feature id for the '<em><b>Related Element</b></em>' reference list.
@@ -2307,7 +2523,97 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATATYPE_ASSOCIATION__RELATED_ELEMENT = ASSOCIATION__RELATED_ELEMENT;
+	int DATATYPE_RELATIONSHIP__RELATED_ELEMENT = DIRECTED_BINARY_RELATIONSHIP__RELATED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATATYPE_RELATIONSHIP__TARGET = DIRECTED_BINARY_RELATIONSHIP__TARGET;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATATYPE_RELATIONSHIP__SOURCE = DIRECTED_BINARY_RELATIONSHIP__SOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Target Aux1</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATATYPE_RELATIONSHIP__TARGET_AUX1 = DIRECTED_BINARY_RELATIONSHIP__TARGET_AUX1;
+
+	/**
+	 * The feature id for the '<em><b>Source Aux1</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATATYPE_RELATIONSHIP__SOURCE_AUX1 = DIRECTED_BINARY_RELATIONSHIP__SOURCE_AUX1;
+
+	/**
+	 * The feature id for the '<em><b>Target Aux2</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATATYPE_RELATIONSHIP__TARGET_AUX2 = DIRECTED_BINARY_RELATIONSHIP__TARGET_AUX2;
+
+	/**
+	 * The feature id for the '<em><b>Source Aux2</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATATYPE_RELATIONSHIP__SOURCE_AUX2 = DIRECTED_BINARY_RELATIONSHIP__SOURCE_AUX2;
+
+	/**
+	 * The feature id for the '<em><b>Source Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATATYPE_RELATIONSHIP__SOURCE_PROPERTY_NAME_LABEL_AUX = DIRECTED_BINARY_RELATIONSHIP__SOURCE_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATATYPE_RELATIONSHIP__TARGET_PROPERTY_NAME_LABEL_AUX = DIRECTED_BINARY_RELATIONSHIP__TARGET_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Source Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATATYPE_RELATIONSHIP__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX = DIRECTED_BINARY_RELATIONSHIP__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATATYPE_RELATIONSHIP__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX = DIRECTED_BINARY_RELATIONSHIP__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2316,7 +2622,16 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATATYPE_ASSOCIATION__NAME = ASSOCIATION__NAME;
+	int DATATYPE_RELATIONSHIP__NAME = DIRECTED_BINARY_RELATIONSHIP__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATATYPE_RELATIONSHIP__ATTRIBUTE = DIRECTED_BINARY_RELATIONSHIP__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -2325,7 +2640,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATATYPE_ASSOCIATION__IS_ABSTRACT = ASSOCIATION__IS_ABSTRACT;
+	int DATATYPE_RELATIONSHIP__IS_ABSTRACT = DIRECTED_BINARY_RELATIONSHIP__IS_ABSTRACT;
 
 	/**
 	 * The feature id for the '<em><b>General</b></em>' reference list.
@@ -2334,7 +2649,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATATYPE_ASSOCIATION__GENERAL = ASSOCIATION__GENERAL;
+	int DATATYPE_RELATIONSHIP__GENERAL = DIRECTED_BINARY_RELATIONSHIP__GENERAL;
 
 	/**
 	 * The feature id for the '<em><b>Generalization</b></em>' containment reference list.
@@ -2343,43 +2658,16 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATATYPE_ASSOCIATION__GENERALIZATION = ASSOCIATION__GENERALIZATION;
+	int DATATYPE_RELATIONSHIP__GENERALIZATION = DIRECTED_BINARY_RELATIONSHIP__GENERALIZATION;
 
 	/**
-	 * The feature id for the '<em><b>Association End</b></em>' reference list.
+	 * The number of structural features of the '<em>Datatype Relationship</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATATYPE_ASSOCIATION__ASSOCIATION_END = ASSOCIATION__ASSOCIATION_END;
-
-	/**
-	 * The feature id for the '<em><b>Association End Aux1</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATATYPE_ASSOCIATION__ASSOCIATION_END_AUX1 = ASSOCIATION__ASSOCIATION_END_AUX1;
-
-	/**
-	 * The feature id for the '<em><b>Association End Aux2</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATATYPE_ASSOCIATION__ASSOCIATION_END_AUX2 = ASSOCIATION__ASSOCIATION_END_AUX2;
-
-	/**
-	 * The number of structural features of the '<em>Datatype Association</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATATYPE_ASSOCIATION_FEATURE_COUNT = ASSOCIATION_FEATURE_COUNT + 0;
+	int DATATYPE_RELATIONSHIP_FEATURE_COUNT = DIRECTED_BINARY_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link OntoUML.impl.DerivationImpl <em>Derivation</em>}' class.
@@ -2390,15 +2678,6 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 */
 	int DERIVATION = 13;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DERIVATION__ATTRIBUTE = DEPENDENCY_RELATIONSHIP__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -2473,6 +2752,42 @@ public interface OntoUMLPackage extends EPackage {
 	int DERIVATION__SOURCE_AUX2 = DEPENDENCY_RELATIONSHIP__SOURCE_AUX2;
 
 	/**
+	 * The feature id for the '<em><b>Source Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DERIVATION__SOURCE_PROPERTY_NAME_LABEL_AUX = DEPENDENCY_RELATIONSHIP__SOURCE_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DERIVATION__TARGET_PROPERTY_NAME_LABEL_AUX = DEPENDENCY_RELATIONSHIP__TARGET_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Source Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DERIVATION__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX = DEPENDENCY_RELATIONSHIP__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DERIVATION__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX = DEPENDENCY_RELATIONSHIP__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2480,6 +2795,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int DERIVATION__NAME = DEPENDENCY_RELATIONSHIP__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DERIVATION__ATTRIBUTE = DEPENDENCY_RELATIONSHIP__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -2518,6 +2842,107 @@ public interface OntoUMLPackage extends EPackage {
 	int DERIVATION_FEATURE_COUNT = DEPENDENCY_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link OntoUML.impl.RedefinableElementImpl <em>Redefinable Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see OntoUML.impl.RedefinableElementImpl
+	 * @see OntoUML.impl.OntoUMLPackageImpl#getRedefinableElement()
+	 * @generated
+	 */
+	int REDEFINABLE_ELEMENT = 37;
+
+	/**
+	 * The feature id for the '<em><b>Container</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REDEFINABLE_ELEMENT__CONTAINER = NAMED_ELEMENT__CONTAINER;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REDEFINABLE_ELEMENT__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is Leaf</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REDEFINABLE_ELEMENT__IS_LEAF = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Redefinable Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REDEFINABLE_ELEMENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link OntoUML.impl.FeatureImpl <em>Feature</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see OntoUML.impl.FeatureImpl
+	 * @see OntoUML.impl.OntoUMLPackageImpl#getFeature()
+	 * @generated
+	 */
+	int FEATURE = 17;
+
+	/**
+	 * The feature id for the '<em><b>Container</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__CONTAINER = REDEFINABLE_ELEMENT__CONTAINER;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__NAME = REDEFINABLE_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is Leaf</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__IS_LEAF = REDEFINABLE_ELEMENT__IS_LEAF;
+
+	/**
+	 * The feature id for the '<em><b>Is Static</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__IS_STATIC = REDEFINABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Feature</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_FEATURE_COUNT = REDEFINABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link OntoUML.impl.FormalAssociationImpl <em>Formal Association</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2525,16 +2950,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getFormalAssociation()
 	 * @generated
 	 */
-	int FORMAL_ASSOCIATION = 17;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORMAL_ASSOCIATION__ATTRIBUTE = ASSOCIATION__ATTRIBUTE;
+	int FORMAL_ASSOCIATION = 18;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -2562,6 +2978,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int FORMAL_ASSOCIATION__NAME = ASSOCIATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_ASSOCIATION__ATTRIBUTE = ASSOCIATION__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -2600,6 +3025,15 @@ public interface OntoUMLPackage extends EPackage {
 	int FORMAL_ASSOCIATION__ASSOCIATION_END = ASSOCIATION__ASSOCIATION_END;
 
 	/**
+	 * The feature id for the '<em><b>Is Derived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_ASSOCIATION__IS_DERIVED = ASSOCIATION__IS_DERIVED;
+
+	/**
 	 * The feature id for the '<em><b>Association End Aux1</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2618,6 +3052,51 @@ public interface OntoUMLPackage extends EPackage {
 	int FORMAL_ASSOCIATION__ASSOCIATION_END_AUX2 = ASSOCIATION__ASSOCIATION_END_AUX2;
 
 	/**
+	 * The feature id for the '<em><b>Association End3 Aux</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_ASSOCIATION__ASSOCIATION_END3_AUX = ASSOCIATION__ASSOCIATION_END3_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Association End1 Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_ASSOCIATION__ASSOCIATION_END1_PROPERTY_NAME_LABEL_AUX = ASSOCIATION__ASSOCIATION_END1_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Association End2 Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_ASSOCIATION__ASSOCIATION_END2_PROPERTY_NAME_LABEL_AUX = ASSOCIATION__ASSOCIATION_END2_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Association End1 Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_ASSOCIATION__ASSOCIATION_END1_PROPERTY_CARDINALITIES_LABEL_AUX = ASSOCIATION__ASSOCIATION_END1_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Association End2 Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_ASSOCIATION__ASSOCIATION_END2_PROPERTY_CARDINALITIES_LABEL_AUX = ASSOCIATION__ASSOCIATION_END2_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
 	 * The number of structural features of the '<em>Formal Association</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2634,16 +3113,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getGeneralization()
 	 * @generated
 	 */
-	int GENERALIZATION = 18;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERALIZATION__ATTRIBUTE = DIRECTED_RELATIONSHIP__ATTRIBUTE;
+	int GENERALIZATION = 19;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -2718,6 +3188,42 @@ public interface OntoUMLPackage extends EPackage {
 	int GENERALIZATION__SOURCE_AUX2 = DIRECTED_RELATIONSHIP__SOURCE_AUX2;
 
 	/**
+	 * The feature id for the '<em><b>Source Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZATION__SOURCE_PROPERTY_NAME_LABEL_AUX = DIRECTED_RELATIONSHIP__SOURCE_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZATION__TARGET_PROPERTY_NAME_LABEL_AUX = DIRECTED_RELATIONSHIP__TARGET_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Source Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZATION__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX = DIRECTED_RELATIONSHIP__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZATION__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX = DIRECTED_RELATIONSHIP__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2770,16 +3276,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getGeneralizationSet()
 	 * @generated
 	 */
-	int GENERALIZATION_SET = 19;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERALIZATION_SET__ATTRIBUTE = NAMED_ELEMENT__ATTRIBUTE;
+	int GENERALIZATION_SET = 20;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -2843,16 +3340,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getKind()
 	 * @generated
 	 */
-	int KIND = 20;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int KIND__ATTRIBUTE = SUBSTANCE_SORTAL__ATTRIBUTE;
+	int KIND = 21;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -2871,6 +3359,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int KIND__NAME = SUBSTANCE_SORTAL__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KIND__ATTRIBUTE = SUBSTANCE_SORTAL__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -2916,16 +3413,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getMaterialAssociation()
 	 * @generated
 	 */
-	int MATERIAL_ASSOCIATION = 21;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MATERIAL_ASSOCIATION__ATTRIBUTE = ASSOCIATION__ATTRIBUTE;
+	int MATERIAL_ASSOCIATION = 22;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -2953,6 +3441,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int MATERIAL_ASSOCIATION__NAME = ASSOCIATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATERIAL_ASSOCIATION__ATTRIBUTE = ASSOCIATION__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -2991,6 +3488,15 @@ public interface OntoUMLPackage extends EPackage {
 	int MATERIAL_ASSOCIATION__ASSOCIATION_END = ASSOCIATION__ASSOCIATION_END;
 
 	/**
+	 * The feature id for the '<em><b>Is Derived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATERIAL_ASSOCIATION__IS_DERIVED = ASSOCIATION__IS_DERIVED;
+
+	/**
 	 * The feature id for the '<em><b>Association End Aux1</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3009,6 +3515,51 @@ public interface OntoUMLPackage extends EPackage {
 	int MATERIAL_ASSOCIATION__ASSOCIATION_END_AUX2 = ASSOCIATION__ASSOCIATION_END_AUX2;
 
 	/**
+	 * The feature id for the '<em><b>Association End3 Aux</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATERIAL_ASSOCIATION__ASSOCIATION_END3_AUX = ASSOCIATION__ASSOCIATION_END3_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Association End1 Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATERIAL_ASSOCIATION__ASSOCIATION_END1_PROPERTY_NAME_LABEL_AUX = ASSOCIATION__ASSOCIATION_END1_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Association End2 Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATERIAL_ASSOCIATION__ASSOCIATION_END2_PROPERTY_NAME_LABEL_AUX = ASSOCIATION__ASSOCIATION_END2_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Association End1 Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATERIAL_ASSOCIATION__ASSOCIATION_END1_PROPERTY_CARDINALITIES_LABEL_AUX = ASSOCIATION__ASSOCIATION_END1_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Association End2 Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATERIAL_ASSOCIATION__ASSOCIATION_END2_PROPERTY_CARDINALITIES_LABEL_AUX = ASSOCIATION__ASSOCIATION_END2_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
 	 * The number of structural features of the '<em>Material Association</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3025,16 +3576,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getMediation()
 	 * @generated
 	 */
-	int MEDIATION = 22;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEDIATION__ATTRIBUTE = DEPENDENCY_RELATIONSHIP__ATTRIBUTE;
+	int MEDIATION = 23;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -3109,6 +3651,42 @@ public interface OntoUMLPackage extends EPackage {
 	int MEDIATION__SOURCE_AUX2 = DEPENDENCY_RELATIONSHIP__SOURCE_AUX2;
 
 	/**
+	 * The feature id for the '<em><b>Source Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDIATION__SOURCE_PROPERTY_NAME_LABEL_AUX = DEPENDENCY_RELATIONSHIP__SOURCE_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDIATION__TARGET_PROPERTY_NAME_LABEL_AUX = DEPENDENCY_RELATIONSHIP__TARGET_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Source Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDIATION__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX = DEPENDENCY_RELATIONSHIP__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDIATION__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX = DEPENDENCY_RELATIONSHIP__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3116,6 +3694,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int MEDIATION__NAME = DEPENDENCY_RELATIONSHIP__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDIATION__ATTRIBUTE = DEPENDENCY_RELATIONSHIP__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -3161,16 +3748,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getmemberOf()
 	 * @generated
 	 */
-	int MEMBER_OF = 23;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEMBER_OF__ATTRIBUTE = MERONYMIC__ATTRIBUTE;
+	int MEMBER_OF = 24;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -3245,6 +3823,42 @@ public interface OntoUMLPackage extends EPackage {
 	int MEMBER_OF__SOURCE_AUX2 = MERONYMIC__SOURCE_AUX2;
 
 	/**
+	 * The feature id for the '<em><b>Source Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMBER_OF__SOURCE_PROPERTY_NAME_LABEL_AUX = MERONYMIC__SOURCE_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMBER_OF__TARGET_PROPERTY_NAME_LABEL_AUX = MERONYMIC__TARGET_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Source Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMBER_OF__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX = MERONYMIC__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMBER_OF__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX = MERONYMIC__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3252,6 +3866,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int MEMBER_OF__NAME = MERONYMIC__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEMBER_OF__ATTRIBUTE = MERONYMIC__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -3342,16 +3965,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getSemiRigidMixin()
 	 * @generated
 	 */
-	int SEMI_RIGID_MIXIN = 43;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEMI_RIGID_MIXIN__ATTRIBUTE = NON_RIGID_MIXIN_CLASS__ATTRIBUTE;
+	int SEMI_RIGID_MIXIN = 45;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -3370,6 +3984,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int SEMI_RIGID_MIXIN__NAME = NON_RIGID_MIXIN_CLASS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMI_RIGID_MIXIN__ATTRIBUTE = NON_RIGID_MIXIN_CLASS__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -3415,16 +4038,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getMixin()
 	 * @generated
 	 */
-	int MIXIN = 25;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MIXIN__ATTRIBUTE = SEMI_RIGID_MIXIN__ATTRIBUTE;
+	int MIXIN = 26;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -3443,6 +4057,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int MIXIN__NAME = SEMI_RIGID_MIXIN__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MIXIN__ATTRIBUTE = SEMI_RIGID_MIXIN__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -3488,16 +4111,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getMomentClass()
 	 * @generated
 	 */
-	int MOMENT_CLASS = 28;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MOMENT_CLASS__ATTRIBUTE = CLASS__ATTRIBUTE;
+	int MOMENT_CLASS = 29;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -3516,6 +4130,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int MOMENT_CLASS__NAME = CLASS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MOMENT_CLASS__ATTRIBUTE = CLASS__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -3561,16 +4184,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getMode()
 	 * @generated
 	 */
-	int MODE = 27;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODE__ATTRIBUTE = MOMENT_CLASS__ATTRIBUTE;
+	int MODE = 28;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -3589,6 +4203,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int MODE__NAME = MOMENT_CLASS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODE__ATTRIBUTE = MOMENT_CLASS__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -3634,16 +4257,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getMultiplicityElement()
 	 * @generated
 	 */
-	int MULTIPLICITY_ELEMENT = 29;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MULTIPLICITY_ELEMENT__ATTRIBUTE = ELEMENT__ATTRIBUTE;
+	int MULTIPLICITY_ELEMENT = 30;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -3689,16 +4303,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getPhase()
 	 * @generated
 	 */
-	int PHASE = 33;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PHASE__ATTRIBUTE = ANTI_RIGID_SORTAL_CLASS__ATTRIBUTE;
+	int PHASE = 34;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -3717,6 +4322,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int PHASE__NAME = ANTI_RIGID_SORTAL_CLASS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PHASE__ATTRIBUTE = ANTI_RIGID_SORTAL_CLASS__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -3762,16 +4376,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getStructuralFeature()
 	 * @generated
 	 */
-	int STRUCTURAL_FEATURE = 47;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURAL_FEATURE__ATTRIBUTE = MULTIPLICITY_ELEMENT__ATTRIBUTE;
+	int STRUCTURAL_FEATURE = 49;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -3810,13 +4415,49 @@ public interface OntoUMLPackage extends EPackage {
 	int STRUCTURAL_FEATURE__NAME = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Is Leaf</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURAL_FEATURE__IS_LEAF = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Is Static</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURAL_FEATURE__IS_STATIC = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURAL_FEATURE__TYPE = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURAL_FEATURE__IS_READ_ONLY = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Structural Feature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURAL_FEATURE_FEATURE_COUNT = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 1;
+	int STRUCTURAL_FEATURE_FEATURE_COUNT = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link OntoUML.impl.PropertyImpl <em>Property</em>}' class.
@@ -3826,16 +4467,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getProperty()
 	 * @generated
 	 */
-	int PROPERTY = 34;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY__ATTRIBUTE = STRUCTURAL_FEATURE__ATTRIBUTE;
+	int PROPERTY = 35;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -3874,6 +4506,42 @@ public interface OntoUMLPackage extends EPackage {
 	int PROPERTY__NAME = STRUCTURAL_FEATURE__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Is Leaf</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY__IS_LEAF = STRUCTURAL_FEATURE__IS_LEAF;
+
+	/**
+	 * The feature id for the '<em><b>Is Static</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY__IS_STATIC = STRUCTURAL_FEATURE__IS_STATIC;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY__TYPE = STRUCTURAL_FEATURE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY__IS_READ_ONLY = STRUCTURAL_FEATURE__IS_READ_ONLY;
+
+	/**
 	 * The feature id for the '<em><b>Is Derived</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3883,22 +4551,13 @@ public interface OntoUMLPackage extends EPackage {
 	int PROPERTY__IS_DERIVED = STRUCTURAL_FEATURE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY__IS_READ_ONLY = STRUCTURAL_FEATURE_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Is Navigable</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__IS_NAVIGABLE = STRUCTURAL_FEATURE_FEATURE_COUNT + 2;
+	int PROPERTY__IS_NAVIGABLE = STRUCTURAL_FEATURE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>End Type</b></em>' reference.
@@ -3907,7 +4566,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__END_TYPE = STRUCTURAL_FEATURE_FEATURE_COUNT + 3;
+	int PROPERTY__END_TYPE = STRUCTURAL_FEATURE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Association End</b></em>' reference.
@@ -3916,7 +4575,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__ASSOCIATION_END = STRUCTURAL_FEATURE_FEATURE_COUNT + 4;
+	int PROPERTY__ASSOCIATION_END = STRUCTURAL_FEATURE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -3925,7 +4584,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__SOURCE = STRUCTURAL_FEATURE_FEATURE_COUNT + 5;
+	int PROPERTY__SOURCE = STRUCTURAL_FEATURE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -3934,25 +4593,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__TARGET = STRUCTURAL_FEATURE_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Owner</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY__OWNER = STRUCTURAL_FEATURE_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Aux</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY__AUX = STRUCTURAL_FEATURE_FEATURE_COUNT + 8;
+	int PROPERTY__TARGET = STRUCTURAL_FEATURE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Association End Position Aux</b></em>' attribute.
@@ -3961,7 +4602,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__ASSOCIATION_END_POSITION_AUX = STRUCTURAL_FEATURE_FEATURE_COUNT + 9;
+	int PROPERTY__ASSOCIATION_END_POSITION_AUX = STRUCTURAL_FEATURE_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Property</em>' class.
@@ -3970,7 +4611,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_FEATURE_COUNT = STRUCTURAL_FEATURE_FEATURE_COUNT + 10;
+	int PROPERTY_FEATURE_COUNT = STRUCTURAL_FEATURE_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link OntoUML.impl.QuantityImpl <em>Quantity</em>}' class.
@@ -3980,16 +4621,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getQuantity()
 	 * @generated
 	 */
-	int QUANTITY = 35;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUANTITY__ATTRIBUTE = SUBSTANCE_SORTAL__ATTRIBUTE;
+	int QUANTITY = 36;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -4008,6 +4640,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int QUANTITY__NAME = SUBSTANCE_SORTAL__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUANTITY__ATTRIBUTE = SUBSTANCE_SORTAL__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -4053,16 +4694,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getRelationalClassifier()
 	 * @generated
 	 */
-	int RELATIONAL_CLASSIFIER = 36;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATIONAL_CLASSIFIER__ATTRIBUTE = CLASSIFIER__ATTRIBUTE;
+	int RELATIONAL_CLASSIFIER = 38;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -4081,6 +4713,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int RELATIONAL_CLASSIFIER__NAME = CLASSIFIER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIONAL_CLASSIFIER__ATTRIBUTE = CLASSIFIER__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -4126,16 +4767,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getRelator()
 	 * @generated
 	 */
-	int RELATOR = 38;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATOR__ATTRIBUTE = MOMENT_CLASS__ATTRIBUTE;
+	int RELATOR = 40;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -4154,6 +4786,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int RELATOR__NAME = MOMENT_CLASS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATOR__ATTRIBUTE = MOMENT_CLASS__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -4199,16 +4840,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getRole()
 	 * @generated
 	 */
-	int ROLE = 41;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE__ATTRIBUTE = ANTI_RIGID_SORTAL_CLASS__ATTRIBUTE;
+	int ROLE = 43;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -4227,6 +4859,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROLE__NAME = ANTI_RIGID_SORTAL_CLASS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__ATTRIBUTE = ANTI_RIGID_SORTAL_CLASS__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -4272,16 +4913,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getRoleMixin()
 	 * @generated
 	 */
-	int ROLE_MIXIN = 42;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE_MIXIN__ATTRIBUTE = ANTI_RIGID_MIXIN_CLASS__ATTRIBUTE;
+	int ROLE_MIXIN = 44;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -4300,6 +4932,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROLE_MIXIN__NAME = ANTI_RIGID_MIXIN_CLASS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_MIXIN__ATTRIBUTE = ANTI_RIGID_MIXIN_CLASS__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -4345,16 +4986,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getSimpleDatatype()
 	 * @generated
 	 */
-	int SIMPLE_DATATYPE = 44;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SIMPLE_DATATYPE__ATTRIBUTE = DATATYPE__ATTRIBUTE;
+	int SIMPLE_DATATYPE = 46;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -4373,6 +5005,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int SIMPLE_DATATYPE__NAME = DATATYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_DATATYPE__ATTRIBUTE = DATATYPE__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -4418,16 +5059,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getStructuralDatatype()
 	 * @generated
 	 */
-	int STRUCTURAL_DATATYPE = 46;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURAL_DATATYPE__ATTRIBUTE = DATATYPE__ATTRIBUTE;
+	int STRUCTURAL_DATATYPE = 48;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -4446,6 +5078,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int STRUCTURAL_DATATYPE__NAME = DATATYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURAL_DATATYPE__ATTRIBUTE = DATATYPE__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -4491,16 +5132,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getsubCollectionOf()
 	 * @generated
 	 */
-	int SUB_COLLECTION_OF = 48;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUB_COLLECTION_OF__ATTRIBUTE = MERONYMIC__ATTRIBUTE;
+	int SUB_COLLECTION_OF = 50;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -4575,6 +5207,42 @@ public interface OntoUMLPackage extends EPackage {
 	int SUB_COLLECTION_OF__SOURCE_AUX2 = MERONYMIC__SOURCE_AUX2;
 
 	/**
+	 * The feature id for the '<em><b>Source Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUB_COLLECTION_OF__SOURCE_PROPERTY_NAME_LABEL_AUX = MERONYMIC__SOURCE_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUB_COLLECTION_OF__TARGET_PROPERTY_NAME_LABEL_AUX = MERONYMIC__TARGET_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Source Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUB_COLLECTION_OF__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX = MERONYMIC__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUB_COLLECTION_OF__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX = MERONYMIC__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4582,6 +5250,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int SUB_COLLECTION_OF__NAME = MERONYMIC__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUB_COLLECTION_OF__ATTRIBUTE = MERONYMIC__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -4672,16 +5349,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getSubKind()
 	 * @generated
 	 */
-	int SUB_KIND = 49;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUB_KIND__ATTRIBUTE = RIGID_SORTAL_CLASS__ATTRIBUTE;
+	int SUB_KIND = 51;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -4700,6 +5368,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int SUB_KIND__NAME = RIGID_SORTAL_CLASS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUB_KIND__ATTRIBUTE = RIGID_SORTAL_CLASS__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -4745,16 +5422,7 @@ public interface OntoUMLPackage extends EPackage {
 	 * @see OntoUML.impl.OntoUMLPackageImpl#getsubQuantityOf()
 	 * @generated
 	 */
-	int SUB_QUANTITY_OF = 50;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUB_QUANTITY_OF__ATTRIBUTE = MERONYMIC__ATTRIBUTE;
+	int SUB_QUANTITY_OF = 52;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' container reference.
@@ -4829,6 +5497,42 @@ public interface OntoUMLPackage extends EPackage {
 	int SUB_QUANTITY_OF__SOURCE_AUX2 = MERONYMIC__SOURCE_AUX2;
 
 	/**
+	 * The feature id for the '<em><b>Source Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUB_QUANTITY_OF__SOURCE_PROPERTY_NAME_LABEL_AUX = MERONYMIC__SOURCE_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Name Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUB_QUANTITY_OF__TARGET_PROPERTY_NAME_LABEL_AUX = MERONYMIC__TARGET_PROPERTY_NAME_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Source Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUB_QUANTITY_OF__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX = MERONYMIC__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
+	 * The feature id for the '<em><b>Target Property Cardinalities Label Aux</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUB_QUANTITY_OF__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX = MERONYMIC__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4836,6 +5540,15 @@ public interface OntoUMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int SUB_QUANTITY_OF__NAME = MERONYMIC__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUB_QUANTITY_OF__ATTRIBUTE = MERONYMIC__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -4920,6 +5633,53 @@ public interface OntoUMLPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link OntoUML.impl.TypedElementImpl <em>Typed Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see OntoUML.impl.TypedElementImpl
+	 * @see OntoUML.impl.OntoUMLPackageImpl#getTypedElement()
+	 * @generated
+	 */
+	int TYPED_ELEMENT = 55;
+
+	/**
+	 * The feature id for the '<em><b>Container</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPED_ELEMENT__CONTAINER = NAMED_ELEMENT__CONTAINER;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPED_ELEMENT__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPED_ELEMENT__TYPE = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Typed Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPED_ELEMENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+
+	/**
 	 * Returns the meta object for class '{@link OntoUML.AntiRigidMixinClass <em>Anti Rigid Mixin Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4961,6 +5721,17 @@ public interface OntoUMLPackage extends EPackage {
 	EReference getAssociation_AssociationEnd();
 
 	/**
+	 * Returns the meta object for the attribute '{@link OntoUML.Association#isIsDerived <em>Is Derived</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Derived</em>'.
+	 * @see OntoUML.Association#isIsDerived()
+	 * @see #getAssociation()
+	 * @generated
+	 */
+	EAttribute getAssociation_IsDerived();
+
+	/**
 	 * Returns the meta object for the reference list '{@link OntoUML.Association#getAssociationEndAux1 <em>Association End Aux1</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4981,6 +5752,61 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAssociation_AssociationEndAux2();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link OntoUML.Association#getAssociationEnd3Aux <em>Association End3 Aux</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Association End3 Aux</em>'.
+	 * @see OntoUML.Association#getAssociationEnd3Aux()
+	 * @see #getAssociation()
+	 * @generated
+	 */
+	EReference getAssociation_AssociationEnd3Aux();
+
+	/**
+	 * Returns the meta object for the attribute '{@link OntoUML.Association#getAssociationEnd1PropertyNameLabelAux <em>Association End1 Property Name Label Aux</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Association End1 Property Name Label Aux</em>'.
+	 * @see OntoUML.Association#getAssociationEnd1PropertyNameLabelAux()
+	 * @see #getAssociation()
+	 * @generated
+	 */
+	EAttribute getAssociation_AssociationEnd1PropertyNameLabelAux();
+
+	/**
+	 * Returns the meta object for the attribute '{@link OntoUML.Association#getAssociationEnd2PropertyNameLabelAux <em>Association End2 Property Name Label Aux</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Association End2 Property Name Label Aux</em>'.
+	 * @see OntoUML.Association#getAssociationEnd2PropertyNameLabelAux()
+	 * @see #getAssociation()
+	 * @generated
+	 */
+	EAttribute getAssociation_AssociationEnd2PropertyNameLabelAux();
+
+	/**
+	 * Returns the meta object for the attribute '{@link OntoUML.Association#getAssociationEnd1PropertyCardinalitiesLabelAux <em>Association End1 Property Cardinalities Label Aux</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Association End1 Property Cardinalities Label Aux</em>'.
+	 * @see OntoUML.Association#getAssociationEnd1PropertyCardinalitiesLabelAux()
+	 * @see #getAssociation()
+	 * @generated
+	 */
+	EAttribute getAssociation_AssociationEnd1PropertyCardinalitiesLabelAux();
+
+	/**
+	 * Returns the meta object for the attribute '{@link OntoUML.Association#getAssociationEnd2PropertyCardinalitiesLabelAux <em>Association End2 Property Cardinalities Label Aux</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Association End2 Property Cardinalities Label Aux</em>'.
+	 * @see OntoUML.Association#getAssociationEnd2PropertyCardinalitiesLabelAux()
+	 * @see #getAssociation()
+	 * @generated
+	 */
+	EAttribute getAssociation_AssociationEnd2PropertyCardinalitiesLabelAux();
 
 	/**
 	 * Returns the meta object for class '{@link OntoUML.Category <em>Category</em>}'.
@@ -5021,6 +5847,17 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getClassifier();
+
+	/**
+	 * Returns the meta object for the reference list '{@link OntoUML.Classifier#getAttribute <em>Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Attribute</em>'.
+	 * @see OntoUML.Classifier#getAttribute()
+	 * @see #getClassifier()
+	 * @generated
+	 */
+	EReference getClassifier_Attribute();
 
 	/**
 	 * Returns the meta object for the attribute '{@link OntoUML.Classifier#isIsAbstract <em>Is Abstract</em>}'.
@@ -5118,14 +5955,14 @@ public interface OntoUMLPackage extends EPackage {
 	EClass getDatatype();
 
 	/**
-	 * Returns the meta object for class '{@link OntoUML.DatatypeAssociation <em>Datatype Association</em>}'.
+	 * Returns the meta object for class '{@link OntoUML.DatatypeRelationship <em>Datatype Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Datatype Association</em>'.
-	 * @see OntoUML.DatatypeAssociation
+	 * @return the meta object for class '<em>Datatype Relationship</em>'.
+	 * @see OntoUML.DatatypeRelationship
 	 * @generated
 	 */
-	EClass getDatatypeAssociation();
+	EClass getDatatypeRelationship();
 
 	/**
 	 * Returns the meta object for class '{@link OntoUML.DependencyRelationship <em>Dependency Relationship</em>}'.
@@ -5234,6 +6071,50 @@ public interface OntoUMLPackage extends EPackage {
 	EReference getDirectedRelationship_SourceAux2();
 
 	/**
+	 * Returns the meta object for the attribute '{@link OntoUML.DirectedRelationship#getSourcePropertyNameLabelAux <em>Source Property Name Label Aux</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Source Property Name Label Aux</em>'.
+	 * @see OntoUML.DirectedRelationship#getSourcePropertyNameLabelAux()
+	 * @see #getDirectedRelationship()
+	 * @generated
+	 */
+	EAttribute getDirectedRelationship_SourcePropertyNameLabelAux();
+
+	/**
+	 * Returns the meta object for the attribute '{@link OntoUML.DirectedRelationship#getTargetPropertyNameLabelAux <em>Target Property Name Label Aux</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Target Property Name Label Aux</em>'.
+	 * @see OntoUML.DirectedRelationship#getTargetPropertyNameLabelAux()
+	 * @see #getDirectedRelationship()
+	 * @generated
+	 */
+	EAttribute getDirectedRelationship_TargetPropertyNameLabelAux();
+
+	/**
+	 * Returns the meta object for the attribute '{@link OntoUML.DirectedRelationship#getSourcePropertyCardinalitiesLabelAux <em>Source Property Cardinalities Label Aux</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Source Property Cardinalities Label Aux</em>'.
+	 * @see OntoUML.DirectedRelationship#getSourcePropertyCardinalitiesLabelAux()
+	 * @see #getDirectedRelationship()
+	 * @generated
+	 */
+	EAttribute getDirectedRelationship_SourcePropertyCardinalitiesLabelAux();
+
+	/**
+	 * Returns the meta object for the attribute '{@link OntoUML.DirectedRelationship#getTargetPropertyCardinalitiesLabelAux <em>Target Property Cardinalities Label Aux</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Target Property Cardinalities Label Aux</em>'.
+	 * @see OntoUML.DirectedRelationship#getTargetPropertyCardinalitiesLabelAux()
+	 * @see #getDirectedRelationship()
+	 * @generated
+	 */
+	EAttribute getDirectedRelationship_TargetPropertyCardinalitiesLabelAux();
+
+	/**
 	 * Returns the meta object for class '{@link OntoUML.Element <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5242,17 +6123,6 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getElement();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link OntoUML.Element#getAttribute <em>Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Attribute</em>'.
-	 * @see OntoUML.Element#getAttribute()
-	 * @see #getElement()
-	 * @generated
-	 */
-	EReference getElement_Attribute();
 
 	/**
 	 * Returns the meta object for the container reference '{@link OntoUML.Element#getContainer <em>Container</em>}'.
@@ -5264,6 +6134,27 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getElement_Container();
+
+	/**
+	 * Returns the meta object for class '{@link OntoUML.Feature <em>Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Feature</em>'.
+	 * @see OntoUML.Feature
+	 * @generated
+	 */
+	EClass getFeature();
+
+	/**
+	 * Returns the meta object for the attribute '{@link OntoUML.Feature#isIsStatic <em>Is Static</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Static</em>'.
+	 * @see OntoUML.Feature#isIsStatic()
+	 * @see #getFeature()
+	 * @generated
+	 */
+	EAttribute getFeature_IsStatic();
 
 	/**
 	 * Returns the meta object for class '{@link OntoUML.FormalAssociation <em>Formal Association</em>}'.
@@ -5611,17 +6502,6 @@ public interface OntoUMLPackage extends EPackage {
 	EAttribute getProperty_IsDerived();
 
 	/**
-	 * Returns the meta object for the attribute '{@link OntoUML.Property#isIsReadOnly <em>Is Read Only</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Read Only</em>'.
-	 * @see OntoUML.Property#isIsReadOnly()
-	 * @see #getProperty()
-	 * @generated
-	 */
-	EAttribute getProperty_IsReadOnly();
-
-	/**
 	 * Returns the meta object for the attribute '{@link OntoUML.Property#isIsNavigable <em>Is Navigable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5677,28 +6557,6 @@ public interface OntoUMLPackage extends EPackage {
 	EReference getProperty_Target();
 
 	/**
-	 * Returns the meta object for the container reference '{@link OntoUML.Property#getOwner <em>Owner</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Owner</em>'.
-	 * @see OntoUML.Property#getOwner()
-	 * @see #getProperty()
-	 * @generated
-	 */
-	EReference getProperty_Owner();
-
-	/**
-	 * Returns the meta object for the reference '{@link OntoUML.Property#getAux <em>Aux</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Aux</em>'.
-	 * @see OntoUML.Property#getAux()
-	 * @see #getProperty()
-	 * @generated
-	 */
-	EReference getProperty_Aux();
-
-	/**
 	 * Returns the meta object for the attribute '{@link OntoUML.Property#getAssociationEndPositionAux <em>Association End Position Aux</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5718,6 +6576,27 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getQuantity();
+
+	/**
+	 * Returns the meta object for class '{@link OntoUML.RedefinableElement <em>Redefinable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Redefinable Element</em>'.
+	 * @see OntoUML.RedefinableElement
+	 * @generated
+	 */
+	EClass getRedefinableElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link OntoUML.RedefinableElement#isIsLeaf <em>Is Leaf</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Leaf</em>'.
+	 * @see OntoUML.RedefinableElement#isIsLeaf()
+	 * @see #getRedefinableElement()
+	 * @generated
+	 */
+	EAttribute getRedefinableElement_IsLeaf();
 
 	/**
 	 * Returns the meta object for class '{@link OntoUML.RelationalClassifier <em>Relational Classifier</em>}'.
@@ -5851,6 +6730,17 @@ public interface OntoUMLPackage extends EPackage {
 	EClass getStructuralFeature();
 
 	/**
+	 * Returns the meta object for the attribute '{@link OntoUML.StructuralFeature#isIsReadOnly <em>Is Read Only</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Read Only</em>'.
+	 * @see OntoUML.StructuralFeature#isIsReadOnly()
+	 * @see #getStructuralFeature()
+	 * @generated
+	 */
+	EAttribute getStructuralFeature_IsReadOnly();
+
+	/**
 	 * Returns the meta object for class '{@link OntoUML.subCollectionOf <em>sub Collection Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5899,6 +6789,27 @@ public interface OntoUMLPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getType();
+
+	/**
+	 * Returns the meta object for class '{@link OntoUML.TypedElement <em>Typed Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Typed Element</em>'.
+	 * @see OntoUML.TypedElement
+	 * @generated
+	 */
+	EClass getTypedElement();
+
+	/**
+	 * Returns the meta object for the reference '{@link OntoUML.TypedElement#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see OntoUML.TypedElement#getType()
+	 * @see #getTypedElement()
+	 * @generated
+	 */
+	EReference getTypedElement_Type();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -5961,6 +6872,14 @@ public interface OntoUMLPackage extends EPackage {
 		EReference ASSOCIATION__ASSOCIATION_END = eINSTANCE.getAssociation_AssociationEnd();
 
 		/**
+		 * The meta object literal for the '<em><b>Is Derived</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSOCIATION__IS_DERIVED = eINSTANCE.getAssociation_IsDerived();
+
+		/**
 		 * The meta object literal for the '<em><b>Association End Aux1</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5975,6 +6894,46 @@ public interface OntoUMLPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ASSOCIATION__ASSOCIATION_END_AUX2 = eINSTANCE.getAssociation_AssociationEndAux2();
+
+		/**
+		 * The meta object literal for the '<em><b>Association End3 Aux</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSOCIATION__ASSOCIATION_END3_AUX = eINSTANCE.getAssociation_AssociationEnd3Aux();
+
+		/**
+		 * The meta object literal for the '<em><b>Association End1 Property Name Label Aux</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSOCIATION__ASSOCIATION_END1_PROPERTY_NAME_LABEL_AUX = eINSTANCE.getAssociation_AssociationEnd1PropertyNameLabelAux();
+
+		/**
+		 * The meta object literal for the '<em><b>Association End2 Property Name Label Aux</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSOCIATION__ASSOCIATION_END2_PROPERTY_NAME_LABEL_AUX = eINSTANCE.getAssociation_AssociationEnd2PropertyNameLabelAux();
+
+		/**
+		 * The meta object literal for the '<em><b>Association End1 Property Cardinalities Label Aux</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSOCIATION__ASSOCIATION_END1_PROPERTY_CARDINALITIES_LABEL_AUX = eINSTANCE.getAssociation_AssociationEnd1PropertyCardinalitiesLabelAux();
+
+		/**
+		 * The meta object literal for the '<em><b>Association End2 Property Cardinalities Label Aux</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSOCIATION__ASSOCIATION_END2_PROPERTY_CARDINALITIES_LABEL_AUX = eINSTANCE.getAssociation_AssociationEnd2PropertyCardinalitiesLabelAux();
 
 		/**
 		 * The meta object literal for the '{@link OntoUML.impl.CategoryImpl <em>Category</em>}' class.
@@ -6015,6 +6974,14 @@ public interface OntoUMLPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CLASSIFIER = eINSTANCE.getClassifier();
+
+		/**
+		 * The meta object literal for the '<em><b>Attribute</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLASSIFIER__ATTRIBUTE = eINSTANCE.getClassifier_Attribute();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Abstract</b></em>' attribute feature.
@@ -6097,14 +7064,14 @@ public interface OntoUMLPackage extends EPackage {
 		EClass DATATYPE = eINSTANCE.getDatatype();
 
 		/**
-		 * The meta object literal for the '{@link OntoUML.impl.DatatypeAssociationImpl <em>Datatype Association</em>}' class.
+		 * The meta object literal for the '{@link OntoUML.impl.DatatypeRelationshipImpl <em>Datatype Relationship</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see OntoUML.impl.DatatypeAssociationImpl
-		 * @see OntoUML.impl.OntoUMLPackageImpl#getDatatypeAssociation()
+		 * @see OntoUML.impl.DatatypeRelationshipImpl
+		 * @see OntoUML.impl.OntoUMLPackageImpl#getDatatypeRelationship()
 		 * @generated
 		 */
-		EClass DATATYPE_ASSOCIATION = eINSTANCE.getDatatypeAssociation();
+		EClass DATATYPE_RELATIONSHIP = eINSTANCE.getDatatypeRelationship();
 
 		/**
 		 * The meta object literal for the '{@link OntoUML.impl.DependencyRelationshipImpl <em>Dependency Relationship</em>}' class.
@@ -6195,6 +7162,38 @@ public interface OntoUMLPackage extends EPackage {
 		EReference DIRECTED_RELATIONSHIP__SOURCE_AUX2 = eINSTANCE.getDirectedRelationship_SourceAux2();
 
 		/**
+		 * The meta object literal for the '<em><b>Source Property Name Label Aux</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DIRECTED_RELATIONSHIP__SOURCE_PROPERTY_NAME_LABEL_AUX = eINSTANCE.getDirectedRelationship_SourcePropertyNameLabelAux();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Property Name Label Aux</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DIRECTED_RELATIONSHIP__TARGET_PROPERTY_NAME_LABEL_AUX = eINSTANCE.getDirectedRelationship_TargetPropertyNameLabelAux();
+
+		/**
+		 * The meta object literal for the '<em><b>Source Property Cardinalities Label Aux</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DIRECTED_RELATIONSHIP__SOURCE_PROPERTY_CARDINALITIES_LABEL_AUX = eINSTANCE.getDirectedRelationship_SourcePropertyCardinalitiesLabelAux();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Property Cardinalities Label Aux</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DIRECTED_RELATIONSHIP__TARGET_PROPERTY_CARDINALITIES_LABEL_AUX = eINSTANCE.getDirectedRelationship_TargetPropertyCardinalitiesLabelAux();
+
+		/**
 		 * The meta object literal for the '{@link OntoUML.impl.ElementImpl <em>Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6205,20 +7204,30 @@ public interface OntoUMLPackage extends EPackage {
 		EClass ELEMENT = eINSTANCE.getElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Attribute</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ELEMENT__ATTRIBUTE = eINSTANCE.getElement_Attribute();
-
-		/**
 		 * The meta object literal for the '<em><b>Container</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference ELEMENT__CONTAINER = eINSTANCE.getElement_Container();
+
+		/**
+		 * The meta object literal for the '{@link OntoUML.impl.FeatureImpl <em>Feature</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see OntoUML.impl.FeatureImpl
+		 * @see OntoUML.impl.OntoUMLPackageImpl#getFeature()
+		 * @generated
+		 */
+		EClass FEATURE = eINSTANCE.getFeature();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Static</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE__IS_STATIC = eINSTANCE.getFeature_IsStatic();
 
 		/**
 		 * The meta object literal for the '{@link OntoUML.impl.FormalAssociationImpl <em>Formal Association</em>}' class.
@@ -6521,14 +7530,6 @@ public interface OntoUMLPackage extends EPackage {
 		EAttribute PROPERTY__IS_DERIVED = eINSTANCE.getProperty_IsDerived();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Read Only</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PROPERTY__IS_READ_ONLY = eINSTANCE.getProperty_IsReadOnly();
-
-		/**
 		 * The meta object literal for the '<em><b>Is Navigable</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6569,22 +7570,6 @@ public interface OntoUMLPackage extends EPackage {
 		EReference PROPERTY__TARGET = eINSTANCE.getProperty_Target();
 
 		/**
-		 * The meta object literal for the '<em><b>Owner</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROPERTY__OWNER = eINSTANCE.getProperty_Owner();
-
-		/**
-		 * The meta object literal for the '<em><b>Aux</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROPERTY__AUX = eINSTANCE.getProperty_Aux();
-
-		/**
 		 * The meta object literal for the '<em><b>Association End Position Aux</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6601,6 +7586,24 @@ public interface OntoUMLPackage extends EPackage {
 		 * @generated
 		 */
 		EClass QUANTITY = eINSTANCE.getQuantity();
+
+		/**
+		 * The meta object literal for the '{@link OntoUML.impl.RedefinableElementImpl <em>Redefinable Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see OntoUML.impl.RedefinableElementImpl
+		 * @see OntoUML.impl.OntoUMLPackageImpl#getRedefinableElement()
+		 * @generated
+		 */
+		EClass REDEFINABLE_ELEMENT = eINSTANCE.getRedefinableElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Leaf</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REDEFINABLE_ELEMENT__IS_LEAF = eINSTANCE.getRedefinableElement_IsLeaf();
 
 		/**
 		 * The meta object literal for the '{@link OntoUML.impl.RelationalClassifierImpl <em>Relational Classifier</em>}' class.
@@ -6731,6 +7734,14 @@ public interface OntoUMLPackage extends EPackage {
 		EClass STRUCTURAL_FEATURE = eINSTANCE.getStructuralFeature();
 
 		/**
+		 * The meta object literal for the '<em><b>Is Read Only</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRUCTURAL_FEATURE__IS_READ_ONLY = eINSTANCE.getStructuralFeature_IsReadOnly();
+
+		/**
 		 * The meta object literal for the '{@link OntoUML.impl.subCollectionOfImpl <em>sub Collection Of</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6779,6 +7790,24 @@ public interface OntoUMLPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TYPE = eINSTANCE.getType();
+
+		/**
+		 * The meta object literal for the '{@link OntoUML.impl.TypedElementImpl <em>Typed Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see OntoUML.impl.TypedElementImpl
+		 * @see OntoUML.impl.OntoUMLPackageImpl#getTypedElement()
+		 * @generated
+		 */
+		EClass TYPED_ELEMENT = eINSTANCE.getTypedElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TYPED_ELEMENT__TYPE = eINSTANCE.getTypedElement_Type();
 
 	}
 

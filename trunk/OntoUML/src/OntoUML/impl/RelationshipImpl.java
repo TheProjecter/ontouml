@@ -18,11 +18,16 @@ import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.ecore.util.EcoreEList;
+
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.Query;
+
 import org.eclipse.ocl.ecore.OCL;
+
 import org.eclipse.ocl.ecore.OCL.Helper;
+
 import org.eclipse.ocl.expressions.OCLExpression;
 
 /**
@@ -156,7 +161,8 @@ public class RelationshipImpl extends ElementImpl implements Relationship {
 	 * @generated
 	 */
 	private static OCLExpression<EClassifier> relatedElementDeriveOCL;
+	
 	private static final String OCL_ANNOTATION_SOURCE = "http://www.eclipse.org/ocl/examples/OCL";
+	
 	private static final OCL OCL_ENV = OCL.newInstance();
-
 } //RelationshipImpl

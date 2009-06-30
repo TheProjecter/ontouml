@@ -17,4 +17,19 @@
             genModel="model/OntoUML.genmodel"/>
    </extension>
  
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+	  <?gmfgen generated="false"?>
+      <parser
+      		type="ontouml"
+      		class="OntoUML.util.OntoUMLResourceFactory">
+      </parser>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <?gmfgen generated="false"?>
+      <parser
+            type="ontouml_diagram"
+            class="OntoUML.util.OntoUMLResourceFactory">
+      </parser>
+   </extension>
 </plugin>

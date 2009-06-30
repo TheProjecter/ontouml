@@ -7,6 +7,7 @@
 package OntoUML.impl;
 
 import OntoUML.Container;
+import OntoUML.DirectedRelationship;
 import OntoUML.Element;
 import OntoUML.OntoUMLPackage;
 
@@ -44,7 +45,6 @@ import org.eclipse.ocl.expressions.OCLExpression;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link OntoUML.impl.ElementImpl#getAttribute <em>Attribute</em>}</li>
  *   <li>{@link OntoUML.impl.ElementImpl#getContainer <em>Container</em>}</li>
  * </ul>
  * </p>
@@ -52,16 +52,6 @@ import org.eclipse.ocl.expressions.OCLExpression;
  * @generated
  */
 public class ElementImpl extends EObjectImpl implements Element {
-	/**
-	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAttribute()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Property> attribute;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -79,36 +69,6 @@ public class ElementImpl extends EObjectImpl implements Element {
 	@Override
 	protected EClass eStaticClass() {
 		return OntoUMLPackage.Literals.ELEMENT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Property> getAttribute() {
-		if (attribute == null) {
-			attribute = new EObjectContainmentWithInverseEList.Unsettable<Property>(Property.class, this, OntoUMLPackage.ELEMENT__ATTRIBUTE, OntoUMLPackage.PROPERTY__OWNER);
-		}
-		return attribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void unsetAttribute() {
-		if (attribute != null) ((InternalEList.Unsettable<?>)attribute).unset();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetAttribute() {
-		return attribute != null && ((InternalEList.Unsettable<?>)attribute).isSet();
 	}
 
 	/**
@@ -185,9 +145,37 @@ public class ElementImpl extends EObjectImpl implements Element {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Element> allSubTypes() {
+		if (allSubTypesBodyOCL == null) {
+			EOperation eOperation = OntoUMLPackage.Literals.ELEMENT.getEOperations().get(1);
+			OCL.Helper helper = OCL_ENV.createOCLHelper();
+			helper.setOperationContext(OntoUMLPackage.Literals.ELEMENT, eOperation);
+			EAnnotation ocl = eOperation.getEAnnotation(OCL_ANNOTATION_SOURCE);
+			String body = ocl.getDetails().get("body");
+			
+			try {
+				allSubTypesBodyOCL = helper.createQuery(body);
+			} catch (ParserException e) {
+				throw new UnsupportedOperationException(e.getLocalizedMessage());
+			}
+		}
+		
+		Query<EClassifier, ?, ?> query = OCL_ENV.createQuery(allSubTypesBodyOCL);
+	
+		@SuppressWarnings("unchecked")
+		Collection<Element> result = (Collection<Element>) query.evaluate(this);
+		return new BasicEList.UnmodifiableEList<Element>(result.size(), result.toArray());
+	
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isConected(Element x) {
 		if (isConectedBodyOCL == null) {
-			EOperation eOperation = OntoUMLPackage.Literals.ELEMENT.getEOperations().get(1);
+			EOperation eOperation = OntoUMLPackage.Literals.ELEMENT.getEOperations().get(2);
 			OCL.Helper helper = OCL_ENV.createOCLHelper();
 			helper.setOperationContext(OntoUMLPackage.Literals.ELEMENT, eOperation);
 			EAnnotation ocl = eOperation.getEAnnotation(OCL_ANNOTATION_SOURCE);
@@ -217,7 +205,7 @@ public class ElementImpl extends EObjectImpl implements Element {
 	 */
 	public boolean subInstanceType(Element x) {
 		if (subInstanceTypeBodyOCL == null) {
-			EOperation eOperation = OntoUMLPackage.Literals.ELEMENT.getEOperations().get(2);
+			EOperation eOperation = OntoUMLPackage.Literals.ELEMENT.getEOperations().get(3);
 			OCL.Helper helper = OCL_ENV.createOCLHelper();
 			helper.setOperationContext(OntoUMLPackage.Literals.ELEMENT, eOperation);
 			EAnnotation ocl = eOperation.getEAnnotation(OCL_ANNOTATION_SOURCE);
@@ -247,7 +235,7 @@ public class ElementImpl extends EObjectImpl implements Element {
 	 */
 	public boolean subMetaTypeKind() {
 		if (subMetaTypeKindBodyOCL == null) {
-			EOperation eOperation = OntoUMLPackage.Literals.ELEMENT.getEOperations().get(3);
+			EOperation eOperation = OntoUMLPackage.Literals.ELEMENT.getEOperations().get(4);
 			OCL.Helper helper = OCL_ENV.createOCLHelper();
 			helper.setOperationContext(OntoUMLPackage.Literals.ELEMENT, eOperation);
 			EAnnotation ocl = eOperation.getEAnnotation(OCL_ANNOTATION_SOURCE);
@@ -273,7 +261,7 @@ public class ElementImpl extends EObjectImpl implements Element {
 	 */
 	public boolean subMetaTypeCollective() {
 		if (subMetaTypeCollectiveBodyOCL == null) {
-			EOperation eOperation = OntoUMLPackage.Literals.ELEMENT.getEOperations().get(4);
+			EOperation eOperation = OntoUMLPackage.Literals.ELEMENT.getEOperations().get(5);
 			OCL.Helper helper = OCL_ENV.createOCLHelper();
 			helper.setOperationContext(OntoUMLPackage.Literals.ELEMENT, eOperation);
 			EAnnotation ocl = eOperation.getEAnnotation(OCL_ANNOTATION_SOURCE);
@@ -299,7 +287,7 @@ public class ElementImpl extends EObjectImpl implements Element {
 	 */
 	public boolean subMetaTypeQuantity() {
 		if (subMetaTypeQuantityBodyOCL == null) {
-			EOperation eOperation = OntoUMLPackage.Literals.ELEMENT.getEOperations().get(5);
+			EOperation eOperation = OntoUMLPackage.Literals.ELEMENT.getEOperations().get(6);
 			OCL.Helper helper = OCL_ENV.createOCLHelper();
 			helper.setOperationContext(OntoUMLPackage.Literals.ELEMENT, eOperation);
 			EAnnotation ocl = eOperation.getEAnnotation(OCL_ANNOTATION_SOURCE);
@@ -325,7 +313,7 @@ public class ElementImpl extends EObjectImpl implements Element {
 	 */
 	public boolean hasFunctionalComplexesInstances() {
 		if (hasFunctionalComplexesInstancesBodyOCL == null) {
-			EOperation eOperation = OntoUMLPackage.Literals.ELEMENT.getEOperations().get(6);
+			EOperation eOperation = OntoUMLPackage.Literals.ELEMENT.getEOperations().get(7);
 			OCL.Helper helper = OCL_ENV.createOCLHelper();
 			helper.setOperationContext(OntoUMLPackage.Literals.ELEMENT, eOperation);
 			EAnnotation ocl = eOperation.getEAnnotation(OCL_ANNOTATION_SOURCE);
@@ -351,7 +339,7 @@ public class ElementImpl extends EObjectImpl implements Element {
 	 */
 	public boolean hasCollectivesInstances() {
 		if (hasCollectivesInstancesBodyOCL == null) {
-			EOperation eOperation = OntoUMLPackage.Literals.ELEMENT.getEOperations().get(7);
+			EOperation eOperation = OntoUMLPackage.Literals.ELEMENT.getEOperations().get(8);
 			OCL.Helper helper = OCL_ENV.createOCLHelper();
 			helper.setOperationContext(OntoUMLPackage.Literals.ELEMENT, eOperation);
 			EAnnotation ocl = eOperation.getEAnnotation(OCL_ANNOTATION_SOURCE);
@@ -377,7 +365,7 @@ public class ElementImpl extends EObjectImpl implements Element {
 	 */
 	public boolean hasQuantitiesInstances() {
 		if (hasQuantitiesInstancesBodyOCL == null) {
-			EOperation eOperation = OntoUMLPackage.Literals.ELEMENT.getEOperations().get(8);
+			EOperation eOperation = OntoUMLPackage.Literals.ELEMENT.getEOperations().get(9);
 			OCL.Helper helper = OCL_ENV.createOCLHelper();
 			helper.setOperationContext(OntoUMLPackage.Literals.ELEMENT, eOperation);
 			EAnnotation ocl = eOperation.getEAnnotation(OCL_ANNOTATION_SOURCE);
@@ -405,8 +393,6 @@ public class ElementImpl extends EObjectImpl implements Element {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OntoUMLPackage.ELEMENT__ATTRIBUTE:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAttribute()).basicAdd(otherEnd, msgs);
 			case OntoUMLPackage.ELEMENT__CONTAINER:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -423,8 +409,6 @@ public class ElementImpl extends EObjectImpl implements Element {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case OntoUMLPackage.ELEMENT__ATTRIBUTE:
-				return ((InternalEList<?>)getAttribute()).basicRemove(otherEnd, msgs);
 			case OntoUMLPackage.ELEMENT__CONTAINER:
 				return basicSetContainer(null, msgs);
 		}
@@ -453,8 +437,6 @@ public class ElementImpl extends EObjectImpl implements Element {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OntoUMLPackage.ELEMENT__ATTRIBUTE:
-				return getAttribute();
 			case OntoUMLPackage.ELEMENT__CONTAINER:
 				return getContainer();
 		}
@@ -470,10 +452,6 @@ public class ElementImpl extends EObjectImpl implements Element {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OntoUMLPackage.ELEMENT__ATTRIBUTE:
-				getAttribute().clear();
-				getAttribute().addAll((Collection<? extends Property>)newValue);
-				return;
 			case OntoUMLPackage.ELEMENT__CONTAINER:
 				setContainer((Container)newValue);
 				return;
@@ -489,9 +467,6 @@ public class ElementImpl extends EObjectImpl implements Element {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OntoUMLPackage.ELEMENT__ATTRIBUTE:
-				unsetAttribute();
-				return;
 			case OntoUMLPackage.ELEMENT__CONTAINER:
 				setContainer((Container)null);
 				return;
@@ -507,8 +482,6 @@ public class ElementImpl extends EObjectImpl implements Element {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OntoUMLPackage.ELEMENT__ATTRIBUTE:
-				return isSetAttribute();
 			case OntoUMLPackage.ELEMENT__CONTAINER:
 				return getContainer() != null;
 		}
@@ -523,6 +496,14 @@ public class ElementImpl extends EObjectImpl implements Element {
 	 * @generated
 	 */
 	private static OCLExpression<EClassifier> allSuperTypesBodyOCL;
+	/**
+	 * The parsed OCL expression for the body of the '{@link #allSubTypes <em>All Sub Types</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #allSubTypes
+	 * @generated
+	 */
+	private static OCLExpression<EClassifier> allSubTypesBodyOCL;
 	/**
 	 * The parsed OCL expression for the body of the '{@link #isConected <em>Is Conected</em>}' operation.
 	 * <!-- begin-user-doc -->

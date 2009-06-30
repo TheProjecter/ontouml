@@ -8,15 +8,37 @@
   <eClassifiers xsi:type="ecore:EClass" name="Association" eSuperTypes="#//Relationship #//RelationalClassifier">
     <eStructuralFeatures xsi:type="ecore:EReference" name="associationEnd" lowerBound="2"
         upperBound="-1" eType="#//Property" eOpposite="#//Property/associationEnd"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDerived" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="associationEndAux1" upperBound="-1"
         eType="#//Type"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="associationEndAux2" upperBound="-1"
         eType="#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="associationEnd3Aux" upperBound="-1"
+        eType="#//Property" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="associationEnd1PropertyNameLabelAux"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" volatile="true"
+        transient="true" defaultValueLiteral="" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="associationEnd2PropertyNameLabelAux"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" volatile="true"
+        transient="true" defaultValueLiteral="" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="associationEnd1PropertyCardinalitiesLabelAux"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" volatile="true"
+        transient="true" defaultValueLiteral="" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="associationEnd2PropertyCardinalitiesLabelAux"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" volatile="true"
+        transient="true" defaultValueLiteral="" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Category" eSuperTypes="#//RigidMixinClass"/>
   <eClassifiers xsi:type="ecore:EClass" name="Characterization" eSuperTypes="#//DependencyRelationship"/>
   <eClassifiers xsi:type="ecore:EClass" name="Class" eSuperTypes="#//Classifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="Classifier" eSuperTypes="#//Type">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" upperBound="-1"
+        eType="#//Property" volatile="true" transient="true" derived="true" containment="true">
+      <eAnnotations source="http://www.eclipse.org/ocl/examples/OCL">
+        <details key="derive" value="DatatypeRelationship.allInstances()->select(x | if x.source->forAll(y | y.oclIsKindOf(Property)) then x.source->exists(y | y.oclAsType(Property).endType = self) else false endif)->collect(x | if x.target->forAll(y | y.oclIsKindOf(Property)) then x.target.oclAsType(Property) else null endif)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAbstract" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="general" upperBound="-1"
@@ -43,7 +65,7 @@
         eType="#//Element" containment="true" eOpposite="#//Element/container"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Datatype" eSuperTypes="#//Classifier"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DatatypeAssociation" eSuperTypes="#//Association"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DatatypeRelationship" eSuperTypes="#//DirectedBinaryRelationship"/>
   <eClassifiers xsi:type="ecore:EClass" name="DependencyRelationship" eSuperTypes="#//DirectedBinaryRelationship"/>
   <eClassifiers xsi:type="ecore:EClass" name="Derivation" eSuperTypes="#//DependencyRelationship"/>
   <eClassifiers xsi:type="ecore:EClass" name="DirectedBinaryRelationship" eSuperTypes="#//DirectedRelationship #//RelationalClassifier"/>
@@ -60,11 +82,28 @@
         eType="#//Element" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sourceAux2" upperBound="-1"
         eType="#//Element" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourcePropertyNameLabelAux"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" volatile="true"
+        transient="true" defaultValueLiteral="" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetPropertyNameLabelAux"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" volatile="true"
+        transient="true" defaultValueLiteral="" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourcePropertyCardinalitiesLabelAux"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" volatile="true"
+        transient="true" defaultValueLiteral="" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetPropertyCardinalitiesLabelAux"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" volatile="true"
+        transient="true" defaultValueLiteral="" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Element">
     <eOperations name="allSuperTypes" ordered="false" upperBound="-1" eType="#//Element">
       <eAnnotations source="http://www.eclipse.org/ocl/examples/OCL">
         <details key="body" value="if self.oclIsKindOf(Classifier) then (if self.oclAsType(Classifier).generalization->forAll(x | x.oclIsUndefined()) then Set{} else Set{self.oclAsType(Classifier).generalization->collect(x | x.general), self.oclAsType(Classifier).generalization->collect(x | if x.general.oclIsKindOf(Classifier) then x.general.allSuperTypes() else Set{} endif)}->flatten() endif) else Set{} endif"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="allSubTypes" ordered="false" upperBound="-1" eType="#//Element">
+      <eAnnotations source="http://www.eclipse.org/ocl/examples/OCL">
+        <details key="body" value="let generalizations : Set(Generalization) = Generalization.allInstances()->select(x | x.general = self) in (if self.oclIsKindOf(Classifier) then (if generalizations->forAll(y | y.oclIsUndefined()) then Set{} else Set{generalizations->collect(y | y.specific), generalizations->collect(y | if y.specific.oclIsKindOf(Classifier) then y.specific.allSubTypes() else Set{} endif)}->flatten() endif) else Set{} endif)"/>
       </eAnnotations>
     </eOperations>
     <eOperations name="isConected" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -109,10 +148,12 @@
         <details key="body" value="if self.oclIsKindOf(SortalClass) then self.subMetaTypeQuantity() else if self.oclIsKindOf(MixinClass) then Element.allInstances()->forAll(x | x.subInstanceType(self) implies not (x.subMetaTypeKind() or x.subMetaTypeCollective())) else false endif endif"/>
       </eAnnotations>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" upperBound="-1"
-        eType="#//Property" unsettable="true" containment="true" eOpposite="#//Property/owner"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//Container"
         eOpposite="#//Container/InstanciarElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Feature" eSuperTypes="#//RedefinableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isStatic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FormalAssociation" eSuperTypes="#//Association"/>
   <eClassifiers xsi:type="ecore:EClass" name="Generalization" eSuperTypes="#//DirectedRelationship #//NamedElement">
@@ -147,13 +188,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isShareable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isEssential" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="true"/>
+        defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isInseparable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="true"/>
+        defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isImmutablePart" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="true"/>
+        defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isImmutableWhole" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="true"/>
+        defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Mixin" eSuperTypes="#//SemiRigidMixin"/>
   <eClassifiers xsi:type="ecore:EClass" name="MixinClass" eSuperTypes="#//ObjectClass"/>
@@ -161,7 +202,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="MomentClass" eSuperTypes="#//Class"/>
   <eClassifiers xsi:type="ecore:EClass" name="MultiplicityElement" eSuperTypes="#//Element">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="upper" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="0"/>
+        defaultValueLiteral="-1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lower" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="0"/>
   </eClassifiers>
@@ -174,30 +215,28 @@
   <eClassifiers xsi:type="ecore:EClass" name="Property" eSuperTypes="#//StructuralFeature">
     <eOperations name="derivarLowerMaterialAssociation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
       <eAnnotations source="http://www.eclipse.org/ocl/examples/OCL">
-        <details key="body" value="let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = self.endType) else false endif)), B:Set(MaterialAssociation) = MaterialAssociation.allInstances()->select(x | x.associationEnd->exists(y | y = self)) in let C:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).associationEnd->select(z | z &lt;> self)->any(true).endType) else false endif)) in let D:Set(Mediation) = A->select(x | C->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)), E:Set(Mediation) = C->select(x | A->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)) in let lower:Integer = D->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).lower else 0 endif))->any(true)*E->collect(z | z.source->collect(w | if w.oclIsKindOf(Property) then w.oclAsType(Property).lower else 0 endif))->any(true), upper:Integer =  D->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).upper else 0 endif))->any(true)*E->collect(z | z.source->collect(w | if w.oclIsKindOf(Property) then w.oclAsType(Property).upper else 0 endif))->any(true) in lower"/>
+        <details key="body" value="let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = self.endType) else false endif)), B:Set(MaterialAssociation) = MaterialAssociation.allInstances()->select(x | x.associationEnd->exists(y | y = self)) in let C:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).associationEnd->select(z | z &lt;> self)->any(true).endType) else false endif)) in let D:Set(Mediation) = A->select(x | C->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)), E:Set(Mediation) = C->select(x | A->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)) in let F:Integer = D->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).lower else 0 endif))->any(true), G:Integer = E->collect(z | z.source->collect(w | if w.oclIsKindOf(Property) then w.oclAsType(Property).lower else 0 endif))->any(true) in if ((F = -1) or (G = -1)) then (-1) else (F*G) endif"/>
       </eAnnotations>
     </eOperations>
     <eOperations name="derivarUpperMaterialAssociation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
       <eAnnotations source="http://www.eclipse.org/ocl/examples/OCL">
-        <details key="body" value="let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = self.endType) else false endif)), B:Set(MaterialAssociation) = MaterialAssociation.allInstances()->select(x | x.associationEnd->exists(y | y = self)) in let C:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).associationEnd->select(z | z &lt;> self)->any(true).endType) else false endif)) in let D:Set(Mediation) = A->select(x | C->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)), E:Set(Mediation) = C->select(x | A->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)) in let lower:Integer = D->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).lower else 0 endif))->any(true)*E->collect(z | z.source->collect(w | if w.oclIsKindOf(Property) then w.oclAsType(Property).lower else 0 endif))->any(true), upper:Integer =  D->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).upper else 0 endif))->any(true)*E->collect(z | z.source->collect(w | if w.oclIsKindOf(Property) then w.oclAsType(Property).upper else 0 endif))->any(true) in upper"/>
+        <details key="body" value="let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = self.endType) else false endif)), B:Set(MaterialAssociation) = MaterialAssociation.allInstances()->select(x | x.associationEnd->exists(y | y = self)) in let C:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).associationEnd->select(z | z &lt;> self)->any(true).endType) else false endif)) in let D:Set(Mediation) = A->select(x | C->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)), E:Set(Mediation) = C->select(x | A->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)) in let H:Integer =  D->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).upper else 0 endif))->any(true), I:Integer = E->collect(z | z.source->collect(w | if w.oclIsKindOf(Property) then w.oclAsType(Property).upper else 0 endif))->any(true) in if ((H = -1) or (I = -1)) then (-1) else (H*I) endif"/>
       </eAnnotations>
     </eOperations>
     <eOperations name="derivarLowerDerivation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
       <eAnnotations source="http://www.eclipse.org/ocl/examples/OCL">
-        <details key="body" value="let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if (y.oclIsKindOf(Property) and self.endType.oclIsKindOf(MaterialAssociation)) then self.endType.oclAsType(MaterialAssociation).associationEnd->exists(z | z.endType = y.oclAsType(Property).endType) else false endif)), B:Set(Derivation) = Derivation.allInstances()->select(x | x.source->exists(y | y = self)) in let C:Set(Mediation) = A->select(x | x.source->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).target->select(z | z.oclIsKindOf(Property))->any(true).oclAsType(Property).endType) else false endif)) in let lower:Integer = C->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).lower else 0 endif))->iterate(z; a:Integer = 1 | a*z), upper:Integer = C->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).upper else 0 endif))->iterate(z; a:Integer = 1 | a*z) in lower"/>
+        <details key="body" value="let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if (y.oclIsKindOf(Property) and self.endType.oclIsKindOf(MaterialAssociation)) then self.endType.oclAsType(MaterialAssociation).associationEnd->exists(z | z.endType = y.oclAsType(Property).endType) else false endif)), B:Set(Derivation) = Derivation.allInstances()->select(x | x.source->exists(y | y = self)) in let C:Set(Mediation) = A->select(x | x.source->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).target->select(z | z.oclIsKindOf(Property))->any(true).oclAsType(Property).endType) else false endif)) in C->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).lower else 0 endif))->iterate(z; a:Integer = 1 | if ((a = -1) or (z = -1)) then (-1) else (a*z) endif)"/>
       </eAnnotations>
     </eOperations>
     <eOperations name="derivarUpperDerivation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
       <eAnnotations source="http://www.eclipse.org/ocl/examples/OCL">
-        <details key="body" value="let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if (y.oclIsKindOf(Property) and self.endType.oclIsKindOf(MaterialAssociation)) then self.endType.oclAsType(MaterialAssociation).associationEnd->exists(z | z.endType = y.oclAsType(Property).endType) else false endif)), B:Set(Derivation) = Derivation.allInstances()->select(x | x.source->exists(y | y = self)) in let C:Set(Mediation) = A->select(x | x.source->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).target->select(z | z.oclIsKindOf(Property))->any(true).oclAsType(Property).endType) else false endif)) in let lower:Integer = C->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).lower else 0 endif))->iterate(z; a:Integer = 1 | a*z), upper:Integer = C->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).upper else 0 endif))->iterate(z; a:Integer = 1 | a*z) in upper"/>
+        <details key="body" value="let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if (y.oclIsKindOf(Property) and self.endType.oclIsKindOf(MaterialAssociation)) then self.endType.oclAsType(MaterialAssociation).associationEnd->exists(z | z.endType = y.oclAsType(Property).endType) else false endif)), B:Set(Derivation) = Derivation.allInstances()->select(x | x.source->exists(y | y = self)) in let C:Set(Mediation) = A->select(x | x.source->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).target->select(z | z.oclIsKindOf(Property))->any(true).oclAsType(Property).endType) else false endif)) in C->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).upper else 0 endif))->iterate(z; a:Integer = 1 | if ((a = -1) or (z = -1)) then (-1) else (a*z) endif)"/>
       </eAnnotations>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDerived" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReadOnly" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNavigable" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="endType" eType="#//Type"
         volatile="true" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/ocl/examples/OCL">
@@ -218,13 +257,14 @@
         <details key="derive" value="DirectedBinaryRelationship.allInstances()->any(x | x.target->includes(self) or x.targetAux2->includes(self))"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" eType="#//Element"
-        unsettable="true" eOpposite="#//Element/attribute"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="aux" eType="#//Property"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="associationEndPositionAux"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Quantity" eSuperTypes="#//SubstanceSortal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RedefinableElement" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isLeaf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RelationalClassifier" eSuperTypes="#//Classifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="Relationship" eSuperTypes="#//Element">
     <eStructuralFeatures xsi:type="ecore:EReference" name="relatedElement" lowerBound="1"
@@ -243,12 +283,18 @@
   <eClassifiers xsi:type="ecore:EClass" name="SimpleDatatype" eSuperTypes="#//Datatype"/>
   <eClassifiers xsi:type="ecore:EClass" name="SortalClass" eSuperTypes="#//ObjectClass"/>
   <eClassifiers xsi:type="ecore:EClass" name="StructuralDatatype" eSuperTypes="#//Datatype"/>
-  <eClassifiers xsi:type="ecore:EClass" name="StructuralFeature" eSuperTypes="#//MultiplicityElement #//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StructuralFeature" eSuperTypes="#//MultiplicityElement #//Feature #//TypedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReadOnly" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="subCollectionOf" eSuperTypes="#//Meronymic"/>
   <eClassifiers xsi:type="ecore:EClass" name="SubKind" eSuperTypes="#//RigidSortalClass"/>
   <eClassifiers xsi:type="ecore:EClass" name="subQuantityOf" eSuperTypes="#//Meronymic"/>
   <eClassifiers xsi:type="ecore:EClass" name="SubstanceSortal" eSuperTypes="#//RigidSortalClass"/>
   <eClassifiers xsi:type="ecore:EClass" name="Type" eSuperTypes="#//NamedElement #//Element"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TypedElement" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type"/>
+  </eClassifiers>
   <eSubpackages name="URML" nsURI="OntoUML.URML" nsPrefix="OntoUML.URML">
     <eClassifiers xsi:type="ecore:EClass" name="Rule" abstract="true" eSuperTypes="#//NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="condition" upperBound="-1"

@@ -38,7 +38,7 @@ public class MultiplicityElementImpl extends ElementImpl implements Multiplicity
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int UPPER_EDEFAULT = 0;
+	protected static final int UPPER_EDEFAULT = -1;
 
 	/**
 	 * The cached value of the '{@link #getUpper() <em>Upper</em>}' attribute.

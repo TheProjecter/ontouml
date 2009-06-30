@@ -27,7 +27,7 @@ package OntoUML;
 public interface MultiplicityElement extends Element {
 	/**
 	 * Returns the value of the '<em><b>Upper</b></em>' attribute.
-	 * The default value is <code>"0"</code>.
+	 * The default value is <code>"-1"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Upper</em>' attribute isn't clear,
@@ -37,7 +37,7 @@ public interface MultiplicityElement extends Element {
 	 * @return the value of the '<em>Upper</em>' attribute.
 	 * @see #setUpper(int)
 	 * @see OntoUML.OntoUMLPackage#getMultiplicityElement_Upper()
-	 * @model default="0"
+	 * @model default="-1"
 	 * @generated
 	 */
 	int getUpper();
