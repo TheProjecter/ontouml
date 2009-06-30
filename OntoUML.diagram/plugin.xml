@@ -1,0 +1,2039 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension point="org.eclipse.team.core.fileTypes">
+      <?gmfgen generated="true"?>
+      <fileTypes
+         type="text"
+         extension="ontouml_diagram">
+      </fileTypes>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <?gmfgen generated="true"?>
+      <parser
+         type="ontouml_diagram"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <?gmfgen generated="true"?>
+      <editor
+         id="OntoUML.diagram.part.OntoUMLDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/OntoUMLDiagramFile.gif"
+         extensions="ontouml_diagram"
+         default="true"
+         class="OntoUML.diagram.part.OntoUMLDiagramEditor"
+         matchingStrategy="OntoUML.diagram.part.OntoUMLMatchingStrategy"
+         contributorClass="OntoUML.diagram.part.OntoUMLDiagramActionBarContributor">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.contexts">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="OntoUML.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/OntoUMLDiagramFile.gif"
+  	     category="org.eclipse.ui.Examples"
+  	     class="OntoUML.diagram.part.OntoUMLCreationWizard"
+  	     id="OntoUML.diagram.part.OntoUMLCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.popupMenus">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            adaptable="false"
+            id="OntoUML.diagram.LoadResource"
+            objectClass="OntoUML.diagram.edit.parts.ContainerEditPart">
+         <action
+               class="OntoUML.diagram.part.OntoUMLLoadResourceAction"
+               enablesFor="1"
+               id="OntoUML.diagram.LoadResourceAction"
+               label="%loadResourceActionLabel"
+               menubarPath="additions">
+         </action>
+      </objectContribution>           
+   </extension>
+
+   <extension point="org.eclipse.ui.popupMenus">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="OntoUML.diagram.InitDiagram"
+            nameFilter="*.ontouml"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="OntoUML.diagram.part.OntoUMLInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="OntoUML.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+	
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders">
+      <?gmfgen generated="true"?>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
+         id="OntoUMLPresentation">
+         <Priority name="Lowest"/>
+         <ViewId id="OntoUML.diagram.part.OntoUMLDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="delete"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
+               <GlobalActionId actionId="save"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
+         id="OntoUMLPresentationIDE">
+         <Priority name="Lowest"/>
+         <ViewId id="OntoUML.diagram.part.OntoUMLDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="bookmark"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
+            id="OntoUMLRender">
+         <Priority name="Lowest"/>
+         <ViewId id="OntoUML.diagram.part.OntoUMLDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="cut"/>
+               <GlobalActionId actionId="copy"/>
+               <GlobalActionId actionId="paste"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+   </extension>
+
+
+   
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders">
+      <?gmfgen generated="true"?>
+      <MarkerNavigationProvider class="OntoUML.diagram.providers.OntoUMLMarkerNavigationProvider">
+         <MarkerType name="OntoUML.diagram.diagnostic"/>
+         <Priority name="Lowest"/>
+      </MarkerNavigationProvider>
+   </extension>
+
+   <extension id="diagnostic" name="OntoUML Plugin problems" point="org.eclipse.core.resources.markers">
+      <?gmfgen generated="true"?>
+      <super type="org.eclipse.core.resources.problemmarker"/>
+      <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
+      <persistent value="true"/>
+   </extension>   
+
+   
+
+   <extension point="org.eclipse.core.runtime.preferences">
+      <?gmfgen generated="true"?>
+      <initializer class="OntoUML.diagram.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages">
+      <?gmfgen generated="true"?>
+      <page
+            id="OntoUML.diagram.general"
+            name="%preference.page.title.OntoUML.diagram.general"
+            class="OntoUML.diagram.preferences.DiagramGeneralPreferencePage">
+      </page>
+      <page
+            id="OntoUML.diagram.appearance"
+            name="%preference.page.title.OntoUML.diagram.appearance"
+            category="OntoUML.diagram.general"
+            class="OntoUML.diagram.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="OntoUML.diagram.connections"
+            name="%preference.page.title.OntoUML.diagram.connections"
+            category="OntoUML.diagram.general"
+            class="OntoUML.diagram.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="OntoUML.diagram.printing"
+            name="%preference.page.title.OntoUML.diagram.printing"
+            category="OntoUML.diagram.general"
+            class="OntoUML.diagram.preferences.DiagramPrintingPreferencePage">
+      </page>
+      <page
+            id="OntoUML.diagram.rulersAndGrid"
+            name="%preference.page.title.OntoUML.diagram.rulersAndGrid"
+            category="OntoUML.diagram.general"
+            class="OntoUML.diagram.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+      <page
+            id="OntoUML.diagram.pathmaps"
+            name="%preference.page.title.OntoUML.diagram.pathmaps"
+            category="OntoUML.diagram.general"
+            class="org.eclipse.gmf.runtime.emf.ui.preferences.PathmapsPreferencePage">
+      </page>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="OntoUML.diagram"
+            labelProvider="OntoUML.diagram.sheet.OntoUMLSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="OntoUML.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+      </propertyTabs>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="OntoUML.diagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="OntoUML.diagram.sheet.OntoUMLPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="OntoUML.diagram.navigator.OntoUMLAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders">
+      <?gmfgen generated="true"?>
+      <viewProvider class="OntoUML.diagram.providers.OntoUMLViewProvider">
+         <Priority name="Lowest"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="OntoUML"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints=""/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints=""/>
+      </viewProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <?gmfgen generated="true"?>
+      <editpartProvider class="OntoUML.diagram.providers.OntoUMLEditPartProvider">
+         <Priority name="Lowest"/>
+      </editpartProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders">
+      <?gmfgen generated="true"?>
+      <modelingAssistantProvider class="OntoUML.diagram.providers.OntoUMLModelingAssistantProvider">
+         <Priority name="Lowest"/>
+      </modelingAssistantProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders">
+      <?gmfgen generated="true"?>
+      <IconProvider class="OntoUML.diagram.providers.OntoUMLIconProvider">
+         <Priority name="Low"/>
+      </IconProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="OntoUML.diagram.providers.OntoUMLParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+      <?gmfgen generated="true"?>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.Container_1000"
+               name="%metatype.name.Container_1000"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Container"
+               edithelper="OntoUML.diagram.edit.helpers.ContainerEditHelper">
+            <param name="semanticHint" value="1000"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.Category_2001"
+               name="%metatype.name.Category_2001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Category"
+               edithelper="OntoUML.diagram.edit.helpers.CategoryEditHelper">
+            <param name="semanticHint" value="2001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.Collective_2002"
+               name="%metatype.name.Collective_2002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Collective"
+               edithelper="OntoUML.diagram.edit.helpers.CollectiveEditHelper">
+            <param name="semanticHint" value="2002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.Kind_2003"
+               name="%metatype.name.Kind_2003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Kind"
+               edithelper="OntoUML.diagram.edit.helpers.KindEditHelper">
+            <param name="semanticHint" value="2003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.Mixin_2004"
+               name="%metatype.name.Mixin_2004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Mixin"
+               edithelper="OntoUML.diagram.edit.helpers.MixinEditHelper">
+            <param name="semanticHint" value="2004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.Mode_2005"
+               name="%metatype.name.Mode_2005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Mode"
+               edithelper="OntoUML.diagram.edit.helpers.ModeEditHelper">
+            <param name="semanticHint" value="2005"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.Phase_2006"
+               name="%metatype.name.Phase_2006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Phase"
+               edithelper="OntoUML.diagram.edit.helpers.PhaseEditHelper">
+            <param name="semanticHint" value="2006"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.Quantity_2007"
+               name="%metatype.name.Quantity_2007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Quantity"
+               edithelper="OntoUML.diagram.edit.helpers.QuantityEditHelper">
+            <param name="semanticHint" value="2007"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.Relator_2008"
+               name="%metatype.name.Relator_2008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Relator"
+               edithelper="OntoUML.diagram.edit.helpers.RelatorEditHelper">
+            <param name="semanticHint" value="2008"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.Role_2009"
+               name="%metatype.name.Role_2009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Role"
+               edithelper="OntoUML.diagram.edit.helpers.RoleEditHelper">
+            <param name="semanticHint" value="2009"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.RoleMixin_2010"
+               name="%metatype.name.RoleMixin_2010"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="RoleMixin"
+               edithelper="OntoUML.diagram.edit.helpers.RoleMixinEditHelper">
+            <param name="semanticHint" value="2010"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.SimpleDatatype_2011"
+               name="%metatype.name.SimpleDatatype_2011"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SimpleDatatype"
+               edithelper="OntoUML.diagram.edit.helpers.SimpleDatatypeEditHelper">
+            <param name="semanticHint" value="2011"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.StructuralDatatype_2012"
+               name="%metatype.name.StructuralDatatype_2012"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="StructuralDatatype"
+               edithelper="OntoUML.diagram.edit.helpers.StructuralDatatypeEditHelper">
+            <param name="semanticHint" value="2012"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.SubKind_2013"
+               name="%metatype.name.SubKind_2013"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="SubKind"
+               edithelper="OntoUML.diagram.edit.helpers.SubKindEditHelper">
+            <param name="semanticHint" value="2013"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.GeneralizationSet_2014"
+               name="%metatype.name.GeneralizationSet_2014"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="GeneralizationSet"
+               edithelper="OntoUML.diagram.edit.helpers.GeneralizationSetEditHelper">
+            <param name="semanticHint" value="2014"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML.URML">
+         <metamodelType
+               id="OntoUML.diagram.DerivationRule_2015"
+               name="%metatype.name.DerivationRule_2015"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DerivationRule"
+               edithelper="OntoUML.diagram.edit.helpers.DerivationRuleEditHelper">
+            <param name="semanticHint" value="2015"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.Property_3028"
+               name="%metatype.name.Property_3028"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Property"
+               edithelper="OntoUML.diagram.edit.helpers.PropertyEditHelper">
+            <param name="semanticHint" value="3028"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <specializationType
+               id="OntoUML.diagram.Property_3029"
+               name="%metatype.name.Property_3029"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="OntoUML.diagram.Property_3028"/>
+            <param name="semanticHint" value="3029"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <specializationType
+               id="OntoUML.diagram.Property_3030"
+               name="%metatype.name.Property_3030"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="OntoUML.diagram.Property_3028"/>
+            <param name="semanticHint" value="3030"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <specializationType
+               id="OntoUML.diagram.Property_3031"
+               name="%metatype.name.Property_3031"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="OntoUML.diagram.Property_3028"/>
+            <param name="semanticHint" value="3031"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <specializationType
+               id="OntoUML.diagram.Property_3032"
+               name="%metatype.name.Property_3032"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="OntoUML.diagram.Property_3028"/>
+            <param name="semanticHint" value="3032"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <specializationType
+               id="OntoUML.diagram.Property_3033"
+               name="%metatype.name.Property_3033"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="OntoUML.diagram.Property_3028"/>
+            <param name="semanticHint" value="3033"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <specializationType
+               id="OntoUML.diagram.Property_3034"
+               name="%metatype.name.Property_3034"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="OntoUML.diagram.Property_3028"/>
+            <param name="semanticHint" value="3034"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <specializationType
+               id="OntoUML.diagram.Property_3035"
+               name="%metatype.name.Property_3035"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="OntoUML.diagram.Property_3028"/>
+            <param name="semanticHint" value="3035"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <specializationType
+               id="OntoUML.diagram.Property_3036"
+               name="%metatype.name.Property_3036"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="OntoUML.diagram.Property_3028"/>
+            <param name="semanticHint" value="3036"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <specializationType
+               id="OntoUML.diagram.Property_3037"
+               name="%metatype.name.Property_3037"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="OntoUML.diagram.Property_3028"/>
+            <param name="semanticHint" value="3037"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <specializationType
+               id="OntoUML.diagram.Property_3038"
+               name="%metatype.name.Property_3038"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="OntoUML.diagram.Property_3028"/>
+            <param name="semanticHint" value="3038"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <specializationType
+               id="OntoUML.diagram.Property_3039"
+               name="%metatype.name.Property_3039"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="OntoUML.diagram.Property_3028"/>
+            <param name="semanticHint" value="3039"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <specializationType
+               id="OntoUML.diagram.Property_3040"
+               name="%metatype.name.Property_3040"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="OntoUML.diagram.Property_3028"/>
+            <param name="semanticHint" value="3040"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.Characterization_4001"
+               name="%metatype.name.Characterization_4001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Characterization"
+               edithelper="OntoUML.diagram.edit.helpers.CharacterizationEditHelper">
+            <param name="semanticHint" value="4001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.ComponentOf_4002"
+               name="%metatype.name.ComponentOf_4002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="componentOf"
+               edithelper="OntoUML.diagram.edit.helpers.ComponentOfEditHelper">
+            <param name="semanticHint" value="4002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.DatatypeRelationship_4019"
+               name="%metatype.name.DatatypeRelationship_4019"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DatatypeRelationship"
+               edithelper="OntoUML.diagram.edit.helpers.DatatypeRelationshipEditHelper">
+            <param name="semanticHint" value="4019"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.Derivation_4004"
+               name="%metatype.name.Derivation_4004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Derivation"
+               edithelper="OntoUML.diagram.edit.helpers.DerivationEditHelper">
+            <param name="semanticHint" value="4004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.FormalAssociation_4005"
+               name="%metatype.name.FormalAssociation_4005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="FormalAssociation"
+               edithelper="OntoUML.diagram.edit.helpers.FormalAssociationEditHelper">
+            <param name="semanticHint" value="4005"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.Generalization_4006"
+               name="%metatype.name.Generalization_4006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Generalization"
+               edithelper="OntoUML.diagram.edit.helpers.GeneralizationEditHelper">
+            <param name="semanticHint" value="4006"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.MaterialAssociation_4007"
+               name="%metatype.name.MaterialAssociation_4007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="MaterialAssociation"
+               edithelper="OntoUML.diagram.edit.helpers.MaterialAssociationEditHelper">
+            <param name="semanticHint" value="4007"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.Mediation_4008"
+               name="%metatype.name.Mediation_4008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Mediation"
+               edithelper="OntoUML.diagram.edit.helpers.MediationEditHelper">
+            <param name="semanticHint" value="4008"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.MemberOf_4009"
+               name="%metatype.name.MemberOf_4009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="memberOf"
+               edithelper="OntoUML.diagram.edit.helpers.MemberOfEditHelper">
+            <param name="semanticHint" value="4009"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.SubCollectionOf_4010"
+               name="%metatype.name.SubCollectionOf_4010"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="subCollectionOf"
+               edithelper="OntoUML.diagram.edit.helpers.SubCollectionOfEditHelper">
+            <param name="semanticHint" value="4010"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML">
+         <metamodelType
+               id="OntoUML.diagram.SubQuantityOf_4011"
+               name="%metatype.name.SubQuantityOf_4011"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="subQuantityOf"
+               edithelper="OntoUML.diagram.edit.helpers.SubQuantityOfEditHelper">
+            <param name="semanticHint" value="4011"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML.URML">
+         <metamodelType
+               id="OntoUML.diagram.BinaryAssociationAtom_4013"
+               name="%metatype.name.BinaryAssociationAtom_4013"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="BinaryAssociationAtom"
+               edithelper="OntoUML.diagram.edit.helpers.BinaryAssociationAtomEditHelper">
+            <param name="semanticHint" value="4013"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML.URML">
+         <specializationType
+               id="OntoUML.diagram.BinaryAssociationAtom_4014"
+               name="%metatype.name.BinaryAssociationAtom_4014"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="OntoUML.diagram.BinaryAssociationAtom_4013"/>
+            <param name="semanticHint" value="4014"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="OntoUML.URML">
+         <specializationType
+               id="OntoUML.diagram.BinaryAssociationAtom_4015"
+               name="%metatype.name.BinaryAssociationAtom_4015"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="OntoUML.diagram.BinaryAssociationAtom_4013"/>
+            <param name="semanticHint" value="4015"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="OntoUML.URML">
+         <metamodelType
+               id="OntoUML.diagram.ClassifierAtom_4016"
+               name="%metatype.name.ClassifierAtom_4016"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ClassifierAtom"
+               edithelper="OntoUML.diagram.edit.helpers.ClassifierAtomEditHelper">
+            <param name="semanticHint" value="4016"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="OntoUML.URML">
+         <specializationType
+               id="OntoUML.diagram.ClassifierAtom_4017"
+               name="%metatype.name.ClassifierAtom_4017"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="OntoUML.diagram.ClassifierAtom_4016"/>
+            <param name="semanticHint" value="4017"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="OntoUML.URML">
+         <specializationType
+               id="OntoUML.diagram.ClassifierAtom_4018"
+               name="%metatype.name.ClassifierAtom_4018"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="OntoUML.diagram.ClassifierAtom_4016"/>
+            <param name="semanticHint" value="4018"/>
+         </specializationType>
+      </metamodel>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      <?gmfgen generated="true"?>
+      <clientContext id="OntoUML.diagram.TypeContext">
+         <enablement>
+            <test
+               property="org.eclipse.gmf.runtime.emf.core.editingDomain"
+               value="OntoUML.diagram.EditingDomain"/>
+         </enablement>
+      </clientContext> 
+      <binding context="OntoUML.diagram.TypeContext">
+         <elementType ref="OntoUML.diagram.Container_1000"/>
+         <elementType ref="OntoUML.diagram.Category_2001"/>
+         <elementType ref="OntoUML.diagram.Collective_2002"/>
+         <elementType ref="OntoUML.diagram.Kind_2003"/>
+         <elementType ref="OntoUML.diagram.Mixin_2004"/>
+         <elementType ref="OntoUML.diagram.Mode_2005"/>
+         <elementType ref="OntoUML.diagram.Phase_2006"/>
+         <elementType ref="OntoUML.diagram.Quantity_2007"/>
+         <elementType ref="OntoUML.diagram.Relator_2008"/>
+         <elementType ref="OntoUML.diagram.Role_2009"/>
+         <elementType ref="OntoUML.diagram.RoleMixin_2010"/>
+         <elementType ref="OntoUML.diagram.SimpleDatatype_2011"/>
+         <elementType ref="OntoUML.diagram.StructuralDatatype_2012"/>
+         <elementType ref="OntoUML.diagram.SubKind_2013"/>
+         <elementType ref="OntoUML.diagram.GeneralizationSet_2014"/>
+         <elementType ref="OntoUML.diagram.DerivationRule_2015"/>
+         <elementType ref="OntoUML.diagram.Property_3028"/>
+         <elementType ref="OntoUML.diagram.Property_3029"/>
+         <elementType ref="OntoUML.diagram.Property_3030"/>
+         <elementType ref="OntoUML.diagram.Property_3031"/>
+         <elementType ref="OntoUML.diagram.Property_3032"/>
+         <elementType ref="OntoUML.diagram.Property_3033"/>
+         <elementType ref="OntoUML.diagram.Property_3034"/>
+         <elementType ref="OntoUML.diagram.Property_3035"/>
+         <elementType ref="OntoUML.diagram.Property_3036"/>
+         <elementType ref="OntoUML.diagram.Property_3037"/>
+         <elementType ref="OntoUML.diagram.Property_3038"/>
+         <elementType ref="OntoUML.diagram.Property_3039"/>
+         <elementType ref="OntoUML.diagram.Property_3040"/>
+         <elementType ref="OntoUML.diagram.Characterization_4001"/>
+         <elementType ref="OntoUML.diagram.ComponentOf_4002"/>
+         <elementType ref="OntoUML.diagram.DatatypeRelationship_4019"/>
+         <elementType ref="OntoUML.diagram.Derivation_4004"/>
+         <elementType ref="OntoUML.diagram.FormalAssociation_4005"/>
+         <elementType ref="OntoUML.diagram.Generalization_4006"/>
+         <elementType ref="OntoUML.diagram.MaterialAssociation_4007"/>
+         <elementType ref="OntoUML.diagram.Mediation_4008"/>
+         <elementType ref="OntoUML.diagram.MemberOf_4009"/>
+         <elementType ref="OntoUML.diagram.SubCollectionOf_4010"/>
+         <elementType ref="OntoUML.diagram.SubQuantityOf_4011"/>
+         <elementType ref="OntoUML.diagram.BinaryAssociationAtom_4013"/>
+         <elementType ref="OntoUML.diagram.BinaryAssociationAtom_4014"/>
+         <elementType ref="OntoUML.diagram.BinaryAssociationAtom_4015"/>
+         <elementType ref="OntoUML.diagram.ClassifierAtom_4016"/>
+         <elementType ref="OntoUML.diagram.ClassifierAtom_4017"/>
+         <elementType ref="OntoUML.diagram.ClassifierAtom_4018"/>
+         <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+      </binding>
+   </extension>
+	   <extension point="org.eclipse.core.expressions.propertyTesters">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="OntoUML.diagram.URIEditorInputPropertyTester"
+           type="org.eclipse.emf.common.ui.URIEditorInput"
+           namespace="OntoUML.diagram"
+           properties="isURIEditorInput"
+           class="OntoUML.diagram.part.OntoUMLUriEditorInputTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.core.expressions.propertyTesters">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="OntoUML.diagram.DomainModelElementPropertyTester"
+           type="org.eclipse.emf.ecore.EObject"
+           namespace="OntoUML.diagram"
+           properties="isDomainModelElement"
+           class="OntoUML.diagram.part.OntoUMLDomainModelElementTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.ui.navigator.viewer">
+      <?gmfgen generated="true"?>
+      <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension pattern="OntoUML.diagram.resourceContent"/>
+			<contentExtension pattern="OntoUML.diagram.domainResourceContent"/>
+            <contentExtension pattern="OntoUML.diagram.navigatorLinkHelper"/>
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <actionExtension pattern="OntoUML.diagram.navigatorActionProvider"/>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+
+   <extension point="org.eclipse.ui.navigator.navigatorContent">
+      <?gmfgen generated="true"?>
+      <navigatorContent
+            id="OntoUML.diagram.resourceContent" 
+            name="%navigatorContentName" 
+            priority="normal" 
+            contentProvider="OntoUML.diagram.navigator.OntoUMLNavigatorContentProvider" 
+            labelProvider="OntoUML.diagram.navigator.OntoUMLNavigatorLabelProvider"
+            icon="icons/obj16/OntoUMLDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="ontouml_diagram"/>
+               </and>
+               <instanceof value="OntoUML.diagram.navigator.OntoUMLAbstractNavigatorItem"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+         	   <instanceof value="OntoUML.diagram.navigator.OntoUMLAbstractNavigatorItem"/>
+            </or>
+         </possibleChildren>
+         <commonSorter 
+               id="OntoUML.diagram.navigatorSorter" 
+               class="OntoUML.diagram.navigator.OntoUMLNavigatorSorter">
+            <parentExpression>
+               <or>
+	              <and>
+    	             <instanceof value="org.eclipse.core.resources.IFile"/>
+        	         <test property="org.eclipse.core.resources.extension" value="ontouml_diagram"/>
+                  </and>
+                  <instanceof value="OntoUML.diagram.navigator.OntoUMLAbstractNavigatorItem"/>
+               </or>
+            </parentExpression>
+         </commonSorter>
+      </navigatorContent>
+      <navigatorContent
+            id="OntoUML.diagram.domainResourceContent" 
+            name="%domainNavigatorContentName" 
+            priority="normal" 
+            contentProvider="OntoUML.diagram.navigator.OntoUMLDomainNavigatorContentProvider" 
+            labelProvider="OntoUML.diagram.navigator.OntoUMLDomainNavigatorLabelProvider"
+            icon="icons/obj16/OntoUMLDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="ontouml"/>
+               </and>
+               <and>
+                  <instanceof value="org.eclipse.emf.ecore.EObject"/>
+                  <test property="OntoUML.diagram.isDomainModelElement"/>
+               </and>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <and>
+       	       <instanceof value="org.eclipse.emf.ecore.EObject"/>
+       	       <test property="OntoUML.diagram.isDomainModelElement"/>
+       	    </and>
+         </possibleChildren>
+      </navigatorContent>
+      <actionProvider
+            id="OntoUML.diagram.navigatorActionProvider"
+            class="OntoUML.diagram.navigator.OntoUMLNavigatorActionProvider">
+         <enablement>
+            <or>
+               <instanceof value="OntoUML.diagram.navigator.OntoUMLAbstractNavigatorItem"/>
+            </or>
+         </enablement>
+      </actionProvider>
+   </extension>
+   
+	   <extension point="org.eclipse.ui.navigator.linkHelper">
+      <?gmfgen generated="true"?>
+      <linkHelper
+            id="OntoUML.diagram.navigatorLinkHelper"
+            class="OntoUML.diagram.navigator.OntoUMLNavigatorLinkHelper">
+         <editorInputEnablement>
+            <and>
+               <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
+               <test property="OntoUML.diagram.isURIEditorInput"/>
+            </and>
+         </editorInputEnablement>
+         <selectionEnablement>
+            <instanceof value="OntoUML.diagram.navigator.OntoUMLAbstractNavigatorItem"/>
+         </selectionEnablement>
+      </linkHelper>
+   </extension>
+   <extension point="org.eclipse.emf.validation.constraintProviders">
+      <?gmfgen generated="true"?>
+            <category id="OntoUML" mandatory="false" name="OntoUML">
+         <![CDATA[OntoUML]]>
+      </category>
+      <category id="OntoUML/Association" mandatory="false" name="Association">
+         <![CDATA[Association]]>
+      </category>
+      <category id="OntoUML/Category" mandatory="false" name="Category">
+         <![CDATA[Category]]>
+      </category>
+      <category id="OntoUML/Characterization" mandatory="false" name="Characterization">
+         <![CDATA[Characterization]]>
+      </category>
+      <category id="OntoUML/Collective" mandatory="false" name="Collective">
+         <![CDATA[Collective]]>
+      </category>
+      <category id="OntoUML/componentOf" mandatory="false" name="componentOf">
+         <![CDATA[componentOf]]>
+      </category>
+      <category id="OntoUML/DatatypeRelationship" mandatory="false" name="DatatypeRelationship">
+         <![CDATA[DatatypeRelationship]]>
+      </category>
+      <category id="OntoUML/Derivation" mandatory="false" name="Derivation">
+         <![CDATA[Derivation]]>
+      </category>
+      <category id="OntoUML/DirectedBinaryRelationship" mandatory="false" name="DirectedBinaryRelationship">
+         <![CDATA[DirectedBinaryRelationship]]>
+      </category>
+      <category id="OntoUML/Generalization" mandatory="false" name="Generalization">
+         <![CDATA[Generalization]]>
+      </category>
+      <category id="OntoUML/MaterialAssociation" mandatory="false" name="MaterialAssociation">
+         <![CDATA[MaterialAssociation]]>
+      </category>
+      <category id="OntoUML/Mediation" mandatory="false" name="Mediation">
+         <![CDATA[Mediation]]>
+      </category>
+      <category id="OntoUML/memberOf" mandatory="false" name="memberOf">
+         <![CDATA[memberOf]]>
+      </category>
+      <category id="OntoUML/Meronymic" mandatory="false" name="Meronymic">
+         <![CDATA[Meronymic]]>
+      </category>
+      <category id="OntoUML/Mixin" mandatory="false" name="Mixin">
+         <![CDATA[Mixin]]>
+      </category>
+      <category id="OntoUML/MixinClass" mandatory="false" name="MixinClass">
+         <![CDATA[MixinClass]]>
+      </category>
+      <category id="OntoUML/Mode" mandatory="false" name="Mode">
+         <![CDATA[Mode]]>
+      </category>
+      <category id="OntoUML/MultiplicityElement" mandatory="false" name="MultiplicityElement">
+         <![CDATA[MultiplicityElement]]>
+      </category>
+      <category id="OntoUML/Phase" mandatory="false" name="Phase">
+         <![CDATA[Phase]]>
+      </category>
+      <category id="OntoUML/Property" mandatory="false" name="Property">
+         <![CDATA[Property]]>
+      </category>
+      <category id="OntoUML/Relator" mandatory="false" name="Relator">
+         <![CDATA[Relator]]>
+      </category>
+      <category id="OntoUML/Role" mandatory="false" name="Role">
+         <![CDATA[Role]]>
+      </category>
+      <category id="OntoUML/RoleMixin" mandatory="false" name="RoleMixin">
+         <![CDATA[RoleMixin]]>
+      </category>
+      <category id="OntoUML/StructuralDatatype" mandatory="false" name="StructuralDatatype">
+         <![CDATA[StructuralDatatype]]>
+      </category>
+      <category id="OntoUML/subCollectionOf" mandatory="false" name="subCollectionOf">
+         <![CDATA[subCollectionOf]]>
+      </category>
+      <category id="OntoUML/SubKind" mandatory="false" name="SubKind">
+         <![CDATA[SubKind]]>
+      </category>
+      <category id="OntoUML/subQuantityOf" mandatory="false" name="subQuantityOf">
+         <![CDATA[subQuantityOf]]>
+      </category>
+      <category id="OntoUML/SubstanceSortal" mandatory="false" name="SubstanceSortal">
+         <![CDATA[SubstanceSortal]]>
+      </category>
+      <constraintProvider cache="true">
+         <package namespaceUri="OntoUML"/>
+               <constraints categories="OntoUML">
+                  </constraints>
+         <constraints categories="OntoUML/Association">
+                  <constraint id="AssociationConstraint1*"
+            lang="OCL"
+            name="AssociationConstraint1*"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.associationEnd->forAll(x | if (x.lower <> -1) then ((x.upper >= x.lower) or (x.upper = -1)) else (x.upper = -1) endif)]]>
+            <description><![CDATA[As the decorations for MultiplicityElementConstraint3* cannot be shown in a Link Label, this constraint had to be implemented here.]]></description>
+            <message><![CDATA[In all association ends of this association, the maximum cardinality constraint (the property
+upper) must be equal or greater to the lower cardinality constraint (the property lower).]]></message>
+            <target class="OntoUML.Association"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/Category">
+                  <constraint id="CategoryConstraint1"
+            lang="OCL"
+            name="CategoryConstraint1"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[if self.specific.oclIsKindOf(Category) then (self.general.oclIsKindOf(Category) or self.general.oclIsKindOf(Mixin)) else true endif]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A class stereotyped as «category» can only has as supertypes classes stereotyped as «category» or «mixin», because a non-sortal rigid class cannot be a subtype of a sortal class or an anti-rigid class.]]></message>
+            <target class="OntoUML.Generalization"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/Characterization">
+                  <constraint id="CharacterizationConstraint1"
+            lang="OCL"
+            name="CharacterizationConstraint1"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.source->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.oclIsTypeOf(Mode) else false endif)]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A relationship stereotyped as «characterization» must have in its source association end a class stereotyped as «mode» representing the characterizing mode universal.]]></message>
+            <target class="OntoUML.Characterization"/>
+         </constraint>
+                  <constraint id="CharacterizationConstraint2"
+            lang="OCL"
+            name="CharacterizationConstraint2"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[if self.target.oclIsKindOf(Characterization) then ((self.lower = 1) and (self.upper = 1)) else true endif]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[The association end connected to the characterized universal must have the cardinality constraints of one and exactly one.]]></message>
+            <target class="OntoUML.Property"/>
+         </constraint>
+                  <constraint id="CharacterizationConstraint3"
+            lang="OCL"
+            name="CharacterizationConstraint3"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[if self.source.oclIsKindOf(Characterization) then ((self.lower >= 1) or (self.lower = -1)) else true endif]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[The association end connected to the characterizing quality universal (source association end) must have the minimum cardinality constraints ≥ 1.]]></message>
+            <target class="OntoUML.Property"/>
+         </constraint>
+                  <constraint id="CharacterizationConstraint4"
+            lang="OCL"
+            name="CharacterizationConstraint4"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[if self.target.oclIsKindOf(Characterization) then self.isReadOnly else true endif]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[The association end connected to the characterized universal must have the property isReadOnly = true.]]></message>
+            <target class="OntoUML.Property"/>
+         </constraint>
+                  <constraint id="CharacterizationConstraint5"
+            lang="OCL"
+            name="CharacterizationConstraint5"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.relatedElement->size() = 2]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A relationship stereotyped as «characterization» is always a binary association.]]></message>
+            <target class="OntoUML.Characterization"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/Collective">
+                  <constraint id="CollectiveConstraint1"
+            lang="OCL"
+            name="CollectiveConstraint1"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.isExtensional implies Meronymic.allInstances()->forAll(x | x.source->forAll(y | if y.oclIsKindOf(Property) then if (y.oclAsType(Property).endType = self) then x.isEssential else true endif else false endif))]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A relationship stereotyped as «collective» in which its property isExtensional is true
+must have all its parts with their respective properties isEssential = true. When the
+property isExtensional = true the collective is said to be extensional and this means
+that all its parts are essential and the change (or destruction) of anyof its parts
+terminates the existence of the collective.]]></message>
+            <target class="OntoUML.Collective"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/componentOf">
+                  <constraint id="componentOfConstraint1a"
+            lang="OCL"
+            name="componentOfConstraint1a"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.source->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.hasFunctionalComplexesInstances() else false endif)]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[The classes connected to the source association ends of this relation must represent universals whose instances are functional complexes. A universal X is a universal whose instances are functional complexes if it satisfies the following conditions: (i) If X is a sortal universal, then it must be either stereotyped as «kind» or be a subtype of a class stereotyped as «kind»; (ii) Otherwise, if X is a mixin universal, then for all classes Y such that Y is a subtype of X, we have that Y cannot be either stereotyped as «quantity» or «collective», and Y cannot be a subtype of class stereotyped as either «quantity» or «collective».]]></message>
+            <target class="OntoUML.componentOf"/>
+         </constraint>
+                  <constraint id="componentOfConstraint1b"
+            lang="OCL"
+            name="componentOfConstraint1b"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.target->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.hasFunctionalComplexesInstances() else false endif)]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[The classes connected to the target association ends of this relation must represent universals whose instances are functional complexes. A universal X is a universal whose instances are functional complexes if it satisfies the following conditions: (i) If X is a sortal universal, then it must be either stereotyped as «kind» or be a subtype of a class stereotyped as «kind»; (ii) Otherwise, if X is a mixin universal, then for all classes Y such that Y is a subtype of X, we have that Y cannot be either stereotyped as «quantity» or «collective», and Y cannot be a subtype of class stereotyped as either «quantity» or «collective».]]></message>
+            <target class="OntoUML.componentOf"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/DatatypeRelationship">
+                  <constraint id="DatatypeRelationshipConstraint1*"
+            lang="OCL"
+            name="DatatypeRelationshipConstraint1*"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.target->forAll(x | if x.oclIsKindOf(Property) then (x.oclAsType(Property).endType.oclIsKindOf(SimpleDatatype) or x.oclAsType(Property).endType.oclIsKindOf(StructuralDatatype)) else false endif)]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A relationship stereotyped as «datatypeRelationship» must have in its target association end a class stereotyped as «simpleDatatype» or «structuralDatatype».]]></message>
+            <target class="OntoUML.DatatypeRelationship"/>
+         </constraint>
+                  <constraint id="DatatypeRelationshipConstraint2*"
+            lang="OCL"
+            name="DatatypeRelationshipConstraint2*"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.source->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.oclIsKindOf(Classifier) else false endif)]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A relationship stereotyped as «datatypeRelationship» must have in its source association end an instance of Classifier. Excepting for Generalizations, GeneralizationSets and Properties, all the other OntoUML constructs are Classifiers.]]></message>
+            <target class="OntoUML.DatatypeRelationship"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/Derivation">
+                  <constraint id="DerivationConstraint1a"
+            lang="OCL"
+            name="DerivationConstraint1a"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.source->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.oclIsTypeOf(MaterialAssociation) else false endif)]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A derivation relation must have one of its association ends (not the black circle end) connected to an association stereotyped as «material».]]></message>
+            <target class="OntoUML.Derivation"/>
+         </constraint>
+                  <constraint id="DerivationConstraint1b"
+            lang="OCL"
+            name="DerivationConstraint1b"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.target->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.oclIsTypeOf(Relator) else false endif)]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A derivation relation must have one of its association ends (the black circle end) connected to a class stereotyped as «relator».]]></message>
+            <target class="OntoUML.Derivation"/>
+         </constraint>
+                  <constraint id="DerivationConstraint2"
+            lang="OCL"
+            name="DerivationConstraint2"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.relatedElement->size() = 2]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[Derivation associations are always binary associations.]]></message>
+            <target class="OntoUML.Derivation"/>
+         </constraint>
+                  <constraint id="DerivationConstraint3"
+            lang="OCL"
+            name="DerivationConstraint3"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[if self.target.oclIsKindOf(Derivation) then ((self.lower = 1) and (self.upper = 1)) else true endif]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[The black circle end of the derivation relation must have the cardinality constraints of one and exactly one.]]></message>
+            <target class="OntoUML.Property"/>
+         </constraint>
+                  <constraint id="DerivationConstraint4"
+            lang="OCL"
+            name="DerivationConstraint4"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[if self.target.oclIsKindOf(Derivation) then self.isReadOnly else true endif]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[The black circle end of the derivation relation must have the property isReadOnly = true.]]></message>
+            <target class="OntoUML.Property"/>
+         </constraint>
+                  <constraint id="DerivationConstraint5"
+            lang="OCL"
+            name="DerivationConstraint5"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[if self.source.oclIsKindOf(Derivation) then ((self.lower >= 1) or (self.lower = -1)) else true endif]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[The cardinality constraints of the association end connected to the association stereotyped as «material» in a derivation relation are a product of the cardinality constraints of the relations stereotyped as «mediation» of the class stereotyped as «relator» that this association stereotyped as «material» derives from. However, since the relations stereotyped as «mediation» requires a minimum cardinality of one on both of its association ends, then the minimum cardinality on the end connected to the relation stereotyped as «material» of a derivation relation must also be ≥ 1.]]></message>
+            <target class="OntoUML.Property"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/DirectedBinaryRelationship">
+                  <constraint id="DirectedBinaryRelationshipConstraint1"
+            lang="OCL"
+            name="DirectedBinaryRelationshipConstraint1"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.source->size() = 1 -- From the metamodel.]]>
+            <description><![CDATA[From the metamodel.]]></description>
+            <message><![CDATA[An association stereotyped as «characterization», «mediation», «componentOf», «memberOf»,
+«subCollectionOf», «subQuantityOf» or a derivation relation must have its source extremity
+conected to only one element.]]></message>
+            <target class="OntoUML.DirectedBinaryRelationship"/>
+         </constraint>
+                  <constraint id="DirectedBinaryRelationshipConstraint2"
+            lang="OCL"
+            name="DirectedBinaryRelationshipConstraint2"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.target->size() = 1 -- From the metamodel.]]>
+            <description><![CDATA[From the metamodel.]]></description>
+            <message><![CDATA[An association stereotyped as «characterization», «mediation», «componentOf», «memberOf»,
+«subCollectionOf», «subQuantityOf» or a derivation relation must have its target extremity
+conected to only one element.]]></message>
+            <target class="OntoUML.DirectedBinaryRelationship"/>
+         </constraint>
+                  <constraint id="DirectedBinaryRelationshipConstraint3*"
+            lang="OCL"
+            name="DirectedBinaryRelationshipConstraint3*"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.source->forAll(x | x.oclIsKindOf(Property))]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[An association stereotyped as «characterization», «mediation», «componentOf», «memberOf»,
+«subCollectionOf», «subQuantityOf» or a derivation relation must have its source extremity
+conected to a Property.]]></message>
+            <target class="OntoUML.DirectedBinaryRelationship"/>
+         </constraint>
+                  <constraint id="DirectedBinaryRelationshipConstraint4*"
+            lang="OCL"
+            name="DirectedBinaryRelationshipConstraint4*"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.target->forAll(x | x.oclIsKindOf(Property))]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[An association stereotyped as «characterization», «mediation», «componentOf», «memberOf»,
+«subCollectionOf», «subQuantityOf» or a derivation relation must have its target extremity
+conected to a Property.]]></message>
+            <target class="OntoUML.DirectedBinaryRelationship"/>
+         </constraint>
+                  <constraint id="DirectedBinaryRelationshipConstraint5a*"
+            lang="OCL"
+            name="DirectedBinaryRelationshipConstraint5a*"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.source->forAll(x | if x.oclIsKindOf(Property) then (if (x.oclAsType(Property).lower <> -1) then ((x.oclAsType(Property).upper >= x.oclAsType(Property).lower) or (x.oclAsType(Property).upper = -1)) else (x.oclAsType(Property).upper = -1) endif) else false endif)]]>
+            <description><![CDATA[As the decorations for MultiplicityElementConstraint3* cannot be shown in a Link Label, this constraint had to be implemented here.]]></description>
+            <message><![CDATA[The source maximum cardinality constraint (the property upper) must be equal or
+greater to the source lower cardinality constraint (the property lower).]]></message>
+            <target class="OntoUML.DirectedBinaryRelationship"/>
+         </constraint>
+                  <constraint id="DirectedBinaryRelationshipConstraint5b*"
+            lang="OCL"
+            name="DirectedBinaryRelationshipConstraint5b*"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.target->forAll(x | if x.oclIsKindOf(Property) then (if (x.oclAsType(Property).lower <> -1) then ((x.oclAsType(Property).upper >= x.oclAsType(Property).lower) or (x.oclAsType(Property).upper = -1)) else (x.oclAsType(Property).upper = -1) endif) else false endif)]]>
+            <description><![CDATA[As the decorations for MultiplicityElementConstraint3* cannot be shown in a Link Label, this constraint had to be implemented here.]]></description>
+            <message><![CDATA[The target maximum cardinality constraint (the property upper) must be equal or
+greater to the target lower cardinality constraint (the property lower).]]></message>
+            <target class="OntoUML.DirectedBinaryRelationship"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/Generalization">
+                  <constraint id="GeneralizationConstraint1"
+            lang="OCL"
+            name="GeneralizationConstraint1"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.source->size() <= 1]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A generalization must have its source extremity conected to at maximum one element.]]></message>
+            <target class="OntoUML.Generalization"/>
+         </constraint>
+                  <constraint id="GeneralizationConstraint2"
+            lang="OCL"
+            name="GeneralizationConstraint2"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.target->size() <= 1]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A generalization must have its target extremity conected to at maximum one element.]]></message>
+            <target class="OntoUML.Generalization"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/MaterialAssociation">
+                  <constraint id="MaterialAssociationConstraint1"
+            lang="OCL"
+            name="MaterialAssociationConstraint1"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[Derivation.allInstances()->one(x | x.source->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = self) else false endif))]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[An association stereotyped as «material» must be connected to the association end of exactly
+one derivation relation.]]></message>
+            <target class="OntoUML.MaterialAssociation"/>
+         </constraint>
+                  <constraint id="MaterialAssociationConstraint2"
+            lang="OCL"
+            name="MaterialAssociationConstraint2"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[if self.associationEnd.oclIsKindOf(MaterialAssociation) then ((self.lower >= 1) or (self.lower = -1)) else true endif]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[The cardinality constraints of the association ends of this association are derived from the cardinality constraints of the relations stereotyped as «mediation» which are connected on the class stereotyped as «relator» that this association is derived from. Since the relationships stereotyped as «mediation» requires a minimum cardinality of one on both of its association ends, then the minimum cardinality constraint on each end of the this derived association must also be ≥ 1.]]></message>
+            <target class="OntoUML.Property"/>
+         </constraint>
+                  <constraint id="MaterialAssociationConstraint3"
+            lang="OCL"
+            name="MaterialAssociationConstraint3"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.isDerived]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[An association stereotyped as «material» must have the property isDerived = true.]]></message>
+            <target class="OntoUML.MaterialAssociation"/>
+         </constraint>
+                  <constraint id="MaterialAssociationConstraint4*"
+            lang="OCL"
+            name="MaterialAssociationConstraint4*"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (self.associationEnd->exists(z | if z.oclIsKindOf(Property) then (y.oclAsType(Property).endType = z.oclAsType(Property).endType) else false endif)) else false endif)) in (A->collect(x | if x.target->forAll(y | y.oclIsKindOf(Property)) then x.target.oclAsType(Property).endType else null endif)->includesAll(if self.associationEnd->forAll(x | x.oclIsKindOf(Property)) then self.associationEnd.oclAsType(Property).endType else null endif) and A->forAll(x | x.source->exists(y | if y.oclIsKindOf(Property) then A->exists(z | (x.target->exists(w | if w.oclIsKindOf(Property) then (z.target->exists(k | if k.oclIsKindOf(Property) then (w.oclAsType(Property).endType <> k.oclAsType(Property).endType) else false endif)) else false endif)) and (z.source->exists(w | if w.oclIsKindOf(Property) then ((y.oclAsType(Property).endType = w.oclAsType(Property).endType) and y.oclAsType(Property).endType.oclIsKindOf(Relator)) else false endif))) else false endif)))]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[The classes connected on the extremities of an association stereotyped as «material» must also be connected on the extremities of relationships stereotyped as «mediation», and the other extremities of these relationships (stereotyped as «mediation») must be connected to an unique class stereotyped as «relator».]]></message>
+            <target class="OntoUML.MaterialAssociation"/>
+         </constraint>
+                  <constraint id="MaterialAssociationConstraint5*"
+            lang="OCL"
+            name="MaterialAssociationConstraint5*"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[if self.associationEnd.oclIsKindOf(MaterialAssociation) then isDerived else true endif]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[An association stereotyped as «material» must be connected to Properties which have its properties isDerived = true.]]></message>
+            <target class="OntoUML.Property"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/Mediation">
+                  <constraint id="MediationConstraint1"
+            lang="OCL"
+            name="MediationConstraint1"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.source->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.oclIsTypeOf(Relator) else false endif)]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A relationship stereotyped as «mediation» must have in its source association end a class stereotyped as «relator» representing the corresponding relator universal.]]></message>
+            <target class="OntoUML.Mediation"/>
+         </constraint>
+                  <constraint id="MediationConstraint2"
+            lang="OCL"
+            name="MediationConstraint2"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[if self.target.oclIsKindOf(Mediation) then ((self.lower >= 1) or (self.lower = -1)) else true endif]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[In a relationship stereotyped as «mediation», the association end connected to the mediated universal must have the minimum cardinality constraints ≥ 1.]]></message>
+            <target class="OntoUML.Property"/>
+         </constraint>
+                  <constraint id="MediationConstraint3"
+            lang="OCL"
+            name="MediationConstraint3"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[if self.target.oclIsKindOf(Mediation) then self.isReadOnly else true endif]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[In a relationship stereotyped as «mediation», the association end connected to the mediated universal must have property isReadOnly = true.]]></message>
+            <target class="OntoUML.Property"/>
+         </constraint>
+                  <constraint id="MediationConstraint4"
+            lang="OCL"
+            name="MediationConstraint4"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[if self.source.oclIsKindOf(Mediation) then ((self.lower >= 1) or (self.lower = -1)) else true endif]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[In a relationship stereotyped as «mediation», the association end connected to the relator universal (the class stereotyped as «relator») must have the minimum cardinality constraints ≥ 1.]]></message>
+            <target class="OntoUML.Property"/>
+         </constraint>
+                  <constraint id="MediationConstraint5"
+            lang="OCL"
+            name="MediationConstraint5"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.relatedElement->size() = 2]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A relationship stereotyped as «mediation» is always a binary association.]]></message>
+            <target class="OntoUML.Mediation"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/memberOf">
+                  <constraint id="memberOfConstraint1"
+            lang="OCL"
+            name="memberOfConstraint1"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.isEssential implies self.source->forAll(x | if x.oclIsKindOf(Property) then (if x.oclAsType(Property).endType.oclIsKindOf(Collective) then x.oclAsType(Property).endType.oclAsType(Collective).isExtensional else false endif) else false endif)]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[This relation can only represent essential parthood (isEssential = true) if the object
+representing the whole on this relation is an extensional (isExtensional = true) individual.
+In this case, all parthood relations in which this individual participates as a whole are
+essential parthood relations.]]></message>
+            <target class="OntoUML.memberOf"/>
+         </constraint>
+                  <constraint id="memberOfConstraint2a"
+            lang="OCL"
+            name="memberOfConstraint2a"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.source->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.hasCollectivesInstances() else false endif)]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[The classifier connected to association end relative to the whole individual must be a universal whose instances are collectives. A universal X is a universal whose instances are collectives if it satisfies the following conditions: (i) If X is a sortal universal, then it must be either stereotyped as «collective» or be a subtype of a class stereotyped as «collective»; (ii) Otherwise, if X is a mixin universal, then for all classes Y such that Y is a subtype of X, we have that Y cannot be either stereotyped as «kind» or «quantity», and Y cannot be a subtype of class stereotyped as either «kind» or «quantity».]]></message>
+            <target class="OntoUML.memberOf"/>
+         </constraint>
+                  <constraint id="memberOfConstraint2b"
+            lang="OCL"
+            name="memberOfConstraint2b"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.target->forAll(x | if x.oclIsKindOf(Property) then (x.oclAsType(Property).endType.hasCollectivesInstances() or x.oclAsType(Property).endType.hasFunctionalComplexesInstances()) else false endif)]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[The classifier connected to the association end relative to the part can be either a universal whose instances are collectives, or a universal whose instances are functional complexes. A universal X is a universal whose instances are collectives if it satisfies the following conditions: (i) If X is a sortal universal, then it must be either stereotyped as «collective» or be a subtype of a class stereotyped as «collective»; (ii) Otherwise, if X is a mixin universal, then for all classes Y such that Y is a subtype of X, we have that Y cannot be either stereotyped as «kind» or «quantity», and Y cannot be a subtype of class stereotyped as either «kind» or «quantity». A universal X is a universal whose instances are functional complexes if it satisfies the following conditions: (i) If X is a sortal universal, then it must be either stereotyped as «kind» or be a subtype of a class stereotyped as «kind»; (ii) Otherwise, if X is a mixin universal, then for all classes Y such that Y is a subtype of X, we have that Y cannot be either stereotyped as «quantity» or «collective», and Y cannot be a subtype of class stereotyped as either «quantity» or «collective».]]></message>
+            <target class="OntoUML.memberOf"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/Meronymic">
+                  <constraint id="MeronymicConstraint1"
+            lang="OCL"
+            name="MeronymicConstraint1"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[Meronymic.allInstances()->select(x | x.source->exists(y | if y.oclIsKindOf(Property) then (self.source->exists(z | if z.oclIsKindOf(Property) then (z.oclAsType(Property).endType = y.oclAsType(Property).endType) else false endif)) else false endif))->collect(w | w.target->collect(k | if k.oclIsKindOf(Property) then (if (k.oclAsType(Property).lower = -1) then 2 else k.oclAsType(Property).lower endif) else 0 endif)->sum())->sum() >= 2]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A whole must have at least two disjoint parts due to the Weak Supplementation axiom.]]></message>
+            <target class="OntoUML.Meronymic"/>
+         </constraint>
+                  <constraint id="MeronymicConstraint2a"
+            lang="OCL"
+            name="MeronymicConstraint2a"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[(self.source->forAll(x | if x.oclIsKindOf(Property) then (x.oclAsType(Property).endType.oclIsKindOf(AntiRigidSortalClass) or x.oclAsType(Property).endType.oclIsKindOf(AntiRigidMixinClass)) else false endif)) implies (self.isEssential = false)]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[In a relationship stereotyped as «componentOf», «memberOf», «subCollectionOf» or «subQuantityOf» (i.e., a Meronymic relationship), if the class connected to the association end representing the whole is stereotyped as «phase», «role» or «roleMixin» (i.e., it is an anti-rigid class), then the property isEssential must be false.]]></message>
+            <target class="OntoUML.Meronymic"/>
+         </constraint>
+                  <constraint id="MeronymicConstraint2b"
+            lang="OCL"
+            name="MeronymicConstraint2b"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.isEssential implies self.isImmutablePart -- Constraint 2 revisited with the new meta-attributes isImmutableWhole and isImmutablePart.]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[In a relationship stereotyped as «componentOf», «memberOf», «subCollectionOf»
+or «subQuantityOf» (i.e., a Meronymic relationship), if the property
+isEssential = true (in case of a rigid class with essential parts), then the property
+isImmutablePart must also be true.]]></message>
+            <target class="OntoUML.Meronymic"/>
+         </constraint>
+                  <constraint id="MeronymicConstraint4*"
+            lang="OCL"
+            name="MeronymicConstraint4*"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.isImmutableWhole implies self.source->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).isReadOnly else false endif) -- Constraint 2 revisited with the new meta-attributes isImmutableWhole and isImmutablePart.]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[In a relationship stereotyped as «componentOf», «memberOf», «subCollectionOf»
+or «subQuantityOf» (i.e., a Meronymic relationship), if the property
+isImmutablePart = true, then the Properties connected on its source association
+ends must have the property isReadOnly = true.]]></message>
+            <target class="OntoUML.Meronymic"/>
+         </constraint>
+                  <constraint id="MeronymicConstraint5*"
+            lang="OCL"
+            name="MeronymicConstraint5*"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.isImmutablePart implies self.target->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).isReadOnly else false endif) -- Constraint 2 revisited with the new meta-attributes isImmutableWhole and isImmutablePart.]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[In a relationship stereotyped as «componentOf», «memberOf», «subCollectionOf»
+or «subQuantityOf» (i.e., a Meronymic relationship), if the property
+isImmutablePart = true, then the Properties connected on its target association
+ends must have the property isReadOnly = true.]]></message>
+            <target class="OntoUML.Meronymic"/>
+         </constraint>
+                  <constraint id="MeronymicConstraint6*"
+            lang="OCL"
+            name="MeronymicConstraint6*"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.isInseparable implies self.isImmutableWhole -- Constraint 2 revisited with the new meta-attributes isImmutableWhole and isImmutablePart.]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[In a relationship stereotyped as «componentOf», «memberOf», «subCollectionOf»
+or «subQuantityOf» (i.e., a Meronymic relationship), if the property
+isInseparable = true (in case of an anti-rigid class with inseparable parts), then the
+property isImmutableWhole must also be true.]]></message>
+            <target class="OntoUML.Meronymic"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/Mixin">
+                  <constraint id="MixinConstraint1"
+            lang="OCL"
+            name="MixinConstraint1"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[if self.specific.oclIsKindOf(Mixin) then not self.general.oclIsKindOf(RoleMixin) else true endif]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A class stereotyped as «mixin» cannot have a class stereotyped as «roleMixin» as supertype, because a semi-rigid class cannot specialize an anti-rigid class.]]></message>
+            <target class="OntoUML.Generalization"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/MixinClass">
+                  <constraint id="MixinClassConstraint1"
+            lang="OCL"
+            name="MixinClassConstraint1"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[if self.specific.oclIsKindOf(MixinClass) then not self.general.oclIsKindOf(SortalClass) else true endif]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A class stereotyped as «category», «mixin» or «roleMixin» cannot have as a supertype (must not include in its general collection) a class stereotyped as «kind», «quantity», «collective», «subkind», «phase» or «role» (i.e., a sortal class), because a class representing a non-sortal universal cannot be a subclass of a class representing a sortal.]]></message>
+            <target class="OntoUML.Generalization"/>
+         </constraint>
+                  <constraint id="MixinClassConstraint2"
+            lang="OCL"
+            name="MixinClassConstraint2"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.isAbstract = true]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A class stereotyped as «category», «mixin» or «roleMixin» must have its property isAbstract = true, because a non-sortal cannot have direct instances.]]></message>
+            <target class="OntoUML.MixinClass"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/Mode">
+                  <constraint id="ModeConstraint1"
+            lang="OCL"
+            name="ModeConstraint1"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[Characterization.allInstances()->exists(x | x.isConected(self) or self.allSuperTypes()->exists(y | x.isConected(y)))   ]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A class stereotyped as «mode» must be (directly or indirectly) connected to an
+association end of at least one relationship stereotyped as «characterization».]]></message>
+            <target class="OntoUML.Mode"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/MultiplicityElement">
+                  <constraint id="MultiplicityElementConstraint1"
+            lang="OCL"
+            name="MultiplicityElementConstraint1"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[(self.lower >= 0) or (self.lower = -1)]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[The minimum cardinality constraint (the property lower) must be a cardinal number, where the number -1 represents ℵ0 (aleph-zero), the smallest infinite cardinal number.]]></message>
+            <target class="OntoUML.MultiplicityElement"/>
+         </constraint>
+                  <constraint id="MultiplicityElementConstraint2"
+            lang="OCL"
+            name="MultiplicityElementConstraint2"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[(self.upper >= 0) or (self.upper = -1)]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[The maximum cardinality constraint (the property upper) must be a cardinal number, where the number -1 represents ℵ0 (aleph-zero), the smallest infinite cardinal number.]]></message>
+            <target class="OntoUML.MultiplicityElement"/>
+         </constraint>
+                  <constraint id="MultiplicityElementConstraint3*"
+            lang="OCL"
+            name="MultiplicityElementConstraint3*"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[true -- if (lower <> -1) then ((self.upper >= self.lower) or (self.upper = -1)) else (self.upper = -1) endif]]>
+            <description><![CDATA[As the decorations for this constraint cannot be shown in a Link Label, this constraint had to be implemented in DirectedBinaryRelationshipConstraint5a*, DirectedBinaryRelationshipConstraint5b* and AssociationConstraint1*.]]></description>
+            <message><![CDATA[The maximum cardinality constraint (the property upper) must be equal or
+greater to the lower cardinality constraint (the property lower).]]></message>
+            <target class="OntoUML.MultiplicityElement"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/Phase">
+                  <constraint id="PhaseConstraint1"
+            lang="OCL"
+            name="PhaseConstraint1"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[true -- if (self.specific.oclIsKindOf(RigidSortalClass) or self.specific.oclIsKindOf(Category)) then not self.general.oclIsKindOf(Phase) else true endif -- An equivalent constraint (slightly wider) is implemented by CategoryConstraint1 + SubkindConstraint1 + SubstanceSortalConstraint3.]]>
+            <description><![CDATA[An equivalent constraint (slightly wider) is implemented by CategoryConstraint1 + SubkindConstraint1 + SubstanceSortalConstraint3.]]></description>
+            <message><![CDATA[A class stereotyped as «phase» cannot be a supertype of a class stereotyped as «category», «collective», «kind», «subkind» or «quantity», because an anti-rigid class cannot be a supertype of a rigid class.]]></message>
+            <target class="OntoUML.Phase"/>
+         </constraint>
+                  <constraint id="PhaseConstraint2"
+            lang="OCL"
+            name="PhaseConstraint2"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[let general_substance_sortal : SubstanceSortal = Generalization.allInstances()->select(x | (x.specific = self) and (x.general.oclIsKindOf(SubstanceSortal)))->collect(x | x.general.oclAsType(SubstanceSortal))->any(true) in (let phase_generalizations : Set(Generalization) = Generalization.allInstances()->select(x | (x.general = general_substance_sortal) and (x.specific.oclIsKindOf(Phase))) in (let phase_generalization_sets : Set(GeneralizationSet) = GeneralizationSet.allInstances()->select(x | x.generalization->includesAll(phase_generalizations)) in (if (general_substance_sortal.oclIsUndefined() or (phase_generalizations->size() = 1)) then true else ((phase_generalization_sets->size() = 1) and (phase_generalization_sets->forAll(x | (x.isCovering = true) and (x.isDisjoint = true)))) endif)))]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[The classes stereotyped as «phase» must form a phase-partition of a class C
+stereotyped as «collective», «kind» or «quantity» (a Substance Sortal class).
+Therefore, there must exist an unique GeneralizationSet which contains the
+generalizations from the classes stereotyped as «phase» to the class C (by
+having its meta-reference "generalizations" pointing to these generalizations)
+and in which the properties isDisjoint = true and isComplete = true.]]></message>
+            <target class="OntoUML.Phase"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/Property">
+                  <constraint id="PropertyConstraint1"
+            lang="OCL"
+            name="PropertyConstraint1"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.target->forAll(x | if x.oclIsKindOf(Property) then ((x.oclAsType(Property).lower >= 1) or (x.oclAsType(Property).lower = -1)) else false endif)]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[An association stereotyped as «datatypeRelationship» must not permit the existence of optional attributes, i.e., attributes with minimum cardinalities equal to zero.]]></message>
+            <target class="OntoUML.DatatypeRelationship"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/Relator">
+                  <constraint id="RelatorConstraint1"
+            lang="OCL"
+            name="RelatorConstraint1"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[Mediation.allInstances()->exists(x | x.isConected(self) or self.allSuperTypes()->exists(y | x.isConected(y)))]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A class stereotyped as «relator» must be (directly or indirectly) connected to an
+association end of at least one «mediation» relationship.]]></message>
+            <target class="OntoUML.Relator"/>
+         </constraint>
+                  <constraint id="RelatorConstraint2"
+            lang="OCL"
+            name="RelatorConstraint2"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[Mediation.allInstances()->select(x | x.source->exists(y | if y.oclIsKindOf(Property) then ((y.oclAsType(Property).endType = self) or self.allSuperTypes()->includes(y.oclAsType(Property).endType)) else false endif))->collect(z | z.target->collect(w | if w.oclIsKindOf(Property) then (if (w.oclAsType(Property).lower = -1) then 2 else w.oclAsType(Property).lower endif) else 0 endif)->sum())->sum() >= 2]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A class stereotyped as «relator» must be mediating (by
+being (directly or indirectly) connected to association ends
+of relationships stereotyped as «mediation») at least two
+disjoint elements.]]></message>
+            <target class="OntoUML.Relator"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/Role">
+                  <constraint id="RoleConstraint1"
+            lang="OCL"
+            name="RoleConstraint1"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[true -- if (self.specific.oclIsKindOf(RigidSortalClass) or self.specific.oclIsKindOf(Category)) then not self.general.oclIsKindOf(Role) else true endif -- An equivalent constraint (slightly wider) is implemented by CategoryConstraint1 + SubkindConstraint1 + SubstanceSortalConstraint3.]]>
+            <description><![CDATA[An equivalent constraint (slightly wider) is implemented by CategoryConstraint1 + SubkindConstraint1 + SubstanceSortalConstraint3.]]></description>
+            <message><![CDATA[A class stereotyped as «role» cannot be a supertype of a class stereotyped as «category», «collective», «kind», «subkind» or «quantity», because an anti-rigid class cannot be a supertype of a rigid class.]]></message>
+            <target class="OntoUML.Role"/>
+         </constraint>
+                  <constraint id="RoleConstraint2"
+            lang="OCL"
+            name="RoleConstraint2"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[Mediation.allInstances()->exists(x | x.target->exists(y | if y.oclIsKindOf(Property) then ((y.oclAsType(Property).endType = self) or (self.allSuperTypes()->includes(y.oclAsType(Property).endType))) else false endif))]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A class stereotyped as «role» must be connected to an
+association end of a relationship stereotyped as «mediation».]]></message>
+            <target class="OntoUML.Role"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/RoleMixin">
+                  <constraint id="RoleMixinConstraint1"
+            lang="OCL"
+            name="RoleMixinConstraint1"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[Mediation.allInstances()->exists(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = self) else false endif))]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A class stereotyped as «roleMixin» must be connected to an
+association end of a relationship stereotyped as «mediation».]]></message>
+            <target class="OntoUML.RoleMixin"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/StructuralDatatype">
+                  <constraint id="StructuralDatatypeConstraint1*"
+            lang="OCL"
+            name="StructuralDatatypeConstraint1*"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[DatatypeRelationship.allInstances()->collect(x | if x.source->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = self) else false endif) then x.target->collect(z | if z.oclIsKindOf(Property) then (if (z.oclAsType(Property).lower = -1) then 2 else z.oclAsType(Property).lower endif) else 0 endif)->sum() else 0 endif)->sum() >= 2]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A class stereotyped as «structuralDatatype» must have at
+least two disjoint attributes (a class can have attributes by
+means of relationships stereotyped as «datatypeRelationship»).]]></message>
+            <target class="OntoUML.StructuralDatatype"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/subCollectionOf">
+                  <constraint id="subCollectionOfConstraint1a"
+            lang="OCL"
+            name="subCollectionOfConstraint1a"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.source->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.hasCollectivesInstances() else false endif)]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[The classes connected to the association end relative to the whole individual must represent universals whose instances are collectives. A universal X is a universal whose instances are collectives if it satisfies the following conditions: (i) If X is a sortal universal, then it must be either stereotyped as «collective» or be a subtype of a class stereotyped as «collective»; (ii) Otherwise, if X is a mixin universal, then for all classes Y such that Y is a subtype of X, we have that Y cannot be either stereotyped as «kind» or «quantity», and Y cannot be a subtype of class stereotyped as either «kind» or «quantity».]]></message>
+            <target class="OntoUML.subCollectionOf"/>
+         </constraint>
+                  <constraint id="subCollectionOfConstraint1b"
+            lang="OCL"
+            name="subCollectionOfConstraint1b"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.target->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.hasCollectivesInstances() else false endif)]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[The classes connected to the association end relative to the part must represent universals whose instances are collectives. A universal X is a universal whose instances are collectives if it satisfies the following conditions: (i) If X is a sortal universal, then it must be either stereotyped as «collective» or be a subtype of a class stereotyped as «collective»; (ii) Otherwise, if X is a mixin universal, then for all classes Y such that Y is a subtype of X, we have that Y cannot be either stereotyped as «kind» or «quantity», and Y cannot be a subtype of class stereotyped as either «kind» or «quantity».]]></message>
+            <target class="OntoUML.subCollectionOf"/>
+         </constraint>
+                  <constraint id="subCollectionOfConstraint2"
+            lang="OCL"
+            name="subCollectionOfConstraint2"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[if self.target.oclIsKindOf(subCollectionOf) then self.upper = 1 else true endif]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[In a relationship stereotyped as «subCollectionOf», the maximum cardinality constraint in the association end connected to the part must be one (the property upper = 1).]]></message>
+            <target class="OntoUML.Property"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/SubKind">
+                  <constraint id="SubKindConstraint1"
+            lang="OCL"
+            name="SubKindConstraint1"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[if self.specific.oclIsKindOf(SubKind) then not (self.general.oclIsKindOf(AntiRigidSortalClass) or self.general.oclIsKindOf(RoleMixin)) else true endif]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A class stereotyped as «subkind» cannot be a subtype of a class stereotyped as «phase», «role» or «roleMixin», because a rigid class cannot be a subtype of an anti-rigid class.]]></message>
+            <target class="OntoUML.Generalization"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/subQuantityOf">
+                  <constraint id="subQuantityOfConstraint1"
+            lang="OCL"
+            name="subQuantityOfConstraint1"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.isShareable = false]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A relationship stereotyped as «subQuantityOf» is always non-shareable (the property isShareable = false).]]></message>
+            <target class="OntoUML.subQuantityOf"/>
+         </constraint>
+                  <constraint id="subQuantityOfConstraint2a"
+            lang="OCL"
+            name="subQuantityOfConstraint2a"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.isEssential = true]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A relationship stereotyped as «subQuantityOf» must have the property isEssential = true, because classes stereotyped as «quantity» are extensional individuals.]]></message>
+            <target class="OntoUML.subQuantityOf"/>
+         </constraint>
+                  <constraint id="subQuantityOfConstraint2b*"
+            lang="OCL"
+            name="subQuantityOfConstraint2b*"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.isImmutablePart = true -- Extension of Constraint 2 with the new meta-attribute isImmutablePart.]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A relationship stereotyped as «subQuantityOf» must have the property isImmutablePart = true, because these relationships are always essential (i.e., the property isEssential = true).]]></message>
+            <target class="OntoUML.subQuantityOf"/>
+         </constraint>
+                  <constraint id="subQuantityOfConstraint2c*"
+            lang="OCL"
+            name="subQuantityOfConstraint2c*"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[if self.target.oclIsKindOf(subQuantityOf) then self.isReadOnly else true endif -- Extension of Constraint 2 with the new meta-attribute isImmutablePart.]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[In a relationship stereotyped as «subQuantityOf», the Properties related to the parts must have the property isReadOnly = true, because these parts are always immutable (i.e., the property isImmutablePart = true).]]></message>
+            <target class="OntoUML.Property"/>
+         </constraint>
+                  <constraint id="subQuantityOfConstraint3"
+            lang="OCL"
+            name="subQuantityOfConstraint3"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[if self.target.oclIsKindOf(subQuantityOf) then self.upper = 1 else true endif]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[In a relationship stereotyped as «subQuantityOf», the maximum
+cardinality constraint in the association end connected to the part
+must be one (the property upper = 1).]]></message>
+            <target class="OntoUML.Property"/>
+         </constraint>
+                  <constraint id="subQuantityOfConstraint4a"
+            lang="OCL"
+            name="subQuantityOfConstraint4a"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.source->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.hasQuantitiesInstances() else false endif)]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[The classes connected to the association end relative to the whole individual must represent universals whose instances are quantities. A universal X is a universal whose instances are quantities if it satisfies the following conditions: (i) If X is a sortal universal, then it must be either stereotyped as «quantity» or be a subtype of a class stereotyped as «quantity»; (ii) Otherwise, if X is a mixin universal, then for all classes Y such that Y is a subtype of X, we have that Y cannot be either stereotyped as «kind» or «collective», and Y cannot be a subtype of class stereotyped as either «kind» or «collective».]]></message>
+            <target class="OntoUML.subQuantityOf"/>
+         </constraint>
+                  <constraint id="subQuantityOfConstraint4b"
+            lang="OCL"
+            name="subQuantityOfConstraint4b"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.target->forAll(x | if x.oclIsKindOf(Property) then x.oclAsType(Property).endType.hasQuantitiesInstances() else false endif)]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[The classes connected to the association end relative to the part must represent universals whose instances are quantities. A universal X is a universal whose instances are quantities if it satisfies the following conditions: (i) If X is a sortal universal, then it must be either stereotyped as «quantity» or be a subtype of a class stereotyped as «quantity»; (ii) Otherwise, if X is a mixin universal, then for all classes Y such that Y is a subtype of X, we have that Y cannot be either stereotyped as «kind» or «collective», and Y cannot be a subtype of class stereotyped as either «kind» or «collective».]]></message>
+            <target class="OntoUML.subQuantityOf"/>
+         </constraint>
+                  </constraints>
+         <constraints categories="OntoUML/SubstanceSortal">
+                  <constraint id="SubstanceSortalConstraint1"
+            lang="OCL"
+            name="SubstanceSortalConstraint1"
+            mode="Batch"
+            severity="ERROR" statusCode="200">
+            <![CDATA[if ((self.isAbstract = false) and not self.oclIsKindOf(SubstanceSortal)) then self.allSuperTypes()->exists(x | x.oclIsKindOf(SubstanceSortal)) else true endif]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[The classes which are not abstract (which have the property isAbstract = false)
+and which are not stereotyped as «collective», «kind», «quantity», «mode» or
+«relator» (i.e., which are not substance sortal classes or moment classes) must
+have at least one class stereotyped as «collective», «kind» or «quantity» as
+supertype.]]></message>
+            <target class="OntoUML.ObjectClass"/>
+         </constraint>
+                  <constraint id="SubstanceSortalConstraint2a"
+            lang="OCL"
+            name="SubstanceSortalConstraint2a"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[self.specific.allSubTypes()->including(self.specific)->forAll(x | x.allSuperTypes()->select(y | y.oclIsKindOf(SubstanceSortal))->size() <= 1)]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[Any stereotyped class must not include in its general collection more than one class stereotyped as «collective», «kind» or «quantity» (the substance sortal classes). So, verify if the class connected to the source association end of the generalization relationship or one of its subtypes (in case it has subtypes) are already (directly or indirectly) a subtype of a substance sortal class.]]></message>
+            <target class="OntoUML.Generalization"/>
+         </constraint>
+                  <constraint id="SubstanceSortalConstraint2b"
+            lang="OCL"
+            name="SubstanceSortalConstraint2b"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[if self.specific.oclIsKindOf(SubstanceSortal) then not self.general.oclIsKindOf(RigidSortalClass) else true endif]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A class stereotyped as «collective», «kind» or «quantity» (the substance sortal classes) cannot have as a supertype a class stereotyped as «kind», «subkind», «quantity» or «collective» (the rigid sortal classes), because a substance sortal has its own principle of identity and cannot inherit another principle of identity from other rigid sortal.]]></message>
+            <target class="OntoUML.Generalization"/>
+         </constraint>
+                  <constraint id="SubstanceSortalConstraint3"
+            lang="OCL"
+            name="SubstanceSortalConstraint3"
+            mode="Live"
+            severity="ERROR" statusCode="200">
+            <![CDATA[if self.specific.oclIsKindOf(SubstanceSortal) then not (self.general.oclIsKindOf(AntiRigidSortalClass) or self.general.oclIsKindOf(RoleMixin)) else true endif]]>
+            <description><![CDATA[]]></description>
+            <message><![CDATA[A class stereotyped as «collective», «kind» or «quantity» (the substance sortal classes) cannot be a subtype of a class stereotyped as «phase», «role» or «roleMixin», because a rigid class cannot be a subtype of an anti-rigid class.]]></message>
+            <target class="OntoUML.Generalization"/>
+         </constraint>
+                  </constraints>
+      </constraintProvider>
+   </extension>
+
+   <extension point="org.eclipse.emf.validation.constraintBindings">
+      <?gmfgen generated="true"?>
+      <clientContext default="false" id="OntoUML.diagramDefaultCtx">
+         <selector class="OntoUML.diagram.providers.OntoUMLValidationProvider$DefaultCtx"/>
+      </clientContext>
+      <binding context="OntoUML.diagramDefaultCtx">
+                  <constraint ref="OntoUML.diagram.AssociationConstraint1*"/>
+                  <constraint ref="OntoUML.diagram.CategoryConstraint1"/>
+                  <constraint ref="OntoUML.diagram.CharacterizationConstraint1"/>
+                  <constraint ref="OntoUML.diagram.CharacterizationConstraint2"/>
+                  <constraint ref="OntoUML.diagram.CharacterizationConstraint3"/>
+                  <constraint ref="OntoUML.diagram.CharacterizationConstraint4"/>
+                  <constraint ref="OntoUML.diagram.CharacterizationConstraint5"/>
+                  <constraint ref="OntoUML.diagram.CollectiveConstraint1"/>
+                  <constraint ref="OntoUML.diagram.componentOfConstraint1a"/>
+                  <constraint ref="OntoUML.diagram.componentOfConstraint1b"/>
+                  <constraint ref="OntoUML.diagram.DatatypeRelationshipConstraint1*"/>
+                  <constraint ref="OntoUML.diagram.DatatypeRelationshipConstraint2*"/>
+                  <constraint ref="OntoUML.diagram.DerivationConstraint1a"/>
+                  <constraint ref="OntoUML.diagram.DerivationConstraint1b"/>
+                  <constraint ref="OntoUML.diagram.DerivationConstraint2"/>
+                  <constraint ref="OntoUML.diagram.DerivationConstraint3"/>
+                  <constraint ref="OntoUML.diagram.DerivationConstraint4"/>
+                  <constraint ref="OntoUML.diagram.DerivationConstraint5"/>
+                  <constraint ref="OntoUML.diagram.DirectedBinaryRelationshipConstraint1"/>
+                  <constraint ref="OntoUML.diagram.DirectedBinaryRelationshipConstraint2"/>
+                  <constraint ref="OntoUML.diagram.DirectedBinaryRelationshipConstraint3*"/>
+                  <constraint ref="OntoUML.diagram.DirectedBinaryRelationshipConstraint4*"/>
+                  <constraint ref="OntoUML.diagram.DirectedBinaryRelationshipConstraint5a*"/>
+                  <constraint ref="OntoUML.diagram.DirectedBinaryRelationshipConstraint5b*"/>
+                  <constraint ref="OntoUML.diagram.GeneralizationConstraint1"/>
+                  <constraint ref="OntoUML.diagram.GeneralizationConstraint2"/>
+                  <constraint ref="OntoUML.diagram.MaterialAssociationConstraint1"/>
+                  <constraint ref="OntoUML.diagram.MaterialAssociationConstraint2"/>
+                  <constraint ref="OntoUML.diagram.MaterialAssociationConstraint3"/>
+                  <constraint ref="OntoUML.diagram.MaterialAssociationConstraint4*"/>
+                  <constraint ref="OntoUML.diagram.MaterialAssociationConstraint5*"/>
+                  <constraint ref="OntoUML.diagram.MediationConstraint1"/>
+                  <constraint ref="OntoUML.diagram.MediationConstraint2"/>
+                  <constraint ref="OntoUML.diagram.MediationConstraint3"/>
+                  <constraint ref="OntoUML.diagram.MediationConstraint4"/>
+                  <constraint ref="OntoUML.diagram.MediationConstraint5"/>
+                  <constraint ref="OntoUML.diagram.memberOfConstraint1"/>
+                  <constraint ref="OntoUML.diagram.memberOfConstraint2a"/>
+                  <constraint ref="OntoUML.diagram.memberOfConstraint2b"/>
+                  <constraint ref="OntoUML.diagram.MeronymicConstraint1"/>
+                  <constraint ref="OntoUML.diagram.MeronymicConstraint2a"/>
+                  <constraint ref="OntoUML.diagram.MeronymicConstraint2b"/>
+                  <constraint ref="OntoUML.diagram.MeronymicConstraint4*"/>
+                  <constraint ref="OntoUML.diagram.MeronymicConstraint5*"/>
+                  <constraint ref="OntoUML.diagram.MeronymicConstraint6*"/>
+                  <constraint ref="OntoUML.diagram.MixinConstraint1"/>
+                  <constraint ref="OntoUML.diagram.MixinClassConstraint1"/>
+                  <constraint ref="OntoUML.diagram.MixinClassConstraint2"/>
+                  <constraint ref="OntoUML.diagram.ModeConstraint1"/>
+                  <constraint ref="OntoUML.diagram.MultiplicityElementConstraint1"/>
+                  <constraint ref="OntoUML.diagram.MultiplicityElementConstraint2"/>
+                  <constraint ref="OntoUML.diagram.MultiplicityElementConstraint3*"/>
+                  <constraint ref="OntoUML.diagram.PhaseConstraint1"/>
+                  <constraint ref="OntoUML.diagram.PhaseConstraint2"/>
+                  <constraint ref="OntoUML.diagram.PropertyConstraint1"/>
+                  <constraint ref="OntoUML.diagram.RelatorConstraint1"/>
+                  <constraint ref="OntoUML.diagram.RelatorConstraint2"/>
+                  <constraint ref="OntoUML.diagram.RoleConstraint1"/>
+                  <constraint ref="OntoUML.diagram.RoleConstraint2"/>
+                  <constraint ref="OntoUML.diagram.RoleMixinConstraint1"/>
+                  <constraint ref="OntoUML.diagram.StructuralDatatypeConstraint1*"/>
+                  <constraint ref="OntoUML.diagram.subCollectionOfConstraint1a"/>
+                  <constraint ref="OntoUML.diagram.subCollectionOfConstraint1b"/>
+                  <constraint ref="OntoUML.diagram.subCollectionOfConstraint2"/>
+                  <constraint ref="OntoUML.diagram.SubKindConstraint1"/>
+                  <constraint ref="OntoUML.diagram.subQuantityOfConstraint1"/>
+                  <constraint ref="OntoUML.diagram.subQuantityOfConstraint2a"/>
+                  <constraint ref="OntoUML.diagram.subQuantityOfConstraint2b*"/>
+                  <constraint ref="OntoUML.diagram.subQuantityOfConstraint2c*"/>
+                  <constraint ref="OntoUML.diagram.subQuantityOfConstraint3"/>
+                  <constraint ref="OntoUML.diagram.subQuantityOfConstraint4a"/>
+                  <constraint ref="OntoUML.diagram.subQuantityOfConstraint4b"/>
+                  <constraint ref="OntoUML.diagram.SubstanceSortalConstraint1"/>
+                  <constraint ref="OntoUML.diagram.SubstanceSortalConstraint2a"/>
+                  <constraint ref="OntoUML.diagram.SubstanceSortalConstraint2b"/>
+                  <constraint ref="OntoUML.diagram.SubstanceSortalConstraint3"/>
+               </binding>
+
+   </extension>
+
+
+   
+
+   <extension point="org.eclipse.ui.commands">
+      <?gmfgen generated="true"?>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="OntoUML.diagram.part.OntoUMLDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="OntoUML.diagram.updateDiagram"
+         name="%update.diagram.name"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings">
+      <?gmfgen generated="true"?>
+      <key 
+         commandId="OntoUML.diagram.updateDiagram"
+         contextId="OntoUML.diagram.ui.diagramContext"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="F5"/>
+   </extension><extension id="ValidationContributionItemProvider" name="Validation"
+      point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders">
+      <?gmfgen generated="true"?>
+      <contributionItemProvider
+         class="OntoUML.diagram.providers.OntoUMLValidationProvider">
+         <Priority name="Highest"/>
+         <partContribution id="OntoUML.diagram.part.OntoUMLDiagramEditorID">
+            <partMenuGroup menubarPath="/diagramMenu/" id="validationGroup"/>
+            <partAction id="validateAction" menubarPath="/diagramMenu/validationGroup"/>
+         </partContribution>
+      </contributionItemProvider>
+   </extension>
+<extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="OntoUML.diagram.providers.OntoUMLValidationDecoratorProvider">
+         <Priority name="Highest"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
+         <context decoratorTargets="PRIMARY_VIEW"/>
+      </decoratorProvider>
+   </extension>
+<extension point="org.eclipse.emf.validation.ui.UIRegisteredClientContext">
+      <?gmfgen generated="true"?>
+      <clientContext id="OntoUML.diagramDefaultCtx"/>
+   </extension>
+
+<extension point="org.eclipse.emf.ecore.extension_parser">
+   <?gmfgen generated="false"?>
+   <parser
+   		type="ontouml"
+   		class="OntoUML.util.OntoUMLResourceFactory">
+   </parser>
+</extension>
+
+<extension point="org.eclipse.emf.ecore.extension_parser">
+   <?gmfgen generated="false"?>
+   <parser
+         type="ontouml_diagram"
+         class="OntoUML.util.OntoUMLResourceFactory">
+   </parser>
+</extension>
+
+
+
+
+</plugin>
