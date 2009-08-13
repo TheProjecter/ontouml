@@ -1,16 +1,16 @@
 #summary How to install and run OntoUML Editor.
 #labels Phase-Deploy
 
-*Pre-requisite: a working JRE.*
+*Pre-requisite: a working JRE (Java Runtime Environment).*
 
-=Installing the plugin=
+=Installing the OntoUML Editor Eclipse plugin:=
  # Download the Eclipse Modeling Tools package for your OS in http://www.eclipse.org/downloads and unzip it (in case you do not have a working Eclipse).
  # If you have manually installed a previous version of OntoUML Editor in the "dropins" Eclipse folder, just delete the OntoUML Editor files from "dropins".
  # In Eclipse, go to Help->Software Updates->Available Software->Add Site and add the address http://ontouml.googlecode.com/svn/trunk/OntoUMLUpdateSite and click on OK. After, click on "Manage Sites", select this url or "OntoUML Editor Update Site" (if it was not selected by default) and click on OK. Click on Refresh. Now, open the repository "OntoUML Editor Update Site", select OntoUML Editor and click on Install.
  # Restart Eclipse when the installation finishes.
  # It is recommended to periodically make a search for updates: Go to Help->Software Updates->Installed Software and click on Update.
 
-=Creating a model=
+=Creating an OntoUML model:=
  # Execute Eclipse.
  # Create a project (if you don't have one): Click in File -> New -> Project... -> General -> Project -> Next -> Name it -> Next -> Next -> Finish.
  # Create an OntoUML diagram: Right click on the folder just created -> New -> Example -> OntoUML Diagram -> Next -> Give a name for the file -> Next -> Next -> Finish.
