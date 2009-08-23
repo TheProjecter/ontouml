@@ -7,7 +7,7 @@
  # Download the Eclipse Modeling Tools package for your OS in http://www.eclipse.org/downloads and unzip it (in case you do not have a working Eclipse).
  # If you have manually installed a previous version of OntoUML Editor in the "dropins" Eclipse folder, just delete the OntoUML Editor files from "dropins".
  #
-  * In Eclipse 3.5.x (Attention, still does not work with Eclipse 3.5!), go to Help->Install New Software...->Add..., then put "OntoUML Editor" (without quotes) in the "Name" field and "http://ontouml.googlecode.com/svn/trunk/OntoUMLUpdateSite" (without quotes) in the "Location" field and then click OK. Now, select "OntoUML Editor" and click on Next->Finish.
+  * In Eclipse 3.5.x (Attention, the OntoUML Editor still does not work with Eclipse 3.5!), go to Help->Install New Software...->Add..., then put "OntoUML Editor" (without quotes) in the "Name" field and "http://ontouml.googlecode.com/svn/trunk/OntoUMLUpdateSite" (without quotes) in the "Location" field and then click OK. Now, select "OntoUML Editor" and click on Next->Finish.
   * In Eclipse 3.4.2, go to Help->Software Updates->Available Software->Add Site and add the address http://ontouml.googlecode.com/svn/trunk/OntoUMLUpdateSite and click on OK. After, click on "Manage Sites", select this url or "OntoUML Editor Update Site" (if it was not selected by default) and click on OK. Click on Refresh. Now, open the repository "OntoUML Editor Update Site", select OntoUML Editor and click on Install.
  # Restart Eclipse when the installation finishes.
  # It is recommended to periodically make a search for updates: Go to Help->Software Updates->Installed Software and click on Update.
