@@ -9,6 +9,7 @@
  # Download the latest version of Alloy Analyzer from http://alloy.mit.edu/community/software to your OntoUML2Alloy project folder;
 
 =Transforming an OntoUML Model into an Alloy Model:=
+ # Execute Eclipse;
  # Click on Run → Run Conﬁgurations... → ATL Transformation → New launch conﬁguration → In “Name” put “OntoUML2Alloy” (without quotes), inside “Project”, in “Name” choose “OntoUML2Alloy” and in “ATL ﬁle” choose “/OntoUML2Alloy/OntoUML2Alloy.atl”. Within “Metamodels”, click on the top “Workspace...” button, open “OntoUML2Alloy” and select “OntoUML.ecore”. Then, click on the botton “Workspace...” button, open “OntoUML2Alloy” and select “Alloy.ecore”. Within “Source Models”, click on the “Workspace...” button and search and open your OntoUML model (the ﬁle with the “.ontouml” extension and not the “.ontouml_diagram” one). Within “Target Models”, put “/OntoUML2Alloy/aux_out.xmials” (without quotes) in the “Out:” ﬁeld;
  # Click on the “Commom” tab and select “Debug” and “Run” within “Display in favorites menu”;
  # Click in “Apply” → “Close”;
