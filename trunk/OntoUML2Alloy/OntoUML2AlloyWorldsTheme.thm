@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<alloy>
+
+<view>
+
+<defaultnode visible="no"/>
+
+<defaultedge/>
+
+<node>
+   <type name="Int"/>
+   <type name="String"/>
+   <type name="univ"/>
+   <type name="seq/Int"/>
+   <type name="world_structure/CounterfactualWorld"/>
+   <type name="world_structure/RealWorld"/>
+</node>
+
+<node hideunconnected="yes">
+   <type name="Concept"/>
+</node>
+
+<node label="$Alex">
+   <set name="$x" type="Concept"/>
+</node>
+
+<node showlabel="no">
+   <set name="this/Adult_Set" type="Concept"/>
+   <set name="this/Business_Set" type="Concept"/>
+   <set name="this/Child_Set" type="Concept"/>
+   <set name="this/Education_Set" type="Concept"/>
+   <set name="this/Enrollment_Set" type="Concept"/>
+   <set name="this/Man_Set" type="Concept"/>
+   <set name="this/Organization_Set" type="Concept"/>
+   <set name="this/Payroll_Set" type="Concept"/>
+   <set name="this/Person_Set" type="Concept"/>
+   <set name="this/Student_Set" type="Concept"/>
+   <set name="this/Teenager_Set" type="Concept"/>
+   <set name="this/Woman_Set" type="Concept"/>
+   <set name="this/Worker_Set" type="Concept"/>
+   <set name="$cw0" type="world_structure/CounterfactualWorld"/>
+   <set name="$rw0" type="world_structure/RealWorld"/>
+   <set name="$rw1" type="world_structure/RealWorld"/>
+</node>
+
+<node showlabel="no" showinattr="no">
+   <set name="$rw2" type="world_structure/RealWorld"/>
+</node>
+
+<node visible="yes" color="Blue">
+   <type name="world_structure/World"/>
+</node>
+
+<edge layout="no">
+   <relation name="access"> <type name="world_structure/World"/> <type name="world_structure/World"/> </relation>
+</edge>
+
+<edge layout="no" weight="10">
+   <relation name="nextReal"> <type name="world_structure/World"/> <type name="world_structure/RealWorld"/> </relation>
+</edge>
+
+<edge layout="yes">
+   <relation name="nextCounterfactual"> <type name="world_structure/World"/> <type name="world_structure/CounterfactualWorld"/> </relation>
+   <relation name="previousCounterfactual"> <type name="world_structure/World"/> <type name="world_structure/CounterfactualWorld"/> </relation>
+   <relation name="previousReal"> <type name="world_structure/World"/> <type name="world_structure/RealWorld"/> </relation>
+</edge>
+
+</view>
+
+</alloy>

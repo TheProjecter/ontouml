@@ -1,0 +1,327 @@
+-- @path Alloy=/Alloy.ecore
+-- @path OntoUML=/OntoUML.ecore
+
+module OntoUML2Alloy; -- Module Template
+create OUT : Alloy from IN : OntoUML;
+
+helper def: world : Alloy!Signature = OclUndefined;
+helper def: cardinality : Alloy!Cardinality = OclUndefined;
+helper def: All_Classifiers : OrderedSet(OntoUML!Classifier) = OrderedSet{};
+helper def: pairwise_disjoint_Classifiers_set : OrderedSet(OntoUML!Classifier) = OrderedSet{};
+-- helper def: path : String = '/home/alessander/Downloads/Eclipse/workspace/OntoUML2Alloy/model_out.als';
+helper def: path : String = '/home/alessander/Downloads/Eclipse/workspace/OntoUML2Alloy/aux_out.als';
+helper def: signature_text : String = '';
+helper def: fact_text : String = '';
+helper def: command_text : String = '';
+helper def: text : String = '';
+helper def: pairwise_disjoint_Classifiers : String = '';
+helper def: concept_is_abstract : String = '';
+
+helper def: derive_source(p: OntoUML!Property) : OntoUML!DirectedBinaryRelationship = OntoUML!DirectedBinaryRelationship.allInstances()->any(x | x.source->includes(p) or x.sourceAux2->includes(p));
+helper def: derive_target(p: OntoUML!Property) : OntoUML!DirectedBinaryRelationship = OntoUML!DirectedBinaryRelationship.allInstances()->any(x | x.target->includes(p) or x.targetAux2->includes(p));
+helper def: derive_endType(p: OntoUML!Property) : OntoUML!Type = if (not thisModule.derive_source(p)->oclIsUndefined()) then (if thisModule.derive_source(p).sourceAux1->forAll(x | x.oclIsKindOf(OntoUML!Type)) then thisModule.derive_source(p).sourceAux1->any(x | true) else OclUndefined endif) else if (not thisModule.derive_target(p)->oclIsUndefined()) then (if thisModule.derive_target(p).targetAux1->forAll(x | x.oclIsKindOf(OntoUML!Type)) then thisModule.derive_target(p).targetAux1->any(x | true) else OclUndefined endif) else if (p.associationEndPositionAux = 1) then p.associationEnd.associationEndAux1->any(x | true) else if (p.associationEndPositionAux = 2) then p.associationEnd.associationEndAux2->any(x | true) else OclUndefined endif endif endif endif;
+
+helper def: superTypes_set(e: OntoUML!Element) : OrderedSet(OntoUML!Element) = OntoUML!Generalization.allInstances()->select(x | x.target->any(y | true) = e)->collect(x | x.source)->flatten();
+helper def: subTypes_set(e: OntoUML!Element) : OrderedSet(OntoUML!Element) = OntoUML!Generalization.allInstances()->select(x | x.source->any(y | true) = e)->collect(x | x.target)->flatten();
+
+helper def: is_Shareable_aux(m : OrderedSet(OntoUML!Meronymic)) : String = '((@' + m.name + '.w).' + thisModule.derive_endType(m.source->any(y | true)).name + '_Set)';
+-- isShareable = false: para todos os mundos em que o cara está na relação, ele não pode estar em outra relação meronímica que não seja supertipo ou subtipo dela.
+helper def: is_Shareable(m: OntoUML!Meronymic, meronymics : OrderedSet(OntoUML!Meronymic)) : String = if (m.isShareable = false) then (let meronymics_exluding_m_super_sub_types: OrderedSet(OntoUML!Meronymic) = OntoUML!Meronymic.allInstances()->select(x | (x <> m) and (thisModule.superTypes_set(m)->excludes(x)) and (thisModule.subTypes_set(m)->excludes(x))) in if (meronymics_exluding_m_super_sub_types->size() > 0) then ('	all w: ' + thisModule.derive_endType(m.source->any(y | true)).name + '_Set.' + m.name + ' | this not in ' + meronymics_exluding_m_super_sub_types->iterate(x; str : String = '' | if ((meronymics_exluding_m_super_sub_types->first() = x) and (meronymics_exluding_m_super_sub_types->size() = 1)) then (thisModule.is_Shareable_aux(x)) else (if (meronymics_exluding_m_super_sub_types->first() = x) then ('(' + thisModule.is_Shareable_aux(x) + ' + ') else (if (meronymics_exluding_m_super_sub_types->last() = x) then (str + thisModule.is_Shareable_aux(x) + ')') else (str + thisModule.is_Shareable_aux(x) + ' + ') endif) endif) endif) + ' -- Non-shareable association.\n') else '' endif) else '' endif;
+helper def: relationship_superTypes(r: OntoUML!Relationship) : String = if (thisModule.superTypes_set(r)->size() = 0) then '' else ('	@' + r.name + ' in ' + thisModule.superTypes_set(r)->iterate(x; str : String = '' | if ((thisModule.superTypes_set(r)->first() = x) and (thisModule.superTypes_set(r)->size() = 1)) then ('@' + x.name + ' -- The supertype(s) of this relationship.\n') else (if (thisModule.superTypes_set(r)->first() = x) then ('(@' + x.name + ' & ') else (if (thisModule.superTypes_set(r)->last() = x) then (str + '@' + x.name + ') -- The supertype(s) of this relationship.\n') else (str + '@' + x.name + ' & ') endif) endif) endif)) endif; 
+helper def: isEssential_isImmutablePart(m: OntoUML!Meronymic) : String = if ((m.isEssential = true) or (m.isImmutablePart = true)) then ('	all x: ' + thisModule.derive_endType(m.source->any(y | true)).name + '_Set, w1, w2: x.(' + thisModule.derive_endType(m.target->any(y | true)).name + '_Set.(@' + m.name + '))' + ' | ((@' + m.name + ').w1).x' + ' = ((@' + m.name + ').w2).x -- ' + m.name + ' is an essential or immutablePart relationship.\n') else '' endif;
+helper def: isInseparable_isImmutableWhole(m: OntoUML!Meronymic) : String = if ((m.isInseparable = true) or (m.isImmutableWhole = true)) then ('	all w1, w2: ' + thisModule.derive_endType(m.source->any(y | true)).name + '_Set.' + m.name + ' | ' + m.name + '.w1' + ' = ' + m.name + '.w2 -- ' + m.name + ' is an inseparable or immutableWhole relationship.\n') else '' endif;
+helper def: is_Abstract_relationalClassifier(r : OntoUML!RelationalClassifier) : String = if (r.isAbstract = true) then (if (thisModule.subTypes_set(r)->size() = 0) then ('	no @' + r.name + ' -- If a relationship is abstract and have no subtypes, it can have no instances.\n') else ('	@' + r.name + ' in ' + thisModule.subTypes_set(r)->iterate(x; str : String = '' | if ((thisModule.subTypes_set(r)->first() = x) and (thisModule.subTypes_set(r)->size() = 1)) then ('@' + x.name + ' -- If x exemplifies an abstract relationship R in a world w, then it must also exemplifies at least one subtype of R in w.\n') else (if (thisModule.subTypes_set(r)->first() = x) then ('(@' + x.name + ' + ') else (if (thisModule.subTypes_set(r)->last() = x) then (str + '@' + x.name + ') -- If x exemplifies an abstract relationship R in a world w, then it must also exemplifies at least one subtype of R in w.\n') else (str + '@' + x.name + ' + ') endif) endif) endif)) endif) else '' endif; 
+
+helper def: pairwise_disjoint_Classifiers_aux1(s: OrderedSet(OntoUML!SubstanceSortal)) : String = s->iterate(x; str : String = '' | if ((s->first() = x) and (s->size() = 1)) then (x.name) else (if (s->first() = x) then ('(' + x.name + ' + ') else (if (s->last() = x) then (str + x.name + ')') else (str + x.name + ' + ') endif) endif) endif);
+helper def: pairwise_disjoint_Classifiers_aux2(s: OrderedSet(OntoUML!SubstanceSortal)) : String = if (s->size() > 2) then ('(no (' + s.first().name + ' & ' + thisModule.pairwise_disjoint_Classifiers_aux1(s->excluding(s.first())) + ')) and ' + thisModule.pairwise_disjoint_Classifiers_aux2(s->excluding(s.first()))) else ('(no (' + s.first().name + ' & ' + thisModule.pairwise_disjoint_Classifiers_aux1(s->excluding(s.first())) + ')) -- Pairwise disjoint instances.\n}\n') endif;
+
+helper def: source_existence(x: OntoUML!DirectedRelationship, c:OntoUML!Class) : String = '	' + thisModule.derive_endType(x.source->any(y | true)).name + '_Set.' + x.name + ' in ' + c.name + ' -- ' + x.name + ' associations can only exists in worlds in which its source (' + c.name + ' instances) exists.\n';
+helper def: target_existence(x: OntoUML!DirectedRelationship) : String = '	all x: ' + x.name + '.World | (x.' + x.name + ' in x.@' + thisModule.derive_endType(x.source->any(y | true)).name + ') -- ' + x.name + ' associations can only exists in worlds in which its target (' + thisModule.derive_endType(x.source->any(y | true)).name + ' instances) exists.\n';
+helper def: association_first_existence(x: OntoUML!DirectedRelationship, c:OntoUML!Class) : String = '	' + thisModule.derive_endType(x.associationEnd->at(1)).name + '_Set.' + x.name + ' in ' + c.name + ' -- ' + x.name + ' associations can only exists in worlds in which its source (' + c.name + ' instances) exists.\n';
+helper def: association_second_existence(x: OntoUML!DirectedRelationship) : String = '	all x: ' + x.name + '.World | (x.' + x.name + ' in x.@' + thisModule.derive_endType(x.associationEnd->at(1)).name + ') -- ' + x.name + ' associations can only exists in worlds in which its target (' + thisModule.derive_endType(x.associationEnd->at(1)).name + ' instances) exists.\n';
+
+-- Minimum cardinalities which are equal to zero are not modeled, because any set has a non-negative number of elements.
+-- Maximum cardinalities that are equal to infinity (constraintless) are not modeled too.
+helper def: source_min_cardinality(d: OntoUML!DirectedRelationship, property : OntoUML!Property) : String = '#(((@' + d.name + ').w).this) >= ' + property.lower.toString();
+helper def: source_max_cardinality(d: OntoUML!DirectedRelationship, property : OntoUML!Property) : String = '#(((@' + d.name + ').w).this) <= ' + property.upper.toString();
+helper def: source_exactly_cardinality(d: OntoUML!DirectedRelationship, property : OntoUML!Property) : String = '#(((@' + d.name + ').w).this) = ' + property.lower.toString();
+helper def: source_cardinalities(x: OntoUML!DirectedRelationship, c: OntoUML!Classifier) : String = let source_property : OntoUML!Property = x.target->any(y | true) in let target_property : OntoUML!Property = x.source->any(y | true) in (if ((source_property.lower = 0) and (source_property.upper = 0-1)) then ('') else ('	all w: ' + c.name + ' | ' + if (source_property.lower = source_property.upper) then (thisModule.source_exactly_cardinality(x, source_property)) else (if (source_property.upper = 0-1) then (thisModule.source_min_cardinality(x, source_property)) else (if (source_property.lower = 0) then (thisModule.source_max_cardinality(x, source_property)) else ('(' + thisModule.source_min_cardinality(x, source_property) + ') and (' + thisModule.source_max_cardinality(x, source_property) + ')') endif) endif) endif + ' -- Source cardinalities of the relation ' + x.name + '.\n') endif);
+helper def: target_min_cardinality(d: OntoUML!DirectedRelationship, property : OntoUML!Property) : String = '#(' + d.name + '.w) >= ' + property.lower.toString();
+helper def: target_max_cardinality(d: OntoUML!DirectedRelationship, property : OntoUML!Property) : String = '#(' + d.name + '.w) <= ' + property.upper.toString();
+helper def: target_exactly_cardinality(d: OntoUML!DirectedRelationship, property : OntoUML!Property) : String = '#(' + d.name + '.w) = ' + property.lower.toString();
+helper def: target_cardinalities(x: OntoUML!DirectedRelationship, c: OntoUML!Classifier) : String = let source_property : OntoUML!Property = x.target->any(y | true) in let target_property : OntoUML!Property = x.source->any(y | true) in (if ((target_property.lower = 0) and (target_property.upper = 0-1)) then ('') else ('	all w: ' + c.name + ' | ' + if (target_property.lower = target_property.upper) then (thisModule.target_exactly_cardinality(x, target_property)) else (if (target_property.upper = 0-1) then (thisModule.target_min_cardinality(x, target_property)) else (if (target_property.lower = 0) then (thisModule.target_max_cardinality(x, target_property)) else ('(' + thisModule.target_min_cardinality(x, target_property) + ') and (' + thisModule.target_max_cardinality(x, target_property) + ')') endif) endif) endif + ' -- Target cardinalities of the relation ' + x.name + '.\n') endif);
+helper def: association_first_min_cardinality(a : OntoUML!Association, property : OntoUML!Property) : String = '#(((@' + a.name + ').w).this) >= ' + property.lower.toString();
+helper def: association_first_max_cardinality(a : OntoUML!Association, property : OntoUML!Property) : String = '#(((@' + a.name + ').w).this) <= ' + property.upper.toString();
+helper def: association_first_exactly_cardinality(a : OntoUML!Association, property : OntoUML!Property) : String = '#(((@' + a.name + ').w).this) = ' + property.lower.toString();
+helper def: association_first_cardinalities(x : OntoUML!Association, c: OntoUML!Classifier) : String = let source_property : OntoUML!Property = x.associationEnd->at(2) in let target_property : OntoUML!Property = x.associationEnd->at(1) in (if ((source_property.lower = 0) and (source_property.upper = 0-1)) then ('') else ('	all w: ' + c.name + ' | ' + if (source_property.lower = source_property.upper) then (thisModule.association_first_exactly_cardinality(x, source_property)) else (if (source_property.upper = 0-1) then (thisModule.association_first_min_cardinality(x, source_property)) else (if (source_property.lower = 0) then (thisModule.association_first_max_cardinality(x, source_property)) else ('(' + thisModule.association_first_min_cardinality(x, source_property) + ') and (' + thisModule.association_first_max_cardinality(x, source_property) + ')') endif) endif) endif + ' -- Cardinalities of the first extremity of the relation ' + x.name + '.\n') endif);
+helper def: association_second_min_cardinality(a : OntoUML!Association, property : OntoUML!Property) : String = '#(' + a.name + '.w) >= ' + property.lower.toString();
+helper def: association_second_max_cardinality(a : OntoUML!Association, property : OntoUML!Property) : String = '#(' + a.name + '.w) <= ' + property.upper.toString();
+helper def: association_second_exactly_cardinality(a : OntoUML!Association, property : OntoUML!Property) : String = '#(' + a.name + '.w) = ' + property.lower.toString();
+helper def: association_second_cardinalities(x : OntoUML!Association, c: OntoUML!Classifier) : String = let source_property : OntoUML!Property = x.associationEnd->at(2) in let target_property : OntoUML!Property = x.associationEnd->at(1) in (if ((target_property.lower = 0) and (target_property.upper = 0-1)) then ('') else ('	all w: ' + c.name + ' | ' + if (target_property.lower = target_property.upper) then (thisModule.association_second_exactly_cardinality(x, target_property)) else (if (target_property.upper = 0-1) then (thisModule.association_second_min_cardinality(x, target_property)) else (if (target_property.lower = 0) then (thisModule.association_second_max_cardinality(x, target_property)) else ('(' + thisModule.association_second_min_cardinality(x, target_property) + ') and (' + thisModule.association_second_max_cardinality(x, target_property) + ')') endif) endif) endif + ' -- Cardinalities of the second extremity of the relation ' + x.name + '.\n') endif);
+    
+helper def: disjoint_associations_aux1(s : OrderedSet(OntoUML!Element)) : String = s->iterate(x; str : String = '' | if ((s->first() = x) and (s->size() = 1)) then (x.name) else (if (s->first() = x) then ('(' + x.name + ' + ') else (if (s->last() = x) then (str + x.name + ')') else (str + x.name + ' + ') endif) endif) endif);
+helper def: disjoint_classes_aux1(s : OrderedSet(OntoUML!Element)) : String = s->iterate(x; str : String = '' | if ((s->first() = x) and (s->size() = 1)) then (x.name + '.w') else (if (s->first() = x) then ('(' + x.name + '.w + ') else (if (s->last() = x) then (str + x.name + '.w)') else (str + x.name + '.w + ') endif) endif) endif);
+helper def: disjoint_associations_aux2(s: OrderedSet(OntoUML!Element)) : String = if (s->size() > 2) then ('(no (' + s.first().name + ' & ' + thisModule.disjoint_associations_aux1(s->excluding(s.first())) + ')) and ' + thisModule.disjoint_associations_aux2(s->excluding(s.first()))) else ('(no (' + s.first().name + ' & ' + thisModule.disjoint_associations_aux1(s->excluding(s.first())) + ')) -- Disjoint associations.\n') endif;
+helper def: disjoint_classes_aux2(s: OrderedSet(OntoUML!Element)) : String = if (s->size() > 2) then ('(no (' + s.first().name + '.w & ' + thisModule.disjoint_classes_aux1(s->excluding(s.first())) + ')) and ' + thisModule.disjoint_classes_aux2(s->excluding(s.first()))) else ('(no (' + s.first().name + '.w & ' + thisModule.disjoint_classes_aux1(s->excluding(s.first())) + '))  -- Disjoint classes.\n') endif;
+
+helper def: relationalClassifier_source_first(r : OntoUML!RelationalClassifier, c: OntoUML!Classifier, relationalClassifiers : OrderedSet(OntoUML!RelationalClassifier)) : String = thisModule.relationship_superTypes(r) + thisModule.is_Abstract_relationalClassifier(r) + if (r.oclIsKindOf(OntoUML!DirectedBinaryRelationship)) then (thisModule.directedBinaryRelationship_source(r, c, relationalClassifiers)) else (if (r.oclIsKindOf(OntoUML!Association)) then (thisModule.association_first(r, c)) else ('') endif) endif;
+helper def: relationalClassifier_target_second(r : OntoUML!RelationalClassifier, c: OntoUML!Classifier, relationalClassifiers : OrderedSet(OntoUML!RelationalClassifier)) : String = if (r.oclIsKindOf(OntoUML!DirectedBinaryRelationship)) then (thisModule.directedBinaryRelationship_target(r, c, relationalClassifiers)) else (if (r.oclIsKindOf(OntoUML!Association)) then (thisModule.association_second(r, c)) else ('') endif) endif;
+helper def: directedBinaryRelationship_source(d : OntoUML!DirectedBinaryRelationship, c: OntoUML!Classifier, relationalClassifiers : OrderedSet(OntoUML!RelationalClassifier)) : String = if(d.oclIsKindOf(OntoUML!DatatypeRelationship)) then thisModule.datatypeRelationship(d, c) else (thisModule.source_existence(d, c) + thisModule.target_existence(d)) endif + if (d.oclIsKindOf(OntoUML!Meronymic)) then (thisModule.meronymic(d, relationalClassifiers)) else (if (d.oclIsKindOf(OntoUML!DependencyRelationship)) then (thisModule.dependencyRelationship(d)) else ('') endif) endif + thisModule.target_cardinalities(d, c);
+helper def: directedBinaryRelationship_target(d : OntoUML!DirectedBinaryRelationship, c: OntoUML!Classifier, relationalClassifiers : OrderedSet(OntoUML!RelationalClassifier)) : String = thisModule.source_cardinalities(d, c);
+helper def: datatypeRelationship(d : OntoUML!DatatypeRelationship, c: OntoUML!Classifier) : String = if (thisModule.derive_endType(d.source->any(x | true)).oclIsKindOf(OntoUML!StructuralDatatype)) then ('	all w1, w2: World, x: ' + thisModule.derive_endType(d.source->any(x | true)).name + '_Set | ((@' + d.name + ').w1).x = ((@' + d.name + ').w2).x -- The attributes of a StructuralDatatype\'s instance cannot change from world to world.\n') else '' endif;
+helper def: meronymic(m : OntoUML!Meronymic, relationalClassifiers : OrderedSet(OntoUML!RelationalClassifier)) : String = thisModule.is_Shareable(m, relationalClassifiers) + thisModule.isEssential_isImmutablePart(m) + thisModule.isInseparable_isImmutableWhole(m);
+helper def: dependencyRelationship(d : OntoUML!DependencyRelationship) : String = if (d.oclIsKindOf(OntoUML!Characterization) or d.oclIsKindOf(OntoUML!Mediation)) then ('	all x: ' + thisModule.derive_endType(d.source->any(y | true)).name + '_Set, w1, w2: x.(' + thisModule.derive_endType(d.target->any(y | true)).name + '_Set.(@' + d.name + '))' + ' | ((@' + d.name + ').w1).x' + ' = ((@' + d.name + ').w2).x -- ' + d.name + ' is an existential dependency relationship from ' + thisModule.derive_endType(d.source->any(y | true)).name + ' to ' + thisModule.derive_endType(d.target->any(y | true)).name + '.\n') else '' endif; -- ver a derivation
+helper def: association_first(a : OntoUML!Association, c: OntoUML!Classifier) : String = thisModule.association_first_existence(a, c) + thisModule.association_second_existence(a) + if (a.oclIsKindOf(OntoUML!MaterialAssociation)) then thisModule.materialAssociation(a, c) else '' endif + thisModule.association_second_cardinalities(a, c);
+helper def: association_second(a : OntoUML!Association, c: OntoUML!Classifier) : String = thisModule.association_first_cardinalities(a, c);
+helper def: materialAssociation(m : OntoUML!MaterialAssociation, c: OntoUML!Classifier) : String = let first_property : OntoUML!Property = m.associationEnd->at(1) in (let second_property : OntoUML!Property = m.associationEnd->at(2) in (let relator : OntoUML!Relator = OntoUML!Derivation.allInstances()->select(x | x.source->exists(y | if y.oclIsKindOf(OntoUML!Property) then (thisModule.derive_endType(y) = m) else false endif))->collect(x | thisModule.derive_endType(x.target->any(y | true)))->any(x | true) in (let first_mediation : OntoUML!Mediation = OntoUML!Mediation.allInstances()->select(x | x.source->exists(y | if y.oclIsKindOf(OntoUML!Property) then (thisModule.derive_endType(y) = relator) else false endif) and x.target->exists(y | if y.oclIsKindOf(OntoUML!Property) then (thisModule.derive_endType(y) = thisModule.derive_endType(first_property)) else false endif))->any(x | true) in (let second_mediation : OntoUML!Mediation = OntoUML!Mediation.allInstances()->select(x | x.source->exists(y | if y.oclIsKindOf(OntoUML!Property) then (thisModule.derive_endType(y) = relator) else false endif) and x.target->exists(y | if y.oclIsKindOf(OntoUML!Property) then (thisModule.derive_endType(y) = thisModule.derive_endType(second_property)) else false endif))->any(x | true) in ('	all x: ' + thisModule.derive_endType(first_property).name + '_Set, w: x.' + m.name + ' | some y: ' + relator.name + '_Set | (((x.' + first_mediation.name + ').w = y) and (' + second_mediation.name + '.w = y)) -- This Material Association is derived from a Derivation relationship.\n')))));
+
+entrypoint rule World() {
+	to
+		s : Alloy!Signature
+	do {
+		s.name <- 'World';
+		thisModule.world <- s;
+		s.debug('World');
+		thisModule.signature_text <- thisModule.signature_text + 'module model_out\n\n';
+		thisModule.signature_text <- thisModule.signature_text + 'open world_structure\n\n';
+		thisModule.signature_text <- thisModule.signature_text + 'some sig Concept {\n	existsIn: set World\n}\n';
+		thisModule.command_text <- 'run {}\n\n';
+		thisModule.Concept();
+		if (thisModule.All_Classifiers->isEmpty()) {
+		    thisModule.concept_is_abstract <- 'fact Concept_is_abstract {\n	no Concept -- As an abstract class, if Concept has no subtypes, it can have no instances.\n}\n';
+		}
+		thisModule.text <- thisModule.signature_text + '\n' + thisModule.concept_is_abstract + '\n' + thisModule.pairwise_disjoint_Classifiers + '\n' + thisModule.fact_text + '\n' + thisModule.command_text;
+		thisModule.text.writeTo(thisModule.path);
+	}
+}
+
+rule Concept() {
+	to
+		s : Alloy!Signature
+	do {
+		s.name <- 'Concept';
+		thisModule.existsIn(s); -- Creates the existence relationship to a set of worlds.
+		--thisModule.signature_text <- thisModule.signature_text + 'some abstract sig Concept {' + thisModule.existsIn + '\n}\n'; -- To enable multiple inheritance.
+		thisModule.text <- thisModule.signature_text + '\n' + thisModule.concept_is_abstract + '\n' + thisModule.pairwise_disjoint_Classifiers + '\n' + thisModule.fact_text + '\n' + thisModule.command_text;
+		thisModule.text.writeTo(thisModule.path);
+	}
+}
+
+rule cardinality(l : Integer, u : Integer) {
+	to
+		c : Alloy!Cardinality (
+			lower <- l,
+			upper <- u
+		)
+	do {
+		thisModule.cardinality <- c;
+		c.debug('Cardinality');
+		thisModule.text <- thisModule.signature_text + '\n' + thisModule.concept_is_abstract + '\n' + thisModule.pairwise_disjoint_Classifiers + '\n' + thisModule.fact_text + '\n' + thisModule.command_text;
+		thisModule.text.writeTo(thisModule.path);
+	}
+}
+
+rule existsIn(s : Alloy!Signature) {
+	to
+		d: Alloy!DirectedBinaryRelationship (
+			name <- 'existsIn',
+			source <- s,
+			target <- thisModule.world
+		)
+	do {
+		thisModule.cardinality(0, 0-1); -- the only way to use the negative number -x is to use 0-x.
+		d.sourceCardinality <- thisModule.cardinality;
+		thisModule.cardinality(0, 0-1);
+		d.targetCardinality <- thisModule.cardinality;
+		d.debug('DirectedBinaryRelationship ' + d.name);
+		thisModule.existsIn <- '\n	existsIn: set World';
+		thisModule.text <- thisModule.signature_text + '\n' + thisModule.concept_is_abstract + '\n' + thisModule.pairwise_disjoint_Classifiers + '\n' + thisModule.fact_text + '\n' + thisModule.command_text;
+		thisModule.text.writeTo(thisModule.path);
+	}
+}
+
+rule DirectedBinaryRelationship2DirectedBinaryRelationship {
+    from
+    	c: OntoUML!DirectedBinaryRelationship
+    using {
+    	source_property : OntoUML!Property = OclUndefined;
+    	target_property : OntoUML!Property = OclUndefined;
+    	source_aux : OntoUML!Type = OclUndefined;
+    	target_aux : OntoUML!Type = OclUndefined;
+    }
+	to
+		d: Alloy!DirectedBinaryRelationship (
+			name <- c.name,
+			source <- thisModule.derive_endType(c.target->any(x | true)),
+			target <- thisModule.derive_endType(c.source->any(x | true))
+		)
+	do {
+		source_property <- c.target->any(x | true);
+		target_property <- c.source->any(x | true);
+		
+		-- Cardinalities.
+		thisModule.cardinality(source_property.lower, source_property.upper);
+		d.sourceCardinality <- thisModule.cardinality;
+		thisModule.cardinality(target_property.lower, target_property.upper);
+		d.targetCardinality <- thisModule.cardinality;	
+		
+		source_aux <- thisModule.derive_endType(c.target->any(x | true));
+		target_aux <- thisModule.derive_endType(c.source->any(x | true));
+		d.debug('memberOf Alloy ' + d.name + ' ' + d.source.toString() + ' ' + d.target.toString() + ' ' + d.source.name.toString() + ' ' + d.target.name.toString() + ' ' + source_aux.name + ' ' + target_aux.name);
+		--if (c.target->exists(y | if y.oclIsKindOf(OntoUML!Property) then true else false endif))
+			--c.debug('	DirectedBinaryRelationship OntoUML ' + c.name + ' ' + c.source.toString() + ' ' + c.target.toString() + ' ' + c.source->any(x | true).name + ' ' + c.target->any(x | true).name + ' ' + thisModule.derive_endType(c.target->any(x | true)).name + ' ' + thisModule.derive_endType(c.source->any(x | true)).name);
+	}
+}
+
+rule Classifier2Signature {
+	from
+		c : OntoUML!Classifier (
+		    not c.oclIsKindOf(OntoUML!RelationalClassifier) -- We won't map OntoUML relationships to Alloy signatures.
+		)
+	using {
+		relationalClassifiers_source_first : OrderedSet(OntoUML!RelationalClassifier) = OclUndefined; -- These are the Relational Classifiers declared as fields of this signature.
+		relationalClassifiers_target_second : OrderedSet(OntoUML!RelationalClassifier) = OclUndefined; -- These are the Relational Classifiers for which this signature is the target or second extremity. These Relational Classifiers are not declared in this signature.
+		directedBinaryRelationships_source : OrderedSet(OntoUML!DirectedBinaryRelationship) = OclUndefined;
+		directedBinaryRelationships_target : OrderedSet(OntoUML!DirectedBinaryRelationship) = OclUndefined;
+		associations_first : OrderedSet(OntoUML!Associations) = OclUndefined;
+		associations_second : OrderedSet(OntoUML!Associations) = OclUndefined;
+		subTypes : OrderedSet(OntoUML!Element) = thisModule.subTypes_set(c);
+		dbr : String = '';
+		signature_constraints : String = '';
+		facts : String = '';
+	}
+	to
+		s : Alloy!Signature (
+			name <- c.name + '_Set',
+			isAbstract <- c.isAbstract,
+			directedBinaryRelationships <- OntoUML!DirectedBinaryRelationship.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(OntoUML!Property) then (thisModule.derive_endType(y) = c) else false endif)),			
+			constraints <- ''
+		)
+	do {
+		s.superTypes <- thisModule.superTypes_set(c);
+		-- sem a derivation, pois é só um sintactic sugar e relação de deependencia existencial entre a relação material e o relator.
+	    directedBinaryRelationships_source <- OntoUML!DirectedBinaryRelationship.allInstances()->select(x | (not x.oclIsKindOf(OntoUML!Derivation)) and x.target->exists(y | if y.oclIsKindOf(OntoUML!Property) then (thisModule.derive_endType(y) = c) else false endif));
+	    directedBinaryRelationships_target <- OntoUML!DirectedBinaryRelationship.allInstances()->select(x | (not x.oclIsKindOf(OntoUML!Derivation)) and x.source->exists(y | if y.oclIsKindOf(OntoUML!Property) then (thisModule.derive_endType(y) = c) else false endif));
+		associations_first <- OntoUML!Association.allInstances()->select(x | if (x.associationEnd->at(2).oclIsKindOf(OntoUML!Property)) then (thisModule.derive_endType(x.associationEnd->at(2)) = c) else false endif);
+		associations_second <- OntoUML!Association.allInstances()->select(x | if (x.associationEnd->at(1).oclIsKindOf(OntoUML!Property)) then (thisModule.derive_endType(x.associationEnd->at(1)) = c) else false endif);
+		relationalClassifiers_source_first <- directedBinaryRelationships_source->union(associations_first);		
+		relationalClassifiers_target_second <- directedBinaryRelationships_target->union(associations_second);
+		signature_constraints <- '{\n';
+	    
+	    if (s.superTypes->isEmpty())
+	        signature_constraints <- signature_constraints + '	' + c.name + ' in existsIn\n';
+	    else
+	    {
+	        signature_constraints <- signature_constraints + '	this in ' + s.superTypes->iterate(x; str : String = '' | if ((s.superTypes->first() = x) and (s.superTypes->size() = 1)) then (x.name + '_Set -- The supertype of this class.\n') else (if (s.superTypes->first() = x) then ('(' + x.name + '_Set & ') else (if (s.superTypes->last() = x) then (str + x.name + '_Set) -- The supertypes of this class.\n') else (str + x.name + '_Set & ') endif) endif) endif);
+	        signature_constraints <- signature_constraints + '	' + c.name + ' in ' + s.superTypes->iterate(x; str : String = '' | if ((s.superTypes->first() = x) and (s.superTypes->size() = 1)) then ('this.' + x.name + ' -- If an instance exists as an instance of a class C in a world w, it must also be an instance of the supertypes of C in w.\n') else (if (s.superTypes->first() = x) then ('this.' + x.name + ' & ') else (if (s.superTypes->last() = x) then (str + 'this.' + x.name + ' -- If an instance exists as an instance of a class C in a world w, it must also be an instance of the supertypes of C in w.\n') else (str + 'this.' + x.name + ' & ') endif) endif) endif);
+	    }
+	        
+	    if (c.oclIsKindOf(OntoUML!RigidSortalClass) or c.oclIsKindOf(OntoUML!RigidMixinClass))
+	    	signature_constraints <- signature_constraints + '	all w1: World | w1 in ' + c.name + ' => (all w2: w1.access | (w2 in existsIn) => (w2 in ' + c.name + ')) -- Rigidity.\n';
+		else if (c.oclIsKindOf(OntoUML!AntiRigidSortalClass) or c.oclIsKindOf(OntoUML!AntiRigidMixinClass))
+	    	signature_constraints <- signature_constraints + '	some w1: World | w1 in ' + c.name + ' and (some w2: w1.access | (w2 in existsIn) and (w2 not in ' + c.name + ')) -- Anti-Rigidity.\n';
+		else if (c.oclIsKindOf(OntoUML!Datatype)) {
+		    signature_constraints <- signature_constraints + '	' + c.name + ' = World -- Datatype\'s instances must exist in every world.\n';
+		    if (c.oclIsKindOf(OntoUML!StructuralDatatype))
+		        signature_constraints <- signature_constraints + '	all w1, w2: World, x1, x2: ' + c.name + '_Set | ' + relationalClassifiers_target_second->iterate(x; str : String = '' | if ((relationalClassifiers_target_second->first() = x) and (relationalClassifiers_target_second->size() = 1)) then ('(((@' + x.name + ').w1).x1 = ((@' + x.name + ').w2).x2)') else (if (relationalClassifiers_target_second->first() = x) then ('((((@' + x.name + ').w1).x1 = ((@' + x.name + ').w2).x2) and ') else (if (relationalClassifiers_target_second->last() = x) then (str + '(((@' + x.name + ').w1).x1 = ((@' + x.name + ').w2).x2))') else (str + '(((@' + x.name + ').w1).x1 = ((@' + x.name + ').w2).x2) and ') endif) endif) endif) + ' <=> (x1 = x2) -- StructuralDatatype\'s instances which have the same values on its attributes are considered to be the same instance.\n';
+		}
+	    
+	    if (s.isAbstract = true) { -- um tipo é abstrato sse as relações de generalização de seus subtipos são completas?
+	        if (not subTypes->isEmpty()) {
+	        	signature_constraints <- signature_constraints + '	this in ' + subTypes->iterate(x; str : String = '' | if ((subTypes->first() = x) and (subTypes->size() = 1)) then (x.name + '_Set -- An instance of an abstract class must be an instance of at least one subtype of the class.\n') else (if (subTypes->first() = x) then ('(' + x.name + '_Set + ') else (if (subTypes->last() = x) then (str + x.name + '_Set) -- An instance of an abstract class must be an instance of at least one subtype of the class.\n') else (str + x.name + '_Set + ') endif) endif) endif);
+	       		signature_constraints <- signature_constraints + '	' + c.name + ' in ' + subTypes->iterate(x; str : String = '' | if ((subTypes->first() = x) and (subTypes->size() = 1)) then ('this.' + x.name + ' -- If x exemplifies an abstract class C in a world w, then it must also exemplifies at least one subtype of C in w.\n') else (if (subTypes->first() = x) then ('(this.' + x.name + ' + ') else (if (subTypes->last() = x) then (str + 'this.' + x.name + ') -- If x exemplifies an abstract class C in a world w, then it must also exemplifies at least one subtype of C in w.\n') else (str + 'this.' + x.name + ' + ') endif) endif) endif);
+	        }
+	        else {
+	            signature_constraints <- signature_constraints + '	no ' + c.name + ' -- If a class is abstract and have no subtypes, it can have no instances.\n'; 
+	        }
+	    }
+	    
+	    if (not subTypes->isEmpty()) -- If a class C is partitioned in Phase subclasses <P0,..., Pi,...,Pn>, an instance of C must possibly (in the modal sense) be an instance of all Pi's, i.e., if x is an instance of a class C, there must exist worlds in which x also instantiates every Pi.
+			signature_constraints <- let phase_subTypes : OrderedSet(OntoUML!Phase) = subTypes->select(x | x.oclIsKindOf(OntoUML!Phase)) in signature_constraints + phase_subTypes->iterate(x; str : String = '' | if ((phase_subTypes->first() = x) and (phase_subTypes->size() = 1)) then ('	some w: World | w in this.' + x.name + ' -- If a class C is partitioned in Phase subclasses <P0,..., Pi,...,Pn>, an instance of C must possibly (in the modal sense) be an instance of all Pi\'s, i.e., if x is an instance of a class C which is partitioned in Phase subclasses <P0,..., Pi,...,Pn>, there must exist worlds in which x also instantiates every Pi.\n') else (if (phase_subTypes->first() = x) then ('	some w: World | w in this.' + x.name + ' -- If a class C is partitioned in Phase subclasses <P0,..., Pi,...,Pn>, an instance of C must possibly (in the modal sense) be an instance of all Pi\'s, i.e., if x is an instance of a class C which is partitioned in Phase subclasses <P0,..., Pi,...,Pn>, there must exist worlds in which x also instantiates every Pi.\n') else (if (phase_subTypes->last() = x) then (str + '	some w: World | w in this.' + x.name + ' -- Idem.\n') else (str + '	some w: World | w in this.' + x.name + ' -- Idem.\n') endif) endif) endif);	        
+	    
+		s.debug('Class ' + s.name + ' ' + relationalClassifiers_source_first.toString() + '' + relationalClassifiers_target_second.toString());
+		if (relationalClassifiers_source_first->size() >= 1)
+			dbr <- '\n	' + c.name + ': some World,\n';
+		else
+		    dbr <- '\n	' + c.name + ': some World\n';
+		dbr <- dbr + relationalClassifiers_source_first->iterate(x; str : String = '' | let property : OntoUML!Property = (if (x.oclIsKindOf(OntoUML!DirectedBinaryRelationship)) then x.source->any(y | true) else x.associationEnd->at(1) endif) in if ((relationalClassifiers_source_first->first() = x) and (relationalClassifiers_source_first->size() = 1)) then ('	' + x.name + ': ' + thisModule.derive_endType(property).name + '_Set set -> set World\n') else (if (relationalClassifiers_source_first->first() = x) then ('	' + x.name + ': ' + thisModule.derive_endType(property).name + '_Set set -> set World,\n') else (if (relationalClassifiers_source_first->last() = x) then (str + '	' + x.name + ': ' + thisModule.derive_endType(property).name + '_Set set -> set World\n') else (str + '	' + x.name + ': ' + thisModule.derive_endType(property).name + '_Set set -> set World,\n') endif) endif) endif);
+		
+		-- Signature constraints.
+		signature_constraints <- signature_constraints + relationalClassifiers_source_first->iterate(x; str : String = '' | str + thisModule.relationalClassifier_source_first(x, c, relationalClassifiers_source_first));
+		signature_constraints <- signature_constraints + relationalClassifiers_target_second->iterate(x; str : String = '' | str + thisModule.relationalClassifier_target_second(x, c, relationalClassifiers_target_second));
+		signature_constraints <- signature_constraints + '}\n';
+		-- poderia ter usado: "all x: Person, y: WTF | y.(x.@m2) in (x.@existsIn & y.@existsIn)" para garantir que a relação só existe onde source e target existem.
+		s.constraints <- signature_constraints; -- rever isso no metamodelo, constraints é mesmo string?
+		
+		-- Constraints as facts.
+		if (c.oclIsKindOf(OntoUML!SubstanceSortal) or c.oclIsKindOf(OntoUML!MomentClass) or c.oclIsKindOf(OntoUML!Datatype)) {
+			thisModule.pairwise_disjoint_Classifiers_set <- thisModule.pairwise_disjoint_Classifiers_set->including(c);
+        	if (thisModule.pairwise_disjoint_Classifiers_set->size() >= 2) -- O Editor não proíbe herança múltipla de um Subkind para vários Kinds! Consertar!
+				thisModule.pairwise_disjoint_Classifiers <- 'fact Pairwise_disjoint_instances {\n	' + thisModule.pairwise_disjoint_Classifiers_aux2(thisModule.pairwise_disjoint_Classifiers_set);
+		}
+		
+		-- Write the signature in plain text.
+	    thisModule.signature_text <- thisModule.signature_text + 'sig ' + s.name + ' in Concept {' + dbr + '}' + signature_constraints;
+				
+		-- "Concept" is an abstract class, but the "abstract" Alloy keyword only works for extensions.
+		thisModule.All_Classifiers <- thisModule.All_Classifiers->including(c);
+		thisModule.concept_is_abstract <- 'fact Concept_is_abstract {\n	all c : Concept | c in ' + thisModule.All_Classifiers->iterate(x; str : String = '' | if ((thisModule.All_Classifiers->first() = x) and (thisModule.All_Classifiers)->size() = 1) then (x.name + '_Set') else (if (thisModule.All_Classifiers->first() = x) then ('(' + x.name + '_Set + ') else (if (thisModule.All_Classifiers->last() = x) then (str + x.name + '_Set)') else (str + x.name + '_Set + ') endif) endif) endif) + ' -- All elements of Concept must also be elements of at least one OntoUML Classifier.\n}\n';
+		
+		-- Write the signatures, facts and commands in the file.
+		thisModule.text <- thisModule.signature_text + '\n' + thisModule.concept_is_abstract + '\n' + thisModule.pairwise_disjoint_Classifiers + '\n' + thisModule.fact_text + '\n' + thisModule.command_text;
+		thisModule.text.writeTo(thisModule.path);
+	}	
+}
+
+rule GeneralizationSet2Fact {
+    from
+    	g : OntoUML!GeneralizationSet (
+    		g.isDisjoint or g.isCovering -- Otherwise, this fact would have no body.
+    	)
+    using {
+    	source : OntoUML!Element = g.generalization->collect(x | x.source)->flatten()->any(x | true); -- todas as generalizações contidas em GeneralizationSet devem ter o mesmo source! E se for disjunta, deve ter no mínimo 2 targets distintos. O editor deveria verificar isso!
+    	targets : OrderedSet(OntoUML!Element) = g.generalization->collect(x | x.target)->flatten();
+    	facts : String = '';
+    }
+    to
+    	f : Alloy!Fact (
+    	    name <- g.name,
+    	    constraints <- ''
+    	)
+    do {
+        facts <- 'fact ' + g.name + ' {\n';
+        if (targets->forAll(x | x.oclIsKindOf(OntoUML!Relationship))) { -- If the generalizations are between associations.
+            if ((g.isDisjoint = true) and (targets->size() >= 2)) {
+                facts <- facts + '	' + thisModule.disjoint_associations_aux2(targets);
+                if (g.isCovering = true)
+                	facts <- facts + '	' + source.name + ' in (' + targets->iterate(x; str : String = '' | if (targets->first() = x) then (x.name + ' + ') else (if (targets->last() = x) then (str + x.name + ')') else (str + x.name + ' + ') endif) endif) + ' -- Complete associations.\n';
+    			facts <- facts + '}\n';               
+            }
+            else {
+                if (g.isCovering = true)
+                    facts <- facts + '	' + source.name + ' in ' + targets->iterate(x; str : String = '' | if ((targets->first() = x) and (targets->size() = 1)) then (x.name) else (if (targets->first() = x) then ('(' + x.name + ' + ') else (if (targets->last() = x) then (str + x.name + ')') else (str + x.name + ' + ') endif) endif) endif) + ' -- Complete associations.\n}\n';
+            }
+        }
+    	else { -- If the generalizations are between classes.
+            if ((g.isDisjoint = true) and (targets->size() >= 2)) {
+                facts <- facts + '	all w: World | ' + thisModule.disjoint_classes_aux2(targets);
+                if (g.isCovering = true)
+                	facts <- facts + '	all x: ' + source.name + '_Set | (x in (' + targets->iterate(x; str : String = '' | if (targets->first() = x) then (x.name + '_Set + ') else (if (targets->last() = x) then (str + x.name + '_Set)') else (str + x.name + '_Set + ') endif) endif) + ') and (x.' + source.name + ' in (' + targets->iterate(x; str : String = '' | if (targets->first() = x) then ('x.' + x.name + ' + ') else (if (targets->last() = x) then (str + 'x.' + x.name) else (str + 'x.' + x.name + ' + ') endif) endif) +  ')) -- Complete classes.\n';
+    			facts <- facts + '}\n';               
+            }
+            else {
+                if (g.isCovering = true)
+                    facts <- facts + '	all x: ' + source.name + '_Set | (x in ' + targets->iterate(x; str : String = '' | if ((targets->first() = x) and (targets->size() = 1)) then (x.name + '_Set') else (if (targets->first() = x) then ('(' + x.name + '_Set + ') else (if (targets->last() = x) then (str + x.name + '_Set)') else (str + x.name + '_Set + ') endif) endif) endif) + ') and (x.' + source.name + ' in ' + targets->iterate(x; str : String = '' | if ((targets->first() = x) and (targets->size() = 1)) then ('x.' + x.name) else (if (targets->first() = x) then ('(x.' + x.name + ' + ') else (if (targets->last() = x) then (str + 'x.' + x.name + ')') else (str + 'x.' + x.name + ' + ') endif) endif) endif) +  ') -- Complete classes.\n}\n';             
+            }    	    
+    	}
+    	  	
+		-- Constraints as facts.
+        f.constraints <- facts;
+        f.debug('GeneralizationSet: ' + f.name + ', constraints: ' + f.constraints);
+        thisModule.fact_text <- thisModule.fact_text + facts;
+        
+        -- Write the signatures, facts and commands in the file.
+		thisModule.text <- thisModule.signature_text + '\n' + thisModule.concept_is_abstract + '\n' + thisModule.pairwise_disjoint_Classifiers + '\n' + thisModule.fact_text + '\n' + thisModule.command_text;
+		thisModule.text.writeTo(thisModule.path);
+    }    	
+}
