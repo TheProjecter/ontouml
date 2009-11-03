@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<alloy>
+
+<view>
+
+<defaultnode visible="no"/>
+
+<defaultedge/>
+
+<node>
+   <type name="Int"/>
+   <type name="String"/>
+   <type name="univ"/>
+   <type name="seq/Int"/>
+   <type name="world_structure/CollapsedWorld"/>
+   <set name="this/Birthday_Set" type="Concept"/>
+   <set name="this/Brain_Set" type="Concept"/>
+   <set name="this/Employee_Set" type="Concept"/>
+   <set name="this/Heart_Set" type="Concept"/>
+   <set name="this/HiringOrganization_Set" type="Concept"/>
+   <set name="this/NaturalNumber_Set" type="Concept"/>
+   <set name="this/School_Set" type="Concept"/>
+   <set name="$age0" type="Concept"/>
+   <set name="$age1" type="Concept"/>
+   <set name="$age2" type="Concept"/>
+   <set name="$age3" type="Concept"/>
+   <set name="$h1" type="Concept"/>
+   <set name="$h2" type="Concept"/>
+   <set name="$x" type="Concept"/>
+   <set name="$y&apos;&apos;" type="Concept"/>
+   <set name="$z" type="Concept"/>
+</node>
+
+<node hideunconnected="yes">
+   <type name="Concept"/>
+</node>
+
+<node showlabel="no">
+   <set name="this/Adult_Set" type="Concept"/>
+   <set name="this/Child_Set" type="Concept"/>
+   <set name="this/Enrollment_Set" type="Concept"/>
+   <set name="this/Man_Set" type="Concept"/>
+   <set name="this/Organization_Set" type="Concept"/>
+   <set name="this/Payroll_Set" type="Concept"/>
+   <set name="this/Person_Set" type="Concept"/>
+   <set name="this/Student_Set" type="Concept"/>
+   <set name="this/Teenager_Set" type="Concept"/>
+   <set name="this/Woman_Set" type="Concept"/>
+   <set name="$w0" type="world_structure/PastWorld"/>
+   <set name="$w1&apos;&apos;&apos;&apos;&apos;&apos;&apos;" type="world_structure/CollapsedWorld"/>
+   <set name="$w2&apos;&apos;&apos;&apos;&apos;&apos;&apos;" type="world_structure/CollapsedWorld"/>
+   <set name="$w3" type="world_structure/CollapsedWorld"/>
+   <set name="$w4" type="world_structure/PossibleWorld"/>
+   <set name="$w5" type="world_structure/PossibleWorld"/>
+   <set name="$w6" type="world_structure/PossibleWorld"/>
+</node>
+
+<node style="Bold">
+   <type name="world_structure/CurrentWorld"/>
+</node>
+
+<node style="Dashed">
+   <type name="world_structure/FutureWorld"/>
+   <type name="world_structure/PossibleWorld"/>
+</node>
+
+<node style="Dotted">
+   <type name="world_structure/CounterfactualWorld"/>
+</node>
+
+<node style="Solid">
+   <type name="world_structure/PastWorld"/>
+</node>
+
+<node visible="yes" color="Blue">
+   <type name="world_structure/World"/>
+</node>
+
+<edge layout="no" weight="100">
+   <relation name="nextCollapsed"> <type name="world_structure/World"/> <type name="world_structure/CollapsedWorld"/> </relation>
+</edge>
+
+<edge layout="yes">
+   <relation name="access"> <type name="world_structure/World"/> <type name="world_structure/World"/> </relation>
+   <relation name="nextPossible"> <type name="world_structure/World"/> <type name="world_structure/PossibleWorld"/> </relation>
+   <relation name="previousCollapsed"> <type name="world_structure/World"/> <type name="world_structure/CollapsedWorld"/> </relation>
+   <relation name="previousPossible"> <type name="world_structure/World"/> <type name="world_structure/PossibleWorld"/> </relation>
+</edge>
+
+</view>
+
+</alloy>
