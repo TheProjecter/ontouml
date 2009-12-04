@@ -2,7 +2,7 @@
 #labels Phase-Deploy
 
 =Installing the Transformation:=
- # Download the version 3.4.0 of Eclipse Modeling Tools package for your OS at http://www.eclipse.org/downloads/packages/eclipse-modeling-tools-includes-incubating-components/ganymeder and unzip it (in case you do not have a working Eclipse);
+ # Download the version 3.4.2 of Eclipse Modeling Tools package for your OS at http://www.eclipse.org/downloads/packages/eclipse-modeling-tools-includes-incubating-components/ganymedesr2 and unzip it (in case you do not have a working Eclipse);
  # Execute Eclipse;
  # Create an ATL project (if you do not have one): Click in File → New → Project... → ATL → ATL Project → Next → in “Name” put “OntoUML2Alloy” (without quotes) → Finish → Click in “Yes” in the “Open Associated Perspective” window;
  # Open your ﬁle manager and ﬁnd the folder of your just created OntoUML2Alloy ATL project. Then, download the ﬁles that are at http://ontouml.googlecode.com/svn/trunk/OntoUML2Alloy to this folder;
