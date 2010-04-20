@@ -18,4 +18,4 @@
  # Create an OntoUML diagram: Right click on the folder just created → New → Example → OntoUML Diagram → Next → Give a name for the file → Next → Next → Finish.
  # You are ready to create an OntoUML model!
 
-_Thank you for using OntoUML Editor!_
+_Thank you for using the OntoUML Editor!_
