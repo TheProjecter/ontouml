@@ -12,7 +12,7 @@
    * In Eclipse 3.4.2 (one can get this version at http://www.eclipse.org/downloads/packages/eclipse-modeling-tools-includes-incubating-components/ganymedesr2), go to Help → Software Updates → Available Software → Add Site and add the address http://ontouml.googlecode.com/svn/trunk/OntoUMLUpdateSite and click on OK. After, click on "Manage Sites", select this url or "OntoUML Editor Update Site" (if it was not selected by default) and click on OK. Click on Refresh. Now, open the repository "OntoUML Editor Update Site", select OntoUML Editor and click on Install.
   * Installing manually (warning: If you install manually, you will not be notified of updates): Download the latest zip file from the Downloads tab and unzip it in the "dropins" folder of your Eclipse.
  # Restart Eclipse when the installation finishes.
- # It is recommended to periodically make a search for updates (only works if installed by the repository): Go to Help → Software Updates → Installed Software and click on Update.
+ # It is recommended to periodically make a search for updates (only works if installed from the repository): Go to Help → Software Updates → Installed Software and click on Update.
 
 =Creating an OntoUML model:=
  # Execute Eclipse.
