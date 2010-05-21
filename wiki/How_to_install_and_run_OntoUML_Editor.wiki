@@ -4,7 +4,7 @@
 *Pre-requisite: a working JRE (Java Runtime Environment).*
 
 =Installing the OntoUML Editor Eclipse plugin:=
- # Download the Eclipse Modeling Tools package for your OS in http://www.eclipse.org/downloads and unzip it (in case you do not have a working Eclipse).
+ # Download the Eclipse Modeling Tools package for your OS at http://www.eclipse.org/downloads and unzip it (in case you do not have a working Eclipse).
  # If you have manually installed a previous version of OntoUML Editor in the "dropins" Eclipse folder, just delete the OntoUML Editor files from "dropins".
  # Installing:
   * Installing from the repository (Recomended):
