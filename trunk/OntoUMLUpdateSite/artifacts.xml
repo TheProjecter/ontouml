@@ -3,32 +3,37 @@
 <repository name='OntoUML Editor Update Site' type='org.eclipse.equinox.p2.artifact.repository.simpleRepository' version='1.0.0'>
   <properties size='2'>
     <property name='p2.compressed' value='false'/>
-    <property name='p2.timestamp' value='1245366160371'/>
+    <property name='p2.timestamp' value='1288121224414'/>
   </properties>
   <mappings size='3'>
     <rule filter='(&amp; (classifier=osgi.bundle))' output='${repoUrl}/plugins/${id}_${version}.jar'/>
     <rule filter='(&amp; (classifier=binary))' output='${repoUrl}/binary/${id}_${version}'/>
     <rule filter='(&amp; (classifier=org.eclipse.update.feature))' output='${repoUrl}/features/${id}_${version}.jar'/>
   </mappings>
-  <artifacts size='10'>
-    <artifact classifier='osgi.bundle' id='OntoUML.editor' version='1.1.0.v200906182002'>
-      <properties size='3'>
-        <property name='artifact.size' value='117696'/>
-        <property name='download.size' value='117696'/>
-        <property name='download.contentType' value='application/zip'/>
-      </properties>
-    </artifact>
+  <artifacts size='30'>
     <artifact classifier='org.eclipse.update.feature' id='OntoUML' version='1.1.0.v200906182002'>
       <properties size='2'>
         <property name='artifact.size' value='5434'/>
         <property name='download.size' value='5434'/>
       </properties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='OntoUML' version='1.1.0.v200906182002'>
+    <artifact classifier='osgi.bundle' id='OntoUML.diagram' version='1.1.1.v200908191342'>
       <properties size='3'>
-        <property name='artifact.size' value='484554'/>
-        <property name='download.size' value='484554'/>
+        <property name='artifact.size' value='2299413'/>
+        <property name='download.size' value='2299413'/>
         <property name='download.contentType' value='application/zip'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='OntoUML' version='1.1.1.v200908191342'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='490742'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='OntoUML.diagram' version='1.0.0.200908191325'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='2299413'/>
       </properties>
     </artifact>
     <artifact classifier='osgi.bundle' id='OntoUML' version='1.1.0.v200906161413'>
@@ -38,6 +43,12 @@
         <property name='download.contentType' value='application/zip'/>
       </properties>
     </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='OntoUML' version='1.1.0.v200906161413'>
+      <properties size='2'>
+        <property name='artifact.size' value='5436'/>
+        <property name='download.size' value='5436'/>
+      </properties>
+    </artifact>
     <artifact classifier='osgi.bundle' id='OntoUML.edit' version='1.1.0.v200906182002'>
       <properties size='3'>
         <property name='artifact.size' value='294555'/>
@@ -45,23 +56,89 @@
         <property name='download.contentType' value='application/zip'/>
       </properties>
     </artifact>
-    <artifact classifier='org.eclipse.update.feature' id='OntoUML' version='1.1.0.v200906161413'>
+    <artifact classifier='osgi.bundle' id='OntoUML' version='1.1.0.v200908191325'>
       <properties size='2'>
-        <property name='artifact.size' value='5436'/>
-        <property name='download.size' value='5436'/>
-      </properties>
-    </artifact>
-    <artifact classifier='osgi.bundle' id='OntoUML.edit' version='1.1.0.v200906161413'>
-      <properties size='3'>
-        <property name='artifact.size' value='294555'/>
-        <property name='download.size' value='294555'/>
-        <property name='download.contentType' value='application/zip'/>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='490743'/>
       </properties>
     </artifact>
     <artifact classifier='osgi.bundle' id='OntoUML.diagram' version='1.0.0.200906161413'>
       <properties size='3'>
         <property name='artifact.size' value='2067780'/>
         <property name='download.size' value='2067780'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='OntoUML' version='1.1.1.v200908191342'>
+      <properties size='3'>
+        <property name='artifact.size' value='490742'/>
+        <property name='download.size' value='490742'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='OntoUML.editor' version='1.1.1.v200908191342'>
+      <properties size='3'>
+        <property name='artifact.size' value='119973'/>
+        <property name='download.size' value='119973'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='OntoUML.diagram' version='1.0.0.200906182002'>
+      <properties size='3'>
+        <property name='artifact.size' value='2067856'/>
+        <property name='download.size' value='2067856'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='OntoUML.editor' version='1.1.1.v200908191342'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='119973'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='OntoUML.editor' version='1.1.0.v200906182002'>
+      <properties size='3'>
+        <property name='artifact.size' value='117696'/>
+        <property name='download.size' value='117696'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='OntoUML.edit' version='1.1.1.v200908191342'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='302278'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='OntoUML.editor' version='1.2.0.v201010261726'>
+      <properties size='3'>
+        <property name='artifact.size' value='118076'/>
+        <property name='download.size' value='118076'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='OntoUML.diagram' version='1.1.1.v200908191342'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='2299413'/>
+      </properties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='OntoUML' version='1.1.1.v200908191342'>
+      <properties size='2'>
+        <property name='artifact.size' value='5144'/>
+        <property name='download.size' value='5144'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='OntoUML.edit' version='1.1.1.v200908191342'>
+      <properties size='3'>
+        <property name='artifact.size' value='302278'/>
+        <property name='download.size' value='302278'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='OntoUML.edit' version='1.2.0.v201010261726'>
+      <properties size='3'>
+        <property name='artifact.size' value='294556'/>
+        <property name='download.size' value='294556'/>
         <property name='download.contentType' value='application/zip'/>
       </properties>
     </artifact>
@@ -72,11 +149,62 @@
         <property name='download.contentType' value='application/zip'/>
       </properties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='OntoUML.diagram' version='1.0.0.200906182002'>
+    <artifact classifier='osgi.bundle' id='OntoUML' version='1.1.0.v200906182002'>
       <properties size='3'>
-        <property name='artifact.size' value='2067856'/>
-        <property name='download.size' value='2067856'/>
+        <property name='artifact.size' value='484554'/>
+        <property name='download.size' value='484554'/>
         <property name='download.contentType' value='application/zip'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='OntoUML.edit' version='1.1.0.v200908191325'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='302278'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='OntoUML.diagram' version='1.2.0.v201010261726'>
+      <properties size='3'>
+        <property name='artifact.size' value='2068257'/>
+        <property name='download.size' value='2068257'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='OntoUML' version='1.2.0.v201010261726'>
+      <properties size='3'>
+        <property name='artifact.size' value='517418'/>
+        <property name='download.size' value='517418'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='OntoUML' version='1.1.1.v200908191342'>
+      <properties size='2'>
+        <property name='download.contentType' value='application/zip'/>
+        <property name='download.size' value='5144'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='OntoUML.edit' version='1.1.0.v200906161413'>
+      <properties size='3'>
+        <property name='artifact.size' value='294555'/>
+        <property name='download.size' value='294555'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='OntoUML' version='1.2.0.v201010261726'>
+      <properties size='2'>
+        <property name='artifact.size' value='17069'/>
+        <property name='download.size' value='17069'/>
+      </properties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='OntoUML' version='1.1.1.v200908191325'>
+      <properties size='2'>
+        <property name='download.contentType' value='application/zip'/>
+        <property name='download.size' value='5155'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='OntoUML.editor' version='1.1.0.v200908191325'>
+      <properties size='2'>
+        <property name='artifact.size' value='4096'/>
+        <property name='download.size' value='119973'/>
       </properties>
     </artifact>
   </artifacts>
