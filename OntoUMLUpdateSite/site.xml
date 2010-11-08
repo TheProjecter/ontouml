@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description url="http://ontouml.googlecode.com/svn/trunk/OntoUMLUpdateSite">
+      OntoUML Editor Update Site
+   </description>
+   <feature url="features/OntoUML_1.2.0.vqualifier.jar" id="OntoUML" version="1.2.0.vqualifier">
+      <category name="Model Development and Ontology Engineering"/>
+   </feature>
+   <category-def name="Model Development and Ontology Engineering" label="Model Development and Ontology Engineering">
+      <description>
+         Modeling tools for the development of ontologically well-founded conceptual models, and in particular, domain ontologies.
+      </description>
+   </category-def>
+</site>
