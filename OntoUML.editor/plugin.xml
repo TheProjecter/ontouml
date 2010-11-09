@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="OntoUML.presentation.OntoUMLModelWizardID"
+            name="%_UI_OntoUMLModelWizard_label"
+            class="OntoUML.presentation.OntoUMLModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/OntoUMLModelFile.gif">
+         <description>%_UI_OntoUMLModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="OntoUML.presentation.OntoUMLEditorID"
+            name="%_UI_OntoUMLEditor_label"
+            icon="icons/full/obj16/OntoUMLModelFile.gif"
+            extensions="ontouml"
+            class="OntoUML.presentation.OntoUMLEditor"
+            contributorClass="OntoUML.presentation.OntoUMLActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="OntoUML.URML.presentation.URMLModelWizardID"
+            name="%_UI_URMLModelWizard_label"
+            class="OntoUML.URML.presentation.URMLModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/URMLModelFile.gif">
+         <description>%_UI_URMLModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="OntoUML.URML.presentation.URMLEditorID"
+            name="%_UI_URMLEditor_label"
+            icon="icons/full/obj16/URMLModelFile.gif"
+            extensions="urml"
+            class="OntoUML.URML.presentation.URMLEditor"
+            contributorClass="OntoUML.URML.presentation.URMLActionBarContributor">
+      </editor>
+   </extension>
+   
+      <extension point="org.eclipse.emf.ecore.extension_parser">
+	  <?gmfgen generated="false"?>
+      <parser
+      		type="ontouml"
+      		class="OntoUML.util.OntoUMLResourceFactory">
+      </parser>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <?gmfgen generated="false"?>
+      <parser
+            type="ontouml_diagram"
+            class="OntoUML.util.OntoUMLResourceFactory">
+      </parser>
+   </extension>
+
+</plugin>
