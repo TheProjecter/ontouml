@@ -37,7 +37,7 @@ public class OntoUMLNewDiagramFileWizard extends Wizard {
 	/**
 	 * @generated
 	 */
-	private WizardNewFileCreationPage myFileCreationPage;
+	private OntoUML.diagram.application.WizardNewFileCreationPage myFileCreationPage;
 
 	/**
 	 * @generated
@@ -58,7 +58,7 @@ public class OntoUMLNewDiagramFileWizard extends Wizard {
 		assert diagramRoot != null : "Doagram root element must be specified"; //$NON-NLS-1$
 		assert editingDomain != null : "Editing domain must be specified"; //$NON-NLS-1$
 
-		myFileCreationPage = new WizardNewFileCreationPage(
+		myFileCreationPage = new OntoUML.diagram.application.WizardNewFileCreationPage(
 				OntoUML.diagram.part.Messages.OntoUMLNewDiagramFileWizard_CreationPageName,
 				StructuredSelection.EMPTY);
 		myFileCreationPage
@@ -110,11 +110,9 @@ public class OntoUMLNewDiagramFileWizard extends Wizard {
 	 */
 	public boolean performFinish() {
 		List affectedFiles = new LinkedList();
-		IFile diagramFile = myFileCreationPage.createNewFile();
-		OntoUML.diagram.part.OntoUMLDiagramEditorUtil.setCharset(diagramFile);
-		affectedFiles.add(diagramFile);
-		URI diagramModelURI = URI.createPlatformResourceURI(diagramFile
-				.getFullPath().toString(), true);
+		IPath diagramModelPath = myFileCreationPage.getContainerFullPath()
+				.append(myFileCreationPage.getFileName());
+		URI diagramModelURI = URI.createFileURI(diagramModelPath.toString());
 		ResourceSet resourceSet = myEditingDomain.getResourceSet();
 		final Resource diagramResource = resourceSet
 				.createResource(diagramModelURI);

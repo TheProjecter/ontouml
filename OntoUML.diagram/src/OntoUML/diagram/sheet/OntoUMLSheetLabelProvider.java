@@ -70,10 +70,6 @@ public class OntoUMLSheetLabelProvider extends DecoratingLabelProvider {
 	 */
 	public String getText(Object element) {
 		Object selected = unwrap(element);
-		if (selected instanceof OntoUML.diagram.navigator.OntoUMLNavigatorGroup) {
-			return ((OntoUML.diagram.navigator.OntoUMLNavigatorGroup) selected)
-					.getGroupName();
-		}
 		return super.getText(selected);
 	}
 

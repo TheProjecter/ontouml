@@ -174,11 +174,17 @@ public class DerivationEditPart extends ConnectionNodeEditPart implements
 			Derivation d = (Derivation) ((View) derivationeditpart.getModel())
 					.getElement();
 
+			/*			for (int i = 0; i < d.getSource().size(); ++i) {
+			 ((Property) d.getSource().get(i)).setLower(((Property) d
+			 .getSource().get(i)).derivarLowerDerivation());
+			 ((Property) d.getSource().get(i)).setUpper(((Property) d
+			 .getSource().get(i)).derivarUpperDerivation());
+			 }*/
 			for (int i = 0; i < d.getSource().size(); ++i) {
-				((Property) d.getSource().get(i)).setLower(((Property) d
-						.getSource().get(i)).derivarLowerDerivation());
-				((Property) d.getSource().get(i)).setUpper(((Property) d
-						.getSource().get(i)).derivarUpperDerivation());
+				((Property) d.getSource().get(i)).setLower(d
+						.deriveLowerDerivation());
+				((Property) d.getSource().get(i)).setUpper(d
+						.deriveUpperDerivation());
 			}
 		}
 

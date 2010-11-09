@@ -135,10 +135,10 @@ public class OntoUMLCreationWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public boolean performFinish() {
-		IRunnableWithProgress op = new WorkspaceModifyOperation(null) {
+		IRunnableWithProgress op = new IRunnableWithProgress() {
 
-			protected void execute(IProgressMonitor monitor)
-					throws CoreException, InterruptedException {
+			public void run(IProgressMonitor monitor)
+					throws InvocationTargetException, InterruptedException {
 				diagram = OntoUML.diagram.part.OntoUMLDiagramEditorUtil
 						.createDiagram(diagramModelFilePage.getURI(),
 								domainModelFilePage.getURI(), monitor);

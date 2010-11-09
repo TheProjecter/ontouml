@@ -269,6 +269,13 @@ public class ElementInitializers {
 							OntoUML.OntoUMLPackage.eINSTANCE.getProperty())
 					.evaluate(newInstance_1_0);
 			newInstance_1_0.setName((String) value_1_0_3);
+			Object value_1_0_4 = OntoUML.diagram.expressions.OntoUMLOCLFactory
+					.getExpression(
+							"if (self.target.oclIsKindOf(DatatypeRelationship)) then (if (self.target.source->forAll(x | if (x.oclIsKindOf(Property)) then (x.oclAsType(Property).endType.oclIsKindOf(StructuralDatatype)) else false endif)) then true else false endif) else false endif",
+							OntoUML.OntoUMLPackage.eINSTANCE.getProperty())
+					.evaluate(newInstance_1_0);
+			newInstance_1_0.setIsReadOnly(((Boolean) value_1_0_4)
+					.booleanValue());
 
 			Object value_2 = OntoUML.diagram.expressions.OntoUMLOCLFactory
 					.getExpression(
@@ -641,6 +648,12 @@ public class ElementInitializers {
 			} else {
 				instance.getTarget().add((OntoUML.Element) value_3);
 			}
+			Object value_4 = OntoUML.diagram.expressions.OntoUMLOCLFactory
+					.getExpression(
+							"if self.source->forAll(x | if x.oclIsKindOf(Property) then (if x.oclAsType(Property).endType.oclIsKindOf(Collective) then x.oclAsType(Property).endType.oclAsType(Collective).isExtensional else false endif) else false endif) then true else false endif",
+							OntoUML.OntoUMLPackage.eINSTANCE.getmemberOf())
+					.evaluate(instance);
+			instance.setIsEssential(((Boolean) value_4).booleanValue());
 		} catch (RuntimeException e) {
 			OntoUML.diagram.part.OntoUMLDiagramEditorPlugin.getInstance()
 					.logError("Element initialization failed", e); //$NON-NLS-1$						
@@ -700,6 +713,12 @@ public class ElementInitializers {
 			} else {
 				instance.getTarget().add((OntoUML.Element) value_3);
 			}
+			Object value_4 = OntoUML.diagram.expressions.OntoUMLOCLFactory
+					.getExpression(
+							"if self.source->forAll(x | if x.oclIsKindOf(Property) then (if x.oclAsType(Property).endType.oclIsKindOf(Collective) then x.oclAsType(Property).endType.oclAsType(Collective).isExtensional else false endif) else false endif) then true else false endif",
+							OntoUML.OntoUMLPackage.eINSTANCE
+									.getsubCollectionOf()).evaluate(instance);
+			instance.setIsEssential(((Boolean) value_4).booleanValue());
 		} catch (RuntimeException e) {
 			OntoUML.diagram.part.OntoUMLDiagramEditorPlugin.getInstance()
 					.logError("Element initialization failed", e); //$NON-NLS-1$						

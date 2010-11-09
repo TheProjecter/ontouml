@@ -17,51 +17,45 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
 /**
  * @generated
  */
-public class OntoUMLInitDiagramFileAction implements IObjectActionDelegate {
+public class OntoUMLInitDiagramFileAction implements
+		IWorkbenchWindowActionDelegate {
 
 	/**
 	 * @generated
 	 */
-	private IWorkbenchPart targetPart;
+	private IWorkbenchWindow window;
 
 	/**
 	 * @generated
 	 */
-	private URI domainModelURI;
+	public void init(IWorkbenchWindow window) {
+		this.window = window;
+	}
 
 	/**
 	 * @generated
 	 */
-	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
-		this.targetPart = targetPart;
+	public void dispose() {
+		window = null;
 	}
 
 	/**
 	 * @generated
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
-		domainModelURI = null;
-		action.setEnabled(false);
-		if (selection instanceof IStructuredSelection == false
-				|| selection.isEmpty()) {
-			return;
-		}
-		IFile file = (IFile) ((IStructuredSelection) selection)
-				.getFirstElement();
-		domainModelURI = URI.createPlatformResourceURI(file.getFullPath()
-				.toString(), true);
-		action.setEnabled(true);
 	}
 
 	/**
 	 * @generated
 	 */
 	private Shell getShell() {
-		return targetPart.getSite().getShell();
+		return window.getShell();
 	}
 
 	/**
@@ -70,25 +64,17 @@ public class OntoUMLInitDiagramFileAction implements IObjectActionDelegate {
 	public void run(IAction action) {
 		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE
 				.createEditingDomain();
-		ResourceSet resourceSet = editingDomain.getResourceSet();
-		EObject diagramRoot = null;
-		try {
-			Resource resource = resourceSet.getResource(domainModelURI, true);
-			diagramRoot = (EObject) resource.getContents().get(0);
-		} catch (WrappedException ex) {
-			OntoUML.diagram.part.OntoUMLDiagramEditorPlugin.getInstance()
-					.logError("Unable to load resource: " + domainModelURI, ex); //$NON-NLS-1$
-		}
-		if (diagramRoot == null) {
-			MessageDialog
-					.openError(
-							getShell(),
-							OntoUML.diagram.part.Messages.OntoUMLInitDiagramFileAction_InitDiagramFileResourceErrorDialogTitle,
-							OntoUML.diagram.part.Messages.OntoUMLInitDiagramFileAction_InitDiagramFileResourceErrorDialogMessage);
+		Resource resource = OntoUML.diagram.part.OntoUMLDiagramEditorUtil
+				.openModel(
+						getShell(),
+						OntoUML.diagram.part.Messages.OntoUMLInitDiagramFileAction_OpenModelFileDialogTitle,
+						editingDomain);
+		if (resource == null || resource.getContents().isEmpty()) {
 			return;
 		}
+		EObject diagramRoot = (EObject) resource.getContents().get(0);
 		Wizard wizard = new OntoUML.diagram.part.OntoUMLNewDiagramFileWizard(
-				domainModelURI, diagramRoot, editingDomain);
+				resource.getURI(), diagramRoot, editingDomain);
 		wizard
 				.setWindowTitle(NLS
 						.bind(

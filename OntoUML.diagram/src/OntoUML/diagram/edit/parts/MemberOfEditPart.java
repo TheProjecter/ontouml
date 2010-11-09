@@ -3,6 +3,7 @@ package OntoUML.diagram.edit.parts;
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
@@ -11,7 +12,10 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
 
+import OntoUML.Collective;
+import OntoUML.Element;
 import OntoUML.memberOf;
+import OntoUML.Property;
 
 /**
  * @generated
@@ -236,6 +240,32 @@ public class MemberOfEditPart extends ConnectionNodeEditPart implements
 
 		/**
 		 * <!-- begin-user-doc -->
+		 * Tests if the whole is extensional.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */
+		protected boolean testIsExtensional(memberOf m) {
+			for (int i = 0; i < m.getSource().size(); ++i)
+				if (!((Collective) ((Property) m.getSource().get(i))
+						.getEndType()).isIsExtensional())
+					return false;
+			return true;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * Set isExtensional = true in the whole.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */
+		protected void setIsExtensionalTrue(memberOf m) {
+			for (int i = 0; i < m.getSource().size(); ++i)
+				((Collective) ((Property) m.getSource().get(i)).getEndType())
+						.setIsExtensional(true);
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
 		 * Associate the correct decoration, depending on the attribute isEssential.
 		 * <!-- end-user-doc -->
 		 * @generated NOT
@@ -244,6 +274,10 @@ public class MemberOfEditPart extends ConnectionNodeEditPart implements
 				MemberOfEditPart memberofeditpart) {
 			memberOf m = (memberOf) ((View) memberofeditpart.getModel())
 					.getElement();
+			if (m.isIsEssential() && !testIsExtensional(m))
+				setIsExtensionalTrue(m);
+			if (m.isIsEssential() && !m.isIsImmutablePart())
+				m.setIsImmutablePart(true);
 			return m.isIsEssential();
 		}
 
@@ -257,7 +291,34 @@ public class MemberOfEditPart extends ConnectionNodeEditPart implements
 				MemberOfEditPart memberofeditpart) {
 			memberOf m = (memberOf) ((View) memberofeditpart.getModel())
 					.getElement();
+			if (m.isIsInseparable() && !m.isIsImmutableWhole())
+				m.setIsImmutableWhole(true);
 			return m.isIsInseparable();
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * Tests if all the Properties are readOnly.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */
+		protected boolean testReadOnly(EList<Element> e) {
+			for (int i = 0; i < e.size(); ++i)
+				if (!((Property) e.get(i)).isIsReadOnly())
+					return false;
+			return true;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * Set all Properties isReadOnly attribute to true.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */
+		protected void setReadOnlyTrue(EList<Element> e) {
+			for (int i = 0; i < e.size(); ++i) {
+				((Property) e.get(i)).setIsReadOnly(true);
+			}
 		}
 
 		/**
@@ -270,6 +331,8 @@ public class MemberOfEditPart extends ConnectionNodeEditPart implements
 				MemberOfEditPart memberofeditpart) {
 			memberOf m = (memberOf) ((View) memberofeditpart.getModel())
 					.getElement();
+			if (m.isIsImmutablePart() && !testReadOnly(m.getTarget()))
+				setReadOnlyTrue(m.getTarget());
 			if (!m.isIsEssential() && m.isIsImmutablePart())
 				return true;
 			else
@@ -286,6 +349,8 @@ public class MemberOfEditPart extends ConnectionNodeEditPart implements
 				MemberOfEditPart memberofeditpart) {
 			memberOf m = (memberOf) ((View) memberofeditpart.getModel())
 					.getElement();
+			if (m.isIsImmutableWhole() && !testReadOnly(m.getSource()))
+				setReadOnlyTrue(m.getSource());
 			if (!m.isIsInseparable() && m.isIsImmutableWhole())
 				return true;
 			else

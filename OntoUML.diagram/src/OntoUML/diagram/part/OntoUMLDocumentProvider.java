@@ -1,5 +1,6 @@
 package OntoUML.diagram.part;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -65,8 +66,7 @@ public class OntoUMLDocumentProvider extends AbstractDocumentProvider implements
 	 */
 	protected ElementInfo createElementInfo(Object element)
 			throws CoreException {
-		if (false == element instanceof FileEditorInput
-				&& false == element instanceof URIEditorInput) {
+		if (false == element instanceof URIEditorInput) {
 			throw new CoreException(
 					new Status(
 							IStatus.ERROR,
@@ -75,9 +75,8 @@ public class OntoUMLDocumentProvider extends AbstractDocumentProvider implements
 							NLS
 									.bind(
 											OntoUML.diagram.part.Messages.OntoUMLDocumentProvider_IncorrectInputError,
-											new Object[] {
-													element,
-													"org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
+											new Object[] { element,
+													"org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ 
 							null));
 		}
 		IEditorInput editorInput = (IEditorInput) element;
@@ -93,8 +92,7 @@ public class OntoUMLDocumentProvider extends AbstractDocumentProvider implements
 	 * @generated
 	 */
 	protected IDocument createDocument(Object element) throws CoreException {
-		if (false == element instanceof FileEditorInput
-				&& false == element instanceof URIEditorInput) {
+		if (false == element instanceof URIEditorInput) {
 			throw new CoreException(
 					new Status(
 							IStatus.ERROR,
@@ -103,9 +101,8 @@ public class OntoUMLDocumentProvider extends AbstractDocumentProvider implements
 							NLS
 									.bind(
 											OntoUML.diagram.part.Messages.OntoUMLDocumentProvider_IncorrectInputError,
-											new Object[] {
-													element,
-													"org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
+											new Object[] { element,
+													"org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ 
 							null));
 		}
 		IDocument document = createEmptyDocument();
@@ -135,13 +132,9 @@ public class OntoUMLDocumentProvider extends AbstractDocumentProvider implements
 		for (Iterator/*<org.eclipse.emf.ecore.resource.Resource>*/it = info
 				.getLoadedResourcesIterator(); it.hasNext();) {
 			Resource nextResource = (Resource) it.next();
-			IFile file = WorkspaceSynchronizer.getFile(nextResource);
-			if (file != null) {
-				if (file.getLocation() != null) {
-					result += file.getLocation().toFile().lastModified();
-				} else {
-					result += file.getModificationStamp();
-				}
+			File file = getFile(nextResource);
+			if (file != null && file.exists()) {
+				result += file.lastModified();
 			}
 		}
 		return result;
@@ -207,12 +200,7 @@ public class OntoUMLDocumentProvider extends AbstractDocumentProvider implements
 			throws CoreException {
 		IDiagramDocument diagramDocument = (IDiagramDocument) document;
 		TransactionalEditingDomain domain = diagramDocument.getEditingDomain();
-		if (element instanceof FileEditorInput) {
-			IStorage storage = ((FileEditorInput) element).getStorage();
-			Diagram diagram = DiagramIOUtil.load(domain, storage, true,
-					getProgressMonitor());
-			document.setContent(diagram);
-		} else if (element instanceof URIEditorInput) {
+		if (element instanceof URIEditorInput) {
 			URI uri = ((URIEditorInput) element).getURI();
 			Resource resource = null;
 			try {
@@ -278,9 +266,8 @@ public class OntoUMLDocumentProvider extends AbstractDocumentProvider implements
 							NLS
 									.bind(
 											OntoUML.diagram.part.Messages.OntoUMLDocumentProvider_IncorrectInputError,
-											new Object[] {
-													element,
-													"org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
+											new Object[] { element,
+													"org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ 
 							null));
 		}
 	}
@@ -304,9 +291,8 @@ public class OntoUMLDocumentProvider extends AbstractDocumentProvider implements
 		if (document != null) {
 			Resource diagramResource = document.getDiagram().eResource();
 			if (diagramResource != null) {
-				IFile file = WorkspaceSynchronizer.getFile(diagramResource);
-				return file == null || file.getLocation() == null
-						|| !file.getLocation().toFile().exists();
+				File file = getFile(diagramResource);
+				return file != null && !file.exists();
 			}
 		}
 		return super.isDeleted(element);
@@ -328,30 +314,6 @@ public class OntoUMLDocumentProvider extends AbstractDocumentProvider implements
 			resourceSetInfo.dispose();
 		}
 		super.disposeElementInfo(element, info);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void doValidateState(Object element, Object computationContext)
-			throws CoreException {
-		ResourceSetInfo info = getResourceSetInfo(element);
-		if (info != null) {
-			Collection/*<org.eclipse.core.resources.IFile>*/files2Validate = new ArrayList/*<org.eclipse.core.resources.IFile>*/();
-			for (Iterator/*<org.eclipse.emf.ecore.resource.Resource>*/it = info
-					.getLoadedResourcesIterator(); it.hasNext();) {
-				Resource nextResource = (Resource) it.next();
-				IFile file = WorkspaceSynchronizer.getFile(nextResource);
-				if (file != null && file.isReadOnly()) {
-					files2Validate.add(file);
-				}
-			}
-			ResourcesPlugin.getWorkspace().validateEdit(
-					(IFile[]) files2Validate.toArray(new IFile[files2Validate
-							.size()]), computationContext);
-		}
-
-		super.doValidateState(element, computationContext);
 	}
 
 	/**
@@ -382,8 +344,7 @@ public class OntoUMLDocumentProvider extends AbstractDocumentProvider implements
 	 */
 	public boolean isModifiable(Object element) {
 		if (!isStateValidated(element)) {
-			if (element instanceof FileEditorInput
-					|| element instanceof URIEditorInput) {
+			if (element instanceof URIEditorInput) {
 				return true;
 			}
 		}
@@ -415,8 +376,8 @@ public class OntoUMLDocumentProvider extends AbstractDocumentProvider implements
 			for (Iterator/*<org.eclipse.emf.ecore.resource.Resource>*/it = info
 					.getLoadedResourcesIterator(); it.hasNext();) {
 				Resource nextResource = (Resource) it.next();
-				IFile file = WorkspaceSynchronizer.getFile(nextResource);
-				if (file != null && file.isReadOnly()) {
+				File file = getFile(nextResource);
+				if (file != null && file.exists() && !file.canWrite()) {
 					info.setReadOnly(true);
 					info.setModifiable(false);
 					return;
@@ -453,117 +414,6 @@ public class OntoUMLDocumentProvider extends AbstractDocumentProvider implements
 	/**
 	 * @generated
 	 */
-	protected ISchedulingRule getResetRule(Object element) {
-		ResourceSetInfo info = getResourceSetInfo(element);
-		if (info != null) {
-			Collection/*<org.eclipse.core.runtime.jobs.ISchedulingRule>*/rules = new ArrayList/*<org.eclipse.core.runtime.jobs.ISchedulingRule>*/();
-			for (Iterator/*<org.eclipse.emf.ecore.resource.Resource>*/it = info
-					.getLoadedResourcesIterator(); it.hasNext();) {
-				Resource nextResource = (Resource) it.next();
-				IFile file = WorkspaceSynchronizer.getFile(nextResource);
-				if (file != null) {
-					rules.add(ResourcesPlugin.getWorkspace().getRuleFactory()
-							.modifyRule(file));
-				}
-			}
-			return new MultiRule((ISchedulingRule[]) rules
-					.toArray(new ISchedulingRule[rules.size()]));
-		}
-		return null;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected ISchedulingRule getSaveRule(Object element) {
-		ResourceSetInfo info = getResourceSetInfo(element);
-		if (info != null) {
-			Collection/*<org.eclipse.core.runtime.jobs.ISchedulingRule>*/rules = new ArrayList/*<org.eclipse.core.runtime.jobs.ISchedulingRule>*/();
-			for (Iterator/*<org.eclipse.emf.ecore.resource.Resource>*/it = info
-					.getLoadedResourcesIterator(); it.hasNext();) {
-				Resource nextResource = (Resource) it.next();
-				IFile file = WorkspaceSynchronizer.getFile(nextResource);
-				if (file != null) {
-					rules.add(computeSchedulingRule(file));
-				}
-			}
-			return new MultiRule((ISchedulingRule[]) rules
-					.toArray(new ISchedulingRule[rules.size()]));
-		}
-		return null;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected ISchedulingRule getSynchronizeRule(Object element) {
-		ResourceSetInfo info = getResourceSetInfo(element);
-		if (info != null) {
-			Collection/*<org.eclipse.core.runtime.jobs.ISchedulingRule>*/rules = new ArrayList/*<org.eclipse.core.runtime.jobs.ISchedulingRule>*/();
-			for (Iterator/*<org.eclipse.emf.ecore.resource.Resource>*/it = info
-					.getLoadedResourcesIterator(); it.hasNext();) {
-				Resource nextResource = (Resource) it.next();
-				IFile file = WorkspaceSynchronizer.getFile(nextResource);
-				if (file != null) {
-					rules.add(ResourcesPlugin.getWorkspace().getRuleFactory()
-							.refreshRule(file));
-				}
-			}
-			return new MultiRule((ISchedulingRule[]) rules
-					.toArray(new ISchedulingRule[rules.size()]));
-		}
-		return null;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected ISchedulingRule getValidateStateRule(Object element) {
-		ResourceSetInfo info = getResourceSetInfo(element);
-		if (info != null) {
-			Collection/*<org.eclipse.core.runtime.jobs.ISchedulingRule>*/files = new ArrayList/*<org.eclipse.core.runtime.jobs.ISchedulingRule>*/();
-			for (Iterator/*<org.eclipse.emf.ecore.resource.Resource>*/it = info
-					.getLoadedResourcesIterator(); it.hasNext();) {
-				Resource nextResource = (Resource) it.next();
-				IFile file = WorkspaceSynchronizer.getFile(nextResource);
-				if (file != null) {
-					files.add(file);
-				}
-			}
-			return ResourcesPlugin.getWorkspace().getRuleFactory()
-					.validateEditRule(
-							(IFile[]) files.toArray(new IFile[files.size()]));
-		}
-		return null;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ISchedulingRule computeSchedulingRule(IResource toCreateOrModify) {
-		if (toCreateOrModify.exists())
-			return ResourcesPlugin.getWorkspace().getRuleFactory().modifyRule(
-					toCreateOrModify);
-
-		IResource parent = toCreateOrModify;
-		do {
-			/*
-			 * XXX This is a workaround for
-			 * https://bugs.eclipse.org/bugs/show_bug.cgi?id=67601
-			 * IResourceRuleFactory.createRule should iterate the hierarchy
-			 * itself.
-			 */
-			toCreateOrModify = parent;
-			parent = toCreateOrModify.getParent();
-		} while (parent != null && !parent.exists());
-
-		return ResourcesPlugin.getWorkspace().getRuleFactory().createRule(
-				toCreateOrModify);
-	}
-
-	/**
-	 * @generated
-	 */
 	protected void doSynchronize(Object element, IProgressMonitor monitor)
 			throws CoreException {
 		ResourceSetInfo info = getResourceSetInfo(element);
@@ -590,11 +440,10 @@ public class OntoUMLDocumentProvider extends AbstractDocumentProvider implements
 						new Status(
 								IStatus.ERROR,
 								OntoUML.diagram.part.OntoUMLDiagramEditorPlugin.ID,
-								IResourceStatus.OUT_OF_SYNC_LOCAL,
+								IStatus.ERROR,
 								OntoUML.diagram.part.Messages.OntoUMLDocumentProvider_UnsynchronizedFileSaveError,
 								null));
 			}
-			info.stopResourceListening();
 			fireElementStateChanging(element);
 			try {
 				monitor
@@ -633,18 +482,11 @@ public class OntoUMLDocumentProvider extends AbstractDocumentProvider implements
 			} catch (RuntimeException x) {
 				fireElementStateChangeFailed(element);
 				throw x;
-			} finally {
-				info.startResourceListening();
 			}
 		} else {
 			URI newResoruceURI;
 			List affectedFiles = null;
-			if (element instanceof FileEditorInput) {
-				IFile newFile = ((FileEditorInput) element).getFile();
-				affectedFiles = Collections.singletonList(newFile);
-				newResoruceURI = URI.createPlatformResourceURI(newFile
-						.getFullPath().toString(), true);
-			} else if (element instanceof URIEditorInput) {
+			if (element instanceof URIEditorInput) {
 				newResoruceURI = ((URIEditorInput) element).getURI();
 			} else {
 				fireElementStateChangeFailed(element);
@@ -656,9 +498,8 @@ public class OntoUMLDocumentProvider extends AbstractDocumentProvider implements
 								NLS
 										.bind(
 												OntoUML.diagram.part.Messages.OntoUMLDocumentProvider_IncorrectInputError,
-												new Object[] {
-														element,
-														"org.eclipse.ui.part.FileEditorInput", "org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ //$NON-NLS-2$ 
+												new Object[] { element,
+														"org.eclipse.emf.common.ui.URIEditorInput" }), //$NON-NLS-1$ 
 								null));
 			}
 			if (false == document instanceof IDiagramDocument) {
@@ -711,19 +552,6 @@ public class OntoUMLDocumentProvider extends AbstractDocumentProvider implements
 	 */
 	protected void handleElementChanged(ResourceSetInfo info,
 			Resource changedResource, IProgressMonitor monitor) {
-		IFile file = WorkspaceSynchronizer.getFile(changedResource);
-		if (file != null) {
-			try {
-				file.refreshLocal(IResource.DEPTH_INFINITE, monitor);
-			} catch (CoreException ex) {
-				OntoUML.diagram.part.OntoUMLDiagramEditorPlugin
-						.getInstance()
-						.logError(
-								OntoUML.diagram.part.Messages.OntoUMLDocumentProvider_handleElementContentChanged,
-								ex);
-				// Error message to log was initially taken from org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide.internal.l10n.EditorMessages.FileDocumentProvider_handleElementContentChanged
-			}
-		}
 		changedResource.unload();
 
 		fireElementContentAboutToBeReplaced(info.getEditorInput());
@@ -745,13 +573,7 @@ public class OntoUMLDocumentProvider extends AbstractDocumentProvider implements
 	 * @generated
 	 */
 	protected void handleElementMoved(IEditorInput input, URI uri) {
-		if (input instanceof FileEditorInput) {
-			IFile newFile = ResourcesPlugin.getWorkspace().getRoot().getFile(
-					new Path(URI.decode(uri.path())).removeFirstSegments(1));
-			fireElementMoved(input, newFile == null ? null
-					: new FileEditorInput(newFile));
-			return;
-		}
+
 		// TODO: append suffix to the URI! (use diagram as a parameter)
 		fireElementMoved(input, new URIEditorInput(uri));
 	}
@@ -785,22 +607,26 @@ public class OntoUMLDocumentProvider extends AbstractDocumentProvider implements
 	/**
 	 * @generated
 	 */
+	private static File getFile(Resource resource) {
+		URI resourceUri = resource.getURI();
+		if (resourceUri != null && resourceUri.isFile()) {
+			File file = new File(resourceUri.toFileString());
+			if (!file.isDirectory()) {
+				return file;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected class ResourceSetInfo extends ElementInfo {
 
 		/**
 		 * @generated
 		 */
-		private long myModificationStamp = IResource.NULL_STAMP;
-
-		/**
-		 * @generated
-		 */
-		private WorkspaceSynchronizer mySynchronizer;
-
-		/**
-		 * @generated
-		 */
-		private Collection myUnSynchronizedResources = new ArrayList();
+		private long myModificationStamp = 0;
 
 		/**
 		 * @generated
@@ -840,7 +666,6 @@ public class OntoUMLDocumentProvider extends AbstractDocumentProvider implements
 			super(document);
 			myDocument = document;
 			myEditorInput = editorInput;
-			startResourceListening();
 			myResourceSetListener = new ResourceSetModificationListener(this);
 			getResourceSet().eAdapters().add(myResourceSetListener);
 		}
@@ -892,7 +717,6 @@ public class OntoUMLDocumentProvider extends AbstractDocumentProvider implements
 		 * @generated
 		 */
 		public void dispose() {
-			stopResourceListening();
 			getResourceSet().eAdapters().remove(myResourceSetListener);
 			for (Iterator/*<org.eclipse.emf.ecore.resource.Resource>*/it = getLoadedResourcesIterator(); it
 					.hasNext();) {
@@ -905,37 +729,7 @@ public class OntoUMLDocumentProvider extends AbstractDocumentProvider implements
 		 * @generated
 		 */
 		public boolean isSynchronized() {
-			return myUnSynchronizedResources.size() == 0;
-		}
-
-		/**
-		 * @generated
-		 */
-		public void setUnSynchronized(Resource resource) {
-			myUnSynchronizedResources.add(resource);
-		}
-
-		/**
-		 * @generated
-		 */
-		public void setSynchronized(Resource resource) {
-			myUnSynchronizedResources.remove(resource);
-		}
-
-		/**
-		 * @generated
-		 */
-		public final void stopResourceListening() {
-			mySynchronizer.dispose();
-			mySynchronizer = null;
-		}
-
-		/**
-		 * @generated
-		 */
-		public final void startResourceListening() {
-			mySynchronizer = new WorkspaceSynchronizer(getEditingDomain(),
-					new SynchronizerDelegate());
+			return getModificationStamp() == computeModificationStamp(this);
 		}
 
 		/**
@@ -978,82 +772,6 @@ public class OntoUMLDocumentProvider extends AbstractDocumentProvider implements
 		 */
 		public void setReadOnly(boolean readOnly) {
 			myReadOnly = readOnly;
-		}
-
-		/**
-		 * @generated
-		 */
-		private class SynchronizerDelegate implements
-				WorkspaceSynchronizer.Delegate {
-
-			/**
-			 * @generated
-			 */
-			public void dispose() {
-			}
-
-			/**
-			 * @generated
-			 */
-			public boolean handleResourceChanged(final Resource resource) {
-				synchronized (ResourceSetInfo.this) {
-					if (ResourceSetInfo.this.fCanBeSaved) {
-						ResourceSetInfo.this.setUnSynchronized(resource);
-						return true;
-					}
-				}
-				Display.getDefault().asyncExec(new Runnable() {
-					public void run() {
-						handleElementChanged(ResourceSetInfo.this, resource,
-								null);
-					}
-				});
-				return true;
-			}
-
-			/**
-			 * @generated
-			 */
-			public boolean handleResourceDeleted(Resource resource) {
-				synchronized (ResourceSetInfo.this) {
-					if (ResourceSetInfo.this.fCanBeSaved) {
-						ResourceSetInfo.this.setUnSynchronized(resource);
-						return true;
-					}
-				}
-				Display.getDefault().asyncExec(new Runnable() {
-					public void run() {
-						fireElementDeleted(ResourceSetInfo.this
-								.getEditorInput());
-					}
-				});
-				return true;
-			}
-
-			/**
-			 * @generated
-			 */
-			public boolean handleResourceMoved(Resource resource,
-					final URI newURI) {
-				synchronized (ResourceSetInfo.this) {
-					if (ResourceSetInfo.this.fCanBeSaved) {
-						ResourceSetInfo.this.setUnSynchronized(resource);
-						return true;
-					}
-				}
-				if (myDocument.getDiagram().eResource() == resource) {
-					Display.getDefault().asyncExec(new Runnable() {
-						public void run() {
-							handleElementMoved(ResourceSetInfo.this
-									.getEditorInput(), newURI);
-						}
-					});
-				} else {
-					handleResourceDeleted(resource);
-				}
-				return true;
-			}
-
 		}
 
 	}
@@ -1112,9 +830,6 @@ public class OntoUMLDocumentProvider extends AbstractDocumentProvider implements
 							if (modified != myInfo.fCanBeSaved) {
 								myInfo.fCanBeSaved = modified;
 								dirtyStateChanged = true;
-							}
-							if (!resource.isModified()) {
-								myInfo.setSynchronized(resource);
 							}
 						}
 						if (dirtyStateChanged) {

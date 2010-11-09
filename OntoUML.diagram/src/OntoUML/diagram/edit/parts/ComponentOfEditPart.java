@@ -2,9 +2,8 @@ package OntoUML.diagram.edit.parts;
 
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.RotatableDecoration;
-import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.impl.AdapterImpl;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
@@ -13,8 +12,9 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
 
-import OntoUML.OntoUMLPackage;
+import OntoUML.Element;
 import OntoUML.componentOf;
+import OntoUML.Property;
 
 /**
  * @generated
@@ -252,6 +252,8 @@ public class ComponentOfEditPart extends ConnectionNodeEditPart implements
 				ComponentOfEditPart componentofeditpart) {
 			componentOf c = (componentOf) ((View) componentofeditpart
 					.getModel()).getElement();
+			if (c.isIsEssential() && !c.isIsImmutablePart())
+				c.setIsImmutablePart(true);
 			return c.isIsEssential();
 		}
 
@@ -265,7 +267,34 @@ public class ComponentOfEditPart extends ConnectionNodeEditPart implements
 				ComponentOfEditPart componentofeditpart) {
 			componentOf c = (componentOf) ((View) componentofeditpart
 					.getModel()).getElement();
+			if (c.isIsInseparable() && !c.isIsImmutableWhole())
+				c.setIsImmutableWhole(true);
 			return c.isIsInseparable();
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * Tests if all the Properties are readOnly.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */
+		protected boolean testReadOnly(EList<Element> e) {
+			for (int i = 0; i < e.size(); ++i)
+				if (!((Property) e.get(i)).isIsReadOnly())
+					return false;
+			return true;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * Set all Properties isReadOnly attribute to true.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */
+		protected void setReadOnlyTrue(EList<Element> e) {
+			for (int i = 0; i < e.size(); ++i) {
+				((Property) e.get(i)).setIsReadOnly(true);
+			}
 		}
 
 		/**
@@ -278,6 +307,8 @@ public class ComponentOfEditPart extends ConnectionNodeEditPart implements
 				ComponentOfEditPart componentofeditpart) {
 			componentOf c = (componentOf) ((View) componentofeditpart
 					.getModel()).getElement();
+			if (c.isIsImmutablePart() && !testReadOnly(c.getTarget()))
+				setReadOnlyTrue(c.getTarget());
 			if (!c.isIsEssential() && c.isIsImmutablePart())
 				return true;
 			else
@@ -294,6 +325,8 @@ public class ComponentOfEditPart extends ConnectionNodeEditPart implements
 				ComponentOfEditPart componentofeditpart) {
 			componentOf c = (componentOf) ((View) componentofeditpart
 					.getModel()).getElement();
+			if (c.isIsImmutableWhole() && !testReadOnly(c.getSource()))
+				setReadOnlyTrue(c.getSource());
 			if (!c.isIsInseparable() && c.isIsImmutableWhole())
 				return true;
 			else

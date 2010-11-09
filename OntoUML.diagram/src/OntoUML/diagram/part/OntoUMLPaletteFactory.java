@@ -44,7 +44,7 @@ public class OntoUMLPaletteFactory {
 		paletteContainer.add(createRole10CreationTool());
 		paletteContainer.add(createRoleMixin11CreationTool());
 		paletteContainer.add(createSimpleDatatype12CreationTool());
-		paletteContainer.add(createStructuralDatatype13CreationTool());
+		paletteContainer.add(createStructuredDatatype13CreationTool());
 		paletteContainer.add(createSubKind14CreationTool());
 		return paletteContainer;
 	}
@@ -287,13 +287,13 @@ public class OntoUMLPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createStructuralDatatype13CreationTool() {
+	private ToolEntry createStructuredDatatype13CreationTool() {
 		List/*<IElementType>*/types = new ArrayList/*<IElementType>*/(1);
 		types
 				.add(OntoUML.diagram.providers.OntoUMLElementTypes.StructuralDatatype_2012);
 		NodeToolEntry entry = new NodeToolEntry(
-				OntoUML.diagram.part.Messages.StructuralDatatype13CreationTool_title,
-				OntoUML.diagram.part.Messages.StructuralDatatype13CreationTool_desc,
+				OntoUML.diagram.part.Messages.StructuredDatatype13CreationTool_title,
+				OntoUML.diagram.part.Messages.StructuredDatatype13CreationTool_desc,
 				types);
 		entry
 				.setSmallIcon(OntoUML.diagram.providers.OntoUMLElementTypes

@@ -223,13 +223,19 @@ public class MaterialAssociationEditPart extends ConnectionNodeEditPart
 			MaterialAssociation m = (MaterialAssociation) ((View) materialassociationeditpart
 					.getModel()).getElement();
 
-			for (int i = 0; i < m.getAssociationEnd().size(); ++i) {
-				m.getAssociationEnd().get(i).setLower(
-						m.getAssociationEnd().get(i)
-								.derivarLowerMaterialAssociation());
-				m.getAssociationEnd().get(i).setUpper(
-						m.getAssociationEnd().get(i)
-								.derivarUpperMaterialAssociation());
+			/*			for (int i = 0; i < m.getAssociationEnd().size(); ++i) {
+			 m.getAssociationEnd().get(i).setLower(
+			 m.getAssociationEnd().get(i)
+			 .derivarLowerMaterialAssociation());
+			 m.getAssociationEnd().get(i).setUpper(
+			 m.getAssociationEnd().get(i)
+			 .derivarUpperMaterialAssociation());
+			 }*/
+			if (m.existsDerivationConnected()) {
+				m.getAssociationEnd().get(0).setUpper(
+						m.deriveUpperMaterialAssociationExt1());
+				m.getAssociationEnd().get(1).setUpper(
+						m.deriveUpperMaterialAssociationExt2());
 			}
 		}
 

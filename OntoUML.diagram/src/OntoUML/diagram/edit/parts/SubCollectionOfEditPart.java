@@ -3,6 +3,7 @@ package OntoUML.diagram.edit.parts;
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
@@ -11,7 +12,9 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
 
+import OntoUML.Element;
 import OntoUML.subCollectionOf;
+import OntoUML.Property;
 
 /**
  * @generated
@@ -250,6 +253,8 @@ public class SubCollectionOfEditPart extends ConnectionNodeEditPart implements
 				SubCollectionOfEditPart subcollectionofeditpart) {
 			subCollectionOf s = (subCollectionOf) ((View) subcollectionofeditpart
 					.getModel()).getElement();
+			if (s.isIsEssential() && !s.isIsImmutablePart())
+				s.setIsImmutablePart(true);
 			return s.isIsEssential();
 		}
 
@@ -263,7 +268,34 @@ public class SubCollectionOfEditPart extends ConnectionNodeEditPart implements
 				SubCollectionOfEditPart subcollectionofeditpart) {
 			subCollectionOf s = (subCollectionOf) ((View) subcollectionofeditpart
 					.getModel()).getElement();
+			if (s.isIsInseparable() && !s.isIsImmutableWhole())
+				s.setIsImmutableWhole(true);
 			return s.isIsInseparable();
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * Tests if all the Properties are readOnly.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */
+		protected boolean testReadOnly(EList<Element> e) {
+			for (int i = 0; i < e.size(); ++i)
+				if (!((Property) e.get(i)).isIsReadOnly())
+					return false;
+			return true;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * Set all Properties isReadOnly attribute to true.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */
+		protected void setReadOnlyTrue(EList<Element> e) {
+			for (int i = 0; i < e.size(); ++i) {
+				((Property) e.get(i)).setIsReadOnly(true);
+			}
 		}
 
 		/**
@@ -276,6 +308,8 @@ public class SubCollectionOfEditPart extends ConnectionNodeEditPart implements
 				SubCollectionOfEditPart subcollectionofeditpart) {
 			subCollectionOf s = (subCollectionOf) ((View) subcollectionofeditpart
 					.getModel()).getElement();
+			if (s.isIsImmutablePart() && !testReadOnly(s.getTarget()))
+				setReadOnlyTrue(s.getTarget());
 			if (!s.isIsEssential() && s.isIsImmutablePart())
 				return true;
 			else
@@ -292,6 +326,8 @@ public class SubCollectionOfEditPart extends ConnectionNodeEditPart implements
 				SubCollectionOfEditPart subcollectionofeditpart) {
 			subCollectionOf s = (subCollectionOf) ((View) subcollectionofeditpart
 					.getModel()).getElement();
+			if (s.isIsImmutableWhole() && !testReadOnly(s.getSource()))
+				setReadOnlyTrue(s.getSource());
 			if (!s.isIsInseparable() && s.isIsImmutableWhole())
 				return true;
 			else

@@ -5,6 +5,7 @@ import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -29,6 +30,7 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import OntoUML.Classifier;
 import OntoUML.Collective;
+import OntoUML.Element;
 
 /**
  * @generated
@@ -375,6 +377,27 @@ public class CollectiveEditPart extends ShapeNodeEditPart {
 
 		/**
 		 * <!-- begin-user-doc -->
+		 * Set all isEssential = true in all members or subcollections of this Collective.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */
+		protected void setIsEssentialTrue(Collective c) {
+			EList<Element> e = c.getContainer().getInstanciarElement();
+			for (int i = 0; i < e.size(); ++i) {
+				if (e.get(i) instanceof OntoUML.Meronymic) {
+					for (int j = 0; j < ((OntoUML.Meronymic) e.get(i))
+							.getSource().size(); ++j) {
+						if (((OntoUML.Property) ((OntoUML.Meronymic) e.get(i))
+								.getSource().get(j)).getEndType() == ((OntoUML.Type) c)) {
+							((OntoUML.Meronymic) e.get(i)).setIsEssential(true);
+						}
+					}
+				}
+			}
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
 		 * Created to update the exhibition of the meta-attribute isExtensional and to update the exhibition of the attribute compartment.
 		 * <!-- end-user-doc -->
 		 * @generated NOT
@@ -385,6 +408,7 @@ public class CollectiveEditPart extends ShapeNodeEditPart {
 			if (updateFaceIsExtensional((Collective) element)) {
 				fFigureCollectiveMetaAttributeLabelFigure
 						.setText("{extensional}");
+				setIsEssentialTrue((Collective) element);
 			} else {
 				fFigureCollectiveMetaAttributeLabelFigure.setText("");
 			}
