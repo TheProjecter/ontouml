@@ -27,7 +27,7 @@ In the Downloads tab, there are binaries for different combinations of operation
  * OS: Solaris
   * Processor type: SPARC
    * Widget toolkit: GTK
- * OS: Windows NT and Windows 95 to Windows 7 (The versions of Windows that use the Win32 API)
+ * OS: Windows NT and Windows 95 up to Windows 7 (The versions of Windows that use the Win32 API)
   * Processor type: x86
    * Widget toolkit: Win32 API
    * Widget toolkit: WPF
