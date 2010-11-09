@@ -34,6 +34,8 @@ In the Downloads tab, there are binaries for different combinations of operation
   * Processor type: x86-64
    * Widget toolkit: Win32 API
 
+If you have no idea of what are those options, just download [http://ontouml.googlecode.com/files/OntoUMLEditor1.2.0.win32.win32.x86.zip OntoUMLEditor1.2.0.win32.win32.x86.zip] (you are probably using a 32 bit Windows).
+
 =Installing the OntoUML Editor Eclipse plugin:=
  # Download the Eclipse Modeling Tools package for your OS at http://www.eclipse.org/downloads and unzip it (in case you do not have a working Eclipse).
  # If you have manually installed a previous version of OntoUML Editor in the "dropins" Eclipse folder, just delete the OntoUML Editor files from "dropins".
