@@ -8,13 +8,13 @@
  # Open your ﬁle manager and ﬁnd the folder of your just created OntoUML2Alloy ATL project. Then, download the ﬁles that are at http://ontouml.googlecode.com/svn/trunk/OntoUML2Alloy to this folder;
  # Download the latest version of Alloy Analyzer from http://alloy.mit.edu/community/software to your OntoUML2Alloy project folder;
 
-=Transforming an OntoUML Model into an Alloy Model:=
+=Transforming an OntoUML Model into an Alloy Specification:=
  # Execute Eclipse;
  # Click on Run → Run Conﬁgurations... → ATL Transformation → New launch conﬁguration → In “Name” put “OntoUML2Alloy” (without quotes), inside “Project”, in “Name” choose “OntoUML2Alloy” and in “ATL ﬁle” choose “/OntoUML2Alloy/OntoUML2Alloy.atl”. Within “Metamodels”, click on the “Workspace...” button, open “OntoUML2Alloy” and select “OntoUML.ecore”. Within “Source Models”, click on the “Workspace...” button and search and open your OntoUML model (the ﬁle with the “.ontouml” extension and not the “.ontouml_diagram” one). Within “Target Models”, put “/OntoUML2Alloy/you_can_delete_this_file” (without quotes) in the “Out:” ﬁeld;
  # Click on the “Common” tab and select “Debug” and “Run” within “Display in favorites menu”;
  # Click in “Apply” → “Close”;
- # Click in the right side of the “Run” button → “OntoUML2Alloy”. The OntoUML2Alloy transformation will generate a ﬁle named “model.als”;
- # Open your ﬁle manager and ﬁnd the folder of your OntoUML2Alloy ATL project. Then, execute the ﬁle “alloy4.jar” (the Alloy Analyzer). Within Alloy Analyzer, click in “Open” and ﬁnd the ﬁle “model.als”. Then, click in “Options” → “Visualize Automatically”. Finally, click in “Execute” → “Run run$1”;
- # You can optionally use our predeﬁned themes to visualize the generated Kripke structure: Within the window of the generated ﬁgure, click in “Theme” → “Load Theme...” → Select “alloy_analyzer_theme_world_structure.thm” → “Open”. For a black and white version of this theme, select “alloy_analyzer_theme_world_structure_bw.thm” instead of “alloy_analyzer_theme_world_structure.thm”.
+ # Click in the right side of the “Run” button → “OntoUML2Alloy”. The OntoUML2Alloy transformation will generate a ﬁle named “specification.als”;
+ # Open your ﬁle manager and ﬁnd the folder of your OntoUML2Alloy ATL project. Then, execute the ﬁle “alloy4.jar” (the Alloy Analyzer). Within Alloy Analyzer, click in “Open” and ﬁnd the ﬁle “specification.als”. Then, click in “Options” → “Visualize Automatically”. Finally, click in “Execute” → “Run run$1”;
+ # You can optionally use our predeﬁned theme to visualize the generated Kripke structure: Within the window of the generated ﬁgure, click in “Theme” → “Load Theme...” → Select “alloy_analyzer_theme_world_structure.thm” → “Open”.
 
 _Thank you for using the OntoUML2Alloy ATL transformation!_
