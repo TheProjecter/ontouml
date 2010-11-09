@@ -119,7 +119,7 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="StructuralDatatype"
+          title="StructuredDatatype"
           description="Create new StructuralDatatype">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>

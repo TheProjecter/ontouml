@@ -209,6 +209,8 @@ public class ClassifierImpl extends TypeImpl implements Classifier {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case OntoUMLPackage.CLASSIFIER__ATTRIBUTE:
+				return ((InternalEList<?>)getAttribute()).basicRemove(otherEnd, msgs);
 			case OntoUMLPackage.CLASSIFIER__GENERALIZATION:
 				return ((InternalEList<?>)getGeneralization()).basicRemove(otherEnd, msgs);
 		}

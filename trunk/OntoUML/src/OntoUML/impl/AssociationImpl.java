@@ -654,6 +654,8 @@ public class AssociationImpl extends RelationshipImpl implements Association {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case OntoUMLPackage.ASSOCIATION__ATTRIBUTE:
+				return ((InternalEList<?>)getAttribute()).basicRemove(otherEnd, msgs);
 			case OntoUMLPackage.ASSOCIATION__GENERALIZATION:
 				return ((InternalEList<?>)getGeneralization()).basicRemove(otherEnd, msgs);
 			case OntoUMLPackage.ASSOCIATION__ASSOCIATION_END:

@@ -191,7 +191,7 @@ public interface URMLPackage extends EPackage {
 	int CONCLUSION__NAME = OntoUMLPackage.RELATIONAL_CLASSIFIER__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -273,7 +273,7 @@ public interface URMLPackage extends EPackage {
 	int CONDITION__NAME = OntoUMLPackage.RELATIONAL_CLASSIFIER__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -364,7 +364,7 @@ public interface URMLPackage extends EPackage {
 	int CLASSIFIER_ATOM__NAME = CONDITION__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -482,7 +482,7 @@ public interface URMLPackage extends EPackage {
 	int ROLE_TYPE_ATOM__NAME = CONCLUSION__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -582,7 +582,7 @@ public interface URMLPackage extends EPackage {
 	int BINARY_ASSOCIATION_ATOM__NAME = CONDITION__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -728,7 +728,7 @@ public interface URMLPackage extends EPackage {
 	int ATTRIBUTION_ATOM__NAME = CONCLUSION__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
