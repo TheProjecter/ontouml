@@ -67,7 +67,18 @@
   <eClassifiers xsi:type="ecore:EClass" name="Datatype" eSuperTypes="#//Classifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="DatatypeRelationship" eSuperTypes="#//DirectedBinaryRelationship"/>
   <eClassifiers xsi:type="ecore:EClass" name="DependencyRelationship" eSuperTypes="#//DirectedBinaryRelationship"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Derivation" eSuperTypes="#//DependencyRelationship"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Derivation" eSuperTypes="#//DependencyRelationship">
+    <eOperations name="deriveLowerDerivation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.eclipse.org/ocl/examples/OCL">
+        <details key="body" value="let mat:MaterialAssociation = self.source->any(true).oclAsType(Property).endType.oclAsType(MaterialAssociation), rel:Relator = self.target->any(true).oclAsType(Property).endType.oclAsType(Relator) in (let matext1:Type = mat.associationEnd->at(1).oclAsType(Property).endType.oclAsType(Type), matext2:Type = mat.associationEnd->at(2).oclAsType(Property).endType.oclAsType(Type) in (let med1:Set(Mediation) = Mediation.allInstances()->select(x | x.source->exists(y | y.oclAsType(Property).endType = rel) and x.target->exists(y | y.oclAsType(Property).endType = matext1)), med2:Set(Mediation) = Mediation.allInstances()->select(x | x.source->exists(y | y.oclAsType(Property).endType = rel) and x.target->exists(y | y.oclAsType(Property).endType = matext2)) in (let med1targetlower: Integer = med1.target->any(true).oclAsType(Property).lower, med2targetlower: Integer = med2.target->any(true).oclAsType(Property).lower in (if ((med1targetlower = -1) or (med2targetlower = -1)) then (-1) else (med1targetlower*med2targetlower) endif))))"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="deriveUpperDerivation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.eclipse.org/ocl/examples/OCL">
+        <details key="body" value="let mat:MaterialAssociation = self.source->any(true).oclAsType(Property).endType.oclAsType(MaterialAssociation), rel:Relator = self.target->any(true).oclAsType(Property).endType.oclAsType(Relator) in (let matext1:Type = mat.associationEnd->at(1).oclAsType(Property).endType.oclAsType(Type), matext2:Type = mat.associationEnd->at(2).oclAsType(Property).endType.oclAsType(Type) in (let med1:Set(Mediation) = Mediation.allInstances()->select(x | x.source->exists(y | y.oclAsType(Property).endType = rel) and x.target->exists(y | y.oclAsType(Property).endType = matext1)), med2:Set(Mediation) = Mediation.allInstances()->select(x | x.source->exists(y | y.oclAsType(Property).endType = rel) and x.target->exists(y | y.oclAsType(Property).endType = matext2)) in (let med1targetupper: Integer = med1.target->any(true).oclAsType(Property).upper, med2targetupper: Integer = med2.target->any(true).oclAsType(Property).upper in (if ((med1targetupper = -1) or (med2targetupper = -1)) then (-1) else (med1targetupper*med2targetupper) endif))))"/>
+      </eAnnotations>
+    </eOperations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DirectedBinaryRelationship" eSuperTypes="#//DirectedRelationship #//RelationalClassifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="DirectedRelationship" eSuperTypes="#//Relationship">
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
@@ -181,7 +192,23 @@
         upperBound="-1" eType="#//Generalization" eOpposite="#//Generalization/generalizationSet"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Kind" eSuperTypes="#//SubstanceSortal"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MaterialAssociation" eSuperTypes="#//Association"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MaterialAssociation" eSuperTypes="#//Association">
+    <eOperations name="deriveUpperMaterialAssociationExt1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.eclipse.org/ocl/examples/OCL">
+        <details key="body" value="let der:Derivation = Derivation.allInstances()->select(x | x.source->any(true).oclAsType(Property).endType = self)->any(true), matext1:Type = self.associationEnd->at(1).oclAsType(Property).endType.oclAsType(Type), matext2:Type = self.associationEnd->at(2).oclAsType(Property).endType.oclAsType(Type) in (let rel:Relator = der.target->any(true).oclAsType(Property).endType.oclAsType(Relator) in (let med1:Set(Mediation) = Mediation.allInstances()->select(x | x.source->exists(y | y.oclAsType(Property).endType = rel) and x.target->exists(y | y.oclAsType(Property).endType = matext1)), med2:Set(Mediation) = Mediation.allInstances()->select(x | x.source->exists(y | y.oclAsType(Property).endType = rel) and x.target->exists(y | y.oclAsType(Property).endType = matext2)) in (let med1targetupper: Integer = med1.target->any(true).oclAsType(Property).upper, med2sourceupper: Integer = med2.source->any(true).oclAsType(Property).upper in (if ((med2sourceupper = -1) or (med1targetupper = -1)) then (-1) else (med2sourceupper*med1targetupper) endif))))"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="deriveUpperMaterialAssociationExt2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.eclipse.org/ocl/examples/OCL">
+        <details key="body" value="let der:Derivation = Derivation.allInstances()->select(x | x.source->any(true).oclAsType(Property).endType = self)->any(true), matext1:Type = self.associationEnd->at(1).oclAsType(Property).endType.oclAsType(Type), matext2:Type = self.associationEnd->at(2).oclAsType(Property).endType.oclAsType(Type) in (let rel:Relator = der.target->any(true).oclAsType(Property).endType.oclAsType(Relator) in (let med1:Set(Mediation) = Mediation.allInstances()->select(x | x.source->exists(y | y.oclAsType(Property).endType = rel) and x.target->exists(y | y.oclAsType(Property).endType = matext1)), med2:Set(Mediation) = Mediation.allInstances()->select(x | x.source->exists(y | y.oclAsType(Property).endType = rel) and x.target->exists(y | y.oclAsType(Property).endType = matext2)) in (let med1sourceupper: Integer = med1.source->any(true).oclAsType(Property).upper, med2targetupper: Integer = med2.target->any(true).oclAsType(Property).upper in (if ((med1sourceupper = -1) or (med2targetupper = -1)) then (-1) else (med1sourceupper*med2targetupper) endif))))&#xA;"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="existsDerivationConnected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/ocl/examples/OCL">
+        <details key="body" value="not Derivation.allInstances()->select(x | x.source->any(true).oclAsType(Property).endType = self)->isEmpty()"/>
+      </eAnnotations>
+    </eOperations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Mediation" eSuperTypes="#//DependencyRelationship"/>
   <eClassifiers xsi:type="ecore:EClass" name="memberOf" eSuperTypes="#//Meronymic"/>
   <eClassifiers xsi:type="ecore:EClass" name="Meronymic" eSuperTypes="#//DirectedBinaryRelationship">
@@ -213,26 +240,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="ObjectClass" eSuperTypes="#//Class"/>
   <eClassifiers xsi:type="ecore:EClass" name="Phase" eSuperTypes="#//AntiRigidSortalClass"/>
   <eClassifiers xsi:type="ecore:EClass" name="Property" eSuperTypes="#//StructuralFeature">
-    <eOperations name="derivarLowerMaterialAssociation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
-      <eAnnotations source="http://www.eclipse.org/ocl/examples/OCL">
-        <details key="body" value="let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = self.endType) else false endif)), B:Set(MaterialAssociation) = MaterialAssociation.allInstances()->select(x | x.associationEnd->exists(y | y = self)) in let C:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).associationEnd->select(z | z &lt;> self)->any(true).endType) else false endif)) in let D:Set(Mediation) = A->select(x | C->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)), E:Set(Mediation) = C->select(x | A->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)) in let F:Integer = D->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).lower else 0 endif))->any(true), G:Integer = E->collect(z | z.source->collect(w | if w.oclIsKindOf(Property) then w.oclAsType(Property).lower else 0 endif))->any(true) in if ((F = -1) or (G = -1)) then (-1) else (F*G) endif"/>
-      </eAnnotations>
-    </eOperations>
-    <eOperations name="derivarUpperMaterialAssociation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
-      <eAnnotations source="http://www.eclipse.org/ocl/examples/OCL">
-        <details key="body" value="let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = self.endType) else false endif)), B:Set(MaterialAssociation) = MaterialAssociation.allInstances()->select(x | x.associationEnd->exists(y | y = self)) in let C:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).associationEnd->select(z | z &lt;> self)->any(true).endType) else false endif)) in let D:Set(Mediation) = A->select(x | C->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)), E:Set(Mediation) = C->select(x | A->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)) in let H:Integer =  D->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).upper else 0 endif))->any(true), I:Integer = E->collect(z | z.source->collect(w | if w.oclIsKindOf(Property) then w.oclAsType(Property).upper else 0 endif))->any(true) in if ((H = -1) or (I = -1)) then (-1) else (H*I) endif"/>
-      </eAnnotations>
-    </eOperations>
-    <eOperations name="derivarLowerDerivation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
-      <eAnnotations source="http://www.eclipse.org/ocl/examples/OCL">
-        <details key="body" value="let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if (y.oclIsKindOf(Property) and self.endType.oclIsKindOf(MaterialAssociation)) then self.endType.oclAsType(MaterialAssociation).associationEnd->exists(z | z.endType = y.oclAsType(Property).endType) else false endif)), B:Set(Derivation) = Derivation.allInstances()->select(x | x.source->exists(y | y = self)) in let C:Set(Mediation) = A->select(x | x.source->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).target->select(z | z.oclIsKindOf(Property))->any(true).oclAsType(Property).endType) else false endif)) in C->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).lower else 0 endif))->iterate(z; a:Integer = 1 | if ((a = -1) or (z = -1)) then (-1) else (a*z) endif)"/>
-      </eAnnotations>
-    </eOperations>
-    <eOperations name="derivarUpperDerivation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
-      <eAnnotations source="http://www.eclipse.org/ocl/examples/OCL">
-        <details key="body" value="let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if (y.oclIsKindOf(Property) and self.endType.oclIsKindOf(MaterialAssociation)) then self.endType.oclAsType(MaterialAssociation).associationEnd->exists(z | z.endType = y.oclAsType(Property).endType) else false endif)), B:Set(Derivation) = Derivation.allInstances()->select(x | x.source->exists(y | y = self)) in let C:Set(Mediation) = A->select(x | x.source->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).target->select(z | z.oclIsKindOf(Property))->any(true).oclAsType(Property).endType) else false endif)) in C->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).upper else 0 endif))->iterate(z; a:Integer = 1 | if ((a = -1) or (z = -1)) then (-1) else (a*z) endif)"/>
-      </eAnnotations>
-    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDerived" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNavigable" lowerBound="1"
