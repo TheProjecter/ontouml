@@ -3,6 +3,37 @@
 
 *Pre-requisite: a working JRE (Java Runtime Environment).*
 
+=Installing the Standalone OntoUML Editor:=
+In the Downloads tab, there are binaries for different combinations of operational systems (_viz_.: AIX, HP-UX, Linux, Mac OS X, Solaris and Windows), processor types (_viz_.: IA64-32, PowerPC, SPARC, x86 and x86-64) and widget toolkits (_viz_.: Carbon, GTK, Motif, Win32 API and WPF). You have to choose a suitable combination, the options are:
+
+ * OS: AIX
+  * Processor type: PowerPC
+   * Widget toolkit: Motif
+ * OS: HP-UX
+  * Processor type: IA64-32
+   * Widget toolkit: Motif
+ * OS: Linux
+  * Processor type: PowerPC
+   * Widget toolkit: GTK
+  * Processor type: x86
+   * Widget toolkit: GTK
+  * Processor type: x86-64
+   * Widget toolkit: GTK
+ * OS: Mac OS X
+  * Processor type: PowerPC
+   * Widget toolkit: Carbon
+  * Processor type: x86
+   * Widget toolkit: Carbon
+ * OS: Solaris
+  * Processor type: SPARC
+   * Widget toolkit: GTK
+ * OS: Windows NT and Windows 95 to Windows 7 (The versions of Windows that use the Win32 API)
+  * Processor type: x86
+   * Widget toolkit: Win32 API
+   * Widget toolkit: WPF
+  * Processor type: x86-64
+   * Widget toolkit: Win32 API
+
 =Installing the OntoUML Editor Eclipse plugin:=
  # Download the Eclipse Modeling Tools package for your OS at http://www.eclipse.org/downloads and unzip it (in case you do not have a working Eclipse).
  # If you have manually installed a previous version of OntoUML Editor in the "dropins" Eclipse folder, just delete the OntoUML Editor files from "dropins".
