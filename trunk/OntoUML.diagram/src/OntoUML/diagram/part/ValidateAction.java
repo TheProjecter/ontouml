@@ -68,16 +68,15 @@ public class ValidateAction extends Action {
 		if (workbenchPart instanceof IDiagramWorkbenchPart) {
 			final IDiagramWorkbenchPart part = (IDiagramWorkbenchPart) workbenchPart;
 			try {
-				new WorkspaceModifyDelegatingOperation(
-						new IRunnableWithProgress() {
+				new IRunnableWithProgress() {
 
-							public void run(IProgressMonitor monitor)
-									throws InterruptedException,
-									InvocationTargetException {
-								runValidation(part.getDiagramEditPart(), part
-										.getDiagram());
-							}
-						}).run(new NullProgressMonitor());
+					public void run(IProgressMonitor monitor)
+							throws InterruptedException,
+							InvocationTargetException {
+						runValidation(part.getDiagramEditPart(), part
+								.getDiagram());
+					}
+				}.run(new NullProgressMonitor());
 			} catch (Exception e) {
 				OntoUML.diagram.part.OntoUMLDiagramEditorPlugin.getInstance()
 						.logError("Validation action failed", e); //$NON-NLS-1$
@@ -153,12 +152,9 @@ public class ValidateAction extends Action {
 	 * @generated
 	 */
 	private static void validate(DiagramEditPart diagramEditPart, View view) {
-		IFile target = view.eResource() != null ? WorkspaceSynchronizer
-				.getFile(view.eResource()) : null;
-		if (target != null) {
-			OntoUML.diagram.providers.OntoUMLMarkerNavigationProvider
-					.deleteMarkers(target);
-		}
+		View target = view;
+		OntoUML.diagram.part.ValidationMarker.removeAllMarkers(diagramEditPart
+				.getViewer());
 		Diagnostic diagnostic = runEMFValidator(view);
 		createMarkers(target, diagnostic, diagramEditPart);
 		IBatchValidator validator = (IBatchValidator) ModelValidationService
@@ -168,12 +164,21 @@ public class ValidateAction extends Action {
 			IStatus status = validator.validate(view.getElement());
 			createMarkers(target, status, diagramEditPart);
 		}
+		OntoUML.diagram.providers.OntoUMLValidationDecoratorProvider
+				.refreshDecorators(view);
+		for (Iterator it = view.eAllContents(); it.hasNext();) {
+			EObject next = (EObject) it.next();
+			if (next instanceof View) {
+				OntoUML.diagram.providers.OntoUMLValidationDecoratorProvider
+						.refreshDecorators((View) next);
+			}
+		}
 	}
 
 	/**
 	 * @generated
 	 */
-	private static void createMarkers(IFile target, IStatus validationStatus,
+	private static void createMarkers(View target, IStatus validationStatus,
 			DiagramEditPart diagramEditPart) {
 		if (validationStatus.isOK()) {
 			return;
@@ -197,7 +202,7 @@ public class ValidateAction extends Action {
 	/**
 	 * @generated
 	 */
-	private static void createMarkers(IFile target,
+	private static void createMarkers(View target,
 			Diagnostic emfValidationStatus, DiagramEditPart diagramEditPart) {
 		if (emfValidationStatus.getSeverity() == Diagnostic.OK) {
 			return;
@@ -230,14 +235,14 @@ public class ValidateAction extends Action {
 	/**
 	 * @generated
 	 */
-	private static void addMarker(EditPartViewer viewer, IFile target,
+	private static void addMarker(EditPartViewer viewer, View target,
 			String elementId, String location, String message,
 			int statusSeverity) {
 		if (target == null) {
 			return;
 		}
-		OntoUML.diagram.providers.OntoUMLMarkerNavigationProvider.addMarker(
-				target, elementId, location, message, statusSeverity);
+		new OntoUML.diagram.part.ValidationMarker(location, message,
+				statusSeverity).add(viewer, elementId);
 	}
 
 	/**

@@ -23,6 +23,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String OntoUMLCreateShortcutAction_OpenModelTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String OntoUMLCreateShortcutAction_CreateShortcutTitle;
+
+	/**
+	 * @generated
+	 */
 	public static String OntoUMLCreationWizardTitle;
 
 	/**
@@ -233,6 +243,36 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String ShortcutCreationWizard_ReferencedElementSelectionPageName;
+
+	/**
+	 * @generated
+	 */
+	public static String ShortcutCreationWizard_ReferencedElementSelectionPageTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String ShortcutCreationWizard_ReferencedElementSelectionPageDescription;
+
+	/**
+	 * @generated
+	 */
+	public static String ShortcutCreationWizard_ReferencedElementSelectionPageMessage;
+
+	/**
+	 * @generated
+	 */
+	public static String ShortcutCreationWizard_ReferencedElementSelectionPageEmptyError;
+
+	/**
+	 * @generated
+	 */
+	public static String ShortcutCreationWizard_ReferencedElementSelectionPageInvalidError;
+
+	/**
+	 * @generated
+	 */
 	public static String ModelElementSelectionPageMessage;
 
 	/**
@@ -383,12 +423,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String StructuralDatatype13CreationTool_title;
+	public static String StructuredDatatype13CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StructuralDatatype13CreationTool_desc;
+	public static String StructuredDatatype13CreationTool_desc;
 
 	/**
 	 * @generated
@@ -543,6 +583,86 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String DiagramEditorActionBarAdvisor_DefaultFileEditorTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramEditorActionBarAdvisor_DefaultFileEditorMessage;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramEditorActionBarAdvisor_DefaultEditorOpenErrorTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramEditorActionBarAdvisor_AboutDialogTitle;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramEditorActionBarAdvisor_AboutDialogMessage;
+
+	/**
+	 * @generated
+	 */
+	public static String ApplicationMenuName_File;
+
+	/**
+	 * @generated
+	 */
+	public static String ApplicationMenuName_Edit;
+
+	/**
+	 * @generated
+	 */
+	public static String ApplicationMenuName_Window;
+
+	/**
+	 * @generated
+	 */
+	public static String ApplicationMenuName_Help;
+
+	/**
+	 * @generated
+	 */
+	public static String ApplicationMenuName_New;
+
+	/**
+	 * @generated
+	 */
+	public static String DiagramEditorWorkbenchWindowAdvisor_Title;
+
+	/**
+	 * @generated
+	 */
+	public static String WizardNewFileCreationPage_FileLabel;
+
+	/**
+	 * @generated
+	 */
+	public static String WizardNewFileCreationPage_BrowseButton;
+
+	/**
+	 * @generated
+	 */
+	public static String WizardNewFileCreationPage_SelectNewFileDialog;
+
+	/**
+	 * @generated
+	 */
+	public static String WizardNewFileCreationPage_EmptyFileNameError;
+
+	/**
+	 * @generated
+	 */
+	public static String WizardNewFileCreationPage_InvalidFileNameError;
+
+	/**
+	 * @generated
+	 */
 	public static String CategoryAttributeCompartmentEditPart_title;
 
 	/**
@@ -609,451 +729,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String CommandName_OpenDiagram;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Container_1000_links;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Category_2001_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Category_2001_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Collective_2002_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Collective_2002_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Kind_2003_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Kind_2003_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Mixin_2004_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Mixin_2004_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Mode_2005_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Mode_2005_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Phase_2006_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Phase_2006_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Quantity_2007_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Quantity_2007_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Relator_2008_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Relator_2008_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Role_2009_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Role_2009_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_RoleMixin_2010_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_RoleMixin_2010_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_SimpleDatatype_2011_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_SimpleDatatype_2011_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_StructuralDatatype_2012_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_StructuralDatatype_2012_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_SubKind_2013_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_SubKind_2013_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_GeneralizationSet_2014_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_GeneralizationSet_2014_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_DerivationRule_2015_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_DerivationRule_2015_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3028_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3028_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3029_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3029_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3030_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3030_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3031_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3031_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3032_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3032_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3033_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3033_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3034_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3034_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3035_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3035_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3036_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3036_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3037_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3037_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3038_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3038_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3039_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3039_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3040_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Property_3040_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Characterization_4001_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Characterization_4001_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ComponentOf_4002_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ComponentOf_4002_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_DatatypeRelationship_4019_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_DatatypeRelationship_4019_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Derivation_4004_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Derivation_4004_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_FormalAssociation_4005_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_FormalAssociation_4005_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Generalization_4006_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Generalization_4006_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_MaterialAssociation_4007_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_MaterialAssociation_4007_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Mediation_4008_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Mediation_4008_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_MemberOf_4009_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_MemberOf_4009_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_SubCollectionOf_4010_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_SubCollectionOf_4010_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_SubQuantityOf_4011_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_SubQuantityOf_4011_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_BinaryAssociationAtom_4013_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_BinaryAssociationAtom_4014_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_BinaryAssociationAtom_4015_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ClassifierAtom_4016_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ClassifierAtom_4016_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ClassifierAtom_4017_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ClassifierAtom_4017_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ClassifierAtom_4018_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ClassifierAtom_4018_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorActionProvider_OpenDiagramActionName;
 
 	/**
 	 * @generated

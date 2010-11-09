@@ -11,7 +11,8 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 /**
  * @generated
  */
-public class OntoUMLCreationWizardPage extends WizardNewFileCreationPage {
+public class OntoUMLCreationWizardPage extends
+		OntoUML.diagram.application.WizardNewFileCreationPage {
 
 	/**
 	 * @generated
@@ -40,22 +41,7 @@ public class OntoUMLCreationWizardPage extends WizardNewFileCreationPage {
 	 * @generated
 	 */
 	public URI getURI() {
-		return URI.createPlatformResourceURI(getFilePath().toString(), false);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected IPath getFilePath() {
-		IPath path = getContainerFullPath();
-		if (path == null) {
-			path = new Path(""); //$NON-NLS-1$
-		}
-		String fileName = getFileName();
-		if (fileName != null) {
-			path = path.append(fileName);
-		}
-		return path;
+		return URI.createFileURI(getFilePath().toString());
 	}
 
 	/**

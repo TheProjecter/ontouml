@@ -289,7 +289,7 @@ public class StructuralDatatypeEditPart extends ShapeNodeEditPart {
 
 			fFigureStructuralDatatypeLabelFigure = new WrappingLabel();
 			fFigureStructuralDatatypeLabelFigure
-					.setText("«structuralDatatype»");
+					.setText("«structuredDatatype»");
 
 			this.add(fFigureStructuralDatatypeLabelFigure);
 

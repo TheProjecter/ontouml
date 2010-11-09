@@ -3,6 +3,7 @@ package OntoUML.diagram.edit.parts;
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.PolylineDecoration;
 import org.eclipse.draw2d.RotatableDecoration;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
@@ -10,6 +11,10 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
+
+import OntoUML.DatatypeRelationship;
+import OntoUML.Property;
+import OntoUML.StructuralDatatype;
 
 /**
  * @generated
@@ -113,6 +118,17 @@ public class DatatypeRelationshipEditPart extends ConnectionNodeEditPart
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * Created to update the meta-attribute isReadOnly = true of the Property in the target association end, when there is a «structuredDatatype» in the source association end.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void handleNotificationEvent(Notification event) {
+		getPrimaryShape().updateContents(this);
+		super.handleNotificationEvent(event);
+	}
+
+	/**
 	 * @generated
 	 */
 	public class DatatypeRelationshipFigure extends PolylineConnectionEx {
@@ -193,6 +209,91 @@ public class DatatypeRelationshipEditPart extends ConnectionNodeEditPart
 			this
 					.add(fFigureDatatypeRelationshipTargetPropertyCardinalitiesLabelFigure);
 
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * Changed to receive DatatypeRelationshipEditPart.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */
+		public DatatypeRelationshipFigure(
+				DatatypeRelationshipEditPart datatyperelationshipeditpart) {
+
+			createContents(datatyperelationshipeditpart);
+			setTargetDecoration(createTargetDecoration());
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * Changed to update the meta-attribute isReadOnly = true of the Property in the target association end, when there is a «structuredDatatype» in the source association end.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */
+		private void createContents(
+				DatatypeRelationshipEditPart datatyperelationshipeditpart) {
+
+			DatatypeRelationship dr = (DatatypeRelationship) datatyperelationshipeditpart
+					.resolveSemanticElement();
+			for (int i = 0; i < dr.getSource().size(); ++i)
+				if (((Property) dr.getSource().get(i)).getEndType() instanceof StructuralDatatype)
+					for (int j = 0; j < dr.getTarget().size(); ++j)
+						((Property) dr.getTarget().get(j)).setIsReadOnly(true);
+
+			fFigureDatatypeRelationshipLabelFigure = new WrappingLabel();
+			fFigureDatatypeRelationshipLabelFigure
+					.setText("«datatypeRelationship»");
+
+			this.add(fFigureDatatypeRelationshipLabelFigure);
+
+			fFigureDatatypeRelationshipNameLabelFigure = new WrappingLabel();
+			fFigureDatatypeRelationshipNameLabelFigure.setText("");
+
+			this.add(fFigureDatatypeRelationshipNameLabelFigure);
+
+			fFigureDatatypeRelationshipSourcePropertyNameLabelFigure = new WrappingLabel();
+			fFigureDatatypeRelationshipSourcePropertyNameLabelFigure
+					.setText("");
+
+			this.add(fFigureDatatypeRelationshipSourcePropertyNameLabelFigure);
+
+			fFigureDatatypeRelationshipSourcePropertyCardinalitiesLabelFigure = new WrappingLabel();
+			fFigureDatatypeRelationshipSourcePropertyCardinalitiesLabelFigure
+					.setText("");
+
+			this
+					.add(fFigureDatatypeRelationshipSourcePropertyCardinalitiesLabelFigure);
+
+			fFigureDatatypeRelationshipTargetPropertyNameLabelFigure = new WrappingLabel();
+			fFigureDatatypeRelationshipTargetPropertyNameLabelFigure
+					.setText("");
+
+			this.add(fFigureDatatypeRelationshipTargetPropertyNameLabelFigure);
+
+			fFigureDatatypeRelationshipTargetPropertyCardinalitiesLabelFigure = new WrappingLabel();
+			fFigureDatatypeRelationshipTargetPropertyCardinalitiesLabelFigure
+					.setText("");
+
+			this
+					.add(fFigureDatatypeRelationshipTargetPropertyCardinalitiesLabelFigure);
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * Created to update the meta-attribute isReadOnly = true of the Property in the target association end, when there is a «structuredDatatype» in the source association end.
+		 * <!-- end-user-doc -->
+		 * @generated NOT
+		 */
+		private void updateContents(
+				DatatypeRelationshipEditPart datatyperelationshipeditpart) {
+
+			DatatypeRelationship dr = (DatatypeRelationship) datatyperelationshipeditpart
+					.resolveSemanticElement();
+			for (int i = 0; i < dr.getSource().size(); ++i)
+				if (((Property) dr.getSource().get(i)).getEndType() instanceof StructuralDatatype)
+					for (int j = 0; j < dr.getTarget().size(); ++j)
+						((Property) dr.getTarget().get(j)).setIsReadOnly(true);
 		}
 
 		/**

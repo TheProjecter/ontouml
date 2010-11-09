@@ -1,5 +1,6 @@
 package OntoUML.diagram.part;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,7 +22,9 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.SubProgressMonitor;
+import org.eclipse.emf.common.ui.URIEditorInput;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.xmi.XMLResource;
@@ -41,8 +44,12 @@ import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.dialogs.IDialogSettings;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardDialog;
+import org.eclipse.osgi.util.NLS;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
@@ -70,34 +77,11 @@ public class OntoUMLDiagramEditorUtil {
 	 */
 	public static boolean openDiagram(Resource diagram)
 			throws PartInitException {
-		String path = diagram.getURI().toPlatformString(true);
-		IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot()
-				.findMember(new Path(path));
-		if (workspaceResource instanceof IFile) {
-			IWorkbenchPage page = PlatformUI.getWorkbench()
-					.getActiveWorkbenchWindow().getActivePage();
-			return null != page.openEditor(new FileEditorInput(
-					(IFile) workspaceResource),
-					OntoUML.diagram.part.OntoUMLDiagramEditor.ID);
-		}
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static void setCharset(IFile file) {
-		if (file == null) {
-			return;
-		}
-		try {
-			file.setCharset("UTF-8", new NullProgressMonitor()); //$NON-NLS-1$
-		} catch (CoreException e) {
-			OntoUML.diagram.part.OntoUMLDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"Unable to set charset for file " + file.getFullPath(), e); //$NON-NLS-1$
-		}
+		IWorkbenchPage page = PlatformUI.getWorkbench()
+				.getActiveWorkbenchWindow().getActivePage();
+		page.openEditor(new URIEditorInput(diagram.getURI()),
+				OntoUML.diagram.part.OntoUMLDiagramEditor.ID);
+		return true;
 	}
 
 	/**
@@ -118,7 +102,7 @@ public class OntoUMLDiagramEditorUtil {
 		extension = filePath.getFileExtension();
 		fileName = filePath.removeFileExtension().lastSegment();
 		int i = 1;
-		while (ResourcesPlugin.getWorkspace().getRoot().exists(filePath)) {
+		while (filePath.toFile().exists()) {
 			i++;
 			filePath = containerFullPath.append(fileName + i);
 			if (extension != null) {
@@ -126,6 +110,44 @@ public class OntoUMLDiagramEditorUtil {
 			}
 		}
 		return filePath.lastSegment();
+	}
+
+	/**
+	 * Allows user to select file and loads it as a model.
+	 * 
+	 * @generated
+	 */
+	public static Resource openModel(Shell shell, String description,
+			TransactionalEditingDomain editingDomain) {
+		FileDialog fileDialog = new FileDialog(shell, SWT.OPEN);
+		if (description != null) {
+			fileDialog.setText(description);
+		}
+		fileDialog.open();
+		String fileName = fileDialog.getFileName();
+		if (fileName == null || fileName.length() == 0) {
+			return null;
+		}
+		if (fileDialog.getFilterPath() != null) {
+			fileName = fileDialog.getFilterPath() + File.separator + fileName;
+		}
+		URI uri = URI.createFileURI(fileName);
+		Resource resource = null;
+		try {
+			resource = editingDomain.getResourceSet().getResource(uri, true);
+		} catch (WrappedException we) {
+			OntoUML.diagram.part.OntoUMLDiagramEditorPlugin.getInstance()
+					.logError("Unable to load resource: " + uri, we); //$NON-NLS-1$
+			MessageDialog
+					.openError(
+							shell,
+							OntoUML.diagram.part.Messages.OntoUMLDiagramEditorUtil_OpenModelResourceErrorDialogTitle,
+							NLS
+									.bind(
+											OntoUML.diagram.part.Messages.OntoUMLDiagramEditorUtil_OpenModelResourceErrorDialogMessage,
+											fileName));
+		}
+		return resource;
 	}
 
 	/**
@@ -212,8 +234,6 @@ public class OntoUMLDiagramEditorUtil {
 			OntoUML.diagram.part.OntoUMLDiagramEditorPlugin.getInstance()
 					.logError("Unable to create model and diagram", e); //$NON-NLS-1$
 		}
-		setCharset(WorkspaceSynchronizer.getFile(modelResource));
-		setCharset(WorkspaceSynchronizer.getFile(diagramResource));
 		return diagramResource;
 	}
 
