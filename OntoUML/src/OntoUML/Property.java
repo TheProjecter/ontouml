@@ -219,36 +219,4 @@ public interface Property extends StructuralFeature {
 	 */
 	void setAssociationEndPositionAux(int value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/ocl/examples/OCL body='let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = self.endType) else false endif)), B:Set(MaterialAssociation) = MaterialAssociation.allInstances()->select(x | x.associationEnd->exists(y | y = self)) in let C:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).associationEnd->select(z | z <> self)->any(true).endType) else false endif)) in let D:Set(Mediation) = A->select(x | C->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)), E:Set(Mediation) = C->select(x | A->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)) in let F:Integer = D->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).lower else 0 endif))->any(true), G:Integer = E->collect(z | z.source->collect(w | if w.oclIsKindOf(Property) then w.oclAsType(Property).lower else 0 endif))->any(true) in if ((F = -1) or (G = -1)) then (-1) else (F*G) endif'"
-	 * @generated
-	 */
-	int derivarLowerMaterialAssociation();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/ocl/examples/OCL body='let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = self.endType) else false endif)), B:Set(MaterialAssociation) = MaterialAssociation.allInstances()->select(x | x.associationEnd->exists(y | y = self)) in let C:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).associationEnd->select(z | z <> self)->any(true).endType) else false endif)) in let D:Set(Mediation) = A->select(x | C->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)), E:Set(Mediation) = C->select(x | A->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)) in let H:Integer =  D->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).upper else 0 endif))->any(true), I:Integer = E->collect(z | z.source->collect(w | if w.oclIsKindOf(Property) then w.oclAsType(Property).upper else 0 endif))->any(true) in if ((H = -1) or (I = -1)) then (-1) else (H*I) endif'"
-	 * @generated
-	 */
-	int derivarUpperMaterialAssociation();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/ocl/examples/OCL body='let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if (y.oclIsKindOf(Property) and self.endType.oclIsKindOf(MaterialAssociation)) then self.endType.oclAsType(MaterialAssociation).associationEnd->exists(z | z.endType = y.oclAsType(Property).endType) else false endif)), B:Set(Derivation) = Derivation.allInstances()->select(x | x.source->exists(y | y = self)) in let C:Set(Mediation) = A->select(x | x.source->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).target->select(z | z.oclIsKindOf(Property))->any(true).oclAsType(Property).endType) else false endif)) in C->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).lower else 0 endif))->iterate(z; a:Integer = 1 | if ((a = -1) or (z = -1)) then (-1) else (a*z) endif)'"
-	 * @generated
-	 */
-	int derivarLowerDerivation();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/ocl/examples/OCL body='let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if (y.oclIsKindOf(Property) and self.endType.oclIsKindOf(MaterialAssociation)) then self.endType.oclAsType(MaterialAssociation).associationEnd->exists(z | z.endType = y.oclAsType(Property).endType) else false endif)), B:Set(Derivation) = Derivation.allInstances()->select(x | x.source->exists(y | y = self)) in let C:Set(Mediation) = A->select(x | x.source->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).target->select(z | z.oclIsKindOf(Property))->any(true).oclAsType(Property).endType) else false endif)) in C->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).upper else 0 endif))->iterate(z; a:Integer = 1 | if ((a = -1) or (z = -1)) then (-1) else (a*z) endif)'"
-	 * @generated
-	 */
-	int derivarUpperDerivation();
-
 } // Property

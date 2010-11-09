@@ -29,7 +29,7 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Classifier extends Type {
 	/**
-	 * Returns the value of the '<em><b>Attribute</b></em>' reference list.
+	 * Returns the value of the '<em><b>Attribute</b></em>' containment reference list.
 	 * The list contents are of type {@link OntoUML.Property}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -37,9 +37,9 @@ public interface Classifier extends Type {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attribute</em>' reference list.
+	 * @return the value of the '<em>Attribute</em>' containment reference list.
 	 * @see OntoUML.OntoUMLPackage#getClassifier_Attribute()
-	 * @model transient="true" volatile="true" derived="true"
+	 * @model containment="true" transient="true" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/ocl/examples/OCL derive='DatatypeRelationship.allInstances()->select(x | if x.source->forAll(y | y.oclIsKindOf(Property)) then x.source->exists(y | y.oclAsType(Property).endType = self) else false endif)->collect(x | if x.target->forAll(y | y.oclIsKindOf(Property)) then x.target.oclAsType(Property) else null endif)'"
 	 * @generated
 	 */

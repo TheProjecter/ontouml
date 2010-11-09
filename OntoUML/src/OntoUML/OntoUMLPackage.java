@@ -190,7 +190,7 @@ public interface OntoUMLPackage extends EPackage {
 	int CLASSIFIER__NAME = TYPE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -263,7 +263,7 @@ public interface OntoUMLPackage extends EPackage {
 	int CLASS__NAME = CLASSIFIER__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -336,7 +336,7 @@ public interface OntoUMLPackage extends EPackage {
 	int OBJECT_CLASS__NAME = CLASS__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -409,7 +409,7 @@ public interface OntoUMLPackage extends EPackage {
 	int MIXIN_CLASS__NAME = OBJECT_CLASS__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -482,7 +482,7 @@ public interface OntoUMLPackage extends EPackage {
 	int NON_RIGID_MIXIN_CLASS__NAME = MIXIN_CLASS__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -555,7 +555,7 @@ public interface OntoUMLPackage extends EPackage {
 	int ANTI_RIGID_MIXIN_CLASS__NAME = NON_RIGID_MIXIN_CLASS__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -628,7 +628,7 @@ public interface OntoUMLPackage extends EPackage {
 	int SORTAL_CLASS__NAME = OBJECT_CLASS__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -701,7 +701,7 @@ public interface OntoUMLPackage extends EPackage {
 	int ANTI_RIGID_SORTAL_CLASS__NAME = SORTAL_CLASS__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -820,7 +820,7 @@ public interface OntoUMLPackage extends EPackage {
 	int ASSOCIATION__NAME = RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -974,7 +974,7 @@ public interface OntoUMLPackage extends EPackage {
 	int RIGID_MIXIN_CLASS__NAME = MIXIN_CLASS__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1047,7 +1047,7 @@ public interface OntoUMLPackage extends EPackage {
 	int CATEGORY__NAME = RIGID_MIXIN_CLASS__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1346,7 +1346,7 @@ public interface OntoUMLPackage extends EPackage {
 	int DIRECTED_BINARY_RELATIONSHIP__NAME = DIRECTED_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1518,7 +1518,7 @@ public interface OntoUMLPackage extends EPackage {
 	int DEPENDENCY_RELATIONSHIP__NAME = DIRECTED_BINARY_RELATIONSHIP__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1690,7 +1690,7 @@ public interface OntoUMLPackage extends EPackage {
 	int CHARACTERIZATION__NAME = DEPENDENCY_RELATIONSHIP__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1763,7 +1763,7 @@ public interface OntoUMLPackage extends EPackage {
 	int RIGID_SORTAL_CLASS__NAME = SORTAL_CLASS__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1836,7 +1836,7 @@ public interface OntoUMLPackage extends EPackage {
 	int SUBSTANCE_SORTAL__NAME = RIGID_SORTAL_CLASS__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1909,7 +1909,7 @@ public interface OntoUMLPackage extends EPackage {
 	int COLLECTIVE__NAME = SUBSTANCE_SORTAL__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2090,7 +2090,7 @@ public interface OntoUMLPackage extends EPackage {
 	int MERONYMIC__NAME = DIRECTED_BINARY_RELATIONSHIP__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2307,7 +2307,7 @@ public interface OntoUMLPackage extends EPackage {
 	int COMPONENT_OF__NAME = MERONYMIC__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2453,7 +2453,7 @@ public interface OntoUMLPackage extends EPackage {
 	int DATATYPE__NAME = CLASSIFIER__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2625,7 +2625,7 @@ public interface OntoUMLPackage extends EPackage {
 	int DATATYPE_RELATIONSHIP__NAME = DIRECTED_BINARY_RELATIONSHIP__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2797,7 +2797,7 @@ public interface OntoUMLPackage extends EPackage {
 	int DERIVATION__NAME = DEPENDENCY_RELATIONSHIP__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2980,7 +2980,7 @@ public interface OntoUMLPackage extends EPackage {
 	int FORMAL_ASSOCIATION__NAME = ASSOCIATION__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3361,7 +3361,7 @@ public interface OntoUMLPackage extends EPackage {
 	int KIND__NAME = SUBSTANCE_SORTAL__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3443,7 +3443,7 @@ public interface OntoUMLPackage extends EPackage {
 	int MATERIAL_ASSOCIATION__NAME = ASSOCIATION__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3696,7 +3696,7 @@ public interface OntoUMLPackage extends EPackage {
 	int MEDIATION__NAME = DEPENDENCY_RELATIONSHIP__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3868,7 +3868,7 @@ public interface OntoUMLPackage extends EPackage {
 	int MEMBER_OF__NAME = MERONYMIC__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3986,7 +3986,7 @@ public interface OntoUMLPackage extends EPackage {
 	int SEMI_RIGID_MIXIN__NAME = NON_RIGID_MIXIN_CLASS__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4059,7 +4059,7 @@ public interface OntoUMLPackage extends EPackage {
 	int MIXIN__NAME = SEMI_RIGID_MIXIN__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4132,7 +4132,7 @@ public interface OntoUMLPackage extends EPackage {
 	int MOMENT_CLASS__NAME = CLASS__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4205,7 +4205,7 @@ public interface OntoUMLPackage extends EPackage {
 	int MODE__NAME = MOMENT_CLASS__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4324,7 +4324,7 @@ public interface OntoUMLPackage extends EPackage {
 	int PHASE__NAME = ANTI_RIGID_SORTAL_CLASS__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4642,7 +4642,7 @@ public interface OntoUMLPackage extends EPackage {
 	int QUANTITY__NAME = SUBSTANCE_SORTAL__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4715,7 +4715,7 @@ public interface OntoUMLPackage extends EPackage {
 	int RELATIONAL_CLASSIFIER__NAME = CLASSIFIER__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4788,7 +4788,7 @@ public interface OntoUMLPackage extends EPackage {
 	int RELATOR__NAME = MOMENT_CLASS__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4861,7 +4861,7 @@ public interface OntoUMLPackage extends EPackage {
 	int ROLE__NAME = ANTI_RIGID_SORTAL_CLASS__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4934,7 +4934,7 @@ public interface OntoUMLPackage extends EPackage {
 	int ROLE_MIXIN__NAME = ANTI_RIGID_MIXIN_CLASS__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5007,7 +5007,7 @@ public interface OntoUMLPackage extends EPackage {
 	int SIMPLE_DATATYPE__NAME = DATATYPE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5080,7 +5080,7 @@ public interface OntoUMLPackage extends EPackage {
 	int STRUCTURAL_DATATYPE__NAME = DATATYPE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5252,7 +5252,7 @@ public interface OntoUMLPackage extends EPackage {
 	int SUB_COLLECTION_OF__NAME = MERONYMIC__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5370,7 +5370,7 @@ public interface OntoUMLPackage extends EPackage {
 	int SUB_KIND__NAME = RIGID_SORTAL_CLASS__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5542,7 +5542,7 @@ public interface OntoUMLPackage extends EPackage {
 	int SUB_QUANTITY_OF__NAME = MERONYMIC__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference list.
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5849,10 +5849,10 @@ public interface OntoUMLPackage extends EPackage {
 	EClass getClassifier();
 
 	/**
-	 * Returns the meta object for the reference list '{@link OntoUML.Classifier#getAttribute <em>Attribute</em>}'.
+	 * Returns the meta object for the containment reference list '{@link OntoUML.Classifier#getAttribute <em>Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Attribute</em>'.
+	 * @return the meta object for the containment reference list '<em>Attribute</em>'.
 	 * @see OntoUML.Classifier#getAttribute()
 	 * @see #getClassifier()
 	 * @generated
@@ -6976,7 +6976,7 @@ public interface OntoUMLPackage extends EPackage {
 		EClass CLASSIFIER = eINSTANCE.getClassifier();
 
 		/**
-		 * The meta object literal for the '<em><b>Attribute</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Attribute</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

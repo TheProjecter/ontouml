@@ -1828,7 +1828,7 @@ public class OntoUMLPackageImpl extends EPackageImpl implements OntoUMLPackage {
 		initEClass(classEClass, OntoUML.Class.class, "Class", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(classifierEClass, Classifier.class, "Classifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getClassifier_Attribute(), this.getProperty(), null, "attribute", null, 0, -1, Classifier.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getClassifier_Attribute(), this.getProperty(), null, "attribute", null, 0, -1, Classifier.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getClassifier_IsAbstract(), ecorePackage.getEBoolean(), "isAbstract", "false", 1, 1, Classifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getClassifier_General(), this.getClassifier(), null, "general", null, 0, -1, Classifier.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getClassifier_Generalization(), this.getGeneralization(), this.getGeneralization_Specific(), "generalization", null, 0, -1, Classifier.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -1848,6 +1848,10 @@ public class OntoUMLPackageImpl extends EPackageImpl implements OntoUMLPackage {
 		initEClass(dependencyRelationshipEClass, DependencyRelationship.class, "DependencyRelationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(derivationEClass, Derivation.class, "Derivation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(derivationEClass, ecorePackage.getEInt(), "deriveLowerDerivation", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(derivationEClass, ecorePackage.getEInt(), "deriveUpperDerivation", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(directedBinaryRelationshipEClass, DirectedBinaryRelationship.class, "DirectedBinaryRelationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1907,6 +1911,12 @@ public class OntoUMLPackageImpl extends EPackageImpl implements OntoUMLPackage {
 
 		initEClass(materialAssociationEClass, MaterialAssociation.class, "MaterialAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		addEOperation(materialAssociationEClass, ecorePackage.getEInt(), "deriveUpperMaterialAssociationExt1", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(materialAssociationEClass, ecorePackage.getEInt(), "deriveUpperMaterialAssociationExt2", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(materialAssociationEClass, ecorePackage.getEBoolean(), "existsDerivationConnected", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(mediationEClass, Mediation.class, "Mediation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(memberOfEClass, memberOf.class, "memberOf", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1947,14 +1957,6 @@ public class OntoUMLPackageImpl extends EPackageImpl implements OntoUMLPackage {
 		initEReference(getProperty_Source(), this.getDirectedBinaryRelationship(), null, "source", null, 0, 1, Property.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getProperty_Target(), this.getDirectedBinaryRelationship(), null, "target", null, 0, 1, Property.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProperty_AssociationEndPositionAux(), ecorePackage.getEInt(), "associationEndPositionAux", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(propertyEClass, ecorePackage.getEInt(), "derivarLowerMaterialAssociation", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(propertyEClass, ecorePackage.getEInt(), "derivarUpperMaterialAssociation", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(propertyEClass, ecorePackage.getEInt(), "derivarLowerDerivation", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(propertyEClass, ecorePackage.getEInt(), "derivarUpperDerivation", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(quantityEClass, Quantity.class, "Quantity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2035,6 +2037,18 @@ public class OntoUMLPackageImpl extends EPackageImpl implements OntoUMLPackage {
 			 "derive", "Generalization.allInstances()->select(x | x.specific = self)"
 		   });		
 		addAnnotation
+		  (derivationEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+			 "body", "let mat:MaterialAssociation = self.source->any(true).oclAsType(Property).endType.oclAsType(MaterialAssociation), rel:Relator = self.target->any(true).oclAsType(Property).endType.oclAsType(Relator) in (let matext1:Type = mat.associationEnd->at(1).oclAsType(Property).endType.oclAsType(Type), matext2:Type = mat.associationEnd->at(2).oclAsType(Property).endType.oclAsType(Type) in (let med1:Set(Mediation) = Mediation.allInstances()->select(x | x.source->exists(y | y.oclAsType(Property).endType = rel) and x.target->exists(y | y.oclAsType(Property).endType = matext1)), med2:Set(Mediation) = Mediation.allInstances()->select(x | x.source->exists(y | y.oclAsType(Property).endType = rel) and x.target->exists(y | y.oclAsType(Property).endType = matext2)) in (let med1targetlower: Integer = med1.target->any(true).oclAsType(Property).lower, med2targetlower: Integer = med2.target->any(true).oclAsType(Property).lower in (if ((med1targetlower = -1) or (med2targetlower = -1)) then (-1) else (med1targetlower*med2targetlower) endif))))"
+		   });		
+		addAnnotation
+		  (derivationEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+			 "body", "let mat:MaterialAssociation = self.source->any(true).oclAsType(Property).endType.oclAsType(MaterialAssociation), rel:Relator = self.target->any(true).oclAsType(Property).endType.oclAsType(Relator) in (let matext1:Type = mat.associationEnd->at(1).oclAsType(Property).endType.oclAsType(Type), matext2:Type = mat.associationEnd->at(2).oclAsType(Property).endType.oclAsType(Type) in (let med1:Set(Mediation) = Mediation.allInstances()->select(x | x.source->exists(y | y.oclAsType(Property).endType = rel) and x.target->exists(y | y.oclAsType(Property).endType = matext1)), med2:Set(Mediation) = Mediation.allInstances()->select(x | x.source->exists(y | y.oclAsType(Property).endType = rel) and x.target->exists(y | y.oclAsType(Property).endType = matext2)) in (let med1targetupper: Integer = med1.target->any(true).oclAsType(Property).upper, med2targetupper: Integer = med2.target->any(true).oclAsType(Property).upper in (if ((med1targetupper = -1) or (med2targetupper = -1)) then (-1) else (med1targetupper*med2targetupper) endif))))"
+		   });		
+		addAnnotation
 		  (elementEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
@@ -2107,28 +2121,22 @@ public class OntoUMLPackageImpl extends EPackageImpl implements OntoUMLPackage {
 			 "derive", "self.source->any(x | x.oclIsKindOf(Classifier))"
 		   });		
 		addAnnotation
-		  (propertyEClass.getEOperations().get(0), 
+		  (materialAssociationEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
-			 "body", "let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = self.endType) else false endif)), B:Set(MaterialAssociation) = MaterialAssociation.allInstances()->select(x | x.associationEnd->exists(y | y = self)) in let C:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).associationEnd->select(z | z <> self)->any(true).endType) else false endif)) in let D:Set(Mediation) = A->select(x | C->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)), E:Set(Mediation) = C->select(x | A->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)) in let F:Integer = D->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).lower else 0 endif))->any(true), G:Integer = E->collect(z | z.source->collect(w | if w.oclIsKindOf(Property) then w.oclAsType(Property).lower else 0 endif))->any(true) in if ((F = -1) or (G = -1)) then (-1) else (F*G) endif"
+			 "body", "let der:Derivation = Derivation.allInstances()->select(x | x.source->any(true).oclAsType(Property).endType = self)->any(true), matext1:Type = self.associationEnd->at(1).oclAsType(Property).endType.oclAsType(Type), matext2:Type = self.associationEnd->at(2).oclAsType(Property).endType.oclAsType(Type) in (let rel:Relator = der.target->any(true).oclAsType(Property).endType.oclAsType(Relator) in (let med1:Set(Mediation) = Mediation.allInstances()->select(x | x.source->exists(y | y.oclAsType(Property).endType = rel) and x.target->exists(y | y.oclAsType(Property).endType = matext1)), med2:Set(Mediation) = Mediation.allInstances()->select(x | x.source->exists(y | y.oclAsType(Property).endType = rel) and x.target->exists(y | y.oclAsType(Property).endType = matext2)) in (let med1targetupper: Integer = med1.target->any(true).oclAsType(Property).upper, med2sourceupper: Integer = med2.source->any(true).oclAsType(Property).upper in (if ((med2sourceupper = -1) or (med1targetupper = -1)) then (-1) else (med2sourceupper*med1targetupper) endif))))"
 		   });		
 		addAnnotation
-		  (propertyEClass.getEOperations().get(1), 
+		  (materialAssociationEClass.getEOperations().get(1), 
 		   source, 
 		   new String[] {
-			 "body", "let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = self.endType) else false endif)), B:Set(MaterialAssociation) = MaterialAssociation.allInstances()->select(x | x.associationEnd->exists(y | y = self)) in let C:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).associationEnd->select(z | z <> self)->any(true).endType) else false endif)) in let D:Set(Mediation) = A->select(x | C->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)), E:Set(Mediation) = C->select(x | A->source.oclAsType(Property).endType->includesAll(x.source.oclAsType(Property).endType)) in let H:Integer =  D->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).upper else 0 endif))->any(true), I:Integer = E->collect(z | z.source->collect(w | if w.oclIsKindOf(Property) then w.oclAsType(Property).upper else 0 endif))->any(true) in if ((H = -1) or (I = -1)) then (-1) else (H*I) endif"
+			 "body", "let der:Derivation = Derivation.allInstances()->select(x | x.source->any(true).oclAsType(Property).endType = self)->any(true), matext1:Type = self.associationEnd->at(1).oclAsType(Property).endType.oclAsType(Type), matext2:Type = self.associationEnd->at(2).oclAsType(Property).endType.oclAsType(Type) in (let rel:Relator = der.target->any(true).oclAsType(Property).endType.oclAsType(Relator) in (let med1:Set(Mediation) = Mediation.allInstances()->select(x | x.source->exists(y | y.oclAsType(Property).endType = rel) and x.target->exists(y | y.oclAsType(Property).endType = matext1)), med2:Set(Mediation) = Mediation.allInstances()->select(x | x.source->exists(y | y.oclAsType(Property).endType = rel) and x.target->exists(y | y.oclAsType(Property).endType = matext2)) in (let med1sourceupper: Integer = med1.source->any(true).oclAsType(Property).upper, med2targetupper: Integer = med2.target->any(true).oclAsType(Property).upper in (if ((med1sourceupper = -1) or (med2targetupper = -1)) then (-1) else (med1sourceupper*med2targetupper) endif))))\n"
 		   });		
 		addAnnotation
-		  (propertyEClass.getEOperations().get(2), 
+		  (materialAssociationEClass.getEOperations().get(2), 
 		   source, 
 		   new String[] {
-			 "body", "let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if (y.oclIsKindOf(Property) and self.endType.oclIsKindOf(MaterialAssociation)) then self.endType.oclAsType(MaterialAssociation).associationEnd->exists(z | z.endType = y.oclAsType(Property).endType) else false endif)), B:Set(Derivation) = Derivation.allInstances()->select(x | x.source->exists(y | y = self)) in let C:Set(Mediation) = A->select(x | x.source->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).target->select(z | z.oclIsKindOf(Property))->any(true).oclAsType(Property).endType) else false endif)) in C->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).lower else 0 endif))->iterate(z; a:Integer = 1 | if ((a = -1) or (z = -1)) then (-1) else (a*z) endif)"
-		   });		
-		addAnnotation
-		  (propertyEClass.getEOperations().get(3), 
-		   source, 
-		   new String[] {
-			 "body", "let A:Set(Mediation) = Mediation.allInstances()->select(x | x.target->exists(y | if (y.oclIsKindOf(Property) and self.endType.oclIsKindOf(MaterialAssociation)) then self.endType.oclAsType(MaterialAssociation).associationEnd->exists(z | z.endType = y.oclAsType(Property).endType) else false endif)), B:Set(Derivation) = Derivation.allInstances()->select(x | x.source->exists(y | y = self)) in let C:Set(Mediation) = A->select(x | x.source->exists(y | if y.oclIsKindOf(Property) then (y.oclAsType(Property).endType = B->any(true).target->select(z | z.oclIsKindOf(Property))->any(true).oclAsType(Property).endType) else false endif)) in C->collect(x | x.target->collect(y | if y.oclIsKindOf(Property) then y.oclAsType(Property).upper else 0 endif))->iterate(z; a:Integer = 1 | if ((a = -1) or (z = -1)) then (-1) else (a*z) endif)"
+			 "body", "not Derivation.allInstances()->select(x | x.source->any(true).oclAsType(Property).endType = self)->isEmpty()"
 		   });		
 		addAnnotation
 		  (getProperty_EndType(), 

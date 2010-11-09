@@ -255,6 +255,8 @@ public class DirectedBinaryRelationshipImpl extends DirectedRelationshipImpl imp
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__ATTRIBUTE:
+				return ((InternalEList<?>)getAttribute()).basicRemove(otherEnd, msgs);
 			case OntoUMLPackage.DIRECTED_BINARY_RELATIONSHIP__GENERALIZATION:
 				return ((InternalEList<?>)getGeneralization()).basicRemove(otherEnd, msgs);
 		}

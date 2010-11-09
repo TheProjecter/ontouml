@@ -32,4 +32,91 @@
             class="OntoUML.util.OntoUMLResourceFactory">
       </parser>
    </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="OntoUML.diagram.OntoUMLApplication"
+            name="OntoUML Editor">
+         <property
+               name="aboutText"
+               value="OntoUML Editor is a model-based graphical editor that supports the creation of conceptual models and domain ontologies in a philosophically and cognitively well-founded modeling language named OntoUML, which is based on the foundational ontology UFO. The editor is designed in a way that, on one hand, it shields the user from the complexity of the ontological principles underlying this language. On the other hand, it reinforces these principles in the produced models by providing a mechanism for automatic formal constraint verification.&#x0A;&#x0A;OntoUML Editor was developed by Alessander Botti Benevides in his master&apos;s thesis in Computer Science.&#x0A;&#x0A;alessanderbotti@inf.ufes.br&#x0A;M.Sc. in Computer Science - UFES - 2010&#x0A;B.Eng. in Computer Engineering - UFES - 2007&#x0A;Linux User # 450564&#x0A;Ubuntu User # 16176&#x0A;Go Vegan!">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="000000">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,275,445,15">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="7,252,445,20">
+         </property>
+         <property
+               name="appName"
+               value="OntoUML Editor">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+      </product>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="OntoUML.diagram.OntoUMLApplication"
+            name="OntoUML Editor">
+         <property
+               name="aboutText"
+               value="OntoUML Editor, developed by Alessander Botti Benevides in his master&apos;s thesis in Computer Science.&#x0A;&#x0A;alessanderbotti@gmail.com&#x0A;Go Vegan!">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="000000">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,275,445,15">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="7,252,445,20">
+         </property>
+         <property
+               name="preferenceCustomization">
+         </property>
+      </product>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="OntoUML.diagram.OntoUMLApplication"
+            name="OntoUML Editor">
+         <property
+               name="aboutText"
+               value="OntoUML Editor, developed by Alessander Botti Benevides in his master&apos;s thesis in Computer Science.&#x0A;&#x0A;alessanderbotti@gmail.com&#x0A;Go Vegan!">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="000000">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,275,445,15">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="7,252,445,20">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+      </product>
+   </extension>
 </plugin>
