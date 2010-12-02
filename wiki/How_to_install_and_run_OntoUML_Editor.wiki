@@ -1,9 +1,13 @@
 #summary How to install and run the OntoUML Editor.
 #labels Phase-Deploy
 
-*Pre-requisite: a working JRE (Java Runtime Environment).*
+=Contents=
+<wiki:toc max_depth="1" />
 
 =Installing the standalone OntoUML Editor:=
+
+*Pre-requisite: a working JRE (Java Runtime Environment).*
+
 In the [http://code.google.com/p/ontouml/downloads/list Downloads] tab, there are binaries for different combinations of operational systems (_viz_.: AIX, HP-UX, Linux, Mac OS X, Solaris and Windows), processor types (_viz_.: IA64-32, PowerPC, SPARC, x86 and x86-64) and widget toolkits (_viz_.: Carbon, GTK, Motif, Win32 API and WPF). You have to choose a suitable combination. The options are:
 
  * OS: AIX
@@ -39,6 +43,9 @@ If you have no idea of what are those options, just download [http://ontouml.goo
 After downloading, unzip the file, enter in the folder "eclipse" and run OntoUMLEditor`[.exe`].
 
 =Installing the OntoUML Editor Eclipse plugin:=
+
+*Pre-requisite: a working JRE (Java Runtime Environment).*
+
  # Download the Eclipse Modeling Tools package for your OS at http://www.eclipse.org/downloads and unzip it (in case you do not have a working Eclipse).
  # If you have manually installed a previous version of OntoUML Editor in the "dropins" Eclipse folder, just delete the OntoUML Editor files from "dropins".
  # Installing:
