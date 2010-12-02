@@ -2,9 +2,11 @@
 #labels Phase-Deploy
 
 =Contents=
-<wiki:toc max_depth="1" />
+<wiki:toc max_depth="2" />
 
-=Installing the standalone OntoUML Editor:=
+=Installing the OntoUML Editor=
+
+==Installing the standalone OntoUML Editor==
 
 *Pre-requisite: a working JRE (Java Runtime Environment).*
 
@@ -42,24 +44,33 @@ If you have no idea of what are those options, just download [http://ontouml.goo
 
 After downloading, unzip the file, enter in the folder "eclipse" and run OntoUMLEditor`[.exe`].
 
-=Installing the OntoUML Editor Eclipse plugin:=
+==Installing the OntoUML Editor Eclipse plug-in==
 
 *Pre-requisite: a working JRE (Java Runtime Environment).*
 
- # Download the Eclipse Modeling Tools package for your OS at http://www.eclipse.org/downloads and unzip it (in case you do not have a working Eclipse).
- # If you have manually installed a previous version of OntoUML Editor in the "dropins" Eclipse folder, just delete the OntoUML Editor files from "dropins".
+ # Download the Eclipse Modeling Tools package for your OS at http://www.eclipse.org/downloads and unzip it (in case you do not have a working Eclipse);
+ # If you have manually installed a previous version of OntoUML Editor in the "dropins" Eclipse folder, just delete the OntoUML Editor files from "dropins";
  # Installing:
   * Installing from the repository (Recomended):
-   * In Eclipse 3.5.x or 3.6.x (attention, the OntoUML Editor still does not work with these versions of Eclipse!), go to Help → Install New Software... → Add..., then put "OntoUML Editor" (without quotes) in the "Name" field and "http://ontouml.googlecode.com/svn/trunk/OntoUMLUpdateSite" (without quotes) in the "Location" field and then click OK. Now, deselect the button "Group items by catgory", select "OntoUML Editor" and click on Next → Next → Read and accept the terms of the license → Finish. If Eclipse complains about unsigned content, just click OK.
+   * In Eclipse 3.5.x or 3.6.x (attention, the OntoUML Editor still does not work with these versions of Eclipse!), go to Help → Install New Software... → Add..., then put "OntoUML Editor" (without quotes) in the "Name" field and "http://ontouml.googlecode.com/svn/trunk/OntoUMLUpdateSite" (without quotes) in the "Location" field and then click OK. Now, deselect the button "Group items by catgory", select "OntoUML Editor" and click on Next → Next → Read and accept the terms of the license → Finish. If Eclipse complains about unsigned content, just click OK;
    * In Eclipse 3.4.2 (one can get this version at http://www.eclipse.org/downloads/packages/eclipse-modeling-tools-includes-incubating-components/ganymedesr2), go to Help → Software Updates → Available Software → Add Site and add the address http://ontouml.googlecode.com/svn/trunk/OntoUMLUpdateSite and click on OK. After, click on "Manage Sites", select this url or "OntoUML Editor Update Site" (if it was not selected by default) and click on OK. Click on Refresh. Now, open the repository "OntoUML Editor Update Site", select OntoUML Editor and click on Install.
   * Installing manually (warning: if you install manually, you will not be notified of updates): Download the latest zip file from the Downloads tab and unzip it in the "dropins" folder of your Eclipse.
- # Restart Eclipse when the installation finishes.
+ # Restart Eclipse when the installation finishes;
  # It is recommended to periodically make a search for updates (only works if installed from the repository): Go to Help → Software Updates → Installed Software and click on Update. You should make a backup of your models before opening them with a new version of the editor.
 
-=Creating an OntoUML model:=
- # Execute Eclipse.
- # Create a project (if you don't have one): Click in File → New → Project... → General → Project → Next → Name it → Next → Next → Finish.
- # Create an OntoUML diagram: Right click on the folder just created → New → Example → OntoUML Diagram → Next → Give a name for the file → Next → Next → Finish.
+=Creating an OntoUML model=
+
+==Creating an OntoUML Model in the Standalone OntoUML Editor==
+
+ # Execute the standalone OntoUML Editor;
+ # Click on File → New → OntoUML Diagram → Name the file → Next → Finish;
+ # You are ready to create an OntoUML model!
+
+==Creating an OntoUML model in the OntoUML Editor Eclipse Plug-in==
+
+ # Execute Eclipse;
+ # Create a project (if you don't have one): Click in File → New → Project... → General → Project → Next → Name it → Next → Next → Finish;
+ # Create an OntoUML diagram: Right click on the folder just created → New → Example → OntoUML Diagram → Next → Give a name for the file → Next → Next → Finish;
  # You are ready to create an OntoUML model!
 
 _Thank you for using the OntoUML Editor!_
