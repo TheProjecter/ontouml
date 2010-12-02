@@ -1,6 +1,9 @@
 #summary How to install and run the OntoUML2Alloy ATL transformation
 #labels Phase-Deploy
 
+=Contents=
+<wiki:toc max_depth="1" />
+
 =Installing the Transformation:=
  # Download the version 3.4.2 of Eclipse Modeling Tools package for your OS at http://www.eclipse.org/downloads/packages/eclipse-modeling-tools-includes-incubating-components/ganymedesr2 and unzip it (in case you do not have a working Eclipse);
  # Execute Eclipse;
