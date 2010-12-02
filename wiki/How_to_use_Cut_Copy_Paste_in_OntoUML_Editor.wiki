@@ -1,5 +1,5 @@
 #summary How to use Cut/Copy/Paste in the OntoUML Editor.
-#labels Featured
+#labels Featured,Phase-Support
 
 Avoid using the functions "cut", "copy" or "paste" in OntoUML Editor, because they may corrupt your models. Instead, use the function "duplicate", which is very similar. There are two ways of using "duplicate":
 
