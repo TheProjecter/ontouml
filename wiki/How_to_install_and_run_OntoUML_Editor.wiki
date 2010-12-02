@@ -6,7 +6,7 @@
 
 =Installing the OntoUML Editor=
 
-==Installing the standalone OntoUML Editor==
+==Installing the Standalone OntoUML Editor==
 
 *Pre-requisite: a working JRE (Java Runtime Environment).*
 
