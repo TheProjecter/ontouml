@@ -54,8 +54,12 @@ helper def: top_level_rigid_sortals_connected_on_source(d: OntoUML!DirectedRelat
 helper def: top_level_rigid_sortals_connected_on_target(d: OntoUML!DirectedRelationship) : OrderedSet(OntoUML!Classifier) = thisModule.allSuperTypes(thisModule.derive_endType(d.target->any(x | true)))->including(thisModule.derive_endType(d.target->any(x | true)))->select(x | x.oclIsKindOf(OntoUML!SubstanceSortal) or x.oclIsKindOf(OntoUML!MomentClass) or x.oclIsKindOf(OntoUML!Datatype));
 helper def: top_level_rigid_sortals_connected_on_associationEnd(d: OntoUML!DirectedRelationship, i : Integer) : OrderedSet(OntoUML!Classifier) = thisModule.allSuperTypes(thisModule.derive_endType(d.associationEnd->at(i)))->including(thisModule.derive_endType(d.associationEnd->at(i)))->select(x | x.oclIsKindOf(OntoUML!SubstanceSortal) or x.oclIsKindOf(OntoUML!MomentClass) or x.oclIsKindOf(OntoUML!Datatype));
 
+helper def: is_top_level(e: OntoUML!Element) : Boolean = if (e.oclIsKindOf(OntoUML!SubstanceSortal) or e.oclIsKindOf(OntoUML!MomentClass)) then true else false endif;
+helper def: name_side_source(e: OntoUML!Element) : String = let side: OntoUML!Element = thisModule.derive_endType(e.source->any(x | true)) in (if (thisModule.is_top_level(side)) then (side.name + ':>domain_of_quantification') else (side.name) endif);
+helper def: name_side_target(e: OntoUML!Element) : String = let side: OntoUML!Element = thisModule.derive_endType(e.target->any(x | true)) in (if (thisModule.is_top_level(side)) then (side.name + ':>domain_of_quantification') else (side.name) endif);
+helper def: name_side_associationEnd(e: OntoUML!Element, i: Integer) : String = let side: OntoUML!Element = thisModule.derive_endType(e.associationEnd->at(i)) in (if (thisModule.is_top_level(side)) then (side.name + ':>domain_of_quantification') else (side.name) endif);
+
 helper def: cardinality(p: OntoUML!Property) : String = if ((p.lower = 0) and (p.upper = 1)) then 'lone' else (if ((p.lower = 1) and (p.upper = 1)) then 'one' else (if ((p.lower = 1) and (p.upper = 0-1)) then 'some' else 'set' endif) endif) endif;
-helper def: cardinality_fact(name_relation: String, name_side: String, p: OntoUML!Property) : String = if (p.lower = 0) then (if (p.upper = 0-1) then '' else ('	all x: ' + name_side + ' | #x.@' + name_relation + ' <= ' + p.upper.toString()) endif) else (if (p.upper = 0-1) then ('	all x: ' + name_side + ' | #x.@' + name_relation + ' >= ' + p.lower.toString()) else (if (p.lower <> p.upper) then ('	all x: ' + name_side + ' | (#x.@' + name_relation + ' >= ' + p.lower.toString() + ') and (#x.@' + name_relation + ' <= ' + p.upper.toString() + ')') else ('	all x: ' + name_side + ' | #x.@' + name_relation + ' = ' + p.lower.toString()) endif) endif) endif;
 helper def: cardinality_fact1(name_relation: String, name_side: String, p: OntoUML!Property) : String = if (p.lower = 0) then (if (p.upper = 0-1) then '' else ('	all x: ' + name_side + ' | #' + name_relation + '.x <= ' + p.upper.toString()) endif) else (if (p.upper = 0-1) then ('	all x: ' + name_side + ' | #' + name_relation + '.x >= ' + p.lower.toString()) else (if (p.lower <> p.upper) then ('	all x: ' + name_side + ' | (#' + name_relation + '.x >= ' + p.lower.toString() + ') and (#' + name_relation + '.x <= ' + p.upper.toString() + ')') else ('	all x: ' + name_side + ' | #' + name_relation + '.x = ' + p.lower.toString()) endif) endif) endif;
 helper def: cardinality_fact2(name_relation: String, name_side: String, p: OntoUML!Property) : String = if (p.lower = 0) then (if (p.upper = 0-1) then '' else ('	all x: ' + name_side + ' | #x.' + name_relation + ' <= ' + p.upper.toString()) endif) else (if (p.upper = 0-1) then ('	all x: ' + name_side + ' | #x.' + name_relation + ' >= ' + p.lower.toString()) else (if (p.lower <> p.upper) then ('	all x: ' + name_side + ' | (#x.' + name_relation + ' >= ' + p.lower.toString() + ') and (#x.' + name_relation + ' <= ' + p.upper.toString() + ')') else ('	all x: ' + name_side + ' | #x.' + name_relation + ' = ' + p.lower.toString()) endif) endif) endif;
 helper def: cardinality_mediation1(name_relation: String, p: OntoUML!Property) : String = if (p.lower = 0) then (if (p.upper = 0-1) then '' else ('	#' + name_relation + ' <= ' + p.upper.toString()) endif) else (if (p.upper = 0-1) then ('	#' + name_relation + ' >= ' + p.lower.toString()) else (if (p.lower <> p.upper) then ('	(#' + name_relation + ' >= ' + p.lower.toString() + ') and (#' + name_relation + ' <= ' + p.upper.toString() + ')') else ('	#' + name_relation + ' = ' + p.lower.toString()) endif) endif) endif;
@@ -121,7 +125,7 @@ rule Mode2Signature {
     	world_facts : String = let world_fact_str: String = '	all x: ' + m.name + ':>domain_of_quantification | ' + characterizations->iterate(x; str : String = '' | str + '(x.' + x.name + ' in ' + thisModule.derive_endType(x.target->any(y | true)).name + ') and ') in (if (world_fact_str.size() > 0) then world_fact_str.substring(1,(world_fact_str.size()-5)) + '\n' else '' endif);
 	}
 	do {
-		world_facts <- world_facts + characterizations->iterate(x; str : String = '' | str + thisModule.cardinality_characterization2(x.name,thisModule.derive_endType(x.target->any(y | true)).name,x.source->any(y | true)) + '\n');
+		world_facts <- world_facts + characterizations->iterate(x; str : String = '' | str + thisModule.cardinality_characterization2(x.name,thisModule.name_side_target(x),x.source->any(y | true)) + '\n');
 	    thisModule.signature_text <- thisModule.signature_text + abstract_keyword + 'sig ' + m.name + supertype_keyword + thisModule.superTypes_name_list(m) + ' {\n' + characterizations_str + '}' + signature_constraints + '\n';
 		thisModule.signature_facts_world <- thisModule.signature_facts_world + world_facts;
 		thisModule.text <- thisModule.final_text();
@@ -148,7 +152,7 @@ rule Relator2Signature {
 		world_facts : String = let world_fact_str: String = '	all x: ' + r.name + ':>domain_of_quantification | ' + mediations->iterate(x; str : String = '' | str + '(x.' + x.name + ' in ' + thisModule.derive_endType(x.target->any(y | true)).name + ') and ') in (if (world_fact_str.size() > 0) then world_fact_str.substring(1,(world_fact_str.size()-5)) + '\n' else '' endif);
 	}
 	do {
-		world_facts <- world_facts + mediations->iterate(x; str : String = '' | str + thisModule.cardinality_mediation2(x.name,thisModule.derive_endType(x.target->any(y | true)).name,x.source->any(y | true)) + '\n');
+		world_facts <- world_facts + mediations->iterate(x; str : String = '' | str + thisModule.cardinality_mediation2(x.name,thisModule.name_side_target(x),x.source->any(y | true)) + '\n');
 		world_facts <- world_facts + derivations->iterate(x; str : String = '' | str + '	' + thisModule.derive_endType(x.source->any(y | true)).name + ' = (' + r.name + ':>domain_of_quantification).' + x.name + '\n');
 	    thisModule.signature_text <- thisModule.signature_text + abstract_keyword + 'sig ' + r.name + supertype_keyword + thisModule.superTypes_name_list(r) + ' {\n' + mediations_str + derivations_str + '}' + signature_constraints + '\n';
 		thisModule.signature_facts_world <- thisModule.signature_facts_world + world_facts;
@@ -270,8 +274,8 @@ rule Meronymic2Relation {
     	    target_max_cardinality : Integer = m.target->any(x | true).upper;
     	    cardinality_source : String = '';
     	    cardinality_target : String = '';
-			cardinality_fact_source : String = thisModule.cardinality_fact1(m.name,thisModule.derive_endType(m.source->any(x | true)).name,m.target->any(x | true));
-			cardinality_fact_target : String = thisModule.cardinality_fact2(m.name,thisModule.derive_endType(m.target->any(x | true)).name,m.source->any(x | true));
+			cardinality_fact_source : String = thisModule.cardinality_fact1(m.name,thisModule.name_side_source(m),m.target->any(x | true));
+			cardinality_fact_target : String = thisModule.cardinality_fact2(m.name,thisModule.name_side_target(m),m.source->any(x | true));
 			tlrss : OrderedSet (OntoUML!Classifier) = thisModule.top_level_rigid_sortals_connected_on_source(m);
 			tlrst : OrderedSet (OntoUML!Classifier) = thisModule.top_level_rigid_sortals_connected_on_target(m);
 			world_facts : String = '';
@@ -337,8 +341,8 @@ rule DatatypeRelationship2Relation {
 			name : String = d.target->any(x | true).name;
     	    cardinality_source : String = '';
     	    cardinality_target : String = '';
-			cardinality_fact_source : String = thisModule.cardinality_fact1(name,thisModule.derive_endType(d.source->any(x | true)).name,d.target->any(x | true));
-			cardinality_fact_target : String = thisModule.cardinality_fact2(name,thisModule.derive_endType(d.target->any(x | true)).name,d.source->any(x | true));
+			cardinality_fact_source : String = thisModule.cardinality_fact1(name,thisModule.name_side_source(d),d.target->any(x | true));
+			cardinality_fact_target : String = thisModule.cardinality_fact2(name,thisModule.name_side_target(d),d.source->any(x | true));
 			tlrss : OrderedSet (OntoUML!Classifier) = thisModule.top_level_rigid_sortals_connected_on_source(d);
 			tlrst : OrderedSet (OntoUML!Classifier) = thisModule.top_level_rigid_sortals_connected_on_target(d);
 			world_facts : String = '';
@@ -401,8 +405,8 @@ rule Association2Relation {
     	    associationEnd2_max_cardinality : Integer = m.associationEnd->at(2).upper;
     	    cardinality_associationEnd1 : String = '';
     	    cardinality_associationEnd2 : String = '';
-			cardinality_fact_associationEnd1 : String = thisModule.cardinality_fact2(m.name,thisModule.derive_endType(m.associationEnd->at(1)).name,m.associationEnd->at(2));
-			cardinality_fact_associationEnd2 : String = thisModule.cardinality_fact1(m.name,thisModule.derive_endType(m.associationEnd->at(2)).name,m.associationEnd->at(1));
+			cardinality_fact_associationEnd1 : String = thisModule.cardinality_fact2(m.name,thisModule.name_side_associationEnd(m,1),m.associationEnd->at(2));
+			cardinality_fact_associationEnd2 : String = thisModule.cardinality_fact1(m.name,thisModule.name_side_associationEnd(m,2),m.associationEnd->at(1));
 			tlrsa1 : OrderedSet (OntoUML!Classifier) = thisModule.top_level_rigid_sortals_connected_on_associationEnd(m,1);
 			tlrsa2 : OrderedSet (OntoUML!Classifier) = thisModule.top_level_rigid_sortals_connected_on_associationEnd(m,2);
 			world_facts : String = '';
