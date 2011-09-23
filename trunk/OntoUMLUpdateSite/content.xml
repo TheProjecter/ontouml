@@ -68,8 +68,8 @@
         </instructions>
       </touchpointData>
     </unit>
-    <unit id='OntoUML.feature.group' version='1.2.0.v201011081723' singleton='false'>
-      <update id='OntoUML.feature.group' range='[0.0.0,1.2.0.v201011081723)' severity='0'/>
+    <unit id='OntoUML.feature.group' version='1.2.1.v201109221934' singleton='false'>
+      <update id='OntoUML.feature.group' range='[0.0.0,1.2.1.v201109221934)' severity='0'/>
       <properties size='5'>
         <property name='org.eclipse.equinox.p2.name' value='OntoUML Editor'/>
         <property name='org.eclipse.equinox.p2.description' value='OntoUML Editor is a model-based graphical editor that supports the creation of conceptual models and domain ontologies in a philosophically and cognitively well-founded modeling language named OntoUML, which is based on the foundational ontology UFO. The editor is designed in a way that, on one hand, it shields the user from the complexity of the ontological principles underlying this language. On the other hand, it reinforces these principles in the produced models by providing a mechanism for automatic formal constraint verification.'/>
@@ -78,7 +78,7 @@
         <property name='org.eclipse.equinox.p2.type.group' value='true'/>
       </properties>
       <provides size='1'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='OntoUML.feature.group' version='1.2.0.v201011081723'/>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='OntoUML.feature.group' version='1.2.1.v201109221934'/>
       </provides>
       <requires size='33'>
         <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.core.runtime' range='0.0.0'/>
@@ -110,10 +110,10 @@
         <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.gmf.runtime.notation' range='0.0.0'/>
         <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.emf.edit' range='0.0.0'/>
         <required namespace='org.eclipse.equinox.p2.iu' name='OntoUML' range='[1.2.0.v201011081723,1.2.0.v201011081723]'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='OntoUML.diagram' range='[1.2.0.v201011081723,1.2.0.v201011081723]'/>
+        <required namespace='org.eclipse.equinox.p2.iu' name='OntoUML.diagram' range='[1.2.1.v201109221934,1.2.1.v201109221934]'/>
         <required namespace='org.eclipse.equinox.p2.iu' name='OntoUML.edit' range='[1.2.0.v201011081723,1.2.0.v201011081723]'/>
         <required namespace='org.eclipse.equinox.p2.iu' name='OntoUML.editor' range='[1.2.0.v201011081723,1.2.0.v201011081723]'/>
-        <required namespace='org.eclipse.equinox.p2.iu' name='OntoUML.feature.jar' range='[1.2.0.v201011081723,1.2.0.v201011081723]'>
+        <required namespace='org.eclipse.equinox.p2.iu' name='OntoUML.feature.jar' range='[1.2.1.v201109221934,1.2.1.v201109221934]'>
           <filter>
             (org.eclipse.update.install.features=true)
           </filter>
@@ -129,8 +129,8 @@
         Copyright © 2010 Alessander Botti Benevides.&#xA;All Rights Reserved.
       </copyright>
     </unit>
-    <unit id='OntoUML.feature.jar' version='1.2.0.v201011081723'>
-      <update id='OntoUML.feature.jar' range='[0.0.0,1.2.0.v201011081723)' severity='0'/>
+    <unit id='OntoUML.feature.jar' version='1.2.1.v201109221934'>
+      <update id='OntoUML.feature.jar' range='[0.0.0,1.2.1.v201109221934)' severity='0'/>
       <properties size='4'>
         <property name='org.eclipse.equinox.p2.name' value='OntoUML Editor'/>
         <property name='org.eclipse.equinox.p2.description' value='OntoUML Editor is a model-based graphical editor that supports the creation of conceptual models and domain ontologies in a philosophically and cognitively well-founded modeling language named OntoUML, which is based on the foundational ontology UFO. The editor is designed in a way that, on one hand, it shields the user from the complexity of the ontological principles underlying this language. On the other hand, it reinforces these principles in the produced models by providing a mechanism for automatic formal constraint verification.'/>
@@ -138,15 +138,15 @@
         <property name='org.eclipse.equinox.p2.provider' value='Alessander Botti Benevides'/>
       </properties>
       <provides size='3'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='OntoUML.feature.jar' version='1.2.0.v201011081723'/>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='OntoUML.feature.jar' version='1.2.1.v201109221934'/>
         <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
-        <provided namespace='org.eclipse.update.feature' name='OntoUML' version='1.2.0.v201011081723'/>
+        <provided namespace='org.eclipse.update.feature' name='OntoUML' version='1.2.1.v201109221934'/>
       </provides>
       <filter>
         (org.eclipse.update.install.features=true)
       </filter>
       <artifacts size='1'>
-        <artifact classifier='org.eclipse.update.feature' id='OntoUML' version='1.2.0.v201011081723'/>
+        <artifact classifier='org.eclipse.update.feature' id='OntoUML' version='1.2.1.v201109221934'/>
       </artifacts>
       <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
       <touchpointData size='1'>
@@ -226,8 +226,8 @@
         </instructions>
       </touchpointData>
     </unit>
-    <unit id='OntoUML.diagram' version='1.2.0.v201011081723'>
-      <update id='OntoUML.diagram' range='[0.0.0,1.2.0.v201011081723)' severity='0'/>
+    <unit id='OntoUML.diagram' version='1.2.1.v201109221934'>
+      <update id='OntoUML.diagram' range='[0.0.0,1.2.1.v201109221934)' severity='0'/>
       <properties size='4'>
         <property name='df_LT.providerName' value='Sample Plugin Provider, Inc'/>
         <property name='df_LT.pluginName' value='OntoUML Plugin'/>
@@ -235,8 +235,8 @@
         <property name='org.eclipse.equinox.p2.provider' value='%providerName'/>
       </properties>
       <provides size='79'>
-        <provided namespace='org.eclipse.equinox.p2.iu' name='OntoUML.diagram' version='1.2.0.v201011081723'/>
-        <provided namespace='osgi.bundle' name='OntoUML.diagram' version='1.2.0.v201011081723'/>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='OntoUML.diagram' version='1.2.1.v201109221934'/>
+        <provided namespace='osgi.bundle' name='OntoUML.diagram' version='1.2.1.v201109221934'/>
         <provided namespace='java.package' name='OntoUML.diagram.edit.parts' version='0.0.0'/>
         <provided namespace='java.package' name='org.eclipse.gmf.runtime.common.ui.services.parser' version='0.0.0'/>
         <provided namespace='java.package' name='org.eclipse.gmf.runtime.draw2d.ui.figures' version='0.0.0'/>
@@ -349,13 +349,13 @@
         <required namespace='osgi.bundle' name='com.abstratt.content' range='1.1.0'/>
       </requires>
       <artifacts size='1'>
-        <artifact classifier='osgi.bundle' id='OntoUML.diagram' version='1.2.0.v201011081723'/>
+        <artifact classifier='osgi.bundle' id='OntoUML.diagram' version='1.2.1.v201109221934'/>
       </artifacts>
       <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
       <touchpointData size='1'>
         <instructions size='1'>
           <instruction key='manifest'>
-            Bundle-ManifestVersion: 2&#xA;Export-Package: OntoUML.diagram.edit.parts;uses:=OntoUML,org.eclipse.gmf.runtime.common.ui.services.parser,org.eclipse.gmf.runtime.draw2d.ui.figures,org.eclipse.gmf.runtime.diagram.ui.editparts,org.eclipse.gef.editpolicies,org.eclipse.emf.common.notify,org.eclipse.draw2d,org.eclipse.jface.text.contentassist,org.eclipse.gef.tools,org.eclipse.emf.ecore,org.eclipse.gmf.runtime.gef.ui.figures,org.eclipse.swt.graphics,org.eclipse.jface.viewers,org.eclipse.draw2d.geometry,org.eclipse.gmf.runtime.notation,org.eclipse.gef,OntoUML.diagram.part;uses:=org.eclipse.jface.wizard,org.eclipse.jface.operation,org.eclipse.core.runtime,org.eclipse.core.commands,org.eclipse.emf.common.notify,org.eclipse.gef.palette,org.eclipse.gmf.runtime.diagram.ui.parts,org.eclipse.jface.action,org.eclipse.emf.ecore,org.eclipse.gmf.runtime.common.ui.util,org.eclipse.gef.commands,org.eclipse.jface.viewers,org.eclipse.emf.transaction,org.eclipse.gmf.runtime.diagram.ui.actions,org.eclipse.gmf.runtime.notation,OntoUML.diagram.application,org.eclipse.gef,org.eclipse.gmf.runtime.emf.type.core,org.eclipse.emf.ecore.resource,org.eclipse.jface.resource,org.eclipse.emf.common.util,org.eclipse.ui,org.eclipse.ui.plugin,org.eclipse.gmf.runtime.diagram.ui.editparts,org.eclipse.gmf.runtime.diagram.ui.resources.editor.document,org.eclipse.gmf.runtime.diagram.ui.providers,org.eclipse.osgi.util,org.eclipse.core.expressions,org.eclipse.gmf.runtime.diagram.core.preferences,org.eclipse.swt.graphics,org.osgi.framework,org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts,org.eclipse.emf.edit.provider,org.eclipse.swt.widgets,OntoUML.diagram.providers;uses:=org.eclipse.core.runtime,OntoUML.URML,org.eclipse.jface.action,org.eclipse.gmf.runtime.common.ui.util,org.eclipse.emf.ecore,org.eclipse.emf.validation.model,org.eclipse.gmf.runtime.emf.ui.services.parser,org.eclipse.core.resources,org.eclipse.emf.transaction,org.eclipse.gmf.runtime.notation,org.eclipse.gef,org.eclipse.gmf.runtime.emf.type.core,OntoUML,org.eclipse.gmf.runtime.common.ui.services.parser,org.eclipse.jface.resource,org.eclipse.gmf.runtime.diagram.ui.editparts,org.eclipse.gmf.runtime.common.ui.services.action.contributionitem,org.eclipse.gmf.runtime.common.core.service,org.eclipse.gmf.runtime.diagram.ui.services.decorator,org.eclipse.gmf.runtime.diagram.ui.services.editpart,org.eclipse.gmf.runtime.common.ui.services.icon,org.eclipse.swt.graphics,org.eclipse.gmf.runtime.diagram.core.providers,org.eclipse.gmf.runtime.emf.ui.services.modelingassistant,org.eclipse.gmf.runtime.emf.ui.providers.marker&#xA;Bundle-Localization: plugin&#xA;Require-Bundle: org.eclipse.core.runtime,org.eclipse.core.resources,org.eclipse.core.expressions,org.eclipse.jface,org.eclipse.ui.ide,org.eclipse.ui.views,org.eclipse.ui.navigator,org.eclipse.ui.navigator.resources,org.eclipse.emf.ecore,org.eclipse.emf.ecore.xmi,org.eclipse.emf.edit.ui,org.eclipse.gmf.runtime.emf.core,org.eclipse.gmf.runtime.emf.commands.core,org.eclipse.gmf.runtime.emf.ui.properties,org.eclipse.gmf.runtime.diagram.ui,org.eclipse.gmf.runtime.diagram.ui.properties,org.eclipse.gmf.runtime.diagram.ui.providers,org.eclipse.gmf.runtime.diagram.ui.providers.ide,org.eclipse.gmf.runtime.diagram.ui.render,org.eclipse.gmf.runtime.diagram.ui.resources.editor,org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide,OntoUML;visibility:=reexport,OntoUML.edit;visibility:=reexport,org.eclipse.ocl.ecore;visibility:=reexport,org.eclipse.emf.validation;visibility:=reexport,org.eclipse.gmf.runtime.draw2d.ui;visibility:=reexport,org.eclipse.draw2d;visibility:=reexport,org.eclipse.gef;visibility:=reexport,org.eclipse.gmf.runtime.notation;visibility:=reexport,org.eclipse.emf.ocl;bundle-version=&quot;1.1.101&quot;,com.abstratt.content;bundle-version=&quot;1.1.0&quot;&#xA;Bundle-Activator: OntoUML.diagram.part.OntoUMLDiagramEditorPlugin&#xA;Bundle-Name: %pluginName&#xA;Bundle-Version: 1.2.0.v201011081723&#xA;Bundle-Vendor: %providerName&#xA;Bundle-SymbolicName: OntoUML.diagram; singleton:=true&#xA;Bundle-ClassPath: .&#xA;Manifest-Version: 1.0&#xA;Eclipse-LazyStart: true&#xA;
+            Bundle-ManifestVersion: 2&#xA;Export-Package: OntoUML.diagram.edit.parts;uses:=OntoUML,org.eclipse.gmf.runtime.common.ui.services.parser,org.eclipse.gmf.runtime.draw2d.ui.figures,org.eclipse.gmf.runtime.diagram.ui.editparts,org.eclipse.gef.editpolicies,org.eclipse.emf.common.notify,org.eclipse.draw2d,org.eclipse.jface.text.contentassist,org.eclipse.gef.tools,org.eclipse.emf.ecore,org.eclipse.gmf.runtime.gef.ui.figures,org.eclipse.swt.graphics,org.eclipse.jface.viewers,org.eclipse.draw2d.geometry,org.eclipse.gmf.runtime.notation,org.eclipse.gef,OntoUML.diagram.part;uses:=org.eclipse.jface.wizard,org.eclipse.jface.operation,org.eclipse.core.runtime,org.eclipse.core.commands,org.eclipse.emf.common.notify,org.eclipse.gef.palette,org.eclipse.gmf.runtime.diagram.ui.parts,org.eclipse.jface.action,org.eclipse.emf.ecore,org.eclipse.gmf.runtime.common.ui.util,org.eclipse.gef.commands,org.eclipse.jface.viewers,org.eclipse.emf.transaction,org.eclipse.gmf.runtime.diagram.ui.actions,org.eclipse.gmf.runtime.notation,OntoUML.diagram.application,org.eclipse.gef,org.eclipse.gmf.runtime.emf.type.core,org.eclipse.emf.ecore.resource,org.eclipse.jface.resource,org.eclipse.emf.common.util,org.eclipse.ui,org.eclipse.ui.plugin,org.eclipse.gmf.runtime.diagram.ui.editparts,org.eclipse.gmf.runtime.diagram.ui.resources.editor.document,org.eclipse.gmf.runtime.diagram.ui.providers,org.eclipse.osgi.util,org.eclipse.core.expressions,org.eclipse.gmf.runtime.diagram.core.preferences,org.eclipse.swt.graphics,org.osgi.framework,org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts,org.eclipse.emf.edit.provider,org.eclipse.swt.widgets,OntoUML.diagram.providers;uses:=org.eclipse.core.runtime,OntoUML.URML,org.eclipse.jface.action,org.eclipse.gmf.runtime.common.ui.util,org.eclipse.emf.ecore,org.eclipse.emf.validation.model,org.eclipse.gmf.runtime.emf.ui.services.parser,org.eclipse.core.resources,org.eclipse.emf.transaction,org.eclipse.gmf.runtime.notation,org.eclipse.gef,org.eclipse.gmf.runtime.emf.type.core,OntoUML,org.eclipse.gmf.runtime.common.ui.services.parser,org.eclipse.jface.resource,org.eclipse.gmf.runtime.diagram.ui.editparts,org.eclipse.gmf.runtime.common.ui.services.action.contributionitem,org.eclipse.gmf.runtime.common.core.service,org.eclipse.gmf.runtime.diagram.ui.services.decorator,org.eclipse.gmf.runtime.diagram.ui.services.editpart,org.eclipse.gmf.runtime.common.ui.services.icon,org.eclipse.swt.graphics,org.eclipse.gmf.runtime.diagram.core.providers,org.eclipse.gmf.runtime.emf.ui.services.modelingassistant,org.eclipse.gmf.runtime.emf.ui.providers.marker&#xA;Bundle-Localization: plugin&#xA;Require-Bundle: org.eclipse.core.runtime,org.eclipse.core.resources,org.eclipse.core.expressions,org.eclipse.jface,org.eclipse.ui.ide,org.eclipse.ui.views,org.eclipse.ui.navigator,org.eclipse.ui.navigator.resources,org.eclipse.emf.ecore,org.eclipse.emf.ecore.xmi,org.eclipse.emf.edit.ui,org.eclipse.gmf.runtime.emf.core,org.eclipse.gmf.runtime.emf.commands.core,org.eclipse.gmf.runtime.emf.ui.properties,org.eclipse.gmf.runtime.diagram.ui,org.eclipse.gmf.runtime.diagram.ui.properties,org.eclipse.gmf.runtime.diagram.ui.providers,org.eclipse.gmf.runtime.diagram.ui.providers.ide,org.eclipse.gmf.runtime.diagram.ui.render,org.eclipse.gmf.runtime.diagram.ui.resources.editor,org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide,OntoUML;visibility:=reexport,OntoUML.edit;visibility:=reexport,org.eclipse.ocl.ecore;visibility:=reexport,org.eclipse.emf.validation;visibility:=reexport,org.eclipse.gmf.runtime.draw2d.ui;visibility:=reexport,org.eclipse.draw2d;visibility:=reexport,org.eclipse.gef;visibility:=reexport,org.eclipse.gmf.runtime.notation;visibility:=reexport,org.eclipse.emf.ocl;bundle-version=&quot;1.1.101&quot;,com.abstratt.content;bundle-version=&quot;1.1.0&quot;&#xA;Bundle-Activator: OntoUML.diagram.part.OntoUMLDiagramEditorPlugin&#xA;Bundle-Name: %pluginName&#xA;Bundle-Version: 1.2.1.v201109221934&#xA;Bundle-Vendor: %providerName&#xA;Bundle-SymbolicName: OntoUML.diagram; singleton:=true&#xA;Bundle-ClassPath: .&#xA;Manifest-Version: 1.0&#xA;Eclipse-LazyStart: true&#xA;
           </instruction>
         </instructions>
       </touchpointData>
