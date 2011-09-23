@@ -1,5 +1,5 @@
 #summary How to install and run the OntoUML2Alloy ATL transformation
-#labels Phase-Deploy
+#labels Phase-Deploy,Featured
 
 =Contents=
 <wiki:toc max_depth="1" />
