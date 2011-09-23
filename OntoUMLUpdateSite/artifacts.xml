@@ -18,7 +18,7 @@
         <property name='download.contentType' value='application/zip'/>
       </properties>
     </artifact>
-    <artifact classifier='osgi.bundle' id='OntoUML.diagram' version='1.2.0.v201011081723'>
+    <artifact classifier='osgi.bundle' id='OntoUML.diagram' version='1.2.1.v201109221934'>
       <properties size='3'>
         <property name='artifact.size' value='2051199'/>
         <property name='download.size' value='2051199'/>
@@ -32,7 +32,7 @@
         <property name='download.contentType' value='application/zip'/>
       </properties>
     </artifact>
-    <artifact classifier='org.eclipse.update.feature' id='OntoUML' version='1.2.0.v201011081723'>
+    <artifact classifier='org.eclipse.update.feature' id='OntoUML' version='1.2.1.v201109221934'>
       <properties size='2'>
         <property name='artifact.size' value='17108'/>
         <property name='download.size' value='17108'/>
