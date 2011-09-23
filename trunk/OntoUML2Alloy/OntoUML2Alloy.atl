@@ -10,10 +10,12 @@ helper def: directedbinaryrelationship_generalization() : String = OntoUML!Direc
 helper def: association_generalization() : String = OntoUML!Association.allInstances()->iterate(x; association: String = '' | let gen : OrderedSet(OntoUML!Classifier) = thisModule.derive_generalization(x)->collect(y | thisModule.derive_general(y)) in (if (gen.size() > 0) then (association + '	' + x.name + ' in ' + thisModule.names_disjunction_set2(gen) + '\n') else association endif));
 helper def: relation_generalization() : String = thisModule.directedbinaryrelationship_generalization() + thisModule.association_generalization();
 helper def: signature_names() : String = thisModule.names_union_set(OntoUML!SubstanceSortal.allInstances()->union(OntoUML!MomentClass.allInstances()));
-helper def: relation_phases() : String = OntoUML!GeneralizationSet.allInstances()->select(x | if (x.generalization.size() > 0) then (if (x.generalization->forAll(y | thisModule.derive_specific(y).oclIsKindOf(OntoUML!Phase))) then true else false endif) else false endif)->iterate(x; phase_generalizationset: String = '' | phase_generalizationset + '	disj ' + thisModule.names_list(x.generalization->iterate(y; phases: OrderedSet(OntoUML!Phase) = OrderedSet{} | phases.including(thisModule.derive_specific(y)))) + ': set ' + thisModule.derive_general(x.generalization->any(y | true)).name + (if (thisModule.derive_general(x.generalization->any(y | true)).oclIsKindOf(OntoUML!SubstanceSortal)) then ' :> domain_of_quantification,\n' else ',\n' endif));
-helper def: relation_roles() : String = OntoUML!Role.allInstances()->iterate(x; role: String = '' | let gen : OrderedSet(OntoUML!Generalization) = thisModule.derive_generalization(x)->collect(y | thisModule.derive_general(y)) in (role + '	' + x.name + ': set ' + thisModule.names_disjunction_set2(gen) + ',\n'));
-helper def: relation_mixins() : String = OntoUML!Mixin.allInstances()->iterate(x; mixin: String = '' | mixin + '	' + x.name + ': set ' + thisModule.subTypes_name_union_set_special_rigid_sortal_subtypes(x) + ',\n');
-helper def: relation_rolemixins() : String = OntoUML!RoleMixin.allInstances()->iterate(x; rolemixin: String = '' | rolemixin + '	' + x.name + ': set ' + thisModule.subTypes_name_union_set(x) + ',\n');
+helper def: relation_phases_GeneralizationSet() : String = OntoUML!GeneralizationSet.allInstances()->select(x | if (x.generalization.size() > 0) then (if (x.generalization->forAll(y | thisModule.derive_specific(y).oclIsKindOf(OntoUML!Phase))) then true else false endif) else false endif)->iterate(x; phase_generalizationset: String = '' | phase_generalizationset + '	disj ' + thisModule.names_list(x.generalization->iterate(y; phases: OrderedSet(OntoUML!Phase) = OrderedSet{} | phases.including(thisModule.derive_specific(y)))) + ': set ' + thisModule.derive_general(x.generalization->any(y | true)).name + (if (thisModule.derive_general(x.generalization->any(y | true)).oclIsKindOf(OntoUML!SubstanceSortal)) then ' :> domain_of_quantification,\n' else ',\n' endif));
+helper def: relation_subphases() : String = OntoUML!Phase.allInstances()->select(x | thisModule.derive_generalization(x)->collect(y | y.generalizationSet)->flatten()->isEmpty())->iterate(x; phase: String = '' | phase + '	' + x.name + ': set ' + thisModule.superTypes_name_disjunction_set(x) + ',\n');
+helper def: relation_phases() : String = thisModule.relation_phases_GeneralizationSet() + thisModule.relation_subphases();
+helper def: relation_roles() : String = OntoUML!Role.allInstances()->iterate(x; role: String = '' | let gen : OrderedSet(OntoUML!Generalization) = thisModule.derive_generalization(x)->collect(y | thisModule.derive_general(y))->select(z | not z.isAbstract) in (role + '	' + x.name + ': set ' + thisModule.names_disjunction_set2(gen) + ',\n'));
+helper def: relation_mixins() : String = OntoUML!Mixin.allInstances()->iterate(x; mixin: String = '' | mixin + '	' + x.name + ': set ' + thisModule.subTypes_name_union_set_special_rigid_sortal_subtypes_univ(x) + ',\n');
+helper def: relation_rolemixins() : String = OntoUML!RoleMixin.allInstances()->iterate(x; rolemixin: String = '' | rolemixin + '	' + x.name + ': set ' + thisModule.subTypes_name_union_set_univ(x) + ',\n');
 helper def: signature_declarations_world() : String = 'abstract sig World {\n	domain_of_quantification: some (' + thisModule.signature_names() + '),\n' + thisModule.relation_phases() + thisModule.relation_roles() + thisModule.relation_mixins() + thisModule.relation_rolemixins() + thisModule.relation_relations + '}';
 helper def: signature_facts_world : String = '\n' + thisModule.relation_generalization();
 helper def: signature_world() : String = thisModule.signature_declarations_world() + if (thisModule.signature_facts_world <> '') then ('{' + thisModule.signature_facts_world + '}') else '' endif;
@@ -30,10 +32,14 @@ helper def: derive_specific(g: OntoUML!Generalization) : OntoUML!Classifier = g.
 helper def: derive_general(g: OntoUML!Generalization) : OntoUML!Classifier = g.source->any(x | x.oclIsKindOf(OntoUML!Classifier));
 helper def: derive_generalization(c: OntoUML!Classifier) : OrderedSet(OntoUML!Generalization) = OntoUML!Generalization.allInstances()->select(x | thisModule.derive_specific(x) = c);
 helper def: allSuperTypes(c: OntoUML!Classifier) : OrderedSet(OntoUML!Element) = if thisModule.derive_generalization(c)->forAll(x | x.oclIsUndefined()) then Set{} else Set{thisModule.derive_generalization(c)->collect(x | thisModule.derive_general(x)), thisModule.derive_generalization(c)->collect(x | if thisModule.derive_general(x).oclIsKindOf(OntoUML!Classifier) then thisModule.allSuperTypes(thisModule.derive_general(x)) else Set{} endif)}->flatten() endif;
+helper def: allSubTypes(c: OntoUML!Classifier) : OrderedSet(OntoUML!Element) = OntoUML!Element.allInstances()->select(x | thisModule.allSuperTypes(x)->includes(c)); -- To do: reformulate this expression to get a better computational complexity.
 
 helper def: names_list(os: OrderedSet(OntoUML!NamedElement)) : String = let names: String = os->iterate(x; names: String = '' | names + x.name + ', ') in (if (names.size() > 0) then names.substring(1,(names.size()-2)) else '' endif);
 helper def: names_union_set(os: OrderedSet(OntoUML!NamedElement)) : String = let names: String = os->iterate(x; names: String = '' | names + x.name + ' + ') in (if (names.size() > 0) then names.substring(1,(names.size()-3)) else '' endif);
-helper def: names_union_set_special_rigid_sortal_subtypes(os: OrderedSet(OntoUML!NamedElement)) : String = let names: String = os->iterate(x; names: String = '' | if (x.oclIsKindOf(OntoUML!RigidSortalClass)) then (names + x.name + ':>domain_of_quantification + ') else (names + x.name + ' + ') endif) in (if (names.size() > 0) then names.substring(1,(names.size()-3)) else '' endif);
+helper def: names_union_set_none(os: OrderedSet(OntoUML!NamedElement)) : String = let names: String = os->iterate(x; names: String = '' | names + x.name + ' + ') in (if (names.size() > 0) then names.substring(1,(names.size()-3)) else 'none' endif);
+helper def: names_union_set_univ(os: OrderedSet(OntoUML!NamedElement)) : String = let names: String = os->iterate(x; names: String = '' | names + x.name + ' + ') in (if (names.size() > 0) then names.substring(1,(names.size()-3)) else 'univ - univ' endif);
+helper def: names_union_set_special_rigid_sortal_subtypes_none(os: OrderedSet(OntoUML!NamedElement)) : String = let names: String = os->iterate(x; names: String = '' | if (x.oclIsKindOf(OntoUML!RigidSortalClass)) then (names + x.name + ':>domain_of_quantification + ') else (names + x.name + ' + ') endif) in (if (names.size() > 0) then names.substring(1,(names.size()-3)) else 'none' endif);
+helper def: names_union_set_special_rigid_sortal_subtypes_univ(os: OrderedSet(OntoUML!NamedElement)) : String = let names: String = os->iterate(x; names: String = '' | if (x.oclIsKindOf(OntoUML!RigidSortalClass)) then (names + x.name + ':>domain_of_quantification + ') else (names + x.name + ' + ') endif) in (if (names.size() > 0) then names.substring(1,(names.size()-3)) else 'univ - univ' endif);
 helper def: names_disjunction_set(os: OrderedSet(OntoUML!NamedElement)) : String = let names: String = os->iterate(x; names: String = '' | names + x.name + ' & ') in (if (names.size() > 0) then names.substring(1,(names.size()-3)) else '' endif);
 helper def: domain_function(e: OntoUML!Element): String = if (e.oclIsKindOf(OntoUML!SubstanceSortal) or e.oclIsKindOf(OntoUML!Relator) or e.oclIsKindOf(OntoUML!Mode)) then ':>domain_of_quantification' else '' endif;
 helper def: names_disjunction_set2(os: OrderedSet(OntoUML!NamedElement)) : String = let names: String = os->iterate(x; names: String = '' | names + x.name + thisModule.domain_function(x) + ' & ') in (if (names.size() > 0) then names.substring(1,(names.size()-3)) else '' endif);
@@ -46,7 +52,10 @@ helper def: superTypes_set_equality(e1: OntoUML!Element, e2: OntoUML!Element) : 
 helper def: classifiers_with_same_supertypes : Set(Set(OntoUML!Element)) = let c: Set(OntoUML!Classifier) = OntoUML!Classifier.allInstances() in (c->iterate(x; acc: Set(Set(OntoUML!Element)) = Set{} | acc->including(c->select(y | thisModule.superTypes_set_equality(x,y))->asSet())));
 helper def: subTypes_set(e: OntoUML!Element) : OrderedSet(OntoUML!Element) = OntoUML!Generalization.allInstances()->select(x | x.source->any(y | true) = e)->collect(x | x.target)->flatten();
 helper def: subTypes_name_union_set(e: OntoUML!Element) : String = thisModule.names_union_set(thisModule.subTypes_set(e));
-helper def: subTypes_name_union_set_special_rigid_sortal_subtypes(e: OntoUML!Element) : String = thisModule.names_union_set_special_rigid_sortal_subtypes(thisModule.subTypes_set(e));
+helper def: subTypes_name_union_set_none(e: OntoUML!Element) : String = thisModule.names_union_set_none(thisModule.subTypes_set(e));
+helper def: subTypes_name_union_set_univ(e: OntoUML!Element) : String = thisModule.names_union_set_univ(thisModule.subTypes_set(e));
+helper def: subTypes_name_union_set_special_rigid_sortal_subtypes_none(e: OntoUML!Element) : String = thisModule.names_union_set_special_rigid_sortal_subtypes_none(thisModule.subTypes_set(e));
+helper def: subTypes_name_union_set_special_rigid_sortal_subtypes_univ(e: OntoUML!Element) : String = thisModule.names_union_set_special_rigid_sortal_subtypes_univ(thisModule.subTypes_set(e));
 helper def: generalization_Sets_of_superTypes_of(c: OntoUML!Classifier) : OrderedSet(OntoUML!GeneralizationSet) = OntoUML!Generalization.allInstances()->select(x | x.target->any(y | true) = c)->collect(x | x.generalizationSet)->flatten();
 helper def: generalization_Sets_of_subKinds_subTypes_of(c: OntoUML!Classifier) : OrderedSet(OntoUML!GeneralizationSet) = OntoUML!Generalization.allInstances()->select(x | (x.source->any(y | true) = c) and (x.target->forAll(y | y.oclIsKindOf(OntoUML!SubKind))))->collect(x | x.generalizationSet)->flatten();
 helper def: generalization_relational_constraint(set: OrderedSet(OntoUML!Classifier)) : String = set->iterate(x; str: String = '' | let gen : OrderedSet(OntoUML!Generalization) = thisModule.derive_generalization(x)->collect(y | thisModule.derive_general(y)) in (if (gen.size() > 0) then (str + '	' + x.name + ' in ' + thisModule.names_disjunction_set2(gen) + '\n') else str endif)); -- For a set of relations.
@@ -58,6 +67,11 @@ helper def: is_top_level(e: OntoUML!Element) : Boolean = if (e.oclIsKindOf(OntoU
 helper def: name_side_source(e: OntoUML!Element) : String = let side: OntoUML!Element = thisModule.derive_endType(e.source->any(x | true)) in (if (thisModule.is_top_level(side)) then (side.name + ':>domain_of_quantification') else (side.name) endif);
 helper def: name_side_target(e: OntoUML!Element) : String = let side: OntoUML!Element = thisModule.derive_endType(e.target->any(x | true)) in (if (thisModule.is_top_level(side)) then (side.name + ':>domain_of_quantification') else (side.name) endif);
 helper def: name_side_associationEnd(e: OntoUML!Element, i: Integer) : String = let side: OntoUML!Element = thisModule.derive_endType(e.associationEnd->at(i)) in (if (thisModule.is_top_level(side)) then (side.name + ':>domain_of_quantification') else (side.name) endif);
+
+helper def: allSubstanceSortalSuperTypesOfAllRoleSubTypes(c: OntoUML!Classifier) : OrderedSet(OntoUML!Element) = thisModule.allSubTypes(c)->select(x | x.oclIsKindOf(OntoUML!Role))->collect(x | thisModule.allSuperTypes(x))->flatten()->select(x | x.oclIsKindOf(OntoUML!SubstanceSortal));
+helper def: names_union_set_allSubstanceSortalSuperTypesOfAllRoleSubTypes(c: OntoUML!Classifier) : String = thisModule.names_union_set(thisModule.allSubstanceSortalSuperTypesOfAllRoleSubTypes(c));
+helper def: name_SubstanceSortal_superType(c: OntoUML!Classifier) : String = thisModule.allSuperTypes(c)->select(x | x.oclIsKindOf(OntoUML!SubstanceSortal))->any(x | true).name;
+helper def: name_side_target_subTypes_or_superTypes_union_set_mediation(c: OntoUML!Classifier) : String = if (c.isAbstract) then ('(' + thisModule.names_union_set_allSubstanceSortalSuperTypesOfAllRoleSubTypes(c) + ')') else (if (c.oclIsKindOf(OntoUML!SubstanceSortal) or c.oclIsKindOf(OntoUML!MomentClass)) then (c.name) else (thisModule.name_SubstanceSortal_superType(c)) endif) endif;
 
 helper def: cardinality(p: OntoUML!Property) : String = if ((p.lower = 0) and (p.upper = 1)) then 'lone' else (if ((p.lower = 1) and (p.upper = 1)) then 'one' else (if ((p.lower = 1) and (p.upper = 0-1)) then 'some' else 'set' endif) endif) endif;
 helper def: cardinality_fact1(name_relation: String, name_side: String, p: OntoUML!Property) : String = if (p.lower = 0) then (if (p.upper = 0-1) then '' else ('	all x: ' + name_side + ' | #' + name_relation + '.x <= ' + p.upper.toString()) endif) else (if (p.upper = 0-1) then ('	all x: ' + name_side + ' | #' + name_relation + '.x >= ' + p.lower.toString()) else (if (p.lower <> p.upper) then ('	all x: ' + name_side + ' | (#' + name_relation + '.x >= ' + p.lower.toString() + ') and (#' + name_relation + '.x <= ' + p.upper.toString() + ')') else ('	all x: ' + name_side + ' | #' + name_relation + '.x = ' + p.lower.toString()) endif) endif) endif;
@@ -142,7 +156,7 @@ rule Relator2Signature {
 		supertype_keyword : String = if (thisModule.generalization_Sets_of_superTypes_of(r)->exists(x | x.isDisjoint = true)) then ' extends ' else (if (thisModule.superTypes_set(r).size() > 0) then ' in ' else '' endif) endif;
 		mediations : OrderedSet(OntoUML!Mediation) = OntoUML!Mediation.allInstances()->select(x | x.source->exists(y | if y.oclIsKindOf(OntoUML!Property) then (thisModule.derive_endType(y) = r) else false endif));
 		derivations : OrderedSet(OntoUML!Derivation) = OntoUML!Derivation.allInstances()->select(x | x.target->exists(y | if y.oclIsKindOf(OntoUML!Property) then (thisModule.derive_endType(y) = r) else false endif));
-		mediations_str : String = mediations->iterate(x; str : String = '' | str + '	' + x.name + ': '+ thisModule.cardinality(x.target->any(y | true)) + ' ' + thisModule.allSuperTypes(thisModule.derive_endType(x.target->any(y | true)))->including(thisModule.derive_endType(x.target->any(y | true)))->select(x | x.oclIsKindOf(OntoUML!SubstanceSortal))->any(x | true).name + ',\n');
+		mediations_str : String = mediations->iterate(x; str : String = '' | str + '	' + x.name + ': '+ thisModule.cardinality(x.target->any(y | true)) + ' ' + thisModule.name_side_target_subTypes_or_superTypes_union_set_mediation(thisModule.derive_endType(x.target->any(y | true))) + ',\n');
 		derivations_str : String = derivations->iterate(x; str : String = '' | let mediated_class1: OntoUML!ObjectClass = thisModule.derive_endType(thisModule.derive_endType(x.source->any(y | true)).associationEnd->at(1)) in let mediated_class2: OntoUML!ObjectClass = thisModule.derive_endType(thisModule.derive_endType(x.source->any(y | true)).associationEnd->at(2)) in let mediation1: OntoUML!Mediation = mediations->select(y | y.target->exists(z | if z.oclIsKindOf(OntoUML!Property) then (thisModule.derive_endType(z) = mediated_class1) else false endif))->at(1) in let mediation2: OntoUML!Mediation = mediations->select(y | y.target->exists(z | if z.oclIsKindOf(OntoUML!Property) then (thisModule.derive_endType(z) = mediated_class2) else false endif))->at(1) in (str + '	' + x.name + ': '+ mediation1.name + ' ' + thisModule.cardinality(mediation1.target->any(y | true)) + ' -> ' + thisModule.cardinality(mediation2.target->any(y | true)) + ' ' + mediation2.name + ',\n'));
     	mediations_generalization : String = thisModule.generalization_relational_constraint(mediations);
 		derivations_generalization : String = thisModule.generalization_relational_constraint(derivations);
@@ -216,9 +230,9 @@ rule Phase2Relation {
     from
     	p: OntoUML!Phase
 	do {
-		if (OntoUML!GeneralizationSet.allInstances()->select(x | if (x.generalization.size() > 0) then (if (x.generalization->exists(y | thisModule.derive_specific(y) = p)) then true else false endif) else false endif)->isEmpty()) {
-	    	thisModule.relation_phases <- thisModule.relation_phases + '	' + p.name + ': set ' + thisModule.superTypes_name_union_set(p) + ':>domain_of_quantification,\n';
-		}
+--		if (OntoUML!GeneralizationSet.allInstances()->select(x | if (x.generalization.size() > 0) then (if (x.generalization->exists(y | thisModule.derive_specific(y) = p)) then true else false endif) else false endif)->isEmpty()) {
+--	    	thisModule.relation_phases <- thisModule.relation_phases + '	' + p.name + ': set ' + thisModule.superTypes_name_union_set(p) + ':>domain_of_quantification,\n';
+--		}
 		thisModule.signature_facts_world <- thisModule.signature_facts_world + '	all x: ' + thisModule.allSuperTypes(p)->select(x | x.oclIsKindOf(OntoUML!SubstanceSortal))->any(x | true).name + ' | some w: World | x in w.@' + p.name + '\n';
 		thisModule.text <- thisModule.final_text();
 		thisModule.text.writeTo(thisModule.path);
@@ -246,7 +260,7 @@ rule Mixin2Relation {
     from
     	m: OntoUML!Mixin
 	do {
-		thisModule.signature_facts_world <- thisModule.signature_facts_world + '	all x: (' + thisModule.subTypes_name_union_set_special_rigid_sortal_subtypes(m) + ') | x in ' + m.name + '\n';
+		thisModule.signature_facts_world <- thisModule.signature_facts_world + '	all x: (' + thisModule.subTypes_name_union_set_special_rigid_sortal_subtypes_none(m) + ') | x in ' + m.name + '\n';
 	    thisModule.text <- thisModule.final_text();
 		thisModule.text.writeTo(thisModule.path);
 		thisModule.debug('Mixin ' + m.name);
@@ -257,7 +271,7 @@ rule RoleMixin2Relation {
     from
     	r: OntoUML!RoleMixin
 	do {
-		thisModule.signature_facts_world <- thisModule.signature_facts_world + '	all x: (' + thisModule.subTypes_name_union_set(r) + ') | x in ' + r.name + '\n';
+		thisModule.signature_facts_world <- thisModule.signature_facts_world + '	all x: (' + thisModule.subTypes_name_union_set_none(r) + ') | x in ' + r.name + '\n';
 	    thisModule.text <- thisModule.final_text();
 		thisModule.text.writeTo(thisModule.path);
 		thisModule.debug('RoleMixin ' + r.name);
