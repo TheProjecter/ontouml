@@ -1,6 +1,6 @@
 #summary Changelog.
 
-= 1.2.1: =
+= 1.2.1 (only for the OntoUML Editor Eclipse plug-in): =
 
 == Bugs fixed: ==
 
