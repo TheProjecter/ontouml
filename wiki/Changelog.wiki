@@ -1,4 +1,5 @@
 #summary Changelog.
+#labels Featured
 
 = 1.2.1 (only for the OntoUML Editor Eclipse plug-in): =
 
