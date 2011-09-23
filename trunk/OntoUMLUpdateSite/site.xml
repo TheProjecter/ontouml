@@ -3,7 +3,7 @@
    <description url="http://ontouml.googlecode.com/svn/trunk/OntoUMLUpdateSite">
       OntoUML Editor Update Site
    </description>
-   <feature url="features/OntoUML_1.2.0.vqualifier.jar" id="OntoUML" version="1.2.0.vqualifier">
+   <feature url="features/OntoUML_1.2.1.v201109221934.jar" id="OntoUML" version="1.2.1.v201109221934">
       <category name="Model Development and Ontology Engineering"/>
    </feature>
    <category-def name="Model Development and Ontology Engineering" label="Model Development and Ontology Engineering">
