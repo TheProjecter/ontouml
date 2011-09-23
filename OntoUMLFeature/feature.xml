@@ -2,7 +2,7 @@
 <feature
       id="OntoUML"
       label="OntoUML Editor"
-      version="1.2.0.vqualifier"
+      version="1.2.1.v201109221934"
       provider-name="Alessander Botti Benevides">
 
    <description url="http://code.google.com/p/ontouml">
@@ -10,7 +10,7 @@
    </description>
 
    <copyright>
-      Copyright © 2010 Alessander Botti Benevides.
+      Copyright © 2008-2010 Alessander Botti Benevides.
 All Rights Reserved.
    </copyright>
 
